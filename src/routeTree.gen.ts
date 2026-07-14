@@ -9,50 +9,228 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
+import { Route as CatalogRouteImport } from './routes/_catalog'
+import { Route as CatalogIndexRouteImport } from './routes/_catalog.index'
+import { Route as PreviewNamePatternRouteImport } from './routes/preview.$name.$pattern'
+import { Route as CatalogPrinciplesTypographyRouteImport } from './routes/_catalog.principles.typography'
+import { Route as CatalogPrinciplesSpacingRouteImport } from './routes/_catalog.principles.spacing'
+import { Route as CatalogPrinciplesShapeRouteImport } from './routes/_catalog.principles.shape'
+import { Route as CatalogPrinciplesColorRouteImport } from './routes/_catalog.principles.color'
+import { Route as CatalogPrinciplesBasicsRouteImport } from './routes/_catalog.principles.basics'
+import { Route as CatalogComponentsNameRouteImport } from './routes/_catalog.components.$name'
 
-const IndexRoute = IndexRouteImport.update({
+const CatalogRoute = CatalogRouteImport.update({
+  id: '/_catalog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogIndexRoute = CatalogIndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => CatalogRoute,
+} as any)
+const PreviewNamePatternRoute = PreviewNamePatternRouteImport.update({
+  id: '/preview/$name/$pattern',
+  path: '/preview/$name/$pattern',
   getParentRoute: () => rootRouteImport,
+} as any)
+const CatalogPrinciplesTypographyRoute =
+  CatalogPrinciplesTypographyRouteImport.update({
+    id: '/principles/typography',
+    path: '/principles/typography',
+    getParentRoute: () => CatalogRoute,
+  } as any)
+const CatalogPrinciplesSpacingRoute =
+  CatalogPrinciplesSpacingRouteImport.update({
+    id: '/principles/spacing',
+    path: '/principles/spacing',
+    getParentRoute: () => CatalogRoute,
+  } as any)
+const CatalogPrinciplesShapeRoute = CatalogPrinciplesShapeRouteImport.update({
+  id: '/principles/shape',
+  path: '/principles/shape',
+  getParentRoute: () => CatalogRoute,
+} as any)
+const CatalogPrinciplesColorRoute = CatalogPrinciplesColorRouteImport.update({
+  id: '/principles/color',
+  path: '/principles/color',
+  getParentRoute: () => CatalogRoute,
+} as any)
+const CatalogPrinciplesBasicsRoute = CatalogPrinciplesBasicsRouteImport.update({
+  id: '/principles/basics',
+  path: '/principles/basics',
+  getParentRoute: () => CatalogRoute,
+} as any)
+const CatalogComponentsNameRoute = CatalogComponentsNameRouteImport.update({
+  id: '/components/$name',
+  path: '/components/$name',
+  getParentRoute: () => CatalogRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
+  '/': typeof CatalogIndexRoute
+  '/components/$name': typeof CatalogComponentsNameRoute
+  '/principles/basics': typeof CatalogPrinciplesBasicsRoute
+  '/principles/color': typeof CatalogPrinciplesColorRoute
+  '/principles/shape': typeof CatalogPrinciplesShapeRoute
+  '/principles/spacing': typeof CatalogPrinciplesSpacingRoute
+  '/principles/typography': typeof CatalogPrinciplesTypographyRoute
+  '/preview/$name/$pattern': typeof PreviewNamePatternRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
+  '/': typeof CatalogIndexRoute
+  '/components/$name': typeof CatalogComponentsNameRoute
+  '/principles/basics': typeof CatalogPrinciplesBasicsRoute
+  '/principles/color': typeof CatalogPrinciplesColorRoute
+  '/principles/shape': typeof CatalogPrinciplesShapeRoute
+  '/principles/spacing': typeof CatalogPrinciplesSpacingRoute
+  '/principles/typography': typeof CatalogPrinciplesTypographyRoute
+  '/preview/$name/$pattern': typeof PreviewNamePatternRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
+  '/_catalog': typeof CatalogRouteWithChildren
+  '/_catalog/': typeof CatalogIndexRoute
+  '/_catalog/components/$name': typeof CatalogComponentsNameRoute
+  '/_catalog/principles/basics': typeof CatalogPrinciplesBasicsRoute
+  '/_catalog/principles/color': typeof CatalogPrinciplesColorRoute
+  '/_catalog/principles/shape': typeof CatalogPrinciplesShapeRoute
+  '/_catalog/principles/spacing': typeof CatalogPrinciplesSpacingRoute
+  '/_catalog/principles/typography': typeof CatalogPrinciplesTypographyRoute
+  '/preview/$name/$pattern': typeof PreviewNamePatternRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/components/$name'
+    | '/principles/basics'
+    | '/principles/color'
+    | '/principles/shape'
+    | '/principles/spacing'
+    | '/principles/typography'
+    | '/preview/$name/$pattern'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/components/$name'
+    | '/principles/basics'
+    | '/principles/color'
+    | '/principles/shape'
+    | '/principles/spacing'
+    | '/principles/typography'
+    | '/preview/$name/$pattern'
+  id:
+    | '__root__'
+    | '/_catalog'
+    | '/_catalog/'
+    | '/_catalog/components/$name'
+    | '/_catalog/principles/basics'
+    | '/_catalog/principles/color'
+    | '/_catalog/principles/shape'
+    | '/_catalog/principles/spacing'
+    | '/_catalog/principles/typography'
+    | '/preview/$name/$pattern'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
+  CatalogRoute: typeof CatalogRouteWithChildren
+  PreviewNamePatternRoute: typeof PreviewNamePatternRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/_catalog': {
+      id: '/_catalog'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof CatalogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/_catalog/': {
+      id: '/_catalog/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+      preLoaderRoute: typeof CatalogIndexRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/preview/$name/$pattern': {
+      id: '/preview/$name/$pattern'
+      path: '/preview/$name/$pattern'
+      fullPath: '/preview/$name/$pattern'
+      preLoaderRoute: typeof PreviewNamePatternRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_catalog/principles/typography': {
+      id: '/_catalog/principles/typography'
+      path: '/principles/typography'
+      fullPath: '/principles/typography'
+      preLoaderRoute: typeof CatalogPrinciplesTypographyRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/_catalog/principles/spacing': {
+      id: '/_catalog/principles/spacing'
+      path: '/principles/spacing'
+      fullPath: '/principles/spacing'
+      preLoaderRoute: typeof CatalogPrinciplesSpacingRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/_catalog/principles/shape': {
+      id: '/_catalog/principles/shape'
+      path: '/principles/shape'
+      fullPath: '/principles/shape'
+      preLoaderRoute: typeof CatalogPrinciplesShapeRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/_catalog/principles/color': {
+      id: '/_catalog/principles/color'
+      path: '/principles/color'
+      fullPath: '/principles/color'
+      preLoaderRoute: typeof CatalogPrinciplesColorRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/_catalog/principles/basics': {
+      id: '/_catalog/principles/basics'
+      path: '/principles/basics'
+      fullPath: '/principles/basics'
+      preLoaderRoute: typeof CatalogPrinciplesBasicsRouteImport
+      parentRoute: typeof CatalogRoute
+    }
+    '/_catalog/components/$name': {
+      id: '/_catalog/components/$name'
+      path: '/components/$name'
+      fullPath: '/components/$name'
+      preLoaderRoute: typeof CatalogComponentsNameRouteImport
+      parentRoute: typeof CatalogRoute
     }
   }
 }
 
+interface CatalogRouteChildren {
+  CatalogIndexRoute: typeof CatalogIndexRoute
+  CatalogComponentsNameRoute: typeof CatalogComponentsNameRoute
+  CatalogPrinciplesBasicsRoute: typeof CatalogPrinciplesBasicsRoute
+  CatalogPrinciplesColorRoute: typeof CatalogPrinciplesColorRoute
+  CatalogPrinciplesShapeRoute: typeof CatalogPrinciplesShapeRoute
+  CatalogPrinciplesSpacingRoute: typeof CatalogPrinciplesSpacingRoute
+  CatalogPrinciplesTypographyRoute: typeof CatalogPrinciplesTypographyRoute
+}
+
+const CatalogRouteChildren: CatalogRouteChildren = {
+  CatalogIndexRoute: CatalogIndexRoute,
+  CatalogComponentsNameRoute: CatalogComponentsNameRoute,
+  CatalogPrinciplesBasicsRoute: CatalogPrinciplesBasicsRoute,
+  CatalogPrinciplesColorRoute: CatalogPrinciplesColorRoute,
+  CatalogPrinciplesShapeRoute: CatalogPrinciplesShapeRoute,
+  CatalogPrinciplesSpacingRoute: CatalogPrinciplesSpacingRoute,
+  CatalogPrinciplesTypographyRoute: CatalogPrinciplesTypographyRoute,
+}
+
+const CatalogRouteWithChildren =
+  CatalogRoute._addFileChildren(CatalogRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
+  CatalogRoute: CatalogRouteWithChildren,
+  PreviewNamePatternRoute: PreviewNamePatternRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

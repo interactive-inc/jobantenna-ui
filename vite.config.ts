@@ -1,5 +1,4 @@
 import { defineConfig } from "vite-plus"
-import { devtools } from "@tanstack/devtools-vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
 import viteReact from "@vitejs/plugin-react"
 import tailwindcss from "@tailwindcss/vite"
@@ -10,7 +9,7 @@ const config = defineConfig({
     port: 4791,
     strictPort: true,
   },
-  plugins: [devtools(), tailwindcss(), tanstackStart(), viteReact()],
+  plugins: [tailwindcss(), tanstackStart(), viteReact()],
   lint: {
     ignorePatterns: ["dist/**"],
   },

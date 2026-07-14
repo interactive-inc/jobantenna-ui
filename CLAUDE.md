@@ -19,6 +19,6 @@ lint/format/test は vite-plus (`vp`) に統一。設定はすべて `vite.confi
 
 開発サーバは portless で立てる。リポジトリルートで `portless` を実行する。素の `bun run dev` / `vite dev` を直接叩かない。
 
-- URL は `https://ui.jobantenna.localhost`（`portless.json` の name 由来）。ポート番号で叩かない
+- URL は `https://design.jobantenna.localhost`（`portless.json` の name 由来）。ポート番号で叩かない
 - `portless.json` で `appPort: 4791` を固定し、`vite.config.ts` の `server.port` も同じ 4791 に固定している。ポートがずれるとプロキシが 502 になる
 - `dev` スクリプトの `--host 127.0.0.1` は必須。外すと Vite が IPv6 のみでバインドし、127.0.0.1 へ繋ぐ portless プロキシが ECONNREFUSED になる
