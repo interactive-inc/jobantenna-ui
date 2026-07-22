@@ -40,10 +40,10 @@ export function CatalogSidebar() {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  render={<Link to="/rules/principles" />}
-                  isActive={location.pathname === "/rules/principles"}
+                  render={<Link to="/rules/experience" />}
+                  isActive={location.pathname === "/rules/experience"}
                 >
-                  <span>原則</span>
+                  <span>体験</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>

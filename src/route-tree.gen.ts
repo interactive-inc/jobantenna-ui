@@ -15,7 +15,7 @@ import { Route as PreviewNamePatternRouteImport } from './routes/preview.$name.$
 import { Route as CatalogRulesTypographyRouteImport } from './routes/_catalog.rules.typography'
 import { Route as CatalogRulesSpacingRouteImport } from './routes/_catalog.rules.spacing'
 import { Route as CatalogRulesShapeRouteImport } from './routes/_catalog.rules.shape'
-import { Route as CatalogRulesPrinciplesRouteImport } from './routes/_catalog.rules.principles'
+import { Route as CatalogRulesExperienceRouteImport } from './routes/_catalog.rules.experience'
 import { Route as CatalogRulesColorRouteImport } from './routes/_catalog.rules.color'
 import { Route as CatalogRulesBasicsRouteImport } from './routes/_catalog.rules.basics'
 import { Route as CatalogComponentsNameRouteImport } from './routes/_catalog.components.$name'
@@ -49,9 +49,9 @@ const CatalogRulesShapeRoute = CatalogRulesShapeRouteImport.update({
   path: '/rules/shape',
   getParentRoute: () => CatalogRoute,
 } as any)
-const CatalogRulesPrinciplesRoute = CatalogRulesPrinciplesRouteImport.update({
-  id: '/rules/principles',
-  path: '/rules/principles',
+const CatalogRulesExperienceRoute = CatalogRulesExperienceRouteImport.update({
+  id: '/rules/experience',
+  path: '/rules/experience',
   getParentRoute: () => CatalogRoute,
 } as any)
 const CatalogRulesColorRoute = CatalogRulesColorRouteImport.update({
@@ -75,7 +75,7 @@ export interface FileRoutesByFullPath {
   '/components/$name': typeof CatalogComponentsNameRoute
   '/rules/basics': typeof CatalogRulesBasicsRoute
   '/rules/color': typeof CatalogRulesColorRoute
-  '/rules/principles': typeof CatalogRulesPrinciplesRoute
+  '/rules/experience': typeof CatalogRulesExperienceRoute
   '/rules/shape': typeof CatalogRulesShapeRoute
   '/rules/spacing': typeof CatalogRulesSpacingRoute
   '/rules/typography': typeof CatalogRulesTypographyRoute
@@ -86,7 +86,7 @@ export interface FileRoutesByTo {
   '/components/$name': typeof CatalogComponentsNameRoute
   '/rules/basics': typeof CatalogRulesBasicsRoute
   '/rules/color': typeof CatalogRulesColorRoute
-  '/rules/principles': typeof CatalogRulesPrinciplesRoute
+  '/rules/experience': typeof CatalogRulesExperienceRoute
   '/rules/shape': typeof CatalogRulesShapeRoute
   '/rules/spacing': typeof CatalogRulesSpacingRoute
   '/rules/typography': typeof CatalogRulesTypographyRoute
@@ -99,7 +99,7 @@ export interface FileRoutesById {
   '/_catalog/components/$name': typeof CatalogComponentsNameRoute
   '/_catalog/rules/basics': typeof CatalogRulesBasicsRoute
   '/_catalog/rules/color': typeof CatalogRulesColorRoute
-  '/_catalog/rules/principles': typeof CatalogRulesPrinciplesRoute
+  '/_catalog/rules/experience': typeof CatalogRulesExperienceRoute
   '/_catalog/rules/shape': typeof CatalogRulesShapeRoute
   '/_catalog/rules/spacing': typeof CatalogRulesSpacingRoute
   '/_catalog/rules/typography': typeof CatalogRulesTypographyRoute
@@ -112,7 +112,7 @@ export interface FileRouteTypes {
     | '/components/$name'
     | '/rules/basics'
     | '/rules/color'
-    | '/rules/principles'
+    | '/rules/experience'
     | '/rules/shape'
     | '/rules/spacing'
     | '/rules/typography'
@@ -123,7 +123,7 @@ export interface FileRouteTypes {
     | '/components/$name'
     | '/rules/basics'
     | '/rules/color'
-    | '/rules/principles'
+    | '/rules/experience'
     | '/rules/shape'
     | '/rules/spacing'
     | '/rules/typography'
@@ -135,7 +135,7 @@ export interface FileRouteTypes {
     | '/_catalog/components/$name'
     | '/_catalog/rules/basics'
     | '/_catalog/rules/color'
-    | '/_catalog/rules/principles'
+    | '/_catalog/rules/experience'
     | '/_catalog/rules/shape'
     | '/_catalog/rules/spacing'
     | '/_catalog/rules/typography'
@@ -191,11 +191,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatalogRulesShapeRouteImport
       parentRoute: typeof CatalogRoute
     }
-    '/_catalog/rules/principles': {
-      id: '/_catalog/rules/principles'
-      path: '/rules/principles'
-      fullPath: '/rules/principles'
-      preLoaderRoute: typeof CatalogRulesPrinciplesRouteImport
+    '/_catalog/rules/experience': {
+      id: '/_catalog/rules/experience'
+      path: '/rules/experience'
+      fullPath: '/rules/experience'
+      preLoaderRoute: typeof CatalogRulesExperienceRouteImport
       parentRoute: typeof CatalogRoute
     }
     '/_catalog/rules/color': {
@@ -227,7 +227,7 @@ interface CatalogRouteChildren {
   CatalogComponentsNameRoute: typeof CatalogComponentsNameRoute
   CatalogRulesBasicsRoute: typeof CatalogRulesBasicsRoute
   CatalogRulesColorRoute: typeof CatalogRulesColorRoute
-  CatalogRulesPrinciplesRoute: typeof CatalogRulesPrinciplesRoute
+  CatalogRulesExperienceRoute: typeof CatalogRulesExperienceRoute
   CatalogRulesShapeRoute: typeof CatalogRulesShapeRoute
   CatalogRulesSpacingRoute: typeof CatalogRulesSpacingRoute
   CatalogRulesTypographyRoute: typeof CatalogRulesTypographyRoute
@@ -238,7 +238,7 @@ const CatalogRouteChildren: CatalogRouteChildren = {
   CatalogComponentsNameRoute: CatalogComponentsNameRoute,
   CatalogRulesBasicsRoute: CatalogRulesBasicsRoute,
   CatalogRulesColorRoute: CatalogRulesColorRoute,
-  CatalogRulesPrinciplesRoute: CatalogRulesPrinciplesRoute,
+  CatalogRulesExperienceRoute: CatalogRulesExperienceRoute,
   CatalogRulesShapeRoute: CatalogRulesShapeRoute,
   CatalogRulesSpacingRoute: CatalogRulesSpacingRoute,
   CatalogRulesTypographyRoute: CatalogRulesTypographyRoute,
