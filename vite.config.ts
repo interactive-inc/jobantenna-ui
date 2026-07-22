@@ -11,13 +11,21 @@ const config = defineConfig({
   },
   plugins: [
     tailwindcss(),
-    tanstackStart({ spa: { enabled: true }, router: { generatedRouteTree: "route-tree.gen.ts" } }),
-    viteReact()
+    tanstackStart({
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        autoStaticPathsDiscovery: true,
+      },
+      router: { generatedRouteTree: "route-tree.gen.ts" },
+    }),
+    viteReact(),
   ],
   lint: {
-    ignorePatterns: ["dist/**"],
+    ignorePatterns: ["dist/**", "src/components/ui.base-luma/**"],
   },
   fmt: {
+    ignorePatterns: ["src/components/ui.base-luma/**"],
     semi: false,
     singleQuote: false,
   },
