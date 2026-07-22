@@ -67,7 +67,7 @@ export const calendarDoc: ComponentDoc = {
   title: "Calendar",
   category: "フォーム",
   purpose:
-    "月表示のグリッドから日付を選択するコンポーネント。react-day-picker ベースで、単一選択・年月ドロップダウン・日付の無効化に対応する。jobantenna では応募後の面接希望日の選択や、入社可能日の指定に使う。",
+    "月表示のグリッドから日付を選択するコンポーネント。react-day-picker ベースで、単一選択・年月ドロップダウン・日付の無効化に対応する。ジョブアンテナでは応募後の面接希望日の選択や、入社可能日の指定に使う。",
   patterns: [
     {
       id: "basic",

@@ -118,7 +118,7 @@ export const buttonGroupDoc: ComponentDoc = {
   title: "Button Group",
   category: "アクション",
   purpose:
-    "関連する複数のボタンを角丸を共有するひとかたまりにまとめ、操作の関係性を視覚的に示すコンポーネントです。jobantenna では検索結果の並び替え（新着/おすすめ）やページ送り、求人カードの応募＋いいかも！のようなスプリットボタンに使います。ButtonGroupText でラベルを、ButtonGroupSeparator で区切り線を差し込めます。",
+    "関連する複数のボタンを角丸を共有するひとかたまりにまとめ、操作の関係性を視覚的に示すコンポーネントです。ジョブアンテナでは検索結果の並び替え（新着/おすすめ）やページ送り、求人カードの応募＋いいかも！のようなスプリットボタンに使います。ButtonGroupText でラベルを、ButtonGroupSeparator で区切り線を差し込めます。",
   patterns: [
     {
       id: "basic",

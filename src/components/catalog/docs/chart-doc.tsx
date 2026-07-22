@@ -143,11 +143,14 @@ function ViewsTrendPattern() {
         <CardDescription>求人票の閲覧数（直近7日間）</CardDescription>
         <CardTitle className="text-2xl tabular-nums">1,240</CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-0 pb-0">
         <ChartContainer config={viewsChartConfig} className="h-32 w-full">
-          <AreaChart accessibilityLayer data={dailyViews}>
+          <AreaChart
+            accessibilityLayer
+            data={dailyViews}
+            margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+          >
             <CartesianGrid vertical={false} />
-            <XAxis dataKey="day" tickLine={false} tickMargin={8} axisLine={false} />
             <ChartTooltip content={<ChartTooltipContent hideLabel />} />
             <Area
               dataKey="views"
@@ -169,7 +172,7 @@ export const chartDoc: ComponentDoc = {
   title: "Chart",
   category: "データ表示",
   purpose:
-    "応募数や閲覧数などの数値データをグラフで可視化するコンポーネント。recharts をラップし、ChartConfig でラベルと色を一元管理して --color-* CSS 変数として参照できる。jobantenna では管理画面ダッシュボードの月別応募数や求人票の閲覧数推移の表示に使う。",
+    "応募数や閲覧数などの数値データをグラフで可視化するコンポーネント。recharts をラップし、ChartConfig でラベルと色を一元管理して --color-* CSS 変数として参照できる。ジョブアンテナでは管理画面ダッシュボードの月別応募数や求人票の閲覧数推移の表示に使う。",
   patterns: [
     {
       id: "basic",

@@ -151,7 +151,7 @@ function JobSharePattern() {
         <Bubble variant="outline" align="end">
           <BubbleContent render={<button type="button" />}>
             <div className="flex items-center gap-2">
-              <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted">
+              <div className="flex size-10 shrink-0 items-center justify-center rounded-(--radius-inner) bg-muted">
                 <Building2 className="size-4 text-muted-foreground" />
               </div>
 
@@ -174,7 +174,7 @@ export const bubbleDoc: ComponentDoc = {
   title: "Bubble",
   category: "チャット",
   purpose:
-    "チャットのメッセージを吹き出しで表示するコンポーネント。variant で送信者ごとの色分け、align で左右の配置を切り替え、BubbleReactions で絵文字リアクションを重ねられる。jobantenna では企業と求職者のメッセージ画面で、応募お礼や面接日程調整のやり取りに使う。",
+    "チャットのメッセージを吹き出しで表示するコンポーネント。variant で送信者ごとの色分け、align で左右の配置を切り替え、BubbleReactions で絵文字リアクションを重ねられる。ジョブアンテナでは企業と求職者のメッセージ画面で、応募お礼や面接日程調整のやり取りに使う。",
   patterns: [
     {
       id: "basic",

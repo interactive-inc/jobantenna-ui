@@ -105,7 +105,7 @@ export const sliderDoc: ComponentDoc = {
   title: "Slider",
   category: "フォーム",
   purpose:
-    "数値を軸上のつまみで直感的に選ぶためのフォームコントロール。@base-ui/react ベースで、defaultValue に数値を渡すと単一値、配列を渡すと範囲指定になる非制御利用に対応する。jobantenna では求人検索の希望年収・希望月給のレンジ指定や、通勤時間の上限指定に使う。",
+    "数値を軸上のつまみで直感的に選ぶためのフォームコントロール。@base-ui/react ベースで、defaultValue に数値を渡すと単一値、配列を渡すと範囲指定になる非制御利用に対応する。ジョブアンテナでは求人検索の希望年収・希望月給のレンジ指定や、通勤時間の上限指定に使う。",
   patterns: [
     {
       id: "basic",

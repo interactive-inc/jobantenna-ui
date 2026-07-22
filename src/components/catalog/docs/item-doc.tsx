@@ -63,7 +63,7 @@ function BasicPattern() {
           </Button>
         </ItemActions>
       </Item>
-      <ItemGroup className="rounded-2xl border">
+      <ItemGroup className="rounded-(--radius-outer) border">
         <Item size="sm">
           <ItemMedia variant="icon">
             <MapPinIcon />
@@ -93,7 +93,7 @@ function BasicPattern() {
  */
 function SettingsMenuPattern() {
   return (
-    <ItemGroup className="w-full max-w-md rounded-2xl border">
+    <ItemGroup className="w-full max-w-md rounded-(--radius-outer) border">
       <Item size="sm" render={<a href="#settings-notification" />}>
         <ItemMedia variant="icon">
           <BellIcon />
@@ -157,7 +157,7 @@ function SettingsMenuPattern() {
  */
 function NotificationSettingsPattern() {
   return (
-    <ItemGroup className="w-full max-w-md rounded-2xl border">
+    <ItemGroup className="w-full max-w-md rounded-(--radius-outer) border">
       <Item>
         <ItemMedia variant="icon">
           <BellIcon />
@@ -209,7 +209,7 @@ function JobCardPattern() {
       <Item variant="outline">
         <ItemHeader>
           <div className="flex items-center gap-2">
-            <div className="flex size-6 items-center justify-center rounded-lg bg-muted">
+            <div className="flex size-6 items-center justify-center rounded-(--radius-inner) bg-muted">
               <BuildingIcon className="size-4 text-muted-foreground" />
             </div>
             <span className="text-xs text-muted-foreground">株式会社サンプル</span>
@@ -236,7 +236,7 @@ function JobCardPattern() {
       <Item variant="outline">
         <ItemHeader>
           <div className="flex items-center gap-2">
-            <div className="flex size-6 items-center justify-center rounded-lg bg-muted">
+            <div className="flex size-6 items-center justify-center rounded-(--radius-inner) bg-muted">
               <BuildingIcon className="size-4 text-muted-foreground" />
             </div>
             <span className="text-xs text-muted-foreground">常磐合同産業株式会社</span>

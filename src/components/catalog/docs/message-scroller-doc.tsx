@@ -318,7 +318,7 @@ export const messageScrollerDoc: ComponentDoc = {
   title: "Message Scroller",
   category: "チャット",
   purpose:
-    "メッセージ履歴を固定高のスクロール領域に表示し、新着時の自動スクロールと最下部へ戻るボタンを提供するコンポーネント。defaultScrollPosition や scrollAnchor で開いたときの表示位置も制御できる。jobantenna では企業と求職者のメッセージ画面で、やり取りの履歴表示に使う。",
+    "メッセージ履歴を固定高のスクロール領域に表示し、新着時の自動スクロールと最下部へ戻るボタンを提供するコンポーネント。defaultScrollPosition や scrollAnchor で開いたときの表示位置も制御できる。ジョブアンテナでは企業と求職者のメッセージ画面で、やり取りの履歴表示に使う。",
   patterns: [
     {
       id: "basic",

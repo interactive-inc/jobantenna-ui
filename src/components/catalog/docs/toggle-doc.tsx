@@ -159,7 +159,7 @@ export const toggleDoc: ComponentDoc = {
   title: "Toggle",
   category: "アクション",
   purpose:
-    "オンとオフの二値を1つのボタンで切り替えるコンポーネント。@base-ui/react ベースで defaultPressed による非制御利用に対応し、押下状態は aria-pressed の背景色で示す。jobantenna では求人カードのお気に入り（星）、検索条件のこだわりフィルタなど、その場で状態が反映される単体トグルに使う。",
+    "オンとオフの二値を1つのボタンで切り替えるコンポーネント。@base-ui/react ベースで defaultPressed による非制御利用に対応し、押下状態は aria-pressed の背景色で示す。ジョブアンテナでは求人カードのお気に入り（星）、検索条件のこだわりフィルタなど、その場で状態が反映される単体トグルに使う。",
   patterns: [
     {
       id: "basic",

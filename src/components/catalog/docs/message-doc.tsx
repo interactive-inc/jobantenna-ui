@@ -124,7 +124,7 @@ function JobSharePattern() {
               <Bubble variant="outline">
                 <BubbleContent render={<button type="button" />}>
                   <div className="flex items-center gap-2">
-                    <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted">
+                    <div className="flex size-10 shrink-0 items-center justify-center rounded-(--radius-inner) bg-muted">
                       <Building2 className="size-4 text-muted-foreground" />
                     </div>
 
@@ -211,7 +211,7 @@ export const messageDoc: ComponentDoc = {
   title: "Message",
   category: "チャット",
   purpose:
-    "チャットの1発言を、アバター・送信者名・吹き出し・時刻までまとめてレイアウトするコンポーネント。align で左右を切り替え、連続する発言は MessageGroup で束ねる。jobantenna では企業と求職者のメッセージスレッドや、管理画面の応募者メッセージ画面に使う。",
+    "チャットの1発言を、アバター・送信者名・吹き出し・時刻までまとめてレイアウトするコンポーネント。align で左右を切り替え、連続する発言は MessageGroup で束ねる。ジョブアンテナでは企業と求職者のメッセージスレッドや、管理画面の応募者メッセージ画面に使う。",
   patterns: [
     {
       id: "basic",

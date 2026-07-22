@@ -183,7 +183,7 @@ export const fieldDoc: ComponentDoc = {
   title: "Field",
   category: "フォーム",
   purpose:
-    "ラベル・入力・説明文・エラーをひとまとまりにして、フォームのレイアウトを統一するためのコンポーネント群。FieldSet / FieldLegend / FieldSeparator でセクションを区切り、orientation で縦・横・レスポンシブの並びを切り替える。jobantenna では応募プロフィールや求人票フォーム、通知設定などフォーム全般の骨組みに使う。",
+    "ラベル・入力・説明文・エラーをひとまとまりにして、フォームのレイアウトを統一するためのコンポーネント群。FieldSet / FieldLegend / FieldSeparator でセクションを区切り、orientation で縦・横・レスポンシブの並びを切り替える。ジョブアンテナでは応募プロフィールや求人票フォーム、通知設定などフォーム全般の骨組みに使う。",
   patterns: [
     {
       id: "basic",

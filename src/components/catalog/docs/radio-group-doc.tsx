@@ -236,7 +236,7 @@ export const radioGroupDoc: ComponentDoc = {
   title: "Radio Group",
   category: "フォーム",
   purpose:
-    "複数の選択肢からちょうど1つを選ばせるためのフォームコントロール。@base-ui/react ベースで defaultValue による非制御利用に対応し、選択肢が2〜5個程度で全体を一覧させたい場面に向く。jobantenna では雇用形態や給与種別の単一選択、検索条件の絞り込み、応募者の選考ステータス更新に使う。",
+    "複数の選択肢からちょうど1つを選ばせるためのフォームコントロール。@base-ui/react ベースで defaultValue による非制御利用に対応し、選択肢が2〜5個程度で全体を一覧させたい場面に向く。ジョブアンテナでは雇用形態や給与種別の単一選択、検索条件の絞り込み、応募者の選考ステータス更新に使う。",
   patterns: [
     {
       id: "basic",

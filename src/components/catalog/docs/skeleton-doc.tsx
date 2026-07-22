@@ -166,7 +166,7 @@ export const skeletonDoc: ComponentDoc = {
   title: "Skeleton",
   category: "フィードバック",
   purpose:
-    "データ取得中に実コンテンツと同じ形のプレースホルダを表示し、レイアウトのがたつきを防ぐコンポーネント。animate-pulse 付きの div に className でサイズと形を与えるだけで使える。jobantenna では求人カードや求人票一覧、ダッシュボードの読み込み中表示に使う。",
+    "データ取得中に実コンテンツと同じ形のプレースホルダを表示し、レイアウトのがたつきを防ぐコンポーネント。animate-pulse 付きの div に className でサイズと形を与えるだけで使える。ジョブアンテナでは求人カードや求人票一覧、ダッシュボードの読み込み中表示に使う。",
   patterns: [
     {
       id: "basic",

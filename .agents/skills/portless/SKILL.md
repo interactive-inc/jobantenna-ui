@@ -221,7 +221,7 @@ LAN mode depends on the system mDNS helpers that portless launches: macOS includ
   // next.config.js
   module.exports = {
     allowedDevOrigins: ["myapp.local", "*.myapp.local"],
-  };
+  }
   ```
 
 - **Expo / React Native**: portless always injects `--port`. React Native also gets `--host 127.0.0.1`. Expo gets `--host localhost` outside LAN mode, but in LAN mode portless leaves Metro on its default LAN host behavior instead of forcing `--host` or `HOST`.

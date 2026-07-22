@@ -273,7 +273,7 @@ export const attachmentDoc: ComponentDoc = {
   title: "Attachment",
   category: "チャット",
   purpose:
-    "チャットやフォームに添付されたファイルを、名前・サイズ・状態つきのカードで表示するコンポーネント。idle / uploading / error / done の状態表示と横スクロールの AttachmentGroup を備える。jobantenna では応募時の履歴書 PDF のアップロードや、企業とのメッセージでやり取りする書類・職場写真の表示に使う。",
+    "チャットやフォームに添付されたファイルを、名前・サイズ・状態つきのカードで表示するコンポーネント。idle / uploading / error / done の状態表示と横スクロールの AttachmentGroup を備える。ジョブアンテナでは応募時の履歴書 PDF のアップロードや、企業とのメッセージでやり取りする書類・職場写真の表示に使う。",
   patterns: [
     {
       id: "basic",

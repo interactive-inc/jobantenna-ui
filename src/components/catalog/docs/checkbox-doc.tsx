@@ -235,7 +235,7 @@ export const checkboxDoc: ComponentDoc = {
   title: "Checkbox",
   category: "フォーム",
   purpose:
-    "複数の選択肢から任意の数を選ぶ、またはオン・オフを切り替えるためのフォームコントロール。@base-ui/react ベースで defaultChecked による非制御利用と name / value でのフォーム送信に対応する。jobantenna ではこだわり条件や勤務地の複数選択、応募時の同意確認、応募者リストの一括選択に使う。",
+    "複数の選択肢から任意の数を選ぶ、またはオン・オフを切り替えるためのフォームコントロール。@base-ui/react ベースで defaultChecked による非制御利用と name / value でのフォーム送信に対応する。ジョブアンテナではこだわり条件や勤務地の複数選択、応募時の同意確認、応募者リストの一括選択に使う。",
   patterns: [
     {
       id: "basic",

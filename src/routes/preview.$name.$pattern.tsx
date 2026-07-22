@@ -34,7 +34,8 @@ function PreviewPage() {
   return (
     <main
       className={cn(
-        "flex min-h-svh items-center justify-center bg-background p-4 text-foreground",
+        "flex min-h-svh bg-background text-foreground",
+        pattern.fullBleed ? "items-stretch justify-start" : "items-center justify-center p-4",
         search.theme === "dark" && "dark",
       )}
     >

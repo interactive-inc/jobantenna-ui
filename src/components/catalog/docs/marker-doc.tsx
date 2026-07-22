@@ -185,7 +185,7 @@ export const markerDoc: ComponentDoc = {
   title: "Marker",
   category: "データ表示",
   purpose:
-    "アイコンと短いテキストを1行にまとめて示すメタ情報コンポーネント。default はラベル行、separator は左右罫線付きの区切り、border は下罫線付きの見出しとして使い分ける。jobantenna では求人カードの勤務地・雇用形態・給与の表示や、メッセージ一覧の日付区切りに使う。",
+    "アイコンと短いテキストを1行にまとめて示すメタ情報コンポーネント。default はラベル行、separator は左右罫線付きの区切り、border は下罫線付きの見出しとして使い分ける。ジョブアンテナでは求人カードの勤務地・雇用形態・給与の表示や、メッセージ一覧の日付区切りに使う。",
   patterns: [
     {
       id: "basic",

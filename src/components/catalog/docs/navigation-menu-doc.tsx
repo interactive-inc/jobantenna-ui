@@ -107,7 +107,7 @@ function MegaMenuPattern() {
           <NavigationMenuContent>
             <div className="grid w-96 grid-cols-2 gap-2">
               <NavigationMenuLink href="#" className="row-span-3 flex-col items-start">
-                <div className="flex aspect-video w-full items-center justify-center rounded-xl bg-muted">
+                <div className="flex aspect-video w-full items-center justify-center rounded-(--radius-inner) bg-muted">
                   <TrophyIcon className="size-6 text-muted-foreground" />
                 </div>
                 <span className="font-medium">求人ランキング</span>
@@ -271,7 +271,7 @@ export const navigationMenuDoc: ComponentDoc = {
   title: "Navigation Menu",
   category: "ナビゲーション",
   purpose:
-    "サイトヘッダーに置くグローバルナビゲーション。トリガーにホバー・クリックするとパネルが開き、リンクを階層で整理して見せられる。jobantenna では求職者向けサイトの「求人を探す」「会社を探す」メガメニューや、採用管理画面のヘッダーナビに使う。",
+    "サイトヘッダーに置くグローバルナビゲーション。トリガーにホバー・クリックするとパネルが開き、リンクを階層で整理して見せられる。ジョブアンテナでは求職者向けサイトの「求人を探す」「会社を探す」メガメニューや、採用管理画面のヘッダーナビに使う。",
   patterns: [
     {
       id: "basic",

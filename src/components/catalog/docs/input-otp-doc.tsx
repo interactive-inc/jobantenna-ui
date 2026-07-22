@@ -140,7 +140,7 @@ export const inputOtpDoc: ComponentDoc = {
   title: "Input OTP",
   category: "フォーム",
   purpose:
-    "ワンタイムパスワード（認証コード）を1文字ずつのスロットで入力するフォームコントロール。input-otp ベースで maxLength による桁数指定、defaultValue による非制御利用、貼り付けや自動入力（one-time-code）に対応する。jobantenna では会員登録時のメール認証や電話番号認証など、本人確認コードの入力に使う。",
+    "ワンタイムパスワード（認証コード）を1文字ずつのスロットで入力するフォームコントロール。input-otp ベースで maxLength による桁数指定、defaultValue による非制御利用、貼り付けや自動入力（one-time-code）に対応する。ジョブアンテナでは会員登録時のメール認証や電話番号認証など、本人確認コードの入力に使う。",
   patterns: [
     {
       id: "basic",

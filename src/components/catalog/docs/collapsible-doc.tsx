@@ -186,7 +186,7 @@ export const collapsibleDoc: ComponentDoc = {
   title: "Collapsible",
   category: "レイアウト",
   purpose:
-    "1つの領域をトリガーで開閉するシンプルな折りたたみ。Accordion と違い単独のセクションを対象に、補足情報や詳細条件を必要なときだけ表示したい場面で使う。jobantenna では検索パネルの詳細条件や、求人カードの仕事内容の展開に使う。",
+    "1つの領域をトリガーで開閉するシンプルな折りたたみ。Accordion と違い単独のセクションを対象に、補足情報や詳細条件を必要なときだけ表示したい場面で使う。ジョブアンテナでは検索パネルの詳細条件や、求人カードの仕事内容の展開に使う。",
   patterns: [
     {
       id: "basic",

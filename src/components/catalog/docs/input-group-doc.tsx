@@ -136,7 +136,7 @@ export const inputGroupDoc: ComponentDoc = {
   title: "Input Group",
   category: "フォーム",
   purpose:
-    "入力欄の前後にアイコン・単位テキスト・ボタンなどのアドオンを組み合わせて、ひとつの入力部品として見せるコンポーネントです。InputGroupAddon の align で inline（左右）と block（上下）の配置を切り替えられます。jobantenna では求人検索のキーワード入力、希望年収の単位付き入力、企業へのメッセージ入力に使います。",
+    "入力欄の前後にアイコン・単位テキスト・ボタンなどのアドオンを組み合わせて、ひとつの入力部品として見せるコンポーネントです。InputGroupAddon の align で inline（左右）と block（上下）の配置を切り替えられます。ジョブアンテナでは求人検索のキーワード入力、希望年収の単位付き入力、企業へのメッセージ入力に使います。",
   patterns: [
     {
       id: "basic",

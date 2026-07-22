@@ -43,7 +43,7 @@ import {
  */
 function BasicPattern() {
   return (
-    <SidebarProvider defaultOpen className="h-full min-h-0">
+    <SidebarProvider defaultOpen>
       <Sidebar collapsible="offcanvas">
         <SidebarHeader>
           <div className="flex items-center gap-2 px-2 py-1 text-sm font-semibold">
@@ -144,7 +144,7 @@ function BasicPattern() {
       <SidebarInset>
         <header className="flex h-12 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger />
-          <Separator orientation="vertical" className="h-4" />
+          <Separator orientation="vertical" className="h-4 self-center" />
           <span className="text-sm font-medium">求人検索</span>
         </header>
         <div className="flex flex-col gap-2 p-4">
@@ -163,7 +163,7 @@ function BasicPattern() {
  */
 function AdminPattern() {
   return (
-    <SidebarProvider defaultOpen className="h-full min-h-0">
+    <SidebarProvider defaultOpen>
       <Sidebar variant="inset" collapsible="offcanvas">
         <SidebarHeader>
           <div className="flex items-center gap-2 px-2 py-1 text-sm font-semibold">
@@ -276,7 +276,7 @@ function AdminPattern() {
 
         <SidebarFooter>
           <div className="flex items-center gap-2 px-2 py-1">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-muted">
+            <div className="flex size-8 shrink-0 items-center justify-center rounded-(--radius-inner) bg-muted">
               <Building2Icon className="size-4 text-muted-foreground" />
             </div>
             <div className="flex min-w-0 flex-col">
@@ -290,26 +290,26 @@ function AdminPattern() {
       <SidebarInset>
         <header className="flex h-12 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger />
-          <Separator orientation="vertical" className="h-4" />
+          <Separator orientation="vertical" className="h-4 self-center" />
           <span className="text-sm font-medium">ダッシュボード</span>
         </header>
         <div className="grid grid-cols-2 gap-2 p-4">
-          <div className="flex flex-col gap-1 rounded-xl border p-4">
+          <div className="flex flex-col gap-1 rounded-(--radius-outer) border p-4">
             <span className="text-xs text-muted-foreground">公開中の求人数</span>
             <span className="text-2xl font-semibold tabular-nums">12</span>
             <span className="text-xs text-muted-foreground">停止 2 件</span>
           </div>
-          <div className="flex flex-col gap-1 rounded-xl border p-4">
+          <div className="flex flex-col gap-1 rounded-(--radius-outer) border p-4">
             <span className="text-xs text-muted-foreground">応募数（累計）</span>
             <span className="text-2xl font-semibold tabular-nums">128</span>
             <span className="text-xs text-muted-foreground">未選考 8 件</span>
           </div>
-          <div className="flex flex-col gap-1 rounded-xl border p-4">
+          <div className="flex flex-col gap-1 rounded-(--radius-outer) border p-4">
             <span className="text-xs text-muted-foreground">未読メッセージ</span>
             <span className="text-2xl font-semibold tabular-nums">5</span>
             <span className="text-xs text-muted-foreground">候補者からの新着</span>
           </div>
-          <div className="flex flex-col gap-1 rounded-xl border p-4">
+          <div className="flex flex-col gap-1 rounded-(--radius-outer) border p-4">
             <span className="text-xs text-muted-foreground">もらったいいかも</span>
             <span className="text-2xl font-semibold tabular-nums">34</span>
             <span className="text-xs text-muted-foreground">で〜じ 3 件含む</span>
@@ -325,7 +325,7 @@ function AdminPattern() {
  */
 function IconCollapsePattern() {
   return (
-    <SidebarProvider defaultOpen={false} className="h-full min-h-0">
+    <SidebarProvider defaultOpen={false}>
       <Sidebar collapsible="icon">
         <SidebarHeader>
           <div className="flex items-center gap-2 px-2 py-1 text-sm font-semibold">
@@ -384,7 +384,7 @@ function IconCollapsePattern() {
       <SidebarInset>
         <header className="flex h-12 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger />
-          <Separator orientation="vertical" className="h-4" />
+          <Separator orientation="vertical" className="h-4 self-center" />
           <span className="text-sm font-medium">ダッシュボード</span>
         </header>
         <div className="flex flex-col gap-2 p-4">
@@ -403,7 +403,7 @@ export const sidebarDoc: ComponentDoc = {
   title: "Sidebar",
   category: "ナビゲーション",
   purpose:
-    "画面の左右に固定するナビゲーション領域を、開閉状態の管理・モバイルでの Sheet 化まで含めて組み立てるコンポーネント群です。SidebarProvider で全体を包み、Sidebar にメニューを、SidebarInset に本体コンテンツを置き、SidebarTrigger で開閉します。jobantenna では求職者マイページや企業管理画面（ダッシュボード・求人票・候補者・応募者・設定）のグローバルナビゲーションに使います。",
+    "画面の左右に固定するナビゲーション領域を、開閉状態の管理・モバイルでの Sheet 化まで含めて組み立てるコンポーネント群です。SidebarProvider で全体を包み、Sidebar にメニューを、SidebarInset に本体コンテンツを置き、SidebarTrigger で開閉します。ジョブアンテナでは求職者マイページや企業管理画面（ダッシュボード・求人票・候補者・応募者・設定）のグローバルナビゲーションに使います。",
   patterns: [
     {
       id: "basic",
@@ -411,6 +411,7 @@ export const sidebarDoc: ComponentDoc = {
       description:
         "SidebarProvider + Sidebar + SidebarInset の最小構成です。グループ見出し・未読バッジ・サブメニューを備え、SidebarTrigger と SidebarRail で開閉できます。",
       previewHeight: 480,
+      fullBleed: true,
       Demo: BasicPattern,
     },
     {
@@ -419,6 +420,7 @@ export const sidebarDoc: ComponentDoc = {
       description:
         'variant="inset" の企業管理画面向けサイドバーです。候補者・応募者のサブメニュー、未読件数の destructive バッジ、フッターの会社アカウント表示と、SidebarInset 側の KPI カードを組み合わせています。',
       previewHeight: 560,
+      fullBleed: true,
       Demo: AdminPattern,
     },
     {
@@ -427,6 +429,7 @@ export const sidebarDoc: ComponentDoc = {
       description:
         'collapsible="icon" でアイコン幅まで縮められる構成です。SidebarMenuButton の tooltip を指定すると、折りたたみ中だけラベルがツールチップで表示されます。画面を広く使いたい管理画面向けです。',
       previewHeight: 480,
+      fullBleed: true,
       Demo: IconCollapsePattern,
     },
   ],

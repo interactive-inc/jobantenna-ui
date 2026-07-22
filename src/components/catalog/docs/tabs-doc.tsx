@@ -296,7 +296,7 @@ export const tabsDoc: ComponentDoc = {
   title: "Tabs",
   category: "ナビゲーション",
   purpose:
-    "同じ画面内で複数のセクションを切り替えて表示するコンポーネント。jobantenna では企業ページ（会社TOP／私たちについて／掲載求人）のセクション切り替えや、いいかも一覧の もらった／送った、求人票一覧の掲載ステータス絞り込みに使う。TabsList の variant（default／line）と orientation で見た目を切り替えられる。",
+    "同じ画面内で複数のセクションを切り替えて表示するコンポーネント。ジョブアンテナでは企業ページ（会社TOP／私たちについて／掲載求人）のセクション切り替えや、いいかも一覧の もらった／送った、求人票一覧の掲載ステータス絞り込みに使う。TabsList の variant（default／line）と orientation で見た目を切り替えられる。",
   patterns: [
     {
       id: "basic",

@@ -40,7 +40,7 @@ import {
 function BasicPattern() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="flex h-48 w-full max-w-md flex-col items-center justify-center gap-2 rounded-2xl border border-dashed text-sm text-muted-foreground">
+      <ContextMenuTrigger className="flex h-48 w-full max-w-md flex-col items-center justify-center gap-2 rounded-(--radius-outer) border border-dashed text-sm text-muted-foreground">
         <span className="font-medium text-foreground">カフェスタッフ（正社員） / 那覇市</span>
         <span>月給 20万円〜 / 未経験歓迎</span>
         <span className="text-xs">ここを右クリック</span>
@@ -97,9 +97,9 @@ function BasicPattern() {
 function JobCardPattern() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="w-full max-w-sm overflow-hidden rounded-2xl border bg-card text-card-foreground shadow-sm">
+      <ContextMenuTrigger className="w-full max-w-sm overflow-hidden rounded-(--radius-outer) border bg-card text-card-foreground shadow-sm">
         <div className="flex items-center gap-2 p-4">
-          <div className="flex size-8 items-center justify-center rounded-lg bg-muted">
+          <div className="flex size-8 items-center justify-center rounded-(--radius-inner) bg-muted">
             <Building2Icon className="size-4 text-muted-foreground" />
           </div>
           <span className="text-sm font-medium">株式会社アールエムシー</span>
@@ -193,7 +193,7 @@ function JobCardPattern() {
 function ApplicantStatusPattern() {
   return (
     <ContextMenu>
-      <ContextMenuTrigger className="flex w-full max-w-md items-center gap-2 rounded-2xl border bg-card p-4 text-card-foreground">
+      <ContextMenuTrigger className="flex w-full max-w-md items-center gap-2 rounded-(--radius-outer) border bg-card p-4 text-card-foreground">
         <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted">
           <UserIcon className="size-4 text-muted-foreground" />
         </div>
@@ -246,7 +246,7 @@ export const contextMenuDoc: ComponentDoc = {
   title: "Context Menu",
   category: "オーバーレイ",
   purpose:
-    "右クリック（タッチ端末では長押し）で、その場に操作メニューを開くオーバーレイ。対象の要素に紐づく操作を画面遷移なしでまとめて呼び出せる。jobantenna では求人カードの保存・共有・非表示や、管理画面での応募者ステータス変更に使う。",
+    "右クリック（タッチ端末では長押し）で、その場に操作メニューを開くオーバーレイ。対象の要素に紐づく操作を画面遷移なしでまとめて呼び出せる。ジョブアンテナでは求人カードの保存・共有・非表示や、管理画面での応募者ステータス変更に使う。",
   patterns: [
     {
       id: "basic",

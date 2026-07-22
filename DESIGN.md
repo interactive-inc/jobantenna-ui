@@ -1,6 +1,6 @@
 ---
 version: alpha
-name: Job Antenna UI
+name: ジョブアンテナ UI
 description: 製品から独立した規範デザインシステム。参照は常に「製品 → デザインシステム」の一方向で、製品側での上書きを認めない。実装は jobantenna-ui の shadcn レジストリで配布する
 colors:
   background: "oklch(1 0 0)"

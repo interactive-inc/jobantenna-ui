@@ -26,6 +26,7 @@ export type ComponentPattern = {
   title: string
   description: string
   previewHeight: number | null
+  fullBleed?: boolean
   Demo: ComponentType
 }
 

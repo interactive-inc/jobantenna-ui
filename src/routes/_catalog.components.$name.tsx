@@ -2,7 +2,6 @@ import type { ReactNode } from "react"
 import { Link, createFileRoute } from "@tanstack/react-router"
 
 import { cn } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
 import { buttonVariants } from "@/components/ui/button"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { componentDocs } from "@/components/catalog/component-docs"
@@ -83,7 +82,6 @@ function ComponentPage() {
         <div className="flex items-center gap-2">
           <SidebarTrigger className="md:hidden" />
           <h1 className="text-3xl font-bold tracking-tight">{doc.title}</h1>
-          <Badge variant="secondary">{doc.category}</Badge>
         </div>
 
         <p className="text-sm leading-relaxed text-muted-foreground">{doc.purpose}</p>

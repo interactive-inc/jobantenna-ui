@@ -158,7 +158,7 @@ export const switchDoc: ComponentDoc = {
   title: "Switch",
   category: "フォーム",
   purpose:
-    "オンとオフの二値を即時に切り替えるためのフォームコントロール。@base-ui/react ベースで defaultChecked による非制御利用に対応し、保存ボタンを介さず反映される設定に向く。jobantenna では新着求人メールやスカウト受信などの通知設定、管理画面での求人票の公開切替に使う。",
+    "オンとオフの二値を即時に切り替えるためのフォームコントロール。@base-ui/react ベースで defaultChecked による非制御利用に対応し、保存ボタンを介さず反映される設定に向く。ジョブアンテナでは新着求人メールやスカウト受信などの通知設定、管理画面での求人票の公開切替に使う。",
   patterns: [
     {
       id: "basic",

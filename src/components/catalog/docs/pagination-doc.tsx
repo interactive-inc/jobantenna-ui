@@ -172,7 +172,7 @@ export const paginationDoc: ComponentDoc = {
   title: "Pagination",
   category: "ナビゲーション",
   purpose:
-    "検索結果や一覧が複数ページに分かれるとき、ページ番号と前後リンクで移動するためのナビゲーションです。jobantenna では求人検索結果や管理画面の応募者テーブルのページ送りに使います。現在ページは isActive で示し、ページ数が多いときは PaginationEllipsis で中間を省略します。",
+    "検索結果や一覧が複数ページに分かれるとき、ページ番号と前後リンクで移動するためのナビゲーションです。ジョブアンテナでは求人検索結果や管理画面の応募者テーブルのページ送りに使います。現在ページは isActive で示し、ページ数が多いときは PaginationEllipsis で中間を省略します。",
   patterns: [
     {
       id: "basic",

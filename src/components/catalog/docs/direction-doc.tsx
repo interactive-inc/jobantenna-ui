@@ -162,7 +162,7 @@ export const directionDoc: ComponentDoc = {
   title: "Direction",
   category: "レイアウト",
   purpose:
-    "テキストの読み方向（LTR / RTL）をコンポーネントツリーに伝えるプロバイダ。Base UI 製コンポーネントのキーボード操作やスライダーの塗り方向が direction に追従する。jobantenna でアラビア語などの RTL 言語対応を検証する際に、DOM の dir 属性と組み合わせて使う。",
+    "テキストの読み方向（LTR / RTL）をコンポーネントツリーに伝えるプロバイダ。Base UI 製コンポーネントのキーボード操作やスライダーの塗り方向が direction に追従する。ジョブアンテナでアラビア語などの RTL 言語対応を検証する際に、DOM の dir 属性と組み合わせて使う。",
   patterns: [
     {
       id: "basic",

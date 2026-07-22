@@ -52,7 +52,7 @@ function BasicPattern() {
  */
 function ViewSwitchPattern() {
   return (
-    <div className="flex w-full max-w-md items-center justify-between gap-2 rounded-lg border p-2">
+    <div className="flex w-full max-w-md items-center justify-between gap-2 rounded-(--radius-outer) border p-2">
       <span className="text-sm text-muted-foreground">128件の求人</span>
 
       <ToggleGroup variant="outline" size="sm" spacing={0} defaultValue={["card"]}>
@@ -124,7 +124,7 @@ export const toggleGroupDoc: ComponentDoc = {
   title: "Toggle Group",
   category: "アクション",
   purpose:
-    "複数のトグルボタンを1つのグループにまとめ、排他的な単一選択（multiple なし）または複数選択（multiple）を切り替えられるコンポーネントです。jobantenna では検索結果のカード/リスト/地図の表示切替、検索条件での雇用形態の複数選択、求人フォームの給与種別の選択に使います。value / defaultValue は配列で扱い、spacing={0} で角丸を共有したセグメント表示になります。",
+    "複数のトグルボタンを1つのグループにまとめ、排他的な単一選択（multiple なし）または複数選択（multiple）を切り替えられるコンポーネントです。ジョブアンテナでは検索結果のカード/リスト/地図の表示切替、検索条件での雇用形態の複数選択、求人フォームの給与種別の選択に使います。value / defaultValue は配列で扱い、spacing={0} で角丸を共有したセグメント表示になります。",
   patterns: [
     {
       id: "basic",

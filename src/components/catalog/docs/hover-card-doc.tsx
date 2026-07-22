@@ -44,7 +44,7 @@ function CompanyPreviewPattern() {
         <HoverCardContent className="w-80">
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
-              <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+              <div className="flex size-12 shrink-0 items-center justify-center rounded-(--radius-inner) bg-muted text-muted-foreground">
                 <Building2Icon className="size-5" />
               </div>
               <div className="flex flex-col gap-0.5">
@@ -116,7 +116,7 @@ export const hoverCardDoc: ComponentDoc = {
   title: "Hover Card",
   category: "オーバーレイ",
   purpose:
-    "リンクやテキストにホバーしたとき、遷移せずに参照先のプレビューを浮かせて見せるカード。クリックする前に相手の概要を確認できるので、一覧を離れたくない場面に向く。jobantenna では求人カードの企業名から企業プレビューを、管理画面の応募者テーブルから候補者プロフィールを覗く用途に使う。",
+    "リンクやテキストにホバーしたとき、遷移せずに参照先のプレビューを浮かせて見せるカード。クリックする前に相手の概要を確認できるので、一覧を離れたくない場面に向く。ジョブアンテナでは求人カードの企業名から企業プレビューを、管理画面の応募者テーブルから候補者プロフィールを覗く用途に使う。",
   patterns: [
     {
       id: "basic",
