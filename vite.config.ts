@@ -6,7 +6,7 @@ import tailwindcss from "@tailwindcss/vite"
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
   server: {
-    port: 4791,
+    port: 44791,
     strictPort: true,
   },
   plugins: [
