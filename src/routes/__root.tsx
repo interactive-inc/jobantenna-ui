@@ -1,6 +1,7 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 
 import appCss from "../styles.css?url"
+import jobantennaCss from "../styles.jobantenna.css?url"
 
 export const Route = createRootRoute({
   head: () => ({
@@ -13,13 +14,17 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "jobantenna-ui カタログ",
+        title: "ジョブアンテナ UI カタログ",
       },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+      {
+        rel: "stylesheet",
+        href: jobantennaCss,
       },
     ],
   }),
