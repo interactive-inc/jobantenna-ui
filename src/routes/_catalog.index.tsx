@@ -17,7 +17,7 @@ function ConceptPage() {
     <div className="mx-auto w-full max-w-4xl space-y-12 px-4 py-12 md:px-8">
       <PrinciplePageHeader
         title="コンセプト"
-        lead="転職・求人サービスのためのデザインシステム。仕事を探す人と人を探す企業という、人生と経営に関わる真剣な場面を扱う。だからこそ緊張をほぐす親しみと、信頼に足る落ち着きを両立させる。以下の6つが、配色や余白より上位にある判断基準。"
+        lead="転職・求人サービスのためのデザインシステム。仕事を探す人と人を探す企業という、人生と経営に関わる真剣な場面を扱う。"
       />
 
       <section className="space-y-4">
@@ -90,45 +90,6 @@ function ConceptPage() {
           <span className="text-sm">応募が完了しました！</span>
           <span className="text-xs text-muted-foreground">← ポップさはこの3つの道具で出す</span>
         </div>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">4. 信頼は細部でつくる</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          個人情報と生活のかかった選択を預かる。何が誰に公開されるかは行動の前に明示する。取り返しのつかない操作は必ず確認を挟む。不安への答え(ブロックできる、知られない)は説明の奥ではなく、行動のすぐそばに置く。
-        </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-col gap-2 rounded-2xl bg-background p-4 text-sm text-foreground"
-        >
-          <span>この求人に応募しますか？</span>
-          <span className="text-xs text-muted-foreground">
-            ※応募すると氏名が企業に公開されます。
-          </span>
-          <div className="flex gap-2">
-            <Button size="sm">応募を完了する</Button>
-            <Button size="sm" variant="ghost">
-              キャンセル
-            </Button>
-          </div>
-        </div>
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          公開範囲の注意はボタンの直前に。読んだ上で押せる配置が信頼になる。
-        </p>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">5. 地域の言葉で話す</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          全国一律のサービス語ではなく、その土地の地名・言葉・文脈で話しかける。地域で言い換えられる文言は最初から差し替え可能に設計し、方言や土地の表現を「飾り」でなく本文で使う。親しみは装飾ではなく、ことばから生まれる。
-        </p>
-      </section>
-
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">6. 両側で同じ言語</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          仕事を探す人と、人を探す企業。立場は違っても同じトークン・同じコンポーネントで作る。探す側の画面は余裕と励ましに、企業の管理画面は密度と効率に振る。同じ言語の振れ幅で応えることで、どちらの画面もひとつのサービスとして通じ合う。
-        </p>
       </section>
     </div>
   )
