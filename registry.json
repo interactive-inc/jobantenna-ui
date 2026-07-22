@@ -1404,6 +1404,20 @@
           "type": "registry:hook"
         }
       ]
+    },
+    {
+      "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+      "name": "design",
+      "type": "registry:item",
+      "title": "DESIGN.md",
+      "description": "Design principles for Job Antenna UI.",
+      "files": [
+        {
+          "path": "DESIGN.md",
+          "type": "registry:file",
+          "target": "~/DESIGN.md"
+        }
+      ]
     }
   ]
 }
