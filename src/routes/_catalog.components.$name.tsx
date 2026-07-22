@@ -77,7 +77,7 @@ function ComponentPage() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-12 px-4 py-12 md:px-8">
+    <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <div className="space-y-4">
         <div className="flex items-center gap-2">
           <SidebarTrigger className="md:hidden" />
@@ -89,7 +89,7 @@ function ComponentPage() {
 
       {doc.patterns.map((pattern) => (
         <section key={pattern.id} className="space-y-4">
-          <h2 className="text-lg font-semibold">{pattern.title}</h2>
+          <h2 className="text-xl font-semibold tracking-tight">{pattern.title}</h2>
           <p className="text-sm leading-relaxed text-muted-foreground">{pattern.description}</p>
           <div className="overflow-hidden rounded-2xl border bg-muted/50">
             <div className="flex flex-wrap items-center justify-end gap-4 border-b px-2 py-1">
