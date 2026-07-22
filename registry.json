@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "jobantenna-ui",
-  "homepage": "https://jobantenna-ui.pages.dev",
+  "homepage": "https://ui.jobantenna.jp",
   "items": [
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",

@@ -1,94 +1,65 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
-import { sampleCanvasStyle } from "@/components/catalog/sample-canvas-style"
 
 export const Route = createFileRoute("/_catalog/")({
-  component: ConceptPage,
+  component: HomePage,
 })
 
 /**
- * コンセプト。ターゲットと製品カテゴリに根ざした、すべての判断の土台になる原則
+ * ホーム。shadcn レジストリとしての導入案内と、サイドバーへの誘導
  */
-function ConceptPage() {
+function HomePage() {
   return (
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
-      <RulePageHeader title="コンセプト" lead="転職・求人サービスのためのデザインシステム。" />
+      <RulePageHeader
+        title="ジョブアンテナ UI"
+        lead="転職・求人サービスのための、製品から独立した規範デザインシステム。トークンと原則をここで定め、コンポーネントは shadcn レジストリとして配布する。参照は常に「製品 → デザインシステム」の一方向で、製品側での上書きを認めない。"
+      />
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">1. スマホの片手で完結する</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          仕事を探す人は、通勤中や休憩中にスマホで探して、そのまま応募まで終える。設計は常にモバイルファースト。1カラムで縦に流し、主要アクションは親指が届く下側に、タップ領域は最小
-          36px を確保する。デスクトップは「広いモバイル」ではなく、一覧と詳細を並べる密度で応える。
+        <h2 className="text-xl font-semibold tracking-tight">導入する</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          このサイトは shadcn レジストリに対応している。外部プロジェクトから shadcn CLI
+          でコンポーネントの JSON を直接指定すれば、ソースがそのプロジェクトに取り込まれる。
         </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex justify-center rounded-2xl bg-background p-4 text-foreground"
-        >
-          <div className="flex h-64 w-40 flex-col justify-between rounded-2xl border bg-card p-2 text-card-foreground">
-            <div className="flex flex-col gap-1">
-              <div className="h-2 w-3/4 rounded-lg bg-muted" />
-              <div className="h-2 w-1/2 rounded-lg bg-muted" />
-              <div className="mt-2 h-12 rounded-xl bg-muted" />
-              <div className="h-12 rounded-xl bg-muted" />
-            </div>
-            <Button size="sm" className="w-full">
-              応募する
-            </Button>
-          </div>
-        </div>
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          主要アクションは画面下部に固定。スクロールしても迷子にならない。
+        <pre className="overflow-x-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed text-foreground">
+          <code>bunx shadcn@latest add https://ui.jobantenna.jp/r/styles/default/button.json</code>
+        </pre>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          プロジェクトの <code className="text-sm">components.json</code> にレジストリを登録すると、
+          名前空間付きの短縮形で追加できる。
         </p>
+        <pre className="overflow-x-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed text-foreground">
+          <code>{`{
+  "registries": {
+    "@jobantenna": "https://ui.jobantenna.jp/r/styles/default/{name}.json"
+  }
+}`}</code>
+        </pre>
+        <pre className="overflow-x-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed text-foreground">
+          <code>bunx shadcn@latest add @jobantenna/button</code>
+        </pre>
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">2. 重い決断を、軽い一歩に分解する</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          転職は重い決断。いきなり「応募」だけを迫ると、ユーザーは何もせずに離脱する。保存・フォロー・気になるを伝える、のような軽いアクションを必ず併置し、段階的に関係を深められるようにする。空状態や完了画面では、必ず次の一歩を1つ提示する。
+        <h2 className="text-xl font-semibold tracking-tight">コンポーネント一覧</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          配布中のコンポーネントの一覧は <code className="text-sm">/r/index.json</code>{" "}
+          で取得できる。個々のコンポーネントは{" "}
+          <code className="text-sm">/r/styles/default/{"{name}"}.json</code> で、ui.shadcn.com
+          と同じ URL 構成になっている。
         </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-col gap-4 rounded-2xl bg-background p-4 text-foreground"
-        >
-          <div className="flex flex-wrap items-center gap-2">
-            <Button>応募する</Button>
-            <Button variant="secondary">気になる</Button>
-            <Button variant="ghost">保存</Button>
-          </div>
-          <div className="flex flex-col items-center gap-2 rounded-2xl bg-muted/50 p-4 text-center">
-            <span className="text-sm font-medium">まだ保存した求人はありません</span>
-            <span className="text-xs text-muted-foreground">
-              気になる求人を保存して、あとで見返しましょう
-            </span>
-            <Button size="sm" variant="outline">
-              求人を探す
-            </Button>
-          </div>
-        </div>
-        <p className="text-xs leading-relaxed text-muted-foreground">
-          重い行動(primary)の隣に必ず軽い行動がある。空状態は「現状+次の一歩+CTA」の3点セット。
-        </p>
+        <pre className="overflow-x-auto rounded-2xl bg-muted p-4 text-xs leading-relaxed text-foreground">
+          <code>https://ui.jobantenna.jp/r/index.json</code>
+        </pre>
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">
-          3. モダンでポップに。でもポップ過ぎない
-        </h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          仕事と収入という真剣なテーマを、堅苦しくせずに扱う。ポップさを出すのは「形」(ピル形状・大きな角丸)と「一色のアクセント」と「励ますことば」の3つだけ。色数を増やす・装飾やアニメーションを盛る・絵文字を多用する、ではポップさを出さない。土台は常にグレースケールの落ち着きで、真剣さを支える。
+        <h2 className="text-xl font-semibold tracking-tight">サイドバーから見る</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          左のサイドバーから、各コンポーネントの実例ページと、配色・形・余白・文字などのルールページを見られる。デザインの土台になる考え方は「原則」から。トークンと原則の正はこのサイトにあり、迷ったときはここに戻る。
         </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap items-center gap-4 rounded-2xl bg-background p-4 text-foreground"
-        >
-          <Button>1分で会員登録</Button>
-          <Badge variant="secondary">未経験OK</Badge>
-          <span className="text-sm">応募が完了しました！</span>
-          <span className="text-xs text-muted-foreground">← ポップさはこの3つの道具で出す</span>
-        </div>
       </section>
     </div>
   )
