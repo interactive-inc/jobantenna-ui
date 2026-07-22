@@ -15,7 +15,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -29,7 +38,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["class-variance-authority"]
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -43,8 +60,18 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -57,7 +84,13 @@
           "path": "src/components/ui/aspect-ratio.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -71,8 +104,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -86,7 +130,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -100,7 +152,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -114,7 +175,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -128,7 +198,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -142,7 +221,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -156,8 +244,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["separator"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -171,8 +270,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["react-day-picker", "lucide-react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "react-day-picker",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -185,7 +295,13 @@
           "path": "src/components/ui/card.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -199,8 +315,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["embla-carousel-react", "lucide-react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "embla-carousel-react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -214,7 +341,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["recharts"]
+      "dependencies": [
+        "recharts"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -228,7 +363,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -242,7 +386,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -256,8 +408,20 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["button", "input-group"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button",
+        "input-group"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -271,8 +435,20 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["cmdk", "lucide-react"],
-      "registryDependencies": ["dialog", "input-group"]
+      "dependencies": [
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dialog",
+        "input-group"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -286,7 +462,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -300,8 +485,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -315,7 +511,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -329,7 +533,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -343,7 +555,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -357,7 +578,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["class-variance-authority"]
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -371,8 +600,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["label", "separator"]
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "label",
+        "separator"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -386,7 +626,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -400,7 +648,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -414,8 +670,20 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["button", "input", "textarea"]
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "input",
+        "textarea"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -429,7 +697,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["input-otp", "lucide-react"]
+      "dependencies": [
+        "input-otp",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -443,8 +720,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["separator"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "separator"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -457,7 +745,13 @@
           "path": "src/components/ui/kbd.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -470,7 +764,13 @@
           "path": "src/components/ui/label.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -484,7 +784,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -498,8 +807,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["dropdown-menu"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "dropdown-menu"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -512,7 +832,13 @@
           "path": "src/components/ui/message.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -526,8 +852,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@shadcn/react", "lucide-react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "@shadcn/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -541,7 +878,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["lucide-react"]
+      "dependencies": [
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -555,7 +900,17 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -569,8 +924,18 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -584,7 +949,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -598,7 +971,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -612,7 +993,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -626,7 +1015,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["react-resizable-panels"]
+      "dependencies": [
+        "react-resizable-panels"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -640,7 +1037,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -654,7 +1059,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -668,7 +1082,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -682,8 +1104,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["button"]
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -697,7 +1130,11 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority",
+        "lucide-react"
+      ],
       "registryDependencies": [
         "button",
         "input",
@@ -706,7 +1143,13 @@
         "skeleton",
         "tooltip",
         "use-mobile"
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -719,7 +1162,13 @@
           "path": "src/components/ui/skeleton.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -733,7 +1182,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -747,7 +1204,17 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["next-themes", "sonner", "lucide-react"]
+      "dependencies": [
+        "next-themes",
+        "sonner",
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -761,7 +1228,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["lucide-react"]
+      "dependencies": [
+        "lucide-react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -775,7 +1250,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -788,7 +1271,13 @@
           "path": "src/components/ui/table.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -802,7 +1291,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -815,7 +1313,13 @@
           "path": "src/components/ui/textarea.tsx",
           "type": "registry:ui"
         }
-      ]
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -829,7 +1333,16 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -843,8 +1356,19 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["toggle"]
+      "dependencies": [
+        "@base-ui/react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -858,7 +1382,15 @@
           "type": "registry:ui"
         }
       ],
-      "dependencies": ["@base-ui/react"]
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "cssVars": {
+        "light": {
+          "radius-outer": "calc(var(--radius) * 0.8)",
+          "radius-inner": "calc(var(--radius) * 0.6)"
+        }
+      }
     },
     {
       "$schema": "https://ui.shadcn.com/schema/registry-item.json",
