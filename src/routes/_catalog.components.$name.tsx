@@ -5,7 +5,14 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { componentDocs } from "@/components/catalog/component-docs"
-import { MonitorIcon, MoonIcon, SmartphoneIcon, SunIcon, TabletIcon } from "lucide-react"
+import {
+  ExternalLinkIcon,
+  MonitorIcon,
+  MoonIcon,
+  SmartphoneIcon,
+  SunIcon,
+  TabletIcon,
+} from "lucide-react"
 
 type ComponentSearch = {
   theme?: "light" | "dark"
@@ -136,6 +143,19 @@ function ComponentPage() {
                 >
                   <SmartphoneIcon />
                 </ToggleLink>
+              </div>
+              <div className="flex items-center gap-0.5">
+                <Link
+                  to="/preview/$name/$pattern"
+                  params={{ name: doc.name, pattern: pattern.id }}
+                  search={{ theme }}
+                  target="_blank"
+                  title="新しいタブで開く"
+                  className={cn(buttonVariants({ variant: "ghost", size: "icon-sm" }))}
+                >
+                  <ExternalLinkIcon />
+                  <span className="sr-only">新しいタブで開く</span>
+                </Link>
               </div>
             </div>
             <div className="flex justify-center p-4">
