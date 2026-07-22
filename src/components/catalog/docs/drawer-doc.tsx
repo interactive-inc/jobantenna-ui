@@ -194,13 +194,13 @@ export const drawerDoc: ComponentDoc = {
   title: "Drawer",
   category: "オーバーレイ",
   purpose:
-    "画面の端からスライドインするパネル。Dialog より多い情報量や操作を、元の画面の文脈を保ったまま重ねて表示したい場面で使う。ジョブアンテナでは求人一覧の絞り込み検索や、一覧から開く求人詳細のプレビューに使う。",
+    "画面の端からスライドインするパネルです。Dialog より多い情報量や操作を、元の画面の文脈を保ったまま重ねて表示したい場面で使います。ジョブアンテナでは求人一覧の絞り込み検索や、一覧から開く求人詳細のプレビューに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "下からスライドインする最小構成。showSwipeHandle でスワイプハンドルを表示し、モバイルではドラッグでも閉じられる。",
+        "下からスライドインする最小構成です。showSwipeHandle でスワイプハンドルを表示し、モバイルではドラッグでも閉じられます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -208,7 +208,7 @@ export const drawerDoc: ComponentDoc = {
       id: "filter-search",
       title: "絞り込み検索",
       description:
-        "求人一覧の絞り込み条件を下からのドロワーにまとめる。条件リストはスクロールさせ、件数付きの検索ボタンとクリアを DrawerFooter に固定する。",
+        "求人一覧の絞り込み条件を下からのドロワーにまとめます。条件リストはスクロールさせ、件数付きの検索ボタンとクリアを DrawerFooter に固定します。",
       previewHeight: 560,
       Demo: FilterSearchPattern,
     },
@@ -216,7 +216,7 @@ export const drawerDoc: ComponentDoc = {
       id: "job-detail",
       title: "求人詳細",
       description:
-        'swipeDirection="right" で右からスライドインする求人詳細。一覧に戻りやすい形で勤務地・給与などの概要を確認し、そのまま応募に進める。',
+        'swipeDirection="right" で右からスライドインする求人詳細です。一覧に戻りやすい形で勤務地・給与などの概要を確認し、そのまま応募に進めます。',
       previewHeight: 480,
       Demo: JobDetailPattern,
     },

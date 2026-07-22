@@ -215,13 +215,13 @@ export const scrollAreaDoc: ComponentDoc = {
   title: "Scroll Area",
   category: "レイアウト",
   purpose:
-    "固定サイズの領域に収まらないコンテンツを、OS 標準より控えめなスクロールバー付きでスクロールさせるコンポーネント。ジョブアンテナでは求人リストや応募規約文の縦スクロール、検索条件タグや求人カードの横スクロールに使う。",
+    "固定サイズの領域に収まらないコンテンツを、OS 標準より控えめなスクロールバー付きでスクロールさせるコンポーネントです。ジョブアンテナでは求人リストや応募規約文の縦スクロール、検索条件タグや求人カードの横スクロールに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "高さを h-64 に固定し、あふれた新着求人リストを縦スクロールで読ませる基本形。デフォルトで縦の ScrollBar が表示される。",
+        "高さを h-64 に固定し、あふれた新着求人リストを縦スクロールで読ませる基本形です。デフォルトで縦の ScrollBar が表示されます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -229,7 +229,7 @@ export const scrollAreaDoc: ComponentDoc = {
       id: "search-tags",
       title: "検索条件タグ",
       description:
-        'こだわり条件などのタグを w-max で折り返さず並べ、ScrollBar に orientation="horizontal" を渡して横スクロールにする。検索画面のタグ一覧向け。',
+        'こだわり条件などのタグを w-max で折り返さず並べ、ScrollBar に orientation="horizontal" を渡して横スクロールにします。検索画面のタグ一覧向けです。',
       previewHeight: null,
       Demo: SearchTagsPattern,
     },
@@ -237,7 +237,7 @@ export const scrollAreaDoc: ComponentDoc = {
       id: "application-terms",
       title: "応募規約",
       description:
-        "応募確認画面で規約文をコンパクトな枠に収める例。長文をスクロールで全文確認させ、注意書きと応募ボタンは領域の外に固定する。",
+        "応募確認画面で規約文をコンパクトな枠に収める例です。長文をスクロールで全文確認させ、注意書きと応募ボタンは領域の外に固定します。",
       previewHeight: 480,
       Demo: ApplicationTermsPattern,
     },
@@ -245,7 +245,7 @@ export const scrollAreaDoc: ComponentDoc = {
       id: "job-card-row",
       title: "求人カードの横並び",
       description:
-        "おすすめ求人カードを横一列に並べてスクロールさせる例。トップページの「あなたへのおすすめ」のような流し見導線に使う。",
+        "おすすめ求人カードを横一列に並べてスクロールさせる例です。トップページの「あなたへのおすすめ」のような流し見導線に使います。",
       previewHeight: null,
       Demo: JobCardRowPattern,
     },

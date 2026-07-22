@@ -116,13 +116,13 @@ export const aspectRatioDoc: ComponentDoc = {
   title: "Aspect Ratio",
   category: "データ表示",
   purpose:
-    "画像やメディア領域の縦横比を固定して表示するためのコンポーネント。画像の読み込み前後でレイアウトが崩れないよう、枠のサイズを比率で確保する。ジョブアンテナでは求人メイン画像(16:9)や企業ロゴ(1:1)のプレースホルダに使う。",
+    "画像やメディア領域の縦横比を固定して表示するためのコンポーネントです。画像の読み込み前後でレイアウトが崩れないよう、枠のサイズを比率で確保します。ジョブアンテナでは求人メイン画像(16:9)や企業ロゴ(1:1)のプレースホルダに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "ratio に数値(16 / 9 など)を渡すと、幅に応じて高さが自動で決まる。よく使う 16:9 / 4:3 / 1:1 の比較。",
+        "ratio に数値(16 / 9 など)を渡すと、幅に応じて高さが自動で決まります。よく使う 16:9 / 4:3 / 1:1 の比較です。",
       previewHeight: 560,
       Demo: RatioListPattern,
     },
@@ -130,7 +130,7 @@ export const aspectRatioDoc: ComponentDoc = {
       id: "job-card",
       title: "求人カード",
       description:
-        "求人カードの上部にメイン画像(16:9)、企業名の横にロゴ(1:1)を配置した例。画像未設定でも比率が保たれるためカードの高さが揃う。",
+        "求人カードの上部にメイン画像(16:9)、企業名の横にロゴ(1:1)を配置した例です。画像未設定でも比率が保たれるためカードの高さが揃います。",
       previewHeight: 480,
       Demo: JobCardPattern,
     },
@@ -138,7 +138,7 @@ export const aspectRatioDoc: ComponentDoc = {
       id: "company-logo-grid",
       title: "企業ロゴ一覧",
       description:
-        "フォロー中の企業一覧など、サイズの異なるロゴを 1:1 で統一してグリッドに並べる例。",
+        "フォロー中の企業一覧など、サイズの異なるロゴを 1:1 で統一してグリッドに並べる例です。",
       previewHeight: null,
       Demo: CompanyLogoGridPattern,
     },

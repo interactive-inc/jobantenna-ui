@@ -159,13 +159,13 @@ export const labelDoc: ComponentDoc = {
   title: "Label",
   category: "フォーム",
   purpose:
-    "入力欄やチェックボックスなどのフォーム部品に名前を付け、htmlFor で紐付けるためのコンポーネント。紐付けるとラベルのクリックで対象へフォーカスや切り替えができ、disabled な部品に合わせて自動で減光する。ジョブアンテナでは検索条件やWeb履歴書、管理画面の求人フォームの項目名として使う。",
+    "入力欄やチェックボックスなどのフォーム部品に名前を付け、htmlFor で紐付けるためのコンポーネントです。紐付けるとラベルのクリックで対象へフォーカスや切り替えができ、disabled な部品に合わせて自動で減光します。ジョブアンテナでは検索条件やWeb履歴書、管理画面の求人フォームの項目名として使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "htmlFor と id で Input や Checkbox に紐付ける基本形。disabled な Checkbox の直後に置くと peer-disabled でラベルも薄くなる。",
+        "htmlFor と id で Input や Checkbox に紐付ける基本形です。disabled な Checkbox の直後に置くと peer-disabled でラベルも薄くなります。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -173,7 +173,7 @@ export const labelDoc: ComponentDoc = {
       id: "required-mark",
       title: "必須マーク",
       description:
-        "Web履歴書フォームで必須・任意を示す例。Label は flex レイアウトなので、テキストの横に Badge を置くだけで揃う。",
+        "Web履歴書フォームで必須・任意を示す例です。Label は flex レイアウトなので、テキストの横に Badge を置くだけで揃います。",
       previewHeight: null,
       Demo: RequiredMarkPattern,
     },
@@ -181,7 +181,7 @@ export const labelDoc: ComponentDoc = {
       id: "salary-form",
       title: "求人フォーム",
       description:
-        "管理画面の求人フォーム「給与・待遇」セクション。セレクトや数値入力にラベルを紐付け、表示イメージの補足テキストを添える。",
+        "管理画面の求人フォーム「給与・待遇」セクションです。セレクトや数値入力にラベルを紐付け、表示イメージの補足テキストを添えます。",
       previewHeight: 400,
       Demo: SalaryFormPattern,
     },
@@ -189,7 +189,7 @@ export const labelDoc: ComponentDoc = {
       id: "notification-settings",
       title: "通知設定",
       description:
-        "ラベルと説明文を左、Switch を右に置く設定画面のレイアウト。ラベルのクリックでもオン・オフが切り替わる。",
+        "ラベルと説明文を左、Switch を右に置く設定画面のレイアウトです。ラベルのクリックでもオン・オフが切り替わります。",
       previewHeight: null,
       Demo: NotificationSettingsPattern,
     },

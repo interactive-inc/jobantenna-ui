@@ -194,13 +194,13 @@ export const menubarDoc: ComponentDoc = {
   title: "Menubar",
   category: "ナビゲーション",
   purpose:
-    "複数のドロップダウンメニューを横一列に並べ、デスクトップアプリのメニューバーのように機能を分類して提供するコンポーネント。左右キーでメニュー間を移動でき、操作の多い画面のヘッダーに向く。ジョブアンテナでは企業向け管理画面のグローバルメニューや、求人検索ページの操作バーに使う。",
+    "複数のドロップダウンメニューを横一列に並べ、デスクトップアプリのメニューバーのように機能を分類して提供するコンポーネントです。左右キーでメニュー間を移動でき、操作の多い画面のヘッダーに向きます。ジョブアンテナでは企業向け管理画面のグローバルメニューや、求人検索ページの操作バーに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "通常項目・ショートカット表示・サブメニュー・破壊的操作を組み合わせた基本形。MenubarTrigger に文字列を渡すだけでメニューバーの項目になる。",
+        "通常項目・ショートカット表示・サブメニュー・破壊的操作を組み合わせた基本形です。MenubarTrigger に文字列を渡すだけでメニューバーの項目になります。",
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -208,7 +208,7 @@ export const menubarDoc: ComponentDoc = {
       id: "filter-sort",
       title: "絞り込みと並び替え",
       description:
-        "MenubarCheckboxItem で雇用形態やこだわり条件を複数選択し、MenubarRadioGroup で並び順を単一選択する例。defaultChecked / defaultValue で初期状態を指定する。",
+        "MenubarCheckboxItem で雇用形態やこだわり条件を複数選択し、MenubarRadioGroup で並び順を単一選択する例です。defaultChecked / defaultValue で初期状態を指定します。",
       previewHeight: 400,
       Demo: FilterSortPattern,
     },
@@ -216,7 +216,7 @@ export const menubarDoc: ComponentDoc = {
       id: "admin",
       title: "管理画面",
       description:
-        "企業向け管理画面のグローバルメニュー。求人票・候補者・応募者・設定を機能ごとにまとめ、未読件数は ml-auto の Badge で項目の右端に表示する。",
+        "企業向け管理画面のグローバルメニューです。求人票・候補者・応募者・設定を機能ごとにまとめ、未読件数は ml-auto の Badge で項目の右端に表示します。",
       previewHeight: 400,
       Demo: AdminPattern,
     },

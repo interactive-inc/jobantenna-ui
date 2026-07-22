@@ -211,13 +211,13 @@ export const messageDoc: ComponentDoc = {
   title: "Message",
   category: "チャット",
   purpose:
-    "チャットの1発言を、アバター・送信者名・吹き出し・時刻までまとめてレイアウトするコンポーネント。align で左右を切り替え、連続する発言は MessageGroup で束ねる。ジョブアンテナでは企業と求職者のメッセージスレッドや、管理画面の応募者メッセージ画面に使う。",
+    "チャットの1発言を、アバター・送信者名・吹き出し・時刻までまとめてレイアウトするコンポーネントです。align で左右を切り替え、連続する発言は MessageGroup で束ねます。ジョブアンテナでは企業と求職者のメッセージスレッドや、管理画面の応募者メッセージ画面に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "応募お礼から面接案内までのスレッド。相手は MessageAvatar と MessageHeader を付けて左に、自分は align=end で右に置き、MessageFooter に時刻と既読を出す。",
+        "応募お礼から面接案内までのスレッドです。相手は MessageAvatar と MessageHeader を付けて左に、自分は align=end で右に置き、MessageFooter に時刻と既読を出します。",
       previewHeight: 480,
       Demo: BasicPattern,
     },
@@ -225,7 +225,7 @@ export const messageDoc: ComponentDoc = {
       id: "job-share",
       title: "求人カード共有",
       description:
-        "企業がスレッド内で別の求人カードを送る例。テキストの吹き出しと outline の求人カードを同じ BubbleGroup にまとめ、1つの発言として扱う。",
+        "企業がスレッド内で別の求人カードを送る例です。テキストの吹き出しと outline の求人カードを同じ BubbleGroup にまとめ、1つの発言として扱います。",
       previewHeight: 400,
       Demo: JobSharePattern,
     },
@@ -233,7 +233,7 @@ export const messageDoc: ComponentDoc = {
       id: "company-view",
       title: "企業側スレッド",
       description:
-        "管理画面の応募者メッセージ。候補者を左、企業担当者を右に配置し、ghost の吹き出しを日付区切りとして挟む。",
+        "管理画面の応募者メッセージです。候補者を左、企業担当者を右に配置し、ghost の吹き出しを日付区切りとして挟みます。",
       previewHeight: 480,
       Demo: CompanyViewPattern,
     },

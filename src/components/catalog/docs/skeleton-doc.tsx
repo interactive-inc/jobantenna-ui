@@ -166,13 +166,13 @@ export const skeletonDoc: ComponentDoc = {
   title: "Skeleton",
   category: "フィードバック",
   purpose:
-    "データ取得中に実コンテンツと同じ形のプレースホルダを表示し、レイアウトのがたつきを防ぐコンポーネント。animate-pulse 付きの div に className でサイズと形を与えるだけで使える。ジョブアンテナでは求人カードや求人票一覧、ダッシュボードの読み込み中表示に使う。",
+    "データ取得中に実コンテンツと同じ形のプレースホルダを表示し、レイアウトのがたつきを防ぐコンポーネントです。animate-pulse 付きの div に className でサイズと形を与えるだけで使えます。ジョブアンテナでは求人カードや求人票一覧、ダッシュボードの読み込み中表示に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "アバター・テキスト行・画像ブロックの組み合わせ。className の高さ・幅・角丸を実コンテンツに合わせて調整するだけで任意のプレースホルダを作れる。",
+        "アバター・テキスト行・画像ブロックの組み合わせです。className の高さ・幅・角丸を実コンテンツに合わせて調整するだけで任意のプレースホルダを作れます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -180,7 +180,7 @@ export const skeletonDoc: ComponentDoc = {
       id: "job-card",
       title: "求人カード",
       description:
-        "企業ロゴ + 企業名、メイン画像、職種名 + キャッチタイトル、勤務地・雇用形態・給与、バッジ、応募ボタンまで、実際の求人カードと同じ構成で置いたスケルトン。読み込み完了時にレイアウトがずれない。",
+        "企業ロゴ + 企業名、メイン画像、職種名 + キャッチタイトル、勤務地・雇用形態・給与、バッジ、応募ボタンまで、実際の求人カードと同じ構成で置いたスケルトンです。読み込み完了時にレイアウトがずれません。",
       previewHeight: 560,
       Demo: JobCardPattern,
     },
@@ -188,7 +188,7 @@ export const skeletonDoc: ComponentDoc = {
       id: "job-list",
       title: "求人票一覧",
       description:
-        "管理画面の求人票一覧を模した行スケルトン。ステータスタブ + サムネイル + ステータスバッジ + タイトル + 勤務条件 + 統計の行を 3 件並べ、一覧取得中の表示に使う。",
+        "管理画面の求人票一覧を模した行スケルトンです。ステータスタブ + サムネイル + ステータスバッジ + タイトル + 勤務条件 + 統計の行を 3 件並べ、一覧取得中の表示に使います。",
       previewHeight: null,
       Demo: JobListPattern,
     },
@@ -196,7 +196,7 @@ export const skeletonDoc: ComponentDoc = {
       id: "kpi-cards",
       title: "KPI カード",
       description:
-        "管理画面ダッシュボードの KPI カード（公開中の求人数・応募数・未読メッセージ・もらったいいかも）の読み込み中表示。ラベル・数値・補足の 3 行構成をそのまま骨組みにしている。",
+        "管理画面ダッシュボードの KPI カード（公開中の求人数・応募数・未読メッセージ・もらったいいかも）の読み込み中表示です。ラベル・数値・補足の 3 行構成をそのまま骨組みにしています。",
       previewHeight: null,
       Demo: KpiCardsPattern,
     },

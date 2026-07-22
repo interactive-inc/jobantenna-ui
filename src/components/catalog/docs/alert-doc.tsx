@@ -98,13 +98,13 @@ export const alertDoc: ComponentDoc = {
   title: "Alert",
   category: "フィードバック",
   purpose:
-    "ページ内に埋め込んで、ユーザーの操作を妨げずに状態や注意事項を伝えるコンポーネント。応募完了の確認、メールアドレス未登録の案内、掲載終了の警告など、閉じられずに残しておきたい通知に使う。一時的な通知にはトースト（sonner）、確認が必要な操作には AlertDialog を使い分ける。",
+    "ページ内に埋め込んで、ユーザーの操作を妨げずに状態や注意事項を伝えるコンポーネントです。応募完了の確認、メールアドレス未登録の案内、掲載終了の警告など、閉じられずに残しておきたい通知に使います。一時的な通知にはトースト（sonner）、確認が必要な操作には AlertDialog を使い分けます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "アイコン・AlertTitle・AlertDescription を並べた基本形。応募完了や新着求人など、状況を伝えるだけの通知に使う。",
+        "アイコン・AlertTitle・AlertDescription を並べた基本形です。応募完了や新着求人など、状況を伝えるだけの通知に使います。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -112,7 +112,7 @@ export const alertDoc: ComponentDoc = {
       id: "notice",
       title: "お知らせ",
       description:
-        "AlertAction にボタンを置いて次の行動を促すお知らせ。メールアドレス未登録や Web履歴書の入力促進など、ユーザーに対応してほしい案内に使う。",
+        "AlertAction にボタンを置いて次の行動を促すお知らせです。メールアドレス未登録や Web履歴書の入力促進など、ユーザーに対応してほしい案内に使います。",
       previewHeight: null,
       Demo: NoticePattern,
     },
@@ -120,7 +120,7 @@ export const alertDoc: ComponentDoc = {
       id: "destructive",
       title: "掲載終了警告",
       description:
-        'variant="destructive" で文字とアイコンを赤にした警告。掲載終了した求人の表示や、掲載期限切れが迫った求人票への注意喚起に使う。',
+        'variant="destructive" で文字とアイコンを赤にした警告です。掲載終了した求人の表示や、掲載期限切れが迫った求人票への注意喚起に使います。',
       previewHeight: null,
       Demo: DestructivePattern,
     },

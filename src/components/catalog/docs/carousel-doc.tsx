@@ -135,13 +135,13 @@ export const carouselDoc: ComponentDoc = {
   title: "Carousel",
   category: "レイアウト",
   purpose:
-    "限られた横幅で複数のコンテンツを順送りに見せるスライド表示コンポーネント。ジョブアンテナではトップページのおすすめ求人や、職種・エリアから探す回遊導線を横並びで見せる場面で使う。前後ボタン・矢印キー・ドラッグ操作でスライドを送れる。",
+    "限られた横幅で複数のコンテンツを順送りに見せるスライド表示コンポーネントです。ジョブアンテナではトップページのおすすめ求人や、職種・エリアから探す回遊導線を横並びで見せる場面で使います。前後ボタン・矢印キー・ドラッグ操作でスライドを送れます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "おすすめ求人カードを1枚ずつ送る基本形。CarouselContent に CarouselItem を並べ、CarouselPrevious / CarouselNext で前後に移動する。応募済みの求人はボタンを disabled にする。",
+        "おすすめ求人カードを1枚ずつ送る基本形です。CarouselContent に CarouselItem を並べ、CarouselPrevious / CarouselNext で前後に移動します。応募済みの求人はボタンを disabled にします。",
       previewHeight: 480,
       Demo: RecommendedJobsPattern,
     },
@@ -149,7 +149,7 @@ export const carouselDoc: ComponentDoc = {
       id: "multi-slide",
       title: "複数枚表示",
       description:
-        "CarouselItem に basis-1/3 を指定して3枚ずつ見せる例。opts の align を start にして先頭揃えでスクロールし、小型の求人カードを一覧的に見せたいときに使う。",
+        "CarouselItem に basis-1/3 を指定して3枚ずつ見せる例です。opts の align を start にして先頭揃えでスクロールし、小型の求人カードを一覧的に見せたいときに使います。",
       previewHeight: null,
       Demo: MultiSlidePattern,
     },

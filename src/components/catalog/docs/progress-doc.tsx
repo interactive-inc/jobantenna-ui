@@ -107,13 +107,13 @@ export const progressDoc: ComponentDoc = {
   title: "Progress",
   category: "フィードバック",
   purpose:
-    "タスクの完了度合いをバーで可視化するコンポーネント。プロフィール入力率や選考ステップの進み具合など、ゴールまでの残りを示して次の行動を促す場面で使う。Track と Indicator は Progress が自動で描画するため、ProgressLabel と ProgressValue を children に置くだけで使える。",
+    "タスクの完了度合いをバーで可視化するコンポーネントです。プロフィール入力率や選考ステップの進み具合など、ゴールまでの残りを示して次の行動を促す場面で使います。Track と Indicator は Progress が自動で描画するため、ProgressLabel と ProgressValue を children に置くだけで使えます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "ProgressLabel と ProgressValue を children に置いた基本形。value を渡すだけでバーが描画され、値は百分率で自動表示される。",
+        "ProgressLabel と ProgressValue を children に置いた基本形です。value を渡すだけでバーが描画され、値は百分率で自動表示されます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -121,7 +121,7 @@ export const progressDoc: ComponentDoc = {
       id: "profile-completion",
       title: "プロフィール入力率",
       description:
-        "マイページに置くプロフィール入力率カード。30%・70%・100% の段階に応じて案内文言とアクションを切り替え、Web履歴書の完成を後押しする。",
+        "マイページに置くプロフィール入力率カードです。30%・70%・100% の段階に応じて案内文言とアクションを切り替え、Web履歴書の完成を後押しします。",
       previewHeight: 560,
       Demo: ProfileCompletionPattern,
     },
@@ -129,7 +129,7 @@ export const progressDoc: ComponentDoc = {
       id: "steps",
       title: "ステップ進捗",
       description:
-        "max を指定して件数ベースの進捗を割合に変換する形。選考ステップや求人票の入力セクションなど、全体の工程数が決まっているフローの現在地表示に使う。",
+        "max を指定して件数ベースの進捗を割合に変換する形です。選考ステップや求人票の入力セクションなど、全体の工程数が決まっているフローの現在地表示に使います。",
       previewHeight: null,
       Demo: StepsPattern,
     },

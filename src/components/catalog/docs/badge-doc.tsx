@@ -164,13 +164,13 @@ export const badgeDoc: ComponentDoc = {
   title: "Badge",
   category: "データ表示",
   purpose:
-    "ステータスや属性を短いラベルで表示するコンポーネント。ジョブアンテナでは求人カードのタグ（新卒採用、Web履歴書OK など）、応募者の選考ステータス、管理画面メニューの未読件数に使う。バリアントの色で情報の種類と緊急度を伝える。",
+    "ステータスや属性を短いラベルで表示するコンポーネントです。ジョブアンテナでは求人カードのタグ（新卒採用、Web履歴書OK など）、応募者の選考ステータス、管理画面メニューの未読件数に使います。バリアントの色で情報の種類と緊急度を伝えます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "default / secondary / destructive / outline / ghost / link の6バリアント。data-icon 属性でアイコンを先頭・末尾に添えられる。",
+        "default / secondary / destructive / outline / ghost / link の6バリアントです。data-icon 属性でアイコンを先頭・末尾に添えられます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -178,7 +178,7 @@ export const badgeDoc: ComponentDoc = {
       id: "job-card-tags",
       title: "求人カードのタグ",
       description:
-        "求人カードで募集条件のタグを並べる例。新着（NEW）は default で目立たせ、属性タグは secondary、補足条件は outline で階層をつける。",
+        "求人カードで募集条件のタグを並べる例です。新着（NEW）は default で目立たせ、属性タグは secondary、補足条件は outline で階層をつけます。",
       previewHeight: 400,
       Demo: JobCardTagsPattern,
     },
@@ -186,7 +186,7 @@ export const badgeDoc: ComponentDoc = {
       id: "application-status",
       title: "応募ステータス",
       description:
-        "応募者リストで選考状況を示す例。未対応は destructive、対応中は secondary、内定は default、不採用は outline と、対応の緊急度で色を割り当てる。",
+        "応募者リストで選考状況を示す例です。未対応は destructive、対応中は secondary、内定は default、不採用は outline と、対応の緊急度で色を割り当てます。",
       previewHeight: null,
       Demo: ApplicationStatusPattern,
     },
@@ -194,7 +194,7 @@ export const badgeDoc: ComponentDoc = {
       id: "unread-count",
       title: "未読件数",
       description:
-        "管理画面のメニュー項目に件数を添える例。通常の件数は secondary、未読メッセージなど対応が必要なものだけ destructive にする。",
+        "管理画面のメニュー項目に件数を添える例です。通常の件数は secondary、未読メッセージなど対応が必要なものだけ destructive にします。",
       previewHeight: null,
       Demo: UnreadCountPattern,
     },

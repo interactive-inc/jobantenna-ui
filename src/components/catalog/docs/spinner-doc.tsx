@@ -94,13 +94,13 @@ export const spinnerDoc: ComponentDoc = {
   title: "Spinner",
   category: "フィードバック",
   purpose:
-    "処理が進行中であることを示す回転インジケータ。求人検索や応募の送信など、結果を待つ間に操作が受け付けられたことを伝える場面で使う。Loader2Icon ベースの単一 SVG で、className の size-* だけでサイズを変えられる。",
+    "処理が進行中であることを示す回転インジケータです。求人検索や応募の送信など、結果を待つ間に操作が受け付けられたことを伝える場面で使います。Loader2Icon ベースの単一 SVG で、className の size-* だけでサイズを変えられます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "className の size-* によるサイズ展開。デフォルトは size-4 で、ボタン内やインラインはそのまま、セクション全体の読み込みには size-6〜8 を使う。",
+        "className の size-* によるサイズ展開です。デフォルトは size-4 で、ボタン内やインラインはそのまま、セクション全体の読み込みには size-6〜8 を使います。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -108,7 +108,7 @@ export const spinnerDoc: ComponentDoc = {
       id: "button-loading",
       title: "ボタン内ローディング",
       description:
-        "送信中のボタンは disabled にして Spinner を先頭に置き、ラベルを進行中の文言に差し替える。検索フッターや応募ボタンの二重送信防止と待機表示を兼ねる。",
+        "送信中のボタンは disabled にして Spinner を先頭に置き、ラベルを進行中の文言に差し替えます。検索フッターや応募ボタンの二重送信防止と待機表示を兼ねます。",
       previewHeight: null,
       Demo: ButtonLoadingPattern,
     },
@@ -116,7 +116,7 @@ export const spinnerDoc: ComponentDoc = {
       id: "loading-placeholder",
       title: "読み込み中プレースホルダ",
       description:
-        "求人一覧やメッセージ欄のデータ到着前に、中央寄せの Spinner と読み込み中の文言で待機状態を示す。読み込み完了後にコンテンツへ差し替える。",
+        "求人一覧やメッセージ欄のデータ到着前に、中央寄せの Spinner と読み込み中の文言で待機状態を示します。読み込み完了後にコンテンツへ差し替えます。",
       previewHeight: null,
       Demo: LoadingPlaceholderPattern,
     },

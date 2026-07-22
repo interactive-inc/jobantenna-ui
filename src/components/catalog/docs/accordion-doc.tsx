@@ -132,13 +132,13 @@ export const accordionDoc: ComponentDoc = {
   title: "Accordion",
   category: "レイアウト",
   purpose:
-    "見出しをクリックして中身を開閉できる折りたたみリスト。情報量の多いページを見出しだけの一覧に圧縮し、読みたい項目だけ展開させたい場面で使う。ジョブアンテナでは応募方法などの FAQ や、求人詳細ページの募集要項セクションの折りたたみに使う。",
+    "見出しをクリックして中身を開閉できる折りたたみリストです。情報量の多いページを見出しだけの一覧に圧縮し、読みたい項目だけ展開させたい場面で使います。ジョブアンテナでは応募方法などの FAQ や、求人詳細ページの募集要項セクションの折りたたみに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "応募に関する FAQ。デフォルトでは同時に開けるのは1項目だけで、defaultValue で最初の質問を開いた状態にしている。",
+        "応募に関する FAQ です。デフォルトでは同時に開けるのは1項目だけで、defaultValue で最初の質問を開いた状態にしています。",
       previewHeight: 400,
       Demo: FaqPattern,
     },
@@ -146,7 +146,7 @@ export const accordionDoc: ComponentDoc = {
       id: "job-detail",
       title: "求人詳細セクション",
       description:
-        "multiple を付けて複数セクションを同時に開ける求人詳細の募集要項。給与や勤務情報をラベル+値の行で整理し、読み比べながら展開できる。",
+        "multiple を付けて複数セクションを同時に開ける求人詳細の募集要項です。給与や勤務情報をラベル+値の行で整理し、読み比べながら展開できます。",
       previewHeight: 560,
       Demo: JobDetailPattern,
     },

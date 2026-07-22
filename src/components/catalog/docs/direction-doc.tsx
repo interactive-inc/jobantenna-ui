@@ -162,13 +162,13 @@ export const directionDoc: ComponentDoc = {
   title: "Direction",
   category: "レイアウト",
   purpose:
-    "テキストの読み方向（LTR / RTL）をコンポーネントツリーに伝えるプロバイダ。Base UI 製コンポーネントのキーボード操作やスライダーの塗り方向が direction に追従する。ジョブアンテナでアラビア語などの RTL 言語対応を検証する際に、DOM の dir 属性と組み合わせて使う。",
+    "テキストの読み方向（LTR / RTL）をコンポーネントツリーに伝えるプロバイダです。Base UI 製コンポーネントのキーボード操作やスライダーの塗り方向が direction に追従します。ジョブアンテナでアラビア語などの RTL 言語対応を検証する際に、DOM の dir 属性と組み合わせて使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "DirectionProvider の direction に ltr / rtl を渡した比較。CSS のレイアウトも反転させるため、ラップする要素に dir 属性も併せて指定する。",
+        "DirectionProvider の direction に ltr / rtl を渡した比較です。CSS のレイアウトも反転させるため、ラップする要素に dir 属性も併せて指定します。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -176,7 +176,7 @@ export const directionDoc: ComponentDoc = {
       id: "salary-slider",
       title: "年収スライダー",
       description:
-        "希望年収の範囲スライダーを LTR / RTL で比較。RTL では塗りの起点が右になり、矢印キーによる増減方向も反転する。",
+        "希望年収の範囲スライダーを LTR / RTL で比較します。RTL では塗りの起点が右になり、矢印キーによる増減方向も反転します。",
       previewHeight: null,
       Demo: SalarySliderPattern,
     },
@@ -184,7 +184,7 @@ export const directionDoc: ComponentDoc = {
       id: "job-card-mirror",
       title: "求人カードのミラー",
       description:
-        "同じ求人カードを LTR / RTL で並べたミラー表示。ロゴ・企業名・バッジの並びが dir 属性で左右反転し、内部のフォーカス移動は DirectionProvider が追従する。",
+        "同じ求人カードを LTR / RTL で並べたミラー表示です。ロゴ・企業名・バッジの並びが dir 属性で左右反転し、内部のフォーカス移動は DirectionProvider が追従します。",
       previewHeight: 400,
       Demo: JobCardMirrorPattern,
     },

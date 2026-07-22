@@ -172,13 +172,13 @@ export const chartDoc: ComponentDoc = {
   title: "Chart",
   category: "データ表示",
   purpose:
-    "応募数や閲覧数などの数値データをグラフで可視化するコンポーネント。recharts をラップし、ChartConfig でラベルと色を一元管理して --color-* CSS 変数として参照できる。ジョブアンテナでは管理画面ダッシュボードの月別応募数や求人票の閲覧数推移の表示に使う。",
+    "応募数や閲覧数などの数値データをグラフで可視化するコンポーネントです。recharts をラップし、ChartConfig でラベルと色を一元管理して --color-* CSS 変数として参照できます。ジョブアンテナでは管理画面ダッシュボードの月別応募数や求人票の閲覧数推移の表示に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "BarChart による月別の応募数・採用数の比較。ChartConfig で定義した色を fill の var(--color-*) で参照する。recharts 3.8.0 のバグで初期アニメーション中に棒が描画されないため、Bar には必ず isAnimationActive={false} を付ける。",
+        "BarChart による月別の応募数・採用数の比較です。ChartConfig で定義した色を fill の var(--color-*) で参照します。recharts 3.8.0 のバグで初期アニメーション中に棒が描画されないため、Bar には必ず isAnimationActive={false} を付けます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -186,7 +186,7 @@ export const chartDoc: ComponentDoc = {
       id: "channel-stacked",
       title: "チャネル別積み上げ",
       description:
-        "stackId を揃えて応募チャネル（検索経由・いいかも経由・フォロー経由）の内訳を積み上げ表示する例。合計の推移と内訳の割合を同時に見せたいときに使う。角丸は最上段の Bar だけに付ける。",
+        "stackId を揃えて応募チャネル（検索経由・いいかも経由・フォロー経由）の内訳を積み上げ表示する例です。合計の推移と内訳の割合を同時に見せたいときに使います。角丸は最上段の Bar だけに付けます。",
       previewHeight: null,
       Demo: ChannelStackedPattern,
     },
@@ -194,7 +194,7 @@ export const chartDoc: ComponentDoc = {
       id: "views-trend",
       title: "閲覧数の推移カード",
       description:
-        "KPI カードに小さな AreaChart を組み合わせた例。管理画面ダッシュボードで累計値と直近の推移をひと目で伝える。",
+        "KPI カードに小さな AreaChart を組み合わせた例です。管理画面ダッシュボードで累計値と直近の推移をひと目で伝えます。",
       previewHeight: null,
       Demo: ViewsTrendPattern,
     },

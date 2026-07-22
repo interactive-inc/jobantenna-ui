@@ -270,13 +270,13 @@ export const itemDoc: ComponentDoc = {
   title: "Item",
   category: "データ表示",
   purpose:
-    "アイコン・タイトル・説明・アクションを1行にまとめて並べるリスト行コンポーネント。ItemGroup と ItemSeparator で境界線付きのリストを組み立てられる。求人リストの行、マイページの設定メニュー、通知のオン・オフ設定など、同じ形の行を縦に積む場面で使う。",
+    "アイコン・タイトル・説明・アクションを1行にまとめて並べるリスト行コンポーネントです。ItemGroup と ItemSeparator で境界線付きのリストを組み立てられます。求人リストの行、マイページの設定メニュー、通知のオン・オフ設定など、同じ形の行を縦に積む場面で使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'ItemMedia（variant="icon"）・ItemContent・ItemActions を並べた基本形。variant は outline / muted、size は sm を切り替えられ、複数行は ItemGroup と ItemSeparator でまとめる。',
+        'ItemMedia（variant="icon"）・ItemContent・ItemActions を並べた基本形です。variant は outline / muted、size は sm を切り替えられ、複数行は ItemGroup と ItemSeparator でまとめます。',
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -284,7 +284,7 @@ export const itemDoc: ComponentDoc = {
       id: "settings-menu",
       title: "設定メニュー",
       description:
-        "render プロップに a 要素を渡して各行をリンク化した設定メニュー。通知設定やブロック企業などマイページの遷移先一覧に使い、件数は Badge、遷移できることは ChevronRight で示す。",
+        "render プロップに a 要素を渡して各行をリンク化した設定メニューです。通知設定やブロック企業などマイページの遷移先一覧に使い、件数は Badge、遷移できることは ChevronRight で示します。",
       previewHeight: 400,
       Demo: SettingsMenuPattern,
     },
@@ -292,7 +292,7 @@ export const itemDoc: ComponentDoc = {
       id: "notification-settings",
       title: "通知設定",
       description:
-        "ItemActions に Switch を置いたオン・オフ設定のリスト。新着求人やいいかも！など通知の種類ごとに1行を割り当て、説明文で通知のタイミングを補足する。",
+        "ItemActions に Switch を置いたオン・オフ設定のリストです。新着求人やいいかも！など通知の種類ごとに1行を割り当て、説明文で通知のタイミングを補足します。",
       previewHeight: 400,
       Demo: NotificationSettingsPattern,
     },
@@ -300,7 +300,7 @@ export const itemDoc: ComponentDoc = {
       id: "job-card",
       title: "求人カード",
       description:
-        "ItemHeader に企業名と更新日、ItemFooter にバッジと応募ボタンを置いた求人カード。応募済みの求人はボタンを disabled にして二重応募を防ぐ。",
+        "ItemHeader に企業名と更新日、ItemFooter にバッジと応募ボタンを置いた求人カードです。応募済みの求人はボタンを disabled にして二重応募を防ぎます。",
       previewHeight: 560,
       Demo: JobCardPattern,
     },

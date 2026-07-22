@@ -236,13 +236,13 @@ export const radioGroupDoc: ComponentDoc = {
   title: "Radio Group",
   category: "フォーム",
   purpose:
-    "複数の選択肢からちょうど1つを選ばせるためのフォームコントロール。@base-ui/react ベースで defaultValue による非制御利用に対応し、選択肢が2〜5個程度で全体を一覧させたい場面に向く。ジョブアンテナでは雇用形態や給与種別の単一選択、検索条件の絞り込み、応募者の選考ステータス更新に使う。",
+    "複数の選択肢からちょうど1つを選ばせるためのフォームコントロールです。@base-ui/react ベースで defaultValue による非制御利用に対応し、選択肢が2〜5個程度で全体を一覧させたい場面に向きます。ジョブアンテナでは雇用形態や給与種別の単一選択、検索条件の絞り込み、応募者の選考ステータス更新に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "雇用形態（正社員・契約社員・アルバイト・パート・派遣社員）から1つを選ぶ基本形。RadioGroupItem に disabled を付けると受付終了などの選べない選択肢を表現できる。",
+        "雇用形態（正社員・契約社員・アルバイト・パート・派遣社員）から1つを選ぶ基本形です。RadioGroupItem に disabled を付けると受付終了などの選べない選択肢を表現できます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -250,7 +250,7 @@ export const radioGroupDoc: ComponentDoc = {
       id: "salary-type-card",
       title: "給与種別のカード選択",
       description:
-        "求人フォームの給与・待遇セクションで給与種別（月給・日給・時給）を選ぶ例。Label でカード全体を包み、has-data-checked で選択中のカードを強調する。補足説明を添えたい選択肢に向く。",
+        "求人フォームの給与・待遇セクションで給与種別（月給・日給・時給）を選ぶ例です。Label でカード全体を包み、has-data-checked で選択中のカードを強調します。補足説明を添えたい選択肢に向きます。",
       previewHeight: null,
       Demo: SalaryTypeCardPattern,
     },
@@ -258,7 +258,7 @@ export const radioGroupDoc: ComponentDoc = {
       id: "employment-filter",
       title: "検索条件の雇用形態",
       description:
-        "求人検索パネルで雇用形態を単一選択で絞り込む例。「すべて」を先頭に置き、各選択肢の右に該当件数、フッターに件数付きの検索ボタンとクリアを置く。",
+        "求人検索パネルで雇用形態を単一選択で絞り込む例です。「すべて」を先頭に置き、各選択肢の右に該当件数、フッターに件数付きの検索ボタンとクリアを置きます。",
       previewHeight: null,
       Demo: EmploymentFilterPattern,
     },
@@ -266,7 +266,7 @@ export const radioGroupDoc: ComponentDoc = {
       id: "applicant-status",
       title: "応募ステータスの更新",
       description:
-        "管理画面の応募者詳細で選考ステータス（未選考・保留中・連絡済・採用・不採用）を付け替える例。状態は排他なのでラジオで選び、更新ボタンで確定する。",
+        "管理画面の応募者詳細で選考ステータス（未選考・保留中・連絡済・採用・不採用）を付け替える例です。状態は排他なのでラジオで選び、更新ボタンで確定します。",
       previewHeight: null,
       Demo: ApplicantStatusPattern,
     },

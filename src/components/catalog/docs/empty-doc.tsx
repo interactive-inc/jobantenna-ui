@@ -121,13 +121,13 @@ export const emptyDoc: ComponentDoc = {
   title: "Empty",
   category: "データ表示",
   purpose:
-    "リストや検索結果にまだデータがないことを伝え、次の行動へ誘導するコンポーネント。保存した求人・メッセージ・応募者リストが空のときや、検索結果ゼロのときに、理由の説明と CTA をセットで見せる。何も表示しないまま放置せず、ユーザーが次に何をすればよいかを示すために使う。",
+    "リストや検索結果にまだデータがないことを伝え、次の行動へ誘導するコンポーネントです。保存した求人・メッセージ・応募者リストが空のときや、検索結果ゼロのときに、理由の説明と CTA をセットで見せます。何も表示しないまま放置せず、ユーザーが次に何をすればよいかを示すために使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'EmptyMedia（variant="icon"）・EmptyTitle・EmptyDescription を EmptyHeader にまとめ、EmptyContent に CTA を置いた基本形。保存した求人など、一覧がまだ空のときに使う。',
+        'EmptyMedia（variant="icon"）・EmptyTitle・EmptyDescription を EmptyHeader にまとめ、EmptyContent に CTA を置いた基本形です。保存した求人など、一覧がまだ空のときに使います。',
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -135,7 +135,7 @@ export const emptyDoc: ComponentDoc = {
       id: "search-empty",
       title: "検索結果ゼロ",
       description:
-        "検索条件に一致する求人がなかったときの表示。条件の緩め方を説明し、「条件を変更する」「すべてクリア」で再検索へ誘導する。",
+        "検索条件に一致する求人がなかったときの表示です。条件の緩め方を説明し、「条件を変更する」「すべてクリア」で再検索へ誘導します。",
       previewHeight: null,
       Demo: SearchEmptyPattern,
     },
@@ -143,7 +143,7 @@ export const emptyDoc: ComponentDoc = {
       id: "messages-empty",
       title: "メッセージ",
       description:
-        "メッセージ一覧が空のときの表示。ただ空を伝えるだけでなく、プロフィールの充実というオファーをもらうための行動へ誘導する。",
+        "メッセージ一覧が空のときの表示です。ただ空を伝えるだけでなく、プロフィールの充実というオファーをもらうための行動へ誘導します。",
       previewHeight: null,
       Demo: MessagesEmptyPattern,
     },
@@ -151,7 +151,7 @@ export const emptyDoc: ComponentDoc = {
       id: "applicants-empty",
       title: "応募者リスト",
       description:
-        "管理画面で応募者がまだいないときの表示。求人票の作成・公開や、いいかも！でのアプローチなど企業側の次の一手を示す。",
+        "管理画面で応募者がまだいないときの表示です。求人票の作成・公開や、いいかも！でのアプローチなど企業側の次の一手を示します。",
       previewHeight: null,
       Demo: ApplicantsEmptyPattern,
     },

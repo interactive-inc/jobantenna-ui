@@ -105,13 +105,13 @@ export const sliderDoc: ComponentDoc = {
   title: "Slider",
   category: "フォーム",
   purpose:
-    "数値を軸上のつまみで直感的に選ぶためのフォームコントロール。@base-ui/react ベースで、defaultValue に数値を渡すと単一値、配列を渡すと範囲指定になる非制御利用に対応する。ジョブアンテナでは求人検索の希望年収・希望月給のレンジ指定や、通勤時間の上限指定に使う。",
+    "数値を軸上のつまみで直感的に選ぶためのフォームコントロールです。@base-ui/react ベースで、defaultValue に数値を渡すと単一値、配列を渡すと範囲指定になる非制御利用に対応します。ジョブアンテナでは求人検索の希望年収・希望月給のレンジ指定や、通勤時間の上限指定に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "単一値・範囲指定（配列の defaultValue）・disabled の各状態。ラベルと現在値をスライダーの上に並べて表示する。",
+        "単一値・範囲指定（配列の defaultValue）・disabled の各状態です。ラベルと現在値をスライダーの上に並べて表示します。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -119,7 +119,7 @@ export const sliderDoc: ComponentDoc = {
       id: "salary-range",
       title: "希望年収レンジ",
       description:
-        "求人検索の希望年収を 150万円〜1000万円 の範囲で指定する例。選択中のレンジを中央に表示し、フッターに件数付きの検索ボタンとクリアを置く。",
+        "求人検索の希望年収を 150万円〜1000万円 の範囲で指定する例です。選択中のレンジを中央に表示し、フッターに件数付きの検索ボタンとクリアを置きます。",
       previewHeight: null,
       Demo: SalaryRangePattern,
     },
@@ -127,7 +127,7 @@ export const sliderDoc: ComponentDoc = {
       id: "commute-time",
       title: "通勤時間",
       description:
-        "通勤時間の上限を単一値で指定する例。15分刻みの粗い step で選びやすくし、両端の目盛りと補足説明を添える。",
+        "通勤時間の上限を単一値で指定する例です。15分刻みの粗い step で選びやすくし、両端の目盛りと補足説明を添えます。",
       previewHeight: null,
       Demo: CommuteTimePattern,
     },

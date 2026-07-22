@@ -185,13 +185,13 @@ export const markerDoc: ComponentDoc = {
   title: "Marker",
   category: "データ表示",
   purpose:
-    "アイコンと短いテキストを1行にまとめて示すメタ情報コンポーネント。default はラベル行、separator は左右罫線付きの区切り、border は下罫線付きの見出しとして使い分ける。ジョブアンテナでは求人カードの勤務地・雇用形態・給与の表示や、メッセージ一覧の日付区切りに使う。",
+    "アイコンと短いテキストを1行にまとめて示すメタ情報コンポーネントです。default はラベル行、separator は左右罫線付きの区切り、border は下罫線付きの見出しとして使い分けます。ジョブアンテナでは求人カードの勤務地・雇用形態・給与の表示や、メッセージ一覧の日付区切りに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "default / separator / border の3バリアント。MarkerIcon にアイコン、MarkerContent にテキストを入れる。separator は中央のテキストの左右に罫線が伸びる。",
+        "default / separator / border の3バリアントです。MarkerIcon にアイコン、MarkerContent にテキストを入れます。separator は中央のテキストの左右に罫線が伸びます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -199,7 +199,7 @@ export const markerDoc: ComponentDoc = {
       id: "job-card-meta",
       title: "求人カードのメタ情報",
       description:
-        "求人カードで勤務地・雇用形態・給与・最終更新を縦に並べる例。アイコン幅が揃うため、行数が変わっても視線が縦にまっすぐ通る。",
+        "求人カードで勤務地・雇用形態・給与・最終更新を縦に並べる例です。アイコン幅が揃うため、行数が変わっても視線が縦にまっすぐ通ります。",
       previewHeight: 400,
       Demo: JobCardMetaPattern,
     },
@@ -207,7 +207,7 @@ export const markerDoc: ComponentDoc = {
       id: "message-separator",
       title: "メッセージの区切り",
       description:
-        "メッセージ一覧に separator バリアントで日付と未読の境界を挿入する例。未読境界は className で文字色と罫線色を destructive に上書きして注意を引く。",
+        "メッセージ一覧に separator バリアントで日付と未読の境界を挿入する例です。未読境界は className で文字色と罫線色を destructive に上書きして注意を引きます。",
       previewHeight: null,
       Demo: MessageSeparatorPattern,
     },
@@ -215,7 +215,7 @@ export const markerDoc: ComponentDoc = {
       id: "section-heading",
       title: "セクション見出し",
       description:
-        "求人詳細ページで border バリアントをセクション見出しに使う例。既定の muted な文字色を text-foreground と font-medium に上書きして本文と階層をつける。",
+        "求人詳細ページで border バリアントをセクション見出しに使う例です。既定の muted な文字色を text-foreground と font-medium に上書きして本文と階層をつけます。",
       previewHeight: null,
       Demo: SectionHeadingPattern,
     },

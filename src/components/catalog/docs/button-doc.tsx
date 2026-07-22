@@ -118,13 +118,13 @@ export const buttonDoc: ComponentDoc = {
   title: "Button",
   category: "アクション",
   purpose:
-    "クリックで操作を実行するための基本コンポーネント。バリアントとサイズの組み合わせでアクションの重要度を表現する。ジョブアンテナでは求人への応募・いいかも！送信・検索実行・求人票の編集や削除など、あらゆる操作の起点に使う。",
+    "クリックで操作を実行するための基本コンポーネントです。バリアントとサイズの組み合わせでアクションの重要度を表現します。ジョブアンテナでは求人への応募・いいかも！送信・検索実行・求人票の編集や削除など、あらゆる操作の起点に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "バリアント6種の一覧。主要アクションは default、補助は secondary / outline、控えめな操作は ghost、取り消せない操作は destructive、遷移は link を使う。",
+        "バリアント6種の一覧です。主要アクションは default、補助は secondary / outline、控えめな操作は ghost、取り消せない操作は destructive、遷移は link を使います。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -132,7 +132,7 @@ export const buttonDoc: ComponentDoc = {
       id: "sizes",
       title: "サイズ",
       description:
-        "テキストボタンは xs / sm / default / lg の4段階。アイコンのみのボタンは icon-* サイズと aria-label を組み合わせて正方形にする。",
+        "テキストボタンは xs / sm / default / lg の4段階です。アイコンのみのボタンは icon-* サイズと aria-label を組み合わせて正方形にします。",
       previewHeight: null,
       Demo: SizesPattern,
     },
@@ -140,7 +140,7 @@ export const buttonDoc: ComponentDoc = {
       id: "apply-status",
       title: "応募ボタンの状態",
       description:
-        "求人カードでの「応募する」と「いいかも！」の並び。応募済みの求人はラベルを「応募済み」に変えて disabled にし、二重応募を防ぐ。",
+        "求人カードでの「応募する」と「いいかも！」の並びです。応募済みの求人はラベルを「応募済み」に変えて disabled にし、二重応募を防ぎます。",
       previewHeight: null,
       Demo: ApplyStatusPattern,
     },
@@ -148,7 +148,7 @@ export const buttonDoc: ComponentDoc = {
       id: "search-footer",
       title: "検索フッター",
       description:
-        "検索条件パネルのフッター。ヒット件数を含めた「128件 検索する」を primary、条件リセットの「すべてクリア」を ghost で並べる。",
+        "検索条件パネルのフッターです。ヒット件数を含めた「128件 検索する」を primary、条件リセットの「すべてクリア」を ghost で並べます。",
       previewHeight: null,
       Demo: SearchFooterPattern,
     },

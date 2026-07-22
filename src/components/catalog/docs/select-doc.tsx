@@ -189,13 +189,13 @@ export const selectDoc: ComponentDoc = {
   title: "Select",
   category: "フォーム",
   purpose:
-    "決まった選択肢の中から1つを選ばせるドロップダウン入力。選択肢が数個〜十数個で一覧して選べる場面に向く。ジョブアンテナでは検索条件の勤務地・雇用形態・希望年収や、求人一覧の並び替えに使う。",
+    "決まった選択肢の中から1つを選ばせるドロップダウン入力です。選択肢が数個〜十数個で一覧して選べる場面に向きます。ジョブアンテナでは検索条件の勤務地・雇用形態・希望年収や、求人一覧の並び替えに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "プレースホルダありと初期値ありの単一選択。Select の items に値とラベルの対応を渡し、SelectValue が選択中のラベルを表示する。",
+        "プレースホルダありと初期値ありの単一選択です。Select の items に値とラベルの対応を渡し、SelectValue が選択中のラベルを表示します。",
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -203,7 +203,7 @@ export const selectDoc: ComponentDoc = {
       id: "desired-salary",
       title: "希望年収",
       description:
-        "検索条件の希望年収を150万円〜1000万円から選ぶ例。選択肢が多くてもリスト内がスクロールし、スクロールボタンで上下に送れる。",
+        "検索条件の希望年収を150万円〜1000万円から選ぶ例です。選択肢が多くてもリスト内がスクロールし、スクロールボタンで上下に送れます。",
       previewHeight: 480,
       Demo: DesiredSalaryPattern,
     },
@@ -211,7 +211,7 @@ export const selectDoc: ComponentDoc = {
       id: "sort-order",
       title: "並び替え",
       description:
-        '求人一覧のヘッダーで新着順・おすすめ順を切り替える例。size="sm" のトリガーを件数表示と並べ、defaultValue で初期の並び順を決める。',
+        '求人一覧のヘッダーで新着順・おすすめ順を切り替える例です。size="sm" のトリガーを件数表示と並べ、defaultValue で初期の並び順を決めます。',
       previewHeight: null,
       Demo: SortOrderPattern,
     },
@@ -219,7 +219,7 @@ export const selectDoc: ComponentDoc = {
       id: "salary-group",
       title: "給与グループ",
       description:
-        "月給と時給のように性質の違う選択肢を SelectGroup と SelectLabel で区切り、SelectSeparator で境界を示す例。",
+        "月給と時給のように性質の違う選択肢を SelectGroup と SelectLabel で区切り、SelectSeparator で境界を示す例です。",
       previewHeight: 400,
       Demo: SalaryGroupPattern,
     },

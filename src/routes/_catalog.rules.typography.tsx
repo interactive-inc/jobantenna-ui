@@ -34,23 +34,23 @@ type VoiceRule = {
 
 const voiceRules: ReadonlyArray<VoiceRule> = [
   {
-    rule: "です・ます調。感嘆符は完了・祝福の場面だけ",
+    rule: "です・ます調で書きます。感嘆符は完了・祝福の場面だけです",
     example: "応募が完了しました！",
   },
   {
-    rule: "注意書きは ※ で前置きし、本文と分ける",
+    rule: "注意書きは ※ で前置きし、本文と分けます",
     example: "※応募すると氏名が企業に公開されます。",
   },
   {
-    rule: "空状態は「現状」+「次の一歩」の2文と CTA で構成する",
+    rule: "空状態は「現状」+「次の一歩」の2文と CTA で構成します",
     example: "まだメッセージはありません / まずはプロフィールを充実させましょう",
   },
   {
-    rule: "破壊的操作は必ず確認を挟み、取り消せないことを明記する",
+    rule: "破壊的操作は必ず確認を挟み、取り消せないことを明記します",
     example: "削除しますか？ この操作は取り消せません。",
   },
   {
-    rule: "完了はトーストで短く伝える",
+    rule: "完了はトーストで短く伝えます",
     example: "一時保存しました。",
   },
 ]
@@ -63,7 +63,7 @@ function TypographyPage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="文字"
-        lead="書体は Noto Sans JP Variable の一書体運用。日本語の可読性を最優先し、階層は書体でなくサイズとウェイトで作る。可変フォントなので font-weight は数値でそのまま指定できる。そして文字と同じくらい、ことばのトーンも UI の一部。"
+        lead="書体は Noto Sans JP Variable の一書体運用です。日本語の可読性を最優先し、階層は書体でなくサイズとウェイトで作ります。可変フォントなので font-weight は数値でそのまま指定できます。そして文字と同じくらい、ことばのトーンも UI の一部です。"
       />
 
       <section className="space-y-5">
@@ -85,7 +85,8 @@ function TypographyPage() {
         </div>
         <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
           UI の基本は text-sm。text-xl と text-3xl
-          以上は原則使わず、5段で完結させる。書体は増やさず、italic は日本語で崩れるため使わない。
+          以上は原則使わず、5段で完結させます。書体は増やさず、italic
+          は日本語で崩れるため使いません。
         </p>
       </section>
 
@@ -105,7 +106,7 @@ function TypographyPage() {
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">トーン&ボイス</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          文言のルール。例文の型はそのまま流用してよい。
+          文言のルールです。例文の型はそのまま流用できます。
         </p>
         <div className="flex flex-col gap-4 rounded-xl border p-4">
           {voiceRules.map((voice) => (

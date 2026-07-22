@@ -125,7 +125,7 @@ export const tooltipDoc: ComponentDoc = {
       id: "basic",
       title: "基本",
       description:
-        "Trigger と Content だけの最小構成。TooltipContent の side で top / bottom / left / right の4方向に表示位置を切り替えられる。",
+        "Trigger と Content だけの最小構成です。TooltipContent の side で top / bottom / left / right の4方向に表示位置を切り替えられます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -133,7 +133,7 @@ export const tooltipDoc: ComponentDoc = {
       id: "icon-button",
       title: "アイコンボタン",
       description:
-        "文字ラベルを持たないアイコンボタンに操作名を補う例。保存・共有・ブロックのように、アイコンだけでは意味が伝わりにくいボタンへ添える。",
+        "文字ラベルを持たないアイコンボタンに操作名を補う例です。保存・共有・ブロックのように、アイコンだけでは意味が伝わりにくいボタンへ添えます。",
       previewHeight: null,
       Demo: IconButtonPattern,
     },
@@ -141,7 +141,7 @@ export const tooltipDoc: ComponentDoc = {
       id: "annotation",
       title: "注釈",
       description:
-        "応募済みで無効化したボタンの理由や、給与に含む固定残業代など、遷移せず補足したい情報を添える例。左のツールチップは defaultOpen で開いた状態を示している。",
+        "応募済みで無効化したボタンの理由や、給与に含む固定残業代など、遷移せず補足したい情報を添える例です。左のツールチップは defaultOpen で開いた状態を示しています。",
       previewHeight: 360,
       Demo: AnnotationPattern,
     },

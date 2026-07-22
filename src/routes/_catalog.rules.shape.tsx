@@ -138,16 +138,16 @@ function ShapePage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="形"
-        lead="角丸は全コンポーネントで --radius-outer と --radius-inner の 2 つの意味トークンに統一している。用途ごとに半径を発明せず、面には outer、その中の項目には inner を使う。面を入れ子にするときは、内側と外側の曲線が同じ中心を共有するよう、半径と余白の関係で決める。"
+        lead="角丸は全コンポーネントで --radius-outer と --radius-inner の 2 つの意味トークンに統一しています。用途ごとに半径を発明せず、面には outer、その中の項目には inner を使います。面を入れ子にするときは、内側と外側の曲線が同じ中心を共有するよう、半径と余白の関係で決めます。"
       />
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">2つの意味トークン</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          角丸に使うトークンは 2 つだけ。独立した面には <code>--radius-outer</code>
+          角丸に使うトークンは 2 つだけです。独立した面には <code>--radius-outer</code>
           、面の中で繰り返される項目には <code>--radius-inner</code>。Button・Card・Tabs をはじめ 19
-          のコンポーネントがこの 2 つに接続していて、 用途ごとに半径を発明しない。現在は outer が
-          rounded-md (8px)、inner が rounded-sm (6px)。
+          のコンポーネントがこの 2 つに接続していて、 用途ごとに半径を発明しません。現在は outer が
+          rounded-md (8px)、inner が rounded-sm (6px) です。
         </p>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full min-w-xl text-left text-sm">
@@ -171,9 +171,9 @@ function ShapePage() {
         </div>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           コンポーネントでは <code>rounded-(--radius-outer)</code> または{" "}
-          <code>rounded-(--radius-inner)</code> と記述する。これらの意味トークンは{" "}
+          <code>rounded-(--radius-inner)</code> と記述します。これらの意味トークンは{" "}
           <code>--radius-outer</code> が <code>--radius-md</code>、<code>--radius-inner</code> が{" "}
-          <code>--radius-sm</code> に接続していて、値の変更はこの 2 行だけで全体に伝わる。
+          <code>--radius-sm</code> に接続していて、値の変更はこの 2 行だけで全体に伝わります。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -209,7 +209,7 @@ function ShapePage() {
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">半径は余白の分だけ大きくする</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          外側の角から内側の角までが一定の距離なら、2本の曲線は平行になる。角だけが太ったり細ったりせず、四辺と同じ厚みに見える。
+          外側の角から内側の角までが一定の距離なら、2本の曲線は平行になります。角だけが太ったり細ったりせず、四辺と同じ厚みに見えます。
         </p>
         <div className="space-y-4 rounded-lg border bg-muted/30 p-4">
           <div className="space-y-4">
@@ -235,7 +235,7 @@ function ShapePage() {
         <h2 className="text-xl font-semibold tracking-tight">対応する外側トークン</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           内側の rounded と間隔の p-* が交わるセルを、外側の rounded
-          に使う。「一致なし」の組み合わせは、内側か間隔を変更する。
+          に使います。「一致なし」の組み合わせは、内側か間隔を変更します。
         </p>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full min-w-xl text-left text-sm">
@@ -278,7 +278,7 @@ function ShapePage() {
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           TabsTrigger の <code>--radius-inner</code> は rounded-sm、その周りの TabsList が{" "}
           <code>p-1</code> なので、TabsList は <code>rounded-lg</code>
-          にする。選択されたタブと背景の曲線が同じ流れになる。
+          にします。選択されたタブと背景の曲線が同じ流れになります。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -297,7 +297,7 @@ function ShapePage() {
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">不一致になる組み合わせ</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          外側が小さすぎても、大きすぎても曲線は揃わない。対応表にない組み合わせへ近いトークンを無理に当てるのも避ける。
+          外側が小さすぎても、大きすぎても曲線は揃いません。対応表にない組み合わせへ近いトークンを無理に当てるのも避けます。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -317,7 +317,7 @@ function ShapePage() {
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           Avatar、Switch、Slider、Progress、RadioGroup
           など、円とトラック(細長い丸)にはスケールでなく rounded-full
-          を使う。ここだけは意味トークンの外側にある。
+          を使います。ここだけは意味トークンの外側にあります。
         </p>
         <div
           style={sampleCanvasStyle}

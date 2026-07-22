@@ -271,13 +271,13 @@ export const navigationMenuDoc: ComponentDoc = {
   title: "Navigation Menu",
   category: "ナビゲーション",
   purpose:
-    "サイトヘッダーに置くグローバルナビゲーション。トリガーにホバー・クリックするとパネルが開き、リンクを階層で整理して見せられる。ジョブアンテナでは求職者向けサイトの「求人を探す」「会社を探す」メガメニューや、採用管理画面のヘッダーナビに使う。",
+    "サイトヘッダーに置くグローバルナビゲーションです。トリガーにホバー・クリックするとパネルが開き、リンクを階層で整理して見せられます。ジョブアンテナでは求職者向けサイトの「求人を探す」「会社を探す」メガメニューや、採用管理画面のヘッダーナビに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "トリガーで開くパネルと単独リンクを組み合わせた基本形。アイコン+説明文つきのリンクで探し方の入口をまとめ、パネル不要の項目は NavigationMenuLink を直接置く。",
+        "トリガーで開くパネルと単独リンクを組み合わせた基本形です。アイコン+説明文つきのリンクで探し方の入口をまとめ、パネル不要の項目は NavigationMenuLink を直接置きます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -285,7 +285,7 @@ export const navigationMenuDoc: ComponentDoc = {
       id: "mega-menu",
       title: "メガメニュー",
       description:
-        "「求人を探す(新着・おすすめ・ランキング)」「会社を探す」の2カラムメガメニュー。row-span の特集リンクに bg-muted のプレースホルダ画像を置き、通常リンクと並べて入口を一望できるようにする。",
+        "「求人を探す(新着・おすすめ・ランキング)」「会社を探す」の2カラムメガメニューです。row-span の特集リンクに bg-muted のプレースホルダ画像を置き、通常リンクと並べて入口を一望できるようにします。",
       previewHeight: 400,
       Demo: MegaMenuPattern,
     },
@@ -293,7 +293,7 @@ export const navigationMenuDoc: ComponentDoc = {
       id: "admin-header",
       title: "採用管理ヘッダー",
       description:
-        "採用管理画面のヘッダーナビ。単独リンクとドロップダウンを混在させ、もらったいいかもや未読メッセージの件数は ml-auto の Badge で右端に表示する。",
+        "採用管理画面のヘッダーナビです。単独リンクとドロップダウンを混在させ、もらったいいかもや未読メッセージの件数は ml-auto の Badge で右端に表示します。",
       previewHeight: 360,
       Demo: AdminHeaderPattern,
     },

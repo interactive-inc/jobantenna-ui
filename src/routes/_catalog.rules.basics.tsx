@@ -29,13 +29,13 @@ function BasicsPage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="基本原則"
-        lead="近接・整列・反復・対比。どんな画面もこの4つの上に成り立つ。トークン(配色・形・余白・文字)はこの原則を実現するための道具で、迷ったときは必ずここに戻る。"
+        lead="近接・整列・反復・対比。どんな画面もこの4つの上に成り立ちます。トークン(配色・形・余白・文字)はこの原則を実現するための道具で、迷ったときは必ずここに戻ります。"
       />
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">近接 — 関係の近さは距離で表す</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          関連する情報は近くに、無関係な情報は遠くに置く。区切り線で分ける前に、まず余白の差でグループを作る。
+          関連する情報は近くに、無関係な情報は遠くに置きます。区切り線で分ける前に、まず余白の差でグループを作ります。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -72,14 +72,14 @@ function BasicsPage() {
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           職種名と会社名は gap-0.5 でひとつの塊、メタ情報同士は gap-2、塊と塊の間は
-          gap-4。アイコンとラベルも gap-0.5 で「1語」として読める。区切り線は1本も使っていない。
+          gap-4。アイコンとラベルも gap-0.5 で「1語」として読めます。区切り線は1本も使っていません。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">整列 — 見えない線を1本に</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          テキストとフォームは左端の1本の線に揃える。中央揃えは空状態や完了画面などの独立した場面だけ。表の数値は右揃えで桁を比べられるようにする。
+          テキストとフォームは左端の1本の線に揃えます。中央揃えは空状態や完了画面などの独立した場面だけです。表の数値は右揃えで桁を比べられるようにします。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -102,14 +102,14 @@ function BasicsPage() {
           </Card>
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          ラベル・入力欄・ボタンが左端の同じ線から始まる。ラベルを入力欄の左に置く2カラム配置は、揃える線が増えるモバイルでは使わない。
+          ラベル・入力欄・ボタンが左端の同じ線から始まります。ラベルを入力欄の左に置く2カラム配置は、揃える線が増えるモバイルでは使いません。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">反復 — 同じ役割は同じ形</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          同じ種類の情報は同じ構造・同じ余白・同じ書式で繰り返す。1件目で覚えた読み方が全件に効くようにする。
+          同じ種類の情報は同じ構造・同じ余白・同じ書式で繰り返します。1件目で覚えた読み方が全件に効くようにします。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -156,14 +156,14 @@ function BasicsPage() {
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           3件とも同じ Item コンポーネント(メディア → 内容 →
-          バッジ)の繰り返し。構造を1件ごとに工夫しない。
+          バッジ)の繰り返しです。構造を1件ごとに工夫しません。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">対比 — 重要度の差をはっきりつける</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          主役と脇役を曖昧にしない。サイズ・ウェイト・色の3つで差をつけ、迷ったら差を大きくする方に倒す。
+          主役と脇役を曖昧にしません。サイズ・ウェイト・色の3つで差をつけ、迷ったら差を大きくする方に倒します。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -186,7 +186,7 @@ function BasicsPage() {
         </div>
         <p className="text-sm leading-relaxed text-muted-foreground">
           主情報は text-2xl の太字、補足は text-xs の muted。ボタンも primary と ghost
-          で重みが対になる。中間の強さを増やすと対比は消える。
+          で重みが対になります。中間の強さを増やすと対比は消えます。
         </p>
       </section>
     </div>

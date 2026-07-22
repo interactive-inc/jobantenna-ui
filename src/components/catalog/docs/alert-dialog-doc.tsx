@@ -71,13 +71,13 @@ export const alertDialogDoc: ComponentDoc = {
   title: "Alert Dialog",
   category: "オーバーレイ",
   purpose:
-    "取り消しづらい操作の前にユーザーへ明示的な確認を求めるモーダルダイアログ。通常の Dialog と違い、キャンセルか実行かの選択に応答が絞られる。ジョブアンテナでは求人の削除、応募の取り消し、企業フォローの解除といった確認に使う。",
+    "取り消しづらい操作の前にユーザーへ明示的な確認を求めるモーダルダイアログです。通常の Dialog と違い、キャンセルか実行かの選択に応答が絞られます。ジョブアンテナでは求人の削除、応募の取り消し、企業フォローの解除といった確認に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "管理画面の求人票削除の確認。AlertDialogMedia のアイコンと destructive アクションで、取り消せない操作であることを強調する。",
+        "管理画面の求人票削除の確認です。AlertDialogMedia のアイコンと destructive アクションで、取り消せない操作であることを強調します。",
       previewHeight: null,
       Demo: DeleteJobPattern,
     },
@@ -85,7 +85,7 @@ export const alertDialogDoc: ComponentDoc = {
       id: "unfollow",
       title: "フォロー解除",
       description:
-        '企業フォローを解除する前の確認。破壊的ではないが影響のある操作なので、size="sm" のコンパクトなダイアログで解除後の影響を伝える。',
+        '企業フォローを解除する前の確認です。破壊的ではないが影響のある操作なので、size="sm" のコンパクトなダイアログで解除後の影響を伝えます。',
       previewHeight: null,
       Demo: UnfollowPattern,
     },

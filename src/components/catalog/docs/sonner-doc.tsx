@@ -154,13 +154,13 @@ export const sonnerDoc: ComponentDoc = {
   title: "Sonner",
   category: "フィードバック",
   purpose:
-    "操作の結果を画面の隅に一時的に表示するトースト通知コンポーネント。Toaster を1つ配置し、イベントハンドラから toast() 関数を呼んで発火する。ジョブアンテナでは応募完了やいいかも！送信の確認、管理画面での保存・削除の結果通知など、ユーザーの操作を妨げずに伝えたいフィードバックに使う。",
+    "操作の結果を画面の隅に一時的に表示するトースト通知コンポーネントです。Toaster を1つ配置し、イベントハンドラから toast() 関数を呼んで発火します。ジョブアンテナでは応募完了やいいかも！送信の確認、管理画面での保存・削除の結果通知など、ユーザーの操作を妨げずに伝えたいフィードバックに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "通常・成功・情報・警告・エラーの5種類を発火する基本形。toast() / toast.success() などメソッドで種類を切り替え、description で補足文を添える。",
+        "通常・成功・情報・警告・エラーの5種類を発火する基本形です。toast() / toast.success() などメソッドで種類を切り替え、description で補足文を添えます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -168,7 +168,7 @@ export const sonnerDoc: ComponentDoc = {
       id: "apply-flow",
       title: "応募・いいかも！",
       description:
-        "求職者の応募やいいかも！送信に対する確認通知。マッチ成立時は action でメッセージ画面への導線をトースト内に置く。",
+        "求職者の応募やいいかも！送信に対する確認通知です。マッチ成立時は action でメッセージ画面への導線をトースト内に置きます。",
       previewHeight: null,
       Demo: ApplyPattern,
     },
@@ -176,7 +176,7 @@ export const sonnerDoc: ComponentDoc = {
       id: "admin-actions",
       title: "管理画面の操作",
       description:
-        "一時保存・ステータス更新・削除など管理画面の操作結果の通知。取り消せる操作には action の「元に戻す」を添えて誤操作から復帰できるようにする。",
+        "一時保存・ステータス更新・削除など管理画面の操作結果の通知です。取り消せる操作には action の「元に戻す」を添えて誤操作から復帰できるようにします。",
       previewHeight: null,
       Demo: AdminPattern,
     },

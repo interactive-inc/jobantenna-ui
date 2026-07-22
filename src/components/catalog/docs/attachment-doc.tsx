@@ -273,13 +273,13 @@ export const attachmentDoc: ComponentDoc = {
   title: "Attachment",
   category: "チャット",
   purpose:
-    "チャットやフォームに添付されたファイルを、名前・サイズ・状態つきのカードで表示するコンポーネント。idle / uploading / error / done の状態表示と横スクロールの AttachmentGroup を備える。ジョブアンテナでは応募時の履歴書 PDF のアップロードや、企業とのメッセージでやり取りする書類・職場写真の表示に使う。",
+    "チャットやフォームに添付されたファイルを、名前・サイズ・状態つきのカードで表示するコンポーネントです。idle / uploading / error / done の状態表示と横スクロールの AttachmentGroup を備えます。ジョブアンテナでは応募時の履歴書 PDF のアップロードや、企業とのメッセージでやり取りする書類・職場写真の表示に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "ファイル名とサイズを表示する基本形。default / sm / xs の3サイズがあり、削除ボタンを AttachmentActions に置く。",
+        "ファイル名とサイズを表示する基本形です。default / sm / xs の3サイズがあり、削除ボタンを AttachmentActions に置きます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -287,7 +287,7 @@ export const attachmentDoc: ComponentDoc = {
       id: "upload-states",
       title: "アップロード状態",
       description:
-        "履歴書 PDF のアップロードの状態遷移。idle は破線枠の添付ボタン、uploading はスピナー、error は再試行と削除、done で完了になる。",
+        "履歴書 PDF のアップロードの状態遷移です。idle は破線枠の添付ボタン、uploading はスピナー、error は再試行と削除、done で完了になります。",
       previewHeight: null,
       Demo: UploadStatesPattern,
     },
@@ -295,7 +295,7 @@ export const attachmentDoc: ComponentDoc = {
       id: "photo-group",
       title: "写真グループ",
       description:
-        "求人票に載せる職場写真を AttachmentGroup で横スクロール表示する。orientation を vertical にするとサムネイル型になり、削除ボタンは右上に重なる。",
+        "求人票に載せる職場写真を AttachmentGroup で横スクロール表示します。orientation を vertical にするとサムネイル型になり、削除ボタンは右上に重なります。",
       previewHeight: null,
       Demo: PhotoGroupPattern,
     },
@@ -303,7 +303,7 @@ export const attachmentDoc: ComponentDoc = {
       id: "message-file",
       title: "メッセージ添付",
       description:
-        "企業とのメッセージで受け取った書類。AttachmentTrigger でカード全体をクリックして開けるようにし、ダウンロードボタンを併置する。",
+        "企業とのメッセージで受け取った書類です。AttachmentTrigger でカード全体をクリックして開けるようにし、ダウンロードボタンを併置します。",
       previewHeight: null,
       Demo: MessageFilePattern,
     },

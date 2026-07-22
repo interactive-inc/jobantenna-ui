@@ -110,13 +110,13 @@ export const kbdDoc: ComponentDoc = {
   title: "Kbd",
   category: "データ表示",
   purpose:
-    "キーボードのキーやショートカットの組み合わせを表示するコンポーネント。ジョブアンテナでは求人検索の起動（⌘K）や応募フォーム送信（⌘Enter）のヒント表示、管理画面のショートカットヘルプに使う。KbdGroup で複数キーの組み合わせをまとめられる。",
+    "キーボードのキーやショートカットの組み合わせを表示するコンポーネントです。ジョブアンテナでは求人検索の起動（⌘K）や応募フォーム送信（⌘Enter）のヒント表示、管理画面のショートカットヘルプに使います。KbdGroup で複数キーの組み合わせをまとめられます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "Kbd で単体キーを、KbdGroup で ⌘K のような組み合わせを表示する。操作の説明文に添えてショートカットを案内する。",
+        "Kbd で単体キーを、KbdGroup で ⌘K のような組み合わせを表示します。操作の説明文に添えてショートカットを案内します。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -124,7 +124,7 @@ export const kbdDoc: ComponentDoc = {
       id: "search-shortcut",
       title: "検索入力のヒント",
       description:
-        "求人検索の入力欄の末尾に ⌘K を添える例。InputGroup の中に置くと Kbd の背景が入力欄に馴染む色へ自動で切り替わる。",
+        "求人検索の入力欄の末尾に ⌘K を添える例です。InputGroup の中に置くと Kbd の背景が入力欄に馴染む色へ自動で切り替わります。",
       previewHeight: null,
       Demo: SearchShortcutPattern,
     },
@@ -132,7 +132,7 @@ export const kbdDoc: ComponentDoc = {
       id: "shortcut-help",
       title: "ショートカット一覧",
       description:
-        "管理画面の候補者確認で使えるショートカットをヘルプとして一覧表示する例。操作名を左、キーを右に揃えて対応を読み取りやすくする。",
+        "管理画面の候補者確認で使えるショートカットをヘルプとして一覧表示する例です。操作名を左、キーを右に揃えて対応を読み取りやすくします。",
       previewHeight: null,
       Demo: ShortcutHelpPattern,
     },

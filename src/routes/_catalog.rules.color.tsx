@@ -123,13 +123,13 @@ function ColorPage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="配色"
-        lead="ジョブアンテナの実パレットを色名のままUIへ直書きせず、shadcnの意味トークンへ割り当てて使う。ブランドのYellowとBlackを核に、Blue Grayで面と境界を作り、彩度のある色は状態の意味にだけ固定する。"
+        lead="ジョブアンテナの実パレットを色名のままUIへ直書きせず、shadcnの意味トークンへ割り当てて使います。ブランドのYellowとBlackを核に、Blue Grayで面と境界を作り、彩度のある色は状態の意味にだけ固定します。"
       />
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">ブランドの核</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          YellowとBlackはライト・ダークで変えない固定値。Yellowを面、Blackを文字に使うことで、ブランドらしさと読みやすさを同時に保つ。
+          YellowとBlackはライト・ダークで変えない固定値です。Yellowを面、Blackを文字に使うことで、ブランドらしさと読みやすさを同時に保ちます。
         </p>
         <div className="grid grid-cols-1 gap-4">
           {brandTokens.map((token) => (
@@ -141,7 +141,7 @@ function ColorPage() {
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">shadcnの基本トークン</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          コンポーネントは元の色名ではなく、primary・muted・borderのような役割を参照する。テーマ切り替えは値だけを変え、役割は変えない。
+          コンポーネントは元の色名ではなく、primary・muted・borderのような役割を参照します。テーマ切り替えは値だけを変え、役割は変えません。
         </p>
         <div className="grid grid-cols-1 gap-4">
           {shadcnTokens.map((token) => (
@@ -153,7 +153,7 @@ function ColorPage() {
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">主要アクションだけが光る</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          primaryは1画面に原則1つ。副次アクションはsecondary・outline・ghostへ落とし、Yellowの面を増やしすぎない。
+          primaryは1画面に原則1つです。副次アクションはsecondary・outline・ghostへ落とし、Yellowの面を増やしすぎません。
         </p>
         <div
           style={jobAntennaSampleStyle}
@@ -169,14 +169,14 @@ function ColorPage() {
           <Button disabled>応募済み</Button>
         </div>
         <p className="max-w-prose text-sm text-muted-foreground">
-          テキストリンクは低コントラストのYellowを避け、Blueのlinkトークンを使う。
+          テキストリンクは低コントラストのYellowを避け、Blueのlinkトークンを使います。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">状態色は意味に固定する</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          色だけに頼らず、アイコンとラベルを併記する。淡い色を面、濃い色を文字に分けることで、状態バッジもコントラストを保つ。
+          色だけに頼らず、アイコンとラベルを併記します。淡い色を面、濃い色を文字に分けることで、状態バッジもコントラストを保ちます。
         </p>
         <div
           style={jobAntennaSampleStyle}
@@ -236,7 +236,7 @@ function ColorPage() {
         <h2 className="text-xl font-semibold tracking-tight">チャートはBlue Grayで組む</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           系列はBlue
-          Grayの明度差で区別し、状態色との意味衝突を避ける。強調したい1系列だけprimaryを使ってよい。
+          Grayの明度差で区別し、状態色との意味衝突を避けます。強調したい1系列だけprimaryを使えます。
         </p>
         <div className="flex items-end gap-2 rounded-2xl border p-6">
           <div className="h-16 w-8 rounded-lg bg-blue-gray1" />

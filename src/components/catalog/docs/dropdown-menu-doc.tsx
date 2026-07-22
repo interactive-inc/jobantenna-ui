@@ -202,13 +202,13 @@ export const dropdownMenuDoc: ComponentDoc = {
   title: "Dropdown Menu",
   category: "オーバーレイ",
   purpose:
-    "ボタンやアバターをトリガーに、関連する操作をまとめて表示するメニュー。画面上に常時並べるほどではない補助的な操作の置き場所に使う。ジョブアンテナでは求人カードの操作、ヘッダーのマイページメニュー、求人一覧の並び替えに使う。",
+    "ボタンやアバターをトリガーに、関連する操作をまとめて表示するメニューです。画面上に常時並べるほどではない補助的な操作の置き場所に使います。ジョブアンテナでは求人カードの操作、ヘッダーのマイページメニュー、求人一覧の並び替えに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "通常項目・サブメニュー・破壊的操作を組み合わせた基本形。DropdownMenuTrigger は render プロップに Button を渡してトリガーにする。",
+        "通常項目・サブメニュー・破壊的操作を組み合わせた基本形です。DropdownMenuTrigger は render プロップに Button を渡してトリガーにします。",
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -216,7 +216,7 @@ export const dropdownMenuDoc: ComponentDoc = {
       id: "mypage-menu",
       title: "マイページメニュー",
       description:
-        "アバター付きボタンをトリガーにしたマイページメニュー。DropdownMenuLabel でアカウント情報を示し、未読メッセージ数は ml-auto の Badge で右端に表示する。",
+        "アバター付きボタンをトリガーにしたマイページメニューです。DropdownMenuLabel でアカウント情報を示し、未読メッセージ数は ml-auto の Badge で右端に表示します。",
       previewHeight: 480,
       Demo: MyPageMenuPattern,
     },
@@ -224,7 +224,7 @@ export const dropdownMenuDoc: ComponentDoc = {
       id: "sort-menu",
       title: "並び替え",
       description:
-        '求人一覧の並び順を DropdownMenuRadioGroup で単一選択する例。defaultValue で初期値を指定し、align="end" でトリガーの右端に揃える。',
+        '求人一覧の並び順を DropdownMenuRadioGroup で単一選択する例です。defaultValue で初期値を指定し、align="end" でトリガーの右端に揃えます。',
       previewHeight: null,
       Demo: SortMenuPattern,
     },

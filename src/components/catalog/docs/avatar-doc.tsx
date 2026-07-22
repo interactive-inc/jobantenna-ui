@@ -147,13 +147,13 @@ export const avatarDoc: ComponentDoc = {
   title: "Avatar",
   category: "データ表示",
   purpose:
-    "人物や企業を画像・イニシャル・アイコンで表すコンポーネント。画像が読み込めない場合は AvatarFallback が代わりに表示される。ジョブアンテナでは応募者テーブルやメッセージ画面の人物表示、求人カードの企業ロゴ、応募者数のグループ表示に使う。",
+    "人物や企業を画像・イニシャル・アイコンで表すコンポーネントです。画像が読み込めない場合は AvatarFallback が代わりに表示されます。ジョブアンテナでは応募者テーブルやメッセージ画面の人物表示、求人カードの企業ロゴ、応募者数のグループ表示に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "sm / default / lg の3サイズ展開。画像がない場合はイニシャルのフォールバックを表示する。",
+        "sm / default / lg の3サイズ展開です。画像がない場合はイニシャルのフォールバックを表示します。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -161,7 +161,7 @@ export const avatarDoc: ComponentDoc = {
       id: "company-logo",
       title: "企業ロゴ",
       description:
-        "求人カードのヘッダで企業ロゴと企業名・業種を並べる使い方。ロゴ未設定の企業はアイコンのフォールバックで補う。",
+        "求人カードのヘッダで企業ロゴと企業名・業種を並べる使い方です。ロゴ未設定の企業はアイコンのフォールバックで補います。",
       previewHeight: null,
       Demo: CompanyLogoPattern,
     },
@@ -169,7 +169,7 @@ export const avatarDoc: ComponentDoc = {
       id: "online-status",
       title: "オンライン状態",
       description:
-        "AvatarBadge で採用担当者や候補者のオンライン状態を示す。メッセージ画面で相手が返信できる状態かを伝えるときに使う。",
+        "AvatarBadge で採用担当者や候補者のオンライン状態を示します。メッセージ画面で相手が返信できる状態かを伝えるときに使います。",
       previewHeight: null,
       Demo: OnlineStatusPattern,
     },
@@ -177,7 +177,7 @@ export const avatarDoc: ComponentDoc = {
       id: "applicant-group",
       title: "応募者グループ",
       description:
-        "AvatarGroup と AvatarGroupCount で応募者を重ねて表示し、求人票ごとの応募人数をひと目で伝える。",
+        "AvatarGroup と AvatarGroupCount で応募者を重ねて表示し、求人票ごとの応募人数をひと目で伝えます。",
       previewHeight: null,
       Demo: ApplicantGroupPattern,
     },

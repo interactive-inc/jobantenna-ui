@@ -174,13 +174,13 @@ export const bubbleDoc: ComponentDoc = {
   title: "Bubble",
   category: "チャット",
   purpose:
-    "チャットのメッセージを吹き出しで表示するコンポーネント。variant で送信者ごとの色分け、align で左右の配置を切り替え、BubbleReactions で絵文字リアクションを重ねられる。ジョブアンテナでは企業と求職者のメッセージ画面で、応募お礼や面接日程調整のやり取りに使う。",
+    "チャットのメッセージを吹き出しで表示するコンポーネントです。variant で送信者ごとの色分け、align で左右の配置を切り替え、BubbleReactions で絵文字リアクションを重ねられます。ジョブアンテナでは企業と求職者のメッセージ画面で、応募お礼や面接日程調整のやり取りに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "相手のメッセージを muted で左に、自分のメッセージを default で右に並べる基本形。ghost はシステムメッセージ、tinted は強調したい返信に使う。",
+        "相手のメッセージを muted で左に、自分のメッセージを default で右に並べる基本形です。ghost はシステムメッセージ、tinted は強調したい返信に使います。",
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -188,7 +188,7 @@ export const bubbleDoc: ComponentDoc = {
       id: "interview-schedule",
       title: "面接日程調整",
       description:
-        "応募お礼から面接日程の確定までの流れ。送信者名と時刻を添え、連続するメッセージは BubbleGroup でまとめる。",
+        "応募お礼から面接日程の確定までの流れです。送信者名と時刻を添え、連続するメッセージは BubbleGroup でまとめます。",
       previewHeight: 560,
       Demo: InterviewSchedulePattern,
     },
@@ -196,7 +196,7 @@ export const bubbleDoc: ComponentDoc = {
       id: "reactions",
       title: "リアクション",
       description:
-        "BubbleReactions を side / align で四隅に配置する。既読や共感を絵文字で軽く返すときに使う。",
+        "BubbleReactions を side / align で四隅に配置します。既読や共感を絵文字で軽く返すときに使います。",
       previewHeight: null,
       Demo: ReactionsPattern,
     },
@@ -204,7 +204,7 @@ export const bubbleDoc: ComponentDoc = {
       id: "job-share",
       title: "求人カード共有",
       description:
-        "render prop で吹き出し全体をボタンにし、メッセージ内で求人を共有する。タップで求人詳細へ誘導する場面で使う。",
+        "render prop で吹き出し全体をボタンにし、メッセージ内で求人を共有します。タップで求人詳細へ誘導する場面で使います。",
       previewHeight: null,
       Demo: JobSharePattern,
     },

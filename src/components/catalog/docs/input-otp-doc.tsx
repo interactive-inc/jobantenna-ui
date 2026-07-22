@@ -140,13 +140,13 @@ export const inputOtpDoc: ComponentDoc = {
   title: "Input OTP",
   category: "フォーム",
   purpose:
-    "ワンタイムパスワード（認証コード）を1文字ずつのスロットで入力するフォームコントロール。input-otp ベースで maxLength による桁数指定、defaultValue による非制御利用、貼り付けや自動入力（one-time-code）に対応する。ジョブアンテナでは会員登録時のメール認証や電話番号認証など、本人確認コードの入力に使う。",
+    "ワンタイムパスワード（認証コード）を1文字ずつのスロットで入力するフォームコントロールです。input-otp ベースで maxLength による桁数指定、defaultValue による非制御利用、貼り付けや自動入力（one-time-code）に対応します。ジョブアンテナでは会員登録時のメール認証や電話番号認証など、本人確認コードの入力に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "maxLength で桁数を決め、InputOTPSlot を index 順に並べる基本形。InputOTPSeparator でグループを区切る形と disabled 状態も示す。",
+        "maxLength で桁数を決め、InputOTPSlot を index 順に並べる基本形です。InputOTPSeparator でグループを区切る形と disabled 状態も示します。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -154,7 +154,7 @@ export const inputOtpDoc: ComponentDoc = {
       id: "email-verification",
       title: "メール認証",
       description:
-        "会員登録時の本人確認フロー。送信先メールアドレスの案内、認証コード入力、認証ボタン、再送の導線を1枚にまとめる。",
+        "会員登録時の本人確認フローです。送信先メールアドレスの案内、認証コード入力、認証ボタン、再送の導線を1枚にまとめます。",
       previewHeight: null,
       Demo: EmailVerificationPattern,
     },
@@ -162,7 +162,7 @@ export const inputOtpDoc: ComponentDoc = {
       id: "error",
       title: "エラー状態",
       description:
-        "コードの照合に失敗したときの表示。各スロットに aria-invalid を付けると赤枠になる。エラー文言と再送ボタンをセットで置く。",
+        "コードの照合に失敗したときの表示です。各スロットに aria-invalid を付けると赤枠になります。エラー文言と再送ボタンをセットで置きます。",
       previewHeight: null,
       Demo: ErrorPattern,
     },

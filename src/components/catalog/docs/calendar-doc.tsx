@@ -67,13 +67,13 @@ export const calendarDoc: ComponentDoc = {
   title: "Calendar",
   category: "フォーム",
   purpose:
-    "月表示のグリッドから日付を選択するコンポーネント。react-day-picker ベースで、単一選択・年月ドロップダウン・日付の無効化に対応する。ジョブアンテナでは応募後の面接希望日の選択や、入社可能日の指定に使う。",
+    "月表示のグリッドから日付を選択するコンポーネントです。react-day-picker ベースで、単一選択・年月ドロップダウン・日付の無効化に対応します。ジョブアンテナでは応募後の面接希望日の選択や、入社可能日の指定に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'mode="single" の非制御カレンダー。面接希望日を1日だけ選ぶ最小構成で、defaultMonth で初期表示月を固定する。',
+        'mode="single" の非制御カレンダーです。面接希望日を1日だけ選ぶ最小構成で、defaultMonth で初期表示月を固定します。',
       previewHeight: 440,
       Demo: BasicPattern,
     },
@@ -81,7 +81,7 @@ export const calendarDoc: ComponentDoc = {
       id: "dropdown",
       title: "年月ドロップダウン",
       description:
-        'captionLayout="dropdown" で年と月をドロップダウンから直接指定する。入社可能日など数か月先の日付を選ぶ場面で、月送りボタンの連打を避けられる。',
+        'captionLayout="dropdown" で年と月をドロップダウンから直接指定します。入社可能日など数か月先の日付を選ぶ場面で、月送りボタンの連打を避けられます。',
       previewHeight: 440,
       Demo: DropdownPattern,
     },
@@ -89,7 +89,7 @@ export const calendarDoc: ComponentDoc = {
       id: "disabled-dates",
       title: "選択不可日",
       description:
-        "disabled に日付の配列と曜日マッチャーを渡してグレーアウトする。企業側の面接不可日や休業日を候補から外すときに使う。",
+        "disabled に日付の配列と曜日マッチャーを渡してグレーアウトします。企業側の面接不可日や休業日を候補から外すときに使います。",
       previewHeight: 480,
       Demo: DisabledDatesPattern,
     },

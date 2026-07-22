@@ -318,13 +318,13 @@ export const messageScrollerDoc: ComponentDoc = {
   title: "Message Scroller",
   category: "チャット",
   purpose:
-    "メッセージ履歴を固定高のスクロール領域に表示し、新着時の自動スクロールと最下部へ戻るボタンを提供するコンポーネント。defaultScrollPosition や scrollAnchor で開いたときの表示位置も制御できる。ジョブアンテナでは企業と求職者のメッセージ画面で、やり取りの履歴表示に使う。",
+    "メッセージ履歴を固定高のスクロール領域に表示し、新着時の自動スクロールと最下部へ戻るボタンを提供するコンポーネントです。defaultScrollPosition や scrollAnchor で開いたときの表示位置も制御できます。ジョブアンテナでは企業と求職者のメッセージ画面で、やり取りの履歴表示に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "応募チャットの履歴を固定高で表示し、開いたとき最下部に自動スクロールする基本形。上へスクロールすると最下部へ戻るボタンが現れる。",
+        "応募チャットの履歴を固定高で表示し、開いたとき最下部に自動スクロールする基本形です。上へスクロールすると最下部へ戻るボタンが現れます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -332,7 +332,7 @@ export const messageScrollerDoc: ComponentDoc = {
       id: "unread-anchor",
       title: "未読から表示",
       description:
-        'defaultScrollPosition="last-anchor" と scrollAnchor で、開いたとき未読の区切りから表示する。direction="start" のボタンで履歴の先頭にも戻れる。',
+        'defaultScrollPosition="last-anchor" と scrollAnchor で、開いたとき未読の区切りから表示します。direction="start" のボタンで履歴の先頭にも戻れます。',
       previewHeight: 400,
       Demo: UnreadAnchorPattern,
     },
@@ -340,7 +340,7 @@ export const messageScrollerDoc: ComponentDoc = {
       id: "chat-screen",
       title: "メッセージ画面",
       description:
-        "ヘッダーと入力欄を組み合わせたメッセージ画面のレイアウト。求人カードの共有を挟み、スクロールボタンにテキストを入れて新着への誘導を明確にする。",
+        "ヘッダーと入力欄を組み合わせたメッセージ画面のレイアウトです。求人カードの共有を挟み、スクロールボタンにテキストを入れて新着への誘導を明確にします。",
       previewHeight: 480,
       Demo: ChatScreenPattern,
     },

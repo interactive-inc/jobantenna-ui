@@ -125,13 +125,13 @@ export const separatorDoc: ComponentDoc = {
   title: "Separator",
   category: "レイアウト",
   purpose:
-    "コンテンツのまとまりを罫線で視覚的に区切るコンポーネント。ジョブアンテナでは求人詳細のセクション区切り（横）と、求人カードで勤務地・雇用形態・給与を1行に並べるメタ情報の区切り（縦）に使う。余白だけでは境界が曖昧になる場面で、情報のグループを明確にする。",
+    "コンテンツのまとまりを罫線で視覚的に区切るコンポーネントです。ジョブアンテナでは求人詳細のセクション区切り（横）と、求人カードで勤務地・雇用形態・給与を1行に並べるメタ情報の区切り（縦）に使います。余白だけでは境界が曖昧になる場面で、情報のグループを明確にします。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "orientation 未指定なら横線で幅いっぱいに伸びる。vertical を指定すると縦線になり、テキストの並びに合わせて h-4 などで高さを揃える。",
+        "orientation 未指定なら横線で幅いっぱいに伸びます。vertical を指定すると縦線になり、テキストの並びに合わせて h-4 などで高さを揃えます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -139,7 +139,7 @@ export const separatorDoc: ComponentDoc = {
       id: "job-card-meta",
       title: "求人カード",
       description:
-        "求人カードのメタ情報（那覇市 / 正社員 / 月給 25万円）を縦線で区切る例。スラッシュや中黒より境界がはっきりし、項目の追加・削除にも崩れない。",
+        "求人カードのメタ情報（那覇市 / 正社員 / 月給 25万円）を縦線で区切る例です。スラッシュや中黒より境界がはっきりし、項目の追加・削除にも崩れません。",
       previewHeight: 400,
       Demo: JobCardMetaPattern,
     },
@@ -147,7 +147,7 @@ export const separatorDoc: ComponentDoc = {
       id: "job-detail-sections",
       title: "求人詳細のセクション",
       description:
-        "仕事の内容・給与・待遇・勤務情報といったセクションの間に横線を入れる例。見出しだけに頼らず、読み進める単位を明確にする。",
+        "仕事の内容・給与・待遇・勤務情報といったセクションの間に横線を入れる例です。見出しだけに頼らず、読み進める単位を明確にします。",
       previewHeight: null,
       Demo: JobDetailSectionsPattern,
     },
@@ -155,7 +155,7 @@ export const separatorDoc: ComponentDoc = {
       id: "job-stats",
       title: "求人票の統計",
       description:
-        "閲覧・応募・いいかもの統計を縦線で3等分する例。縦線は高さを指定しないと self-stretch で親要素の高さいっぱいに伸びるため、ブロック同士の区切りにそのまま使える。",
+        "閲覧・応募・いいかもの統計を縦線で3等分する例です。縦線は高さを指定しないと self-stretch で親要素の高さいっぱいに伸びるため、ブロック同士の区切りにそのまま使えます。",
       previewHeight: null,
       Demo: JobStatsPattern,
     },

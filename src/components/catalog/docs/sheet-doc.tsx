@@ -202,13 +202,13 @@ export const sheetDoc: ComponentDoc = {
   title: "Sheet",
   category: "オーバーレイ",
   purpose:
-    "画面の端からスライドして現れるパネルで、いまのページを離れずに補足的な内容を表示する。Dialog より縦に長い情報やリストを載せるのに向く。ジョブアンテナでは求人一覧からのクイックビュー、通知一覧、モバイルの絞り込み条件などに使う。",
+    "画面の端からスライドして現れるパネルで、いまのページを離れずに補足的な内容を表示します。Dialog より縦に長い情報やリストを載せるのに向きます。ジョブアンテナでは求人一覧からのクイックビュー、通知一覧、モバイルの絞り込み条件などに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "side プロパティで右・左・下の開く方向を切り替える最小構成。Header・Footer・Close の組み合わせ方もあわせて確認できる。",
+        "side プロパティで右・左・下の開く方向を切り替える最小構成です。Header・Footer・Close の組み合わせ方もあわせて確認できます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -216,7 +216,7 @@ export const sheetDoc: ComponentDoc = {
       id: "job-quick-view",
       title: "求人クイックビュー",
       description:
-        "求人一覧のカードから遷移せずに詳細を右側パネルで確認する。メイン画像・勤務地・給与などのサマリーを載せ、フッターに応募といいかも！を固定する。",
+        "求人一覧のカードから遷移せずに詳細を右側パネルで確認します。メイン画像・勤務地・給与などのサマリーを載せ、フッターに応募といいかも！を固定します。",
       previewHeight: 560,
       Demo: JobQuickViewPattern,
     },
@@ -224,7 +224,7 @@ export const sheetDoc: ComponentDoc = {
       id: "notifications",
       title: "通知一覧",
       description:
-        "ヘッダーのベルアイコンから開く左側の通知パネル。いいかも・メッセージ・あしあとを時系列に並べ、未読には destructive バッジを付ける。",
+        "ヘッダーのベルアイコンから開く左側の通知パネルです。いいかも・メッセージ・あしあとを時系列に並べ、未読には destructive バッジを付けます。",
       previewHeight: 520,
       Demo: NotificationsPattern,
     },

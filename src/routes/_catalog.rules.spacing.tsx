@@ -223,14 +223,14 @@ function SpacingPage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="余白"
-        lead="余白は p-0.5 / p-1 / p-2 / p-4 の4段階だけを使う。gap も同じく gap-0.5 / gap-1 / gap-2 / gap-4。情報密度が高い画面でも、このスケールを守ることでリズムが崩れない。中間の値が欲しくなったら、それは値の問題ではなく階層設計の見直しが必要なサイン。"
+        lead="余白は p-0.5 / p-1 / p-2 / p-4 の4段階だけを使います。gap も同じく gap-0.5 / gap-1 / gap-2 / gap-4。情報密度が高い画面でも、このスケールを守ることでリズムが崩れません。中間の値が欲しくなったら、それは値の問題ではなく階層設計の見直しが必要なサインです。"
       />
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">スケール</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          使うのは 0.5 / 1 / 2 / 4 の4段階だけ。数字がそのまま余白の名前で、sm や md
-          のようなトークン名は無い。帯の長さが実際の px に比例している。
+          使うのは 0.5 / 1 / 2 / 4 の4段階だけです。数字がそのまま余白の名前で、sm や md
+          のようなトークン名はありません。帯の長さが実際の px に比例しています。
         </p>
         <div className="flex flex-col gap-2 rounded-xl border p-4">
           {spacingSteps.map((step) => (
@@ -238,16 +238,17 @@ function SpacingPage() {
           ))}
         </div>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          この4値の間にある p-1.5 や p-3 は使わない。大きな区切りほど大きな余白、という対応を
-          4段で完結させる。縦の間隔は margin でなく gap / space-y で作る。
+          この4値の間にある p-1.5 や p-3 は使いません。大きな区切りほど大きな余白、という対応を
+          4段で完結させます。縦の間隔は margin でなく gap / space-y で作ります。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">横は、近い要素ほど詰める</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          横に並べるとき、意味が近い要素は gap-1 で詰めてひとかたまりに見せる。独立した操作は gap-2
-          で開けて別々だと分かるようにする。図解の色付きの帯が、要素の間に空く実寸の隙間。
+          横に並べるとき、意味が近い要素は gap-1 で詰めてひとかたまりに見せます。独立した操作は
+          gap-2
+          で開けて別々だと分かるようにします。図解の色付きの帯が、要素の間に空く実寸の隙間です。
         </p>
         <HorizontalProximity />
       </section>
@@ -256,8 +257,8 @@ function SpacingPage() {
         <h2 className="text-xl font-semibold tracking-tight">縦は、地続きか区切りかで決める</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           タイトルと会社名のように意味が地続きな行は gap-0.5
-          でほぼ隙間なく重ね、1つのかたまりに見せる。かたまり同士は gap-2
-          で区切って、別々の情報だと分かるようにする。
+          でほぼ隙間なく重ね、1つのかたまりに見せます。かたまり同士は gap-2
+          で区切って、別々の情報だと分かるようにします。
         </p>
         <VerticalProximity />
       </section>
@@ -266,7 +267,7 @@ function SpacingPage() {
         <h2 className="text-xl font-semibold tracking-tight">内側は、面から一定の余白を空ける</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           カードのように内容を囲む面は、内側に p-4
-          の余白を回す。縁と内容がくっつかず、四辺すべてで同じ厚みの額縁になる。
+          の余白を回します。縁と内容がくっつかず、四辺すべてで同じ厚みの額縁になります。
         </p>
         <InnerPadding />
       </section>
@@ -275,7 +276,7 @@ function SpacingPage() {
         <h2 className="text-xl font-semibold tracking-tight">完成形</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           横の gap-1 / gap-2、縦の gap-0.5 / gap-2、内側の p-4。ここまでの原則が、この求人カード
-          1枚に全部入っている。図解ではなく実クラスをそのまま使っている。
+          1枚に全部入っています。図解ではなく実クラスをそのまま使っています。
         </p>
         <SpacingStage>
           <PlainJobCard />

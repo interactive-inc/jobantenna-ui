@@ -183,13 +183,13 @@ export const fieldDoc: ComponentDoc = {
   title: "Field",
   category: "フォーム",
   purpose:
-    "ラベル・入力・説明文・エラーをひとまとまりにして、フォームのレイアウトを統一するためのコンポーネント群。FieldSet / FieldLegend / FieldSeparator でセクションを区切り、orientation で縦・横・レスポンシブの並びを切り替える。ジョブアンテナでは応募プロフィールや求人票フォーム、通知設定などフォーム全般の骨組みに使う。",
+    "ラベル・入力・説明文・エラーをひとまとまりにして、フォームのレイアウトを統一するためのコンポーネント群です。FieldSet / FieldLegend / FieldSeparator でセクションを区切り、orientation で縦・横・レスポンシブの並びを切り替えます。ジョブアンテナでは応募プロフィールや求人票フォーム、通知設定などフォーム全般の骨組みに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'FieldLabel・Input・FieldDescription を縦に並べる基本形。data-invalid と FieldError でエラーを表示し、orientation="horizontal" でチェックボックスと説明文を横に並べる。',
+        'FieldLabel・Input・FieldDescription を縦に並べる基本形です。data-invalid と FieldError でエラーを表示し、orientation="horizontal" でチェックボックスと説明文を横に並べます。',
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -197,7 +197,7 @@ export const fieldDoc: ComponentDoc = {
       id: "applicant-profile",
       title: "応募プロフィール",
       description:
-        "求職者の応募プロフィールフォーム。FieldSet + FieldLegend で基本情報（氏名、電話番号）をまとめ、FieldSeparator で自己PRセクションを区切る。",
+        "求職者の応募プロフィールフォームです。FieldSet + FieldLegend で基本情報（氏名、電話番号）をまとめ、FieldSeparator で自己PRセクションを区切ります。",
       previewHeight: 640,
       Demo: ApplicantProfilePattern,
     },
@@ -205,7 +205,7 @@ export const fieldDoc: ComponentDoc = {
       id: "notification-settings",
       title: "通知設定",
       description:
-        "設定画面向けの横並びレイアウト。FieldContent にラベルと説明を入れ、右端にスイッチを置く。項目間は FieldSeparator で区切る。",
+        "設定画面向けの横並びレイアウトです。FieldContent にラベルと説明を入れ、右端にスイッチを置きます。項目間は FieldSeparator で区切ります。",
       previewHeight: null,
       Demo: NotificationSettingsPattern,
     },
@@ -213,7 +213,7 @@ export const fieldDoc: ComponentDoc = {
       id: "salary-section",
       title: "求人票の給与・待遇",
       description:
-        "管理画面の求人票フォームのセクション例。給与種別のセレクトと下限・上限の2カラム入力を FieldGroup 内に組み合わせる。",
+        "管理画面の求人票フォームのセクション例です。給与種別のセレクトと下限・上限の2カラム入力を FieldGroup 内に組み合わせます。",
       previewHeight: 480,
       Demo: SalarySectionPattern,
     },

@@ -232,13 +232,13 @@ export const cardDoc: ComponentDoc = {
   title: "Card",
   category: "データ表示",
   purpose:
-    "関連する情報をひとまとまりの面として区切って表示するコンテナコンポーネント。ジョブアンテナでは求人一覧の求人カードや管理画面ダッシュボードの KPI カードなど、情報のかたまりを並べる画面の基本要素になる。size プロパティ（default / sm）で余白の密度を切り替えられる。",
+    "関連する情報をひとまとまりの面として区切って表示するコンテナコンポーネントです。ジョブアンテナでは求人一覧の求人カードや管理画面ダッシュボードの KPI カードなど、情報のかたまりを並べる画面の基本要素になります。size プロパティ（default / sm）で余白の密度を切り替えられます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'CardHeader / CardTitle / CardDescription / CardAction / CardContent / CardFooter を組み合わせた基本構成。size="sm" にすると余白が詰まり、一覧向けのコンパクトなカードになる。',
+        'CardHeader / CardTitle / CardDescription / CardAction / CardContent / CardFooter を組み合わせた基本構成です。size="sm" にすると余白が詰まり、一覧向けのコンパクトなカードになります。',
       previewHeight: 480,
       Demo: BasicPattern,
     },
@@ -246,7 +246,7 @@ export const cardDoc: ComponentDoc = {
       id: "job-card-medium",
       title: "求人カード（MEDIUM）",
       description:
-        "求人一覧の標準サイズ。メイン画像・企業名・職種名・キャッチタイトル・勤務条件・タグ・応募ボタンまでを1枚に収める。画像を上端まで広げるため Card に pt-0 を指定する。",
+        "求人一覧の標準サイズです。メイン画像・企業名・職種名・キャッチタイトル・勤務条件・タグ・応募ボタンまでを1枚に収めます。画像を上端まで広げるため Card に pt-0 を指定します。",
       previewHeight: 560,
       Demo: JobCardMediumPattern,
     },
@@ -254,7 +254,7 @@ export const cardDoc: ComponentDoc = {
       id: "job-card-small",
       title: "求人カード（SMALL）",
       description:
-        "職種名・タイトル・企業名のみの最小構成。関連求人やランキングなど、限られたスペースに多数並べる場面で使う。",
+        "職種名・タイトル・企業名のみの最小構成です。関連求人やランキングなど、限られたスペースに多数並べる場面で使います。",
       previewHeight: 400,
       Demo: JobCardSmallPattern,
     },
@@ -262,7 +262,7 @@ export const cardDoc: ComponentDoc = {
       id: "stats-card",
       title: "統計カード",
       description:
-        "管理画面ダッシュボードの KPI カード。CardAction に指標のアイコン、CardContent に内訳の補足を置き、グリッドで並べる。",
+        "管理画面ダッシュボードの KPI カードです。CardAction に指標のアイコン、CardContent に内訳の補足を置き、グリッドで並べます。",
       previewHeight: null,
       Demo: StatsCardPattern,
     },

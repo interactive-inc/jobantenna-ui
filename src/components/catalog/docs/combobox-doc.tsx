@@ -148,13 +148,13 @@ export const comboboxDoc: ComponentDoc = {
   title: "Combobox",
   category: "フォーム",
   purpose:
-    "テキスト入力で候補を絞り込みながら選択できる入力コンポーネント。選択肢が多く Select では探しにくい場面で使う。ジョブアンテナでは検索条件の勤務地（那覇市、浦添市など）や職種の選択、雇用形態の複数選択に使う。",
+    "テキスト入力で候補を絞り込みながら選択できる入力コンポーネントです。選択肢が多く Select では探しにくい場面で使います。ジョブアンテナでは検索条件の勤務地（那覇市、浦添市など）や職種の選択、雇用形態の複数選択に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "入力で候補を絞り込みながら1件選ぶ単一選択の基本形。ComboboxInput の showClear で選択を解除するボタンを表示する。",
+        "入力で候補を絞り込みながら1件選ぶ単一選択の基本形です。ComboboxInput の showClear で選択を解除するボタンを表示します。",
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -162,7 +162,7 @@ export const comboboxDoc: ComponentDoc = {
       id: "work-location",
       title: "勤務地選択",
       description:
-        "勤務地を本島南部・中部・北部・離島のエリアごとにグループ化して選ぶ例。ComboboxGroup と ComboboxLabel で区切り、ComboboxCollection でグループ内の候補を描画する。",
+        "勤務地を本島南部・中部・北部・離島のエリアごとにグループ化して選ぶ例です。ComboboxGroup と ComboboxLabel で区切り、ComboboxCollection でグループ内の候補を描画します。",
       previewHeight: 480,
       Demo: WorkLocationPattern,
     },
@@ -170,7 +170,7 @@ export const comboboxDoc: ComponentDoc = {
       id: "employment-type-chips",
       title: "雇用形態チップ",
       description:
-        "雇用形態を複数選択してチップで表示する例。multiple と ComboboxChips を組み合わせ、useComboboxAnchor でポップアップをチップ欄全体にアンカーする。",
+        "雇用形態を複数選択してチップで表示する例です。multiple と ComboboxChips を組み合わせ、useComboboxAnchor でポップアップをチップ欄全体にアンカーします。",
       previewHeight: 400,
       Demo: EmploymentTypeChipsPattern,
     },

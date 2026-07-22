@@ -158,13 +158,13 @@ export const switchDoc: ComponentDoc = {
   title: "Switch",
   category: "フォーム",
   purpose:
-    "オンとオフの二値を即時に切り替えるためのフォームコントロール。@base-ui/react ベースで defaultChecked による非制御利用に対応し、保存ボタンを介さず反映される設定に向く。ジョブアンテナでは新着求人メールやスカウト受信などの通知設定、管理画面での求人票の公開切替に使う。",
+    "オンとオフの二値を即時に切り替えるためのフォームコントロールです。@base-ui/react ベースで defaultChecked による非制御利用に対応し、保存ボタンを介さず反映される設定に向きます。ジョブアンテナでは新着求人メールやスカウト受信などの通知設定、管理画面での求人票の公開切替に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "オン・オフ・disabled の各状態と sm サイズ。id と Label の htmlFor を対応させると、ラベルのクリックでも切り替わる。",
+        "オン・オフ・disabled の各状態と sm サイズです。id と Label の htmlFor を対応させると、ラベルのクリックでも切り替わります。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -172,7 +172,7 @@ export const switchDoc: ComponentDoc = {
       id: "notification-settings",
       title: "通知設定",
       description:
-        "求職者のマイページで新着求人メール・スカウト受信・いいかも！通知などを切り替える例。設定名の下に補足説明を添え、Switch は行の右端に揃える。",
+        "求職者のマイページで新着求人メール・スカウト受信・いいかも！通知などを切り替える例です。設定名の下に補足説明を添え、Switch は行の右端に揃えます。",
       previewHeight: null,
       Demo: NotificationSettingsPattern,
     },
@@ -180,7 +180,7 @@ export const switchDoc: ComponentDoc = {
       id: "job-publish",
       title: "求人票の公開切替",
       description:
-        "管理画面の求人票一覧で掲載中・公開停止を切り替える例。状態はバッジで示し、行内では sm サイズの Switch を使う。ラベルが視覚的にない場合は aria-label を付ける。",
+        "管理画面の求人票一覧で掲載中・公開停止を切り替える例です。状態はバッジで示し、行内では sm サイズの Switch を使います。ラベルが視覚的にない場合は aria-label を付けます。",
       previewHeight: null,
       Demo: JobPublishPattern,
     },

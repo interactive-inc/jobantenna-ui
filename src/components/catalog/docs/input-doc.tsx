@@ -90,13 +90,13 @@ export const inputDoc: ComponentDoc = {
   title: "Input",
   category: "フォーム",
   purpose:
-    "1行のテキストを入力するフォームコンポーネント。ジョブアンテナでは求人のキーワード検索、Web履歴書のメールアドレスや希望年収の入力、求人フォームの各項目に使う。type 属性でテキスト・メール・数値などの入力形式を切り替える。",
+    "1行のテキストを入力するフォームコンポーネントです。ジョブアンテナでは求人のキーワード検索、Web履歴書のメールアドレスや希望年収の入力、求人フォームの各項目に使います。type 属性でテキスト・メール・数値などの入力形式を切り替えます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "Label と組み合わせた基本形。type に text / email / number を指定して入力形式を切り替える。",
+        "Label と組み合わせた基本形です。type に text / email / number を指定して入力形式を切り替えます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -104,7 +104,7 @@ export const inputDoc: ComponentDoc = {
       id: "keyword-search",
       title: "キーワード検索",
       description:
-        "求人検索の検索条件パネルの例。type=search のキーワード入力に、ヒット件数付きの検索ボタンとクリアボタンをフッターとして添える。",
+        "求人検索の検索条件パネルの例です。type=search のキーワード入力に、ヒット件数付きの検索ボタンとクリアボタンをフッターとして添えます。",
       previewHeight: null,
       Demo: KeywordSearchPattern,
     },
@@ -112,7 +112,7 @@ export const inputDoc: ComponentDoc = {
       id: "disabled-invalid",
       title: "無効・エラー状態",
       description:
-        "応募済みなど編集できない値は disabled で薄く表示し、バリデーションエラーは aria-invalid とエラーメッセージで示す。",
+        "応募済みなど編集できない値は disabled で薄く表示し、バリデーションエラーは aria-invalid とエラーメッセージで示します。",
       previewHeight: null,
       Demo: DisabledInvalidPattern,
     },

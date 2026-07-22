@@ -296,13 +296,13 @@ export const tabsDoc: ComponentDoc = {
   title: "Tabs",
   category: "ナビゲーション",
   purpose:
-    "同じ画面内で複数のセクションを切り替えて表示するコンポーネント。ジョブアンテナでは企業ページ（会社TOP／私たちについて／掲載求人）のセクション切り替えや、いいかも一覧の もらった／送った、求人票一覧の掲載ステータス絞り込みに使う。TabsList の variant（default／line）と orientation で見た目を切り替えられる。",
+    "同じ画面内で複数のセクションを切り替えて表示するコンポーネントです。ジョブアンテナでは企業ページ（会社TOP／私たちについて／掲載求人）のセクション切り替えや、いいかも一覧の もらった／送った、求人票一覧の掲載ステータス絞り込みに使います。TabsList の variant（default／line）と orientation で見た目を切り替えられます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'default / line の2バリアントと横・縦（orientation="vertical"）レイアウト。defaultValue で初期タブを決める非制御コンポーネント。disabled で個別のタブを無効化できる。',
+        'default / line の2バリアントと横・縦（orientation="vertical"）レイアウトです。defaultValue で初期タブを決める非制御コンポーネントです。disabled で個別のタブを無効化できます。',
       previewHeight: 420,
       Demo: BasicPattern,
     },
@@ -310,7 +310,7 @@ export const tabsDoc: ComponentDoc = {
       id: "company-page",
       title: "企業ページ",
       description:
-        "企業ページのセクション切り替え。掲載求人タブにだけ件数を muted 色の数字で添え、タブごとに異なる内容の面を表示する。",
+        "企業ページのセクション切り替えです。掲載求人タブにだけ件数を muted 色の数字で添え、タブごとに異なる内容の面を表示します。",
       previewHeight: 400,
       Demo: CompanyPagePattern,
     },
@@ -318,7 +318,7 @@ export const tabsDoc: ComponentDoc = {
       id: "liked-list",
       title: "いいかも一覧",
       description:
-        "もらった／送った の2択。line バリアントに Badge で件数を添える。片側は「まだメッセージはありません」の空状態を見せて実運用の見え方を確認する。",
+        "もらった／送った の2択です。line バリアントに Badge で件数を添えます。片側は「まだメッセージはありません」の空状態を見せて実運用の見え方を確認します。",
       previewHeight: 400,
       Demo: LikedListPattern,
     },
@@ -326,7 +326,7 @@ export const tabsDoc: ComponentDoc = {
       id: "job-status",
       title: "求人票ステータス",
       description:
-        "求人票一覧を掲載ステータス（すべて／掲載中／編集中／下書き／公開停止）で絞り込む例。全タブに件数 Badge を付ける密なケース。タブが多いので container に広めの幅を与える。",
+        "求人票一覧を掲載ステータス（すべて／掲載中／編集中／下書き／公開停止）で絞り込む例です。全タブに件数 Badge を付ける密なケースです。タブが多いので container に広めの幅を与えます。",
       previewHeight: 400,
       Demo: JobStatusPattern,
     },

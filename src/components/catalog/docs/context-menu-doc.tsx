@@ -246,13 +246,13 @@ export const contextMenuDoc: ComponentDoc = {
   title: "Context Menu",
   category: "オーバーレイ",
   purpose:
-    "右クリック（タッチ端末では長押し）で、その場に操作メニューを開くオーバーレイ。対象の要素に紐づく操作を画面遷移なしでまとめて呼び出せる。ジョブアンテナでは求人カードの保存・共有・非表示や、管理画面での応募者ステータス変更に使う。",
+    "右クリック（タッチ端末では長押し）で、その場に操作メニューを開くオーバーレイです。対象の要素に紐づく操作を画面遷移なしでまとめて呼び出せます。ジョブアンテナでは求人カードの保存・共有・非表示や、管理画面での応募者ステータス変更に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        '点線のプレースホルダを右クリックしてメニューを開く基本形。通常項目とショートカット、共有のサブメニュー、通知のチェックボックス、破壊的操作の variant="destructive" を一通り見せる。',
+        '点線のプレースホルダを右クリックしてメニューを開く基本形です。通常項目とショートカット、共有のサブメニュー、通知のチェックボックス、破壊的操作の variant="destructive" を一通り見せます。',
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -260,7 +260,7 @@ export const contextMenuDoc: ComponentDoc = {
       id: "job-card",
       title: "求人カード",
       description:
-        "求人カード全体を ContextMenuTrigger にした実務パターン。いいかも！やキープなどの保存系、共有サブメニュー、非表示・ブロックの破壊的操作をセパレータで区切って並べる。",
+        "求人カード全体を ContextMenuTrigger にした実務パターンです。いいかも！やキープなどの保存系、共有サブメニュー、非表示・ブロックの破壊的操作をセパレータで区切って並べます。",
       previewHeight: 560,
       Demo: JobCardPattern,
     },
@@ -268,7 +268,7 @@ export const contextMenuDoc: ComponentDoc = {
       id: "applicant-status",
       title: "応募ステータス",
       description:
-        "管理画面の応募者行を右クリックして選考ステータスを切り替えるパターン。単一選択には ContextMenuRadioGroup、企業メモの有無には ContextMenuCheckboxItem を使う。",
+        "管理画面の応募者行を右クリックして選考ステータスを切り替えるパターンです。単一選択には ContextMenuRadioGroup、企業メモの有無には ContextMenuCheckboxItem を使います。",
       previewHeight: 480,
       Demo: ApplicantStatusPattern,
     },

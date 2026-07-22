@@ -118,13 +118,13 @@ export const dialogDoc: ComponentDoc = {
   title: "Dialog",
   category: "オーバーレイ",
   purpose:
-    "画面の操作を一時的に遮って、確認やフォーム入力に集中してもらうためのモーダルダイアログ。ページ遷移せずにその場で完結させたい短いやり取りに向く。ジョブアンテナでは求人への応募確認、保存した求人の削除確認、管理画面でのテンプレート作成などに使う。",
+    "画面の操作を一時的に遮って、確認やフォーム入力に集中してもらうためのモーダルダイアログです。ページ遷移せずにその場で完結させたい短いやり取りに向きます。ジョブアンテナでは求人への応募確認、保存した求人の削除確認、管理画面でのテンプレート作成などに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "Trigger・Header・Footer を組み合わせた最小構成。キープリストから求人を外す確認のように、キャンセルと実行の二択を提示する場面で使う。",
+        "Trigger・Header・Footer を組み合わせた最小構成です。キープリストから求人を外す確認のように、キャンセルと実行の二択を提示する場面で使います。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -132,7 +132,7 @@ export const dialogDoc: ComponentDoc = {
       id: "apply-confirm",
       title: "応募確認",
       description:
-        "応募ボタンを押した直後に、応募先の求人サマリーと氏名公開の注意書きを確認させる。本文に bg-muted の求人カードを挟み、誤応募を防ぐ。",
+        "応募ボタンを押した直後に、応募先の求人サマリーと氏名公開の注意書きを確認させます。本文に bg-muted の求人カードを挟み、誤応募を防ぎます。",
       previewHeight: 480,
       Demo: ApplyConfirmPattern,
     },
@@ -140,7 +140,7 @@ export const dialogDoc: ComponentDoc = {
       id: "message-template",
       title: "メッセージテンプレート",
       description:
-        "管理画面でテンプレートを新規作成するフォームダイアログ。Input と Textarea を本文に置き、保存かキャンセルで閉じる。",
+        "管理画面でテンプレートを新規作成するフォームダイアログです。Input と Textarea を本文に置き、保存かキャンセルで閉じます。",
       previewHeight: 560,
       Demo: MessageTemplatePattern,
     },

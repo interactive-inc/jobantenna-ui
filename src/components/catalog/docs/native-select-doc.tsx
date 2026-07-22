@@ -211,13 +211,13 @@ export const nativeSelectDoc: ComponentDoc = {
   title: "Native Select",
   category: "フォーム",
   purpose:
-    "ブラウザ標準の select 要素をそのままスタイリングしたフォームコントロール。OS ネイティブのドロップダウンを使うためモバイルでも軽快に動作し、選択肢が多い単一選択に向く。ジョブアンテナでは希望年収や勤務地などの検索条件、給与種別の入力、応募ステータスの切り替えに使う。",
+    "ブラウザ標準の select 要素をそのままスタイリングしたフォームコントロールです。OS ネイティブのドロップダウンを使うためモバイルでも軽快に動作し、選択肢が多い単一選択に向きます。ジョブアンテナでは希望年収や勤務地などの検索条件、給与種別の入力、応募ステータスの切り替えに使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "default と sm の2サイズ、disabled 状態、NativeSelectOptGroup によるエリア別のグループ化。defaultValue で非制御のまま初期値を与える。",
+        "default と sm の2サイズ、disabled 状態、NativeSelectOptGroup によるエリア別のグループ化です。defaultValue で非制御のまま初期値を与えます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -225,7 +225,7 @@ export const nativeSelectDoc: ComponentDoc = {
       id: "desired-salary",
       title: "希望年収",
       description:
-        "求人検索の希望年収を選ぶ例。「特に指定しない」を先頭に置き、150万円〜1000万円の長い選択肢はネイティブのドロップダウンに任せる。",
+        "求人検索の希望年収を選ぶ例です。「特に指定しない」を先頭に置き、150万円〜1000万円の長い選択肢はネイティブのドロップダウンに任せます。",
       previewHeight: null,
       Demo: DesiredSalaryPattern,
     },
@@ -233,7 +233,7 @@ export const nativeSelectDoc: ComponentDoc = {
       id: "salary-form",
       title: "給与・待遇フォーム",
       description:
-        "管理画面の求人フォームで給与種別（月給・時給・日給・年俸）を選ぶ例。下限・上限の金額入力と組み合わせてひとつのセクションにまとめる。",
+        "管理画面の求人フォームで給与種別（月給・時給・日給・年俸）を選ぶ例です。下限・上限の金額入力と組み合わせてひとつのセクションにまとめます。",
       previewHeight: null,
       Demo: SalaryFormPattern,
     },
@@ -241,7 +241,7 @@ export const nativeSelectDoc: ComponentDoc = {
       id: "applicant-status",
       title: "応募ステータス",
       description:
-        '応募者リストの行内で選考ステータス（未選考・保留中・連絡済・採用・不採用）を切り替える例。size="sm" にすると行の高さに収まる。',
+        '応募者リストの行内で選考ステータス（未選考・保留中・連絡済・採用・不採用）を切り替える例です。size="sm" にすると行の高さに収まります。',
       previewHeight: null,
       Demo: ApplicantStatusPattern,
     },

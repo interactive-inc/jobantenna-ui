@@ -186,13 +186,13 @@ export const collapsibleDoc: ComponentDoc = {
   title: "Collapsible",
   category: "レイアウト",
   purpose:
-    "1つの領域をトリガーで開閉するシンプルな折りたたみ。Accordion と違い単独のセクションを対象に、補足情報や詳細条件を必要なときだけ表示したい場面で使う。ジョブアンテナでは検索パネルの詳細条件や、求人カードの仕事内容の展開に使う。",
+    "1つの領域をトリガーで開閉するシンプルな折りたたみです。Accordion と違い単独のセクションを対象に、補足情報や詳細条件を必要なときだけ表示したい場面で使います。ジョブアンテナでは検索パネルの詳細条件や、求人カードの仕事内容の展開に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "見出し+開閉ボタンの最小構成。上はデフォルト閉、下は defaultOpen で最初から開いた状態にしている。",
+        "見出し+開閉ボタンの最小構成です。上はデフォルト閉、下は defaultOpen で最初から開いた状態にしています。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -200,7 +200,7 @@ export const collapsibleDoc: ComponentDoc = {
       id: "search-filter",
       title: "検索条件",
       description:
-        "キーワード欄は常時表示し、雇用形態やこだわり条件などの詳細条件を Collapsible にまとめた検索パネル。条件が多くても初期表示をコンパクトに保てる。",
+        "キーワード欄は常時表示し、雇用形態やこだわり条件などの詳細条件を Collapsible にまとめた検索パネルです。条件が多くても初期表示をコンパクトに保てます。",
       previewHeight: 560,
       Demo: SearchFilterPattern,
     },
@@ -208,7 +208,7 @@ export const collapsibleDoc: ComponentDoc = {
       id: "job-card",
       title: "求人カード",
       description:
-        "LARGE サイズの求人カードで、仕事内容を「詳しく見る」ボタンで展開する。一覧ではカードを短く保ち、興味を持った求人だけその場で詳細を読める。",
+        "LARGE サイズの求人カードで、仕事内容を「詳しく見る」ボタンで展開します。一覧ではカードを短く保ち、興味を持った求人だけその場で詳細を読めます。",
       previewHeight: 560,
       Demo: JobCardPattern,
     },

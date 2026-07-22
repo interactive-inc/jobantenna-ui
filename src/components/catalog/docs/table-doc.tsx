@@ -338,13 +338,13 @@ export const tableDoc: ComponentDoc = {
   title: "Table",
   category: "データ表示",
   purpose:
-    "行と列で構造化されたデータを一覧表示するコンポーネント。ジョブアンテナでは管理画面の応募者進捗テーブルや求人票一覧など、多数のレコードを比較しながら操作する画面の中核になる。ステータスは Badge、行ごとの操作はアイコンボタンとして各セルに埋め込む。",
+    "行と列で構造化されたデータを一覧表示するコンポーネントです。ジョブアンテナでは管理画面の応募者進捗テーブルや求人票一覧など、多数のレコードを比較しながら操作する画面の中核になります。ステータスは Badge、行ごとの操作はアイコンボタンとして各セルに埋め込みます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        'TableHeader / TableBody / TableFooter / TableCaption を組み合わせた基本構成。行に data-state="selected" を付けると選択状態の背景色になり、数値列は text-right で右揃えにする。',
+        'TableHeader / TableBody / TableFooter / TableCaption を組み合わせた基本構成です。行に data-state="selected" を付けると選択状態の背景色になり、数値列は text-right で右揃えにします。',
       previewHeight: 400,
       Demo: BasicPattern,
     },
@@ -352,7 +352,7 @@ export const tableDoc: ComponentDoc = {
       id: "applicant-management",
       title: "応募者管理",
       description:
-        "進捗管理画面の応募者テーブル。候補者セルにアバターとプロフィール、ステータスセルに選考状況の Badge、操作セルにメッセージ・履歴書のアイコンボタンを収める。",
+        "進捗管理画面の応募者テーブルです。候補者セルにアバターとプロフィール、ステータスセルに選考状況の Badge、操作セルにメッセージ・履歴書のアイコンボタンを収めます。",
       previewHeight: 400,
       Demo: ApplicantTablePattern,
     },
@@ -360,7 +360,7 @@ export const tableDoc: ComponentDoc = {
       id: "job-list",
       title: "求人一覧",
       description:
-        "求人票一覧テーブル。サムネ付きのタイトル行に公開状態の Badge（掲載中=塗り、公開停止・Indeed連携=outline）と閲覧・応募の統計、編集・複製・削除の操作を並べる。",
+        "求人票一覧テーブルです。サムネ付きのタイトル行に公開状態の Badge（掲載中=塗り、公開停止・Indeed連携=outline）と閲覧・応募の統計、編集・複製・削除の操作を並べます。",
       previewHeight: 400,
       Demo: JobListTablePattern,
     },

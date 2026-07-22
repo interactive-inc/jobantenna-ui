@@ -137,13 +137,13 @@ export const popoverDoc: ComponentDoc = {
   title: "Popover",
   category: "オーバーレイ",
   purpose:
-    "クリックで開く小さなフローティングパネル。ダイアログを出すほどではない補足情報や軽い操作を、ページ遷移せずその場で見せたいときに使う。ジョブアンテナではアンテナレベルなどの用語ヘルプや、ヘッダーの通知一覧に使う。",
+    "クリックで開く小さなフローティングパネルです。ダイアログを出すほどではない補足情報や軽い操作を、ページ遷移せずその場で見せたいときに使います。ジョブアンテナではアンテナレベルなどの用語ヘルプや、ヘッダーの通知一覧に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "Trigger と Content に Header・Title・Description を組み合わせた最小構成。ボタンを押すと通知設定のパネルが開く。",
+        "Trigger と Content に Header・Title・Description を組み合わせた最小構成です。ボタンを押すと通知設定のパネルが開きます。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -151,7 +151,7 @@ export const popoverDoc: ComponentDoc = {
       id: "antenna-level-help",
       title: "アンテナレベルのヘルプ",
       description:
-        "数値の横に置いたヘルプアイコンから「アンテナレベルとは？」の解説を開く。用語の意味とレベルの上げ方をその場で確認でき、ページを離れずに次のアクションへ誘導できる。",
+        "数値の横に置いたヘルプアイコンから「アンテナレベルとは？」の解説を開きます。用語の意味とレベルの上げ方をその場で確認でき、ページを離れずに次のアクションへ誘導できます。",
       previewHeight: 400,
       Demo: AntennaLevelHelpPattern,
     },
@@ -159,7 +159,7 @@ export const popoverDoc: ComponentDoc = {
       id: "notification-list",
       title: "通知一覧",
       description:
-        "ヘッダーのベルアイコンから、いいかも！・メッセージ・あしあとの通知をまとめて表示する。未読は赤いドットで示し、未読件数はトリガー側のバッジで伝える。",
+        "ヘッダーのベルアイコンから、いいかも！・メッセージ・あしあとの通知をまとめて表示します。未読は赤いドットで示し、未読件数はトリガー側のバッジで伝えます。",
       previewHeight: 520,
       Demo: NotificationListPattern,
     },

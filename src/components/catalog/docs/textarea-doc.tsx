@@ -90,13 +90,13 @@ export const textareaDoc: ComponentDoc = {
   title: "Textarea",
   category: "フォーム",
   purpose:
-    "複数行のテキストを入力するフォームコンポーネント。内容に応じて高さが自動で伸びる。ジョブアンテナでは Web履歴書の自己PR、応募時のメッセージ、求人フォームの仕事内容や企業メモなど、長文の入力に使う。",
+    "複数行のテキストを入力するフォームコンポーネントです。内容に応じて高さが自動で伸びます。ジョブアンテナでは Web履歴書の自己PR、応募時のメッセージ、求人フォームの仕事内容や企業メモなど、長文の入力に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "プレースホルダのみ・Label 付き・aria-invalid のエラー・disabled の各状態。入力内容に合わせて高さが自動調整される。",
+        "プレースホルダのみ・Label 付き・aria-invalid のエラー・disabled の各状態です。入力内容に合わせて高さが自動調整されます。",
       previewHeight: 480,
       Demo: BasicPattern,
     },
@@ -104,7 +104,7 @@ export const textareaDoc: ComponentDoc = {
       id: "self-pr",
       title: "自己PR",
       description:
-        "Web履歴書の自己PR入力。下部に文字数の目安と現在の文字数を並べ、書く分量の指針を示す。",
+        "Web履歴書の自己PR入力です。下部に文字数の目安と現在の文字数を並べ、書く分量の指針を示します。",
       previewHeight: null,
       Demo: SelfPrPattern,
     },
@@ -112,7 +112,7 @@ export const textareaDoc: ComponentDoc = {
       id: "apply-message",
       title: "応募メッセージ",
       description:
-        "応募確認画面での任意メッセージ入力。求人情報のヘッダー、氏名公開の注意書き、応募完了ボタンとひとまとまりで使う。",
+        "応募確認画面での任意メッセージ入力です。求人情報のヘッダー、氏名公開の注意書き、応募完了ボタンとひとまとまりで使います。",
       previewHeight: 480,
       Demo: ApplyMessagePattern,
     },

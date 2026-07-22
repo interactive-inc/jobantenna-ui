@@ -235,13 +235,13 @@ export const checkboxDoc: ComponentDoc = {
   title: "Checkbox",
   category: "フォーム",
   purpose:
-    "複数の選択肢から任意の数を選ぶ、またはオン・オフを切り替えるためのフォームコントロール。@base-ui/react ベースで defaultChecked による非制御利用と name / value でのフォーム送信に対応する。ジョブアンテナではこだわり条件や勤務地の複数選択、応募時の同意確認、応募者リストの一括選択に使う。",
+    "複数の選択肢から任意の数を選ぶ、またはオン・オフを切り替えるためのフォームコントロールです。@base-ui/react ベースで defaultChecked による非制御利用と name / value でのフォーム送信に対応します。ジョブアンテナではこだわり条件や勤務地の複数選択、応募時の同意確認、応募者リストの一括選択に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "未チェック・チェック済み・disabled の各状態と、name / value を付けてフォーム送信する複数選択。Label で包むとテキストのクリックでも切り替わる。",
+        "未チェック・チェック済み・disabled の各状態と、name / value を付けてフォーム送信する複数選択です。Label で包むとテキストのクリックでも切り替わります。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -249,7 +249,7 @@ export const checkboxDoc: ComponentDoc = {
       id: "filter-conditions",
       title: "こだわり条件",
       description:
-        "求人検索でこだわり条件（未経験OK、リモート可、駅近など）を複数選択する例。先頭の「すべて」で一括選択・解除し、フッターに件数付きの検索ボタンとクリアを置く。",
+        "求人検索でこだわり条件（未経験OK、リモート可、駅近など）を複数選択する例です。先頭の「すべて」で一括選択・解除し、フッターに件数付きの検索ボタンとクリアを置きます。",
       previewHeight: null,
       Demo: FilterConditionsPattern,
     },
@@ -257,7 +257,7 @@ export const checkboxDoc: ComponentDoc = {
       id: "apply-consent",
       title: "応募の同意確認",
       description:
-        "応募確認画面で利用規約への同意を取る例。同意しないと進めない操作では、実行ボタンの直前にチェックボックスと注意書きを置く。",
+        "応募確認画面で利用規約への同意を取る例です。同意しないと進めない操作では、実行ボタンの直前にチェックボックスと注意書きを置きます。",
       previewHeight: null,
       Demo: ApplyConsentPattern,
     },
@@ -265,7 +265,7 @@ export const checkboxDoc: ComponentDoc = {
       id: "candidate-bulk-select",
       title: "応募者の一括選択",
       description:
-        "管理画面の応募者リストで行を選択する例。ヘッダーのチェックで全選択し、選択件数と一括操作ボタンを表示する。",
+        "管理画面の応募者リストで行を選択する例です。ヘッダーのチェックで全選択し、選択件数と一括操作ボタンを表示します。",
       previewHeight: null,
       Demo: CandidateBulkSelectPattern,
     },

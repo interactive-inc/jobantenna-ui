@@ -167,13 +167,13 @@ export const resizableDoc: ComponentDoc = {
   title: "Resizable",
   category: "レイアウト",
   purpose:
-    "ハンドルをドラッグして隣り合うペインの幅や高さを調整できる分割レイアウト。一覧と詳細を同時に見せつつ、ユーザーが自分の作業に合わせて配分を変えられる画面で使う。ジョブアンテナでは管理画面の応募者進捗管理やメッセージ画面など、一覧+詳細の2ペイン構成に使う。",
+    "ハンドルをドラッグして隣り合うペインの幅や高さを調整できる分割レイアウトです。一覧と詳細を同時に見せつつ、ユーザーが自分の作業に合わせて配分を変えられる画面で使います。ジョブアンテナでは管理画面の応募者進捗管理やメッセージ画面など、一覧+詳細の2ペイン構成に使います。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "横分割2ペインの最小構成。defaultSize / minSize はパーセント文字列（数値はピクセル扱い）で指定し、withHandle でつまみを表示する。",
+        "横分割2ペインの最小構成です。defaultSize / minSize はパーセント文字列（数値はピクセル扱い）で指定し、withHandle でつまみを表示します。",
       previewHeight: null,
       Demo: BasicPattern,
     },
@@ -181,7 +181,7 @@ export const resizableDoc: ComponentDoc = {
       id: "vertical",
       title: "縦分割",
       description:
-        'ResizablePanelGroup に orientation="vertical" を指定した上下分割。仕事内容と応募条件のように、長さの読めない2つのテキスト領域を配分調整したいときに使う。',
+        'ResizablePanelGroup に orientation="vertical" を指定した上下分割です。仕事内容と応募条件のように、長さの読めない2つのテキスト領域を配分調整したいときに使います。',
       previewHeight: null,
       Demo: VerticalPattern,
     },
@@ -189,7 +189,7 @@ export const resizableDoc: ComponentDoc = {
       id: "applicant-list-detail",
       title: "応募者一覧+詳細",
       description:
-        "管理画面の進捗管理を想定した固定高の2ペイン。左に応募者リスト、右に選択中の候補者詳細を置き、リストの情報量に応じて境界をドラッグで調整できる。",
+        "管理画面の進捗管理を想定した固定高の2ペインです。左に応募者リスト、右に選択中の候補者詳細を置き、リストの情報量に応じて境界をドラッグで調整できます。",
       previewHeight: 480,
       Demo: ApplicantListDetailPattern,
     },
