@@ -23,50 +23,57 @@ export function CatalogSidebar() {
     <Sidebar className="group-data-[side=left]:border-r-0">
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>デザインシステム</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton render={<Link to="/" />} isActive={location.pathname === "/"}>
-                  <span>コンセプト</span>
+                  <span>ホーム</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
+        <SidebarGroup>
+          <SidebarGroupLabel>ルール</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  render={<Link to="/principles/basics" />}
-                  isActive={location.pathname === "/principles/basics"}
+                  render={<Link to="/rules/basics" />}
+                  isActive={location.pathname === "/rules/basics"}
                 >
                   <span>基本原則</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  render={<Link to="/principles/color" />}
-                  isActive={location.pathname === "/principles/color"}
+                  render={<Link to="/rules/color" />}
+                  isActive={location.pathname === "/rules/color"}
                 >
                   <span>配色</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  render={<Link to="/principles/shape" />}
-                  isActive={location.pathname === "/principles/shape"}
+                  render={<Link to="/rules/shape" />}
+                  isActive={location.pathname === "/rules/shape"}
                 >
                   <span>形</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  render={<Link to="/principles/spacing" />}
-                  isActive={location.pathname === "/principles/spacing"}
+                  render={<Link to="/rules/spacing" />}
+                  isActive={location.pathname === "/rules/spacing"}
                 >
                   <span>余白</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  render={<Link to="/principles/typography" />}
-                  isActive={location.pathname === "/principles/typography"}
+                  render={<Link to="/rules/typography" />}
+                  isActive={location.pathname === "/rules/typography"}
                 >
                   <span>文字</span>
                 </SidebarMenuButton>

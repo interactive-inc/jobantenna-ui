@@ -5,9 +5,9 @@ import { BellDotIcon, CircleCheckIcon, InfoIcon, SendIcon, StickyNoteIcon } from
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ColorSwatch } from "@/components/catalog/color-swatch"
-import { PrinciplePageHeader } from "@/components/catalog/principle-page-header"
+import { RulePageHeader } from "@/components/catalog/rule-page-header"
 
-export const Route = createFileRoute("/_catalog/principles/color")({
+export const Route = createFileRoute("/_catalog/rules/color")({
   component: ColorPage,
 })
 
@@ -120,44 +120,44 @@ const jobAntennaSampleStyle: CSSProperties = {
  */
 function ColorPage() {
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-12 px-4 py-12 md:px-8">
-      <PrinciplePageHeader
+    <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
+      <RulePageHeader
         title="配色"
         lead="ジョブアンテナの実パレットを色名のままUIへ直書きせず、shadcnの意味トークンへ割り当てて使う。ブランドのYellowとBlackを核に、Blue Grayで面と境界を作り、彩度のある色は状態の意味にだけ固定する。"
       />
 
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">ブランドの核</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">ブランドの核</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           YellowとBlackはライト・ダークで変えない固定値。Yellowを面、Blackを文字に使うことで、ブランドらしさと読みやすさを同時に保つ。
         </p>
-        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4">
           {brandTokens.map((token) => (
             <ColorSwatch key={token.name} {...token} />
           ))}
         </div>
       </section>
 
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">shadcnの基本トークン</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">shadcnの基本トークン</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           コンポーネントは元の色名ではなく、primary・muted・borderのような役割を参照する。テーマ切り替えは値だけを変え、役割は変えない。
         </p>
-        <div className="grid grid-cols-1 gap-2 xl:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4">
           {shadcnTokens.map((token) => (
             <ColorSwatch key={token.name} {...token} />
           ))}
         </div>
       </section>
 
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">主要アクションだけが光る</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">主要アクションだけが光る</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           primaryは1画面に原則1つ。副次アクションはsecondary・outline・ghostへ落とし、Yellowの面を増やしすぎない。
         </p>
         <div
           style={jobAntennaSampleStyle}
-          className="flex flex-wrap items-center gap-2 rounded-2xl bg-background p-4 text-foreground"
+          className="flex flex-wrap items-center gap-3 rounded-2xl bg-background p-6 text-foreground"
         >
           <Button>応募する</Button>
           <Button variant="secondary">保存</Button>
@@ -168,28 +168,28 @@ function ColorPage() {
           </Button>
           <Button disabled>応募済み</Button>
         </div>
-        <p className="text-xs text-muted-foreground">
+        <p className="max-w-prose text-sm text-muted-foreground">
           テキストリンクは低コントラストのYellowを避け、Blueのlinkトークンを使う。
         </p>
       </section>
 
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">状態色は意味に固定する</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">状態色は意味に固定する</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           色だけに頼らず、アイコンとラベルを併記する。淡い色を面、濃い色を文字に分けることで、状態バッジもコントラストを保つ。
         </p>
         <div
           style={jobAntennaSampleStyle}
-          className="flex flex-col gap-2 rounded-2xl bg-background p-4 text-foreground"
+          className="flex flex-col gap-y-3 rounded-2xl bg-background p-6 text-foreground"
         >
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="w-56 shrink-0 text-sm text-muted-foreground">相手からの事実</span>
             <Badge className="border-info/30 bg-info-muted text-info">
               <InfoIcon data-icon="inline-start" aria-hidden="true" />
               応募あり
             </Badge>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="w-56 shrink-0 text-sm text-muted-foreground">
               こちらから送ったシグナル
             </span>
@@ -198,7 +198,7 @@ function ColorPage() {
               送信済み
             </Badge>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="w-56 shrink-0 text-sm text-muted-foreground">
               相手から届いたシグナル
             </span>
@@ -207,21 +207,21 @@ function ColorPage() {
               受信あり
             </Badge>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="w-56 shrink-0 text-sm text-muted-foreground">内部向けのメモ</span>
             <Badge className="border-warning/40 bg-warning-muted text-warning-foreground">
               <StickyNoteIcon data-icon="inline-start" aria-hidden="true" />
               メモあり
             </Badge>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="w-56 shrink-0 text-sm text-muted-foreground">未読・要対応</span>
             <Badge variant="destructive">
               <BellDotIcon data-icon="inline-start" aria-hidden="true" />
               未読 3
             </Badge>
           </div>
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="flex flex-wrap items-center gap-3">
             <span className="w-56 shrink-0 text-sm text-muted-foreground">
               公開状態（彩度を使わない）
             </span>
@@ -232,20 +232,20 @@ function ColorPage() {
         </div>
       </section>
 
-      <section className="space-y-4">
-        <h2 className="text-lg font-semibold">チャートはBlue Grayで組む</h2>
-        <p className="text-sm leading-relaxed text-muted-foreground">
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">チャートはBlue Grayで組む</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           系列はBlue
           Grayの明度差で区別し、状態色との意味衝突を避ける。強調したい1系列だけprimaryを使ってよい。
         </p>
-        <div className="flex items-end gap-2 rounded-2xl border p-4">
+        <div className="flex items-end gap-2 rounded-2xl border p-6">
           <div className="h-16 w-8 rounded-lg bg-blue-gray1" />
           <div className="h-12 w-8 rounded-lg bg-blue-gray3" />
           <div className="h-20 w-8 rounded-lg bg-blue-gray5" />
           <div className="h-8 w-8 rounded-lg bg-blue-gray7" />
           <div className="h-14 w-8 rounded-lg bg-blue-gray10" />
           <div className="h-24 w-8 rounded-lg bg-job-antenna-yellow" />
-          <span className="ml-2 text-xs text-muted-foreground">Blue Gray 5段階 + 強調1色</span>
+          <span className="ml-2 text-sm text-muted-foreground">Blue Gray 5段階 + 強調1色</span>
         </div>
       </section>
     </div>
