@@ -1,7 +1,6 @@
 {
+  "advisorModel": "claude-fable-5",
   "effortLevel": "xhigh",
-  "model": "claude-opus-4-6",
-  "advisorModel": "claude-opus-4-8",
   "enableAllProjectMcpServers": true,
   "enabledPlugins": {
     "commit-commands@claude-plugins-official": true,
@@ -13,19 +12,15 @@
     "typescript-lsp@claude-plugins-official": true
   },
   "env": {
-    "CLAUDE_CODE_TASK_LIST_ID": "jobantenna-ui"
+    "CLAUDE_CODE_TASK_LIST_ID": "jobantenna-design"
   },
   "permissions": {
     "defaultMode": "bypassPermissions",
     "deny": [
-      "Edit(hiract/src/index.base-mira.css)",
-      "Write(hiract/src/index.base-mira.css)",
-      "Edit(hiract/src/components/ui.base-mira/**)",
-      "Write(hiract/src/components/ui.base-mira/**)",
+      "Edit(hiract/src/index.base-luma.css)",
+      "Edit(hiract/src/components/ui.base-luma/**)",
       "Edit(hiract/src/hooks/use-mobile.ts)",
-      "Write(hiract/src/hooks/use-mobile.ts)",
-      "Edit(hiract/src/route-tree.gen.ts)",
-      "Write(hiract/src/route-tree.gen.ts)"
+      "Edit(hiract/src/route-tree.gen.ts)"
     ]
   },
   "skipDangerousModePermissionPrompt": true
