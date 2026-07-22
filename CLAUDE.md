@@ -22,3 +22,10 @@ lint/format/test は vite-plus (`vp`) に統一。設定はすべて `vite.confi
 - URL は `https://design.jobantenna.localhost`（`portless.json` の name 由来）。ポート番号で叩かない
 - `portless.json` で `appPort: 4791` を固定し、`vite.config.ts` の `server.port` も同じ 4791 に固定している。ポートがずれるとプロキシが 502 になる
 - `dev` スクリプトの `--host 127.0.0.1` は必須。外すと Vite が IPv6 のみでバインドし、127.0.0.1 へ繋ぐ portless プロキシが ECONNREFUSED になる
+
+## デプロイ
+
+main にプッシュすると Cloudflare が自動デプロイする。公開 URL は https://ui.jobantenna.jp
+
+- SSG（プレレンダー）で配信される。crawler は `<a href>` しか辿らないため、リンクされていないルートは HTML が生成されず、未生成パスへのアクセスはフォールバックのトップページ HTML が返る
+- 新しいルートを足したら、いずれかのページからアンカーリンクで到達できることを確認する（iframe の src だけでは辿られない）
