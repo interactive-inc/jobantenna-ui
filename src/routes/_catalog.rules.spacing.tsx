@@ -1,8 +1,10 @@
 import type { ReactNode } from "react"
 import { createFileRoute } from "@tanstack/react-router"
 
+import { SearchXIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Empty, EmptyDescription, EmptyMedia, EmptyTitle } from "@/components/ui/empty"
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
 import { sampleCanvasStyle } from "@/components/catalog/sample-canvas-style"
 
@@ -16,7 +18,7 @@ type SpacingStep = {
   usage: string
 }
 
-const spacingSteps: ReadonlyArray<SpacingStep> = [
+const denseSpacingSteps: ReadonlyArray<SpacingStep> = [
   {
     tailwind: "p-0.5 / gap-0.5",
     px: 2,
@@ -39,13 +41,31 @@ const spacingSteps: ReadonlyArray<SpacingStep> = [
   },
 ]
 
+const looseSpacingSteps: ReadonlyArray<SpacingStep> = [
+  {
+    tailwind: "gap-8",
+    px: 32,
+    usage: "チャットのメッセージ同士など、別発言として離す縦の間隔",
+  },
+  {
+    tailwind: "p-12",
+    px: 48,
+    usage: "空状態のように、中身が少ない面の内側パディング",
+  },
+  {
+    tailwind: "py-16 / space-y-16",
+    px: 64,
+    usage: "ページ全体の上下パディング、ページ内の大セクション同士の区切り",
+  },
+]
+
 /**
  * 余白のスケールを塗り分けで見せる帯。幅は実寸の px そのもの
  */
 function SpacingScaleRow(props: SpacingStep) {
   return (
     <div className="flex items-center gap-4">
-      <code className="w-28 shrink-0 text-xs font-medium">{props.tailwind}</code>
+      <code className="w-36 shrink-0 text-xs font-medium">{props.tailwind}</code>
       <span className="w-10 shrink-0 text-xs text-muted-foreground">{props.px}px</span>
       <div className="h-4 shrink-0 rounded-xs bg-primary" style={{ width: props.px }} />
       <span className="min-w-0 flex-1 truncate text-xs text-muted-foreground">{props.usage}</span>
@@ -192,6 +212,44 @@ function InnerPadding() {
 }
 
 /**
+ * 大きい余白の実例。カタログの Empty コンポーネントの p-12 をそのまま使う
+ */
+function LooseInnerPaddingExample() {
+  return (
+    <div className="w-full max-w-sm rounded-(--radius-outer) border border-dashed">
+      <Empty className="border-none">
+        <EmptyMedia variant="icon">
+          <SearchXIcon />
+        </EmptyMedia>
+        <EmptyTitle>該当する求人がありません</EmptyTitle>
+        <EmptyDescription>条件を変えて再度検索してください</EmptyDescription>
+      </Empty>
+    </div>
+  )
+}
+
+/**
+ * 大きい余白の実例。ページ本体の外枠に使う py-16 / space-y-16 の縮尺見本。
+ * 実寸の 64px だと枠に収まらないため 1/4 縮尺で構成比だけを見せる
+ */
+function LoosePageRhythmExample() {
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="w-full max-w-sm space-y-4 rounded-(--radius-outer) border border-dashed p-4">
+        <span className="text-xs font-medium text-neutral-900">セクションA</span>
+        <div className="h-8 rounded-(--radius-inner) bg-muted" />
+        <div className="h-4 bg-sky-200" />
+        <span className="text-xs font-medium text-neutral-900">セクションB</span>
+        <div className="h-8 rounded-(--radius-inner) bg-muted" />
+      </div>
+      <span className="text-xs text-muted-foreground">
+        1/4 縮尺（実寸 py-16 / space-y-16 → 表示 py-4 / space-y-4）
+      </span>
+    </div>
+  )
+}
+
+/**
  * 各原則を実クラスのまま組んだ完成形。gap-1 / gap-0.5 / gap-2 / p-4 をそのまま使う
  */
 function PlainJobCard() {
@@ -223,17 +281,17 @@ function SpacingPage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="余白"
-        lead="余白は p-0.5 / p-1 / p-2 / p-4 の4段階だけを使います。gap も同じく gap-0.5 / gap-1 / gap-2 / gap-4。情報密度が高い画面でも、このスケールを守ることでリズムが崩れません。中間の値が欲しくなったら、それは値の問題ではなく階層設計の見直しが必要なサインです。"
+        lead="余白には2つの層があります。要素どうしの近さを作る密な間隔が p-0.5 / p-1 / p-2 / p-4（gap も同じ4段階）、面と面を区切る大きい余白が gap-8 / p-12 / py-16 です。情報密度が高い画面でも、このスケールを守ることでリズムが崩れません。中間の値が欲しくなったら、それは値の問題ではなく階層設計の見直しが必要なサインです。"
       />
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">スケール</h2>
+        <h2 className="text-xl font-semibold tracking-tight">密な間隔のスケール</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          使うのは 0.5 / 1 / 2 / 4 の4段階だけです。数字がそのまま余白の名前で、sm や md
-          のようなトークン名はありません。帯の長さは実寸の px そのものです。
+          カードの中、要素どうしの近さに使うのは 0.5 / 1 / 2 / 4 の4段階だけです。数字がそのまま
+          余白の名前で、sm や md のようなトークン名はありません。帯の長さは実寸の px そのものです。
         </p>
         <div className="flex flex-col gap-2 rounded-xl border p-4">
-          {spacingSteps.map((step) => (
+          {denseSpacingSteps.map((step) => (
             <SpacingScaleRow key={step.tailwind} {...step} />
           ))}
         </div>
@@ -270,6 +328,32 @@ function SpacingPage() {
           の余白を回します。縁と内容がくっつかず、四辺すべてで同じ厚みの額縁になります。
         </p>
         <InnerPadding />
+      </section>
+
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">大きい余白は、面と面の間に使う</h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          p-4 より大きい余白は、カードの中では使いません。使うのは面と面の間、または中身が少ない面の
+          内側だけです。密な間隔の4段階とは目的が違うので、同じ4段階のリズムには含めず別の語彙として
+          扱います。
+        </p>
+        <div className="flex flex-col gap-2 rounded-xl border p-4">
+          {looseSpacingSteps.map((step) => (
+            <SpacingScaleRow key={step.tailwind} {...step} />
+          ))}
+        </div>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          <code>gap-8</code> はチャットのメッセージ同士のように、独立した発言単位を離す縦の間隔です
+          （message-scroller）。<code>p-12</code> は Empty
+          のように中身がテキストとアイコンだけの面で、余白そのものが「何もない」ことを伝えます。{" "}
+          <code>py-16 / space-y-16</code>
+          はページ本体の外枠と、ページ内の大きなセクション同士の区切りに使い、このカタログの全ページ
+          がこの値で組まれています。
+        </p>
+        <SpacingStage>
+          <LooseInnerPaddingExample />
+          <LoosePageRhythmExample />
+        </SpacingStage>
       </section>
 
       <section className="space-y-5">
