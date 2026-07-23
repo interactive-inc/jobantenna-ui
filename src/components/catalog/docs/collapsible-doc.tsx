@@ -115,7 +115,7 @@ function SearchFilterPattern() {
       <Separator />
 
       <div className="flex items-center justify-between gap-2">
-        <Button variant="ghost" size="sm">
+        <Button variant="secondary" size="sm">
           すべてクリア
         </Button>
         <Button>128件 検索する</Button>

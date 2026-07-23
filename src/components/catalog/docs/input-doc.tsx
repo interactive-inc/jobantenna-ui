@@ -50,7 +50,7 @@ function KeywordSearchPattern() {
       </div>
 
       <div className="flex items-center justify-between border-t p-4">
-        <Button variant="ghost">すべてクリア</Button>
+        <Button variant="secondary">すべてクリア</Button>
         <Button>
           <SearchIcon data-icon="inline-start" />
           128件 検索する

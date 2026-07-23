@@ -211,7 +211,7 @@ function SearchConditionPattern() {
         </CommandList>
 
         <div className="flex items-center justify-between gap-2 border-t border-border/50 p-2">
-          <Button variant="ghost" size="sm">
+          <Button variant="secondary" size="sm">
             すべてクリア
           </Button>
           <Button size="sm">128件 検索する</Button>

@@ -117,7 +117,7 @@ function FilterSearchPattern() {
 
         <DrawerFooter>
           <Button>128件 検索する</Button>
-          <DrawerClose render={<Button variant="ghost" />}>すべてクリア</DrawerClose>
+          <DrawerClose render={<Button variant="secondary" />}>すべてクリア</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -91,7 +91,7 @@ function DesiredSalaryPattern() {
       </div>
 
       <div className="flex items-center justify-between border-t p-4">
-        <Button variant="ghost" size="sm">
+        <Button variant="secondary" size="sm">
           すべてクリア
         </Button>
 

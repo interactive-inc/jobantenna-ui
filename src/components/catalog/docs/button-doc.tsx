@@ -104,7 +104,7 @@ function ApplyStatusPattern() {
 function SearchFooterPattern() {
   return (
     <div className="flex w-full max-w-md items-center justify-between gap-2 rounded-lg border p-4">
-      <Button variant="ghost">すべてクリア</Button>
+      <Button variant="secondary">すべてクリア</Button>
       <Button>
         <SearchIcon />
         128件 検索する
@@ -148,7 +148,7 @@ export const buttonDoc: ComponentDoc = {
       id: "search-footer",
       title: "検索フッター",
       description:
-        "検索条件パネルのフッターです。ヒット件数を含めた「128件 検索する」を primary、条件リセットの「すべてクリア」を ghost で並べます。",
+        "検索条件パネルのフッターです。ヒット件数を含めた「128件 検索する」を primary、条件リセットの「すべてクリア」を secondary で並べます。",
       previewHeight: null,
       Demo: SearchFooterPattern,
     },

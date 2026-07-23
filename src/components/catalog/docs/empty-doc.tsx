@@ -54,7 +54,7 @@ function SearchEmptyPattern() {
         <EmptyContent>
           <div className="flex flex-wrap justify-center gap-2">
             <Button>条件を変更する</Button>
-            <Button variant="outline">すべてクリア</Button>
+            <Button variant="secondary">すべてクリア</Button>
           </div>
         </EmptyContent>
       </Empty>
