@@ -1,5 +1,12 @@
-/* ジョブアンテナ固有のセマンティックトークン。shadcn/ui のトークンとは分離する。 */
+/*
+ * Product-specific semantic tokens, kept separate from shadcn/ui's own tokens.
+ * outer / inner are pinned to Tailwind's default rounded-lg(8px) / rounded-sm(4px)
+ * (the --radius-sm..4xl custom multiplier scale was removed from styles.css's
+ * @theme block). Since these are fixed scale references rather than a computed
+ * value, outer = inner + p-1 holds only incidentally at the current --radius and
+ * is not guaranteed.
+ */
 :root {
   --radius-outer: var(--radius-lg);
-  --radius-inner: calc(var(--radius-outer) - var(--spacing, 0.25rem));
+  --radius-inner: var(--radius-sm);
 }
