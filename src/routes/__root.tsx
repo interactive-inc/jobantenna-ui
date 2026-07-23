@@ -16,6 +16,10 @@ export const Route = createRootRoute({
       {
         title: "ジョブアンテナ UI カタログ",
       },
+      {
+        name: "robots",
+        content: "noindex, nofollow",
+      },
     ],
     links: [
       {
