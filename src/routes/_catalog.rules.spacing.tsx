@@ -40,14 +40,14 @@ const spacingSteps: ReadonlyArray<SpacingStep> = [
 ]
 
 /**
- * 余白のスケールを塗り分けで見せる帯。px 幅は 8 倍して視認しやすくする
+ * 余白のスケールを塗り分けで見せる帯。幅は実寸の px そのもの
  */
 function SpacingScaleRow(props: SpacingStep) {
   return (
     <div className="flex items-center gap-4">
       <code className="w-28 shrink-0 text-xs font-medium">{props.tailwind}</code>
       <span className="w-10 shrink-0 text-xs text-muted-foreground">{props.px}px</span>
-      <div className="h-4 shrink-0 rounded-xs bg-primary" style={{ width: props.px * 8 }} />
+      <div className="h-4 shrink-0 rounded-xs bg-primary" style={{ width: props.px }} />
       <span className="min-w-0 flex-1 truncate text-xs text-muted-foreground">{props.usage}</span>
     </div>
   )
@@ -230,7 +230,7 @@ function SpacingPage() {
         <h2 className="text-xl font-semibold tracking-tight">スケール</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           使うのは 0.5 / 1 / 2 / 4 の4段階だけです。数字がそのまま余白の名前で、sm や md
-          のようなトークン名はありません。帯の長さは実寸の8倍で、px 表記の値がそのまま実際の余白です。
+          のようなトークン名はありません。帯の長さは実寸の px そのものです。
         </p>
         <div className="flex flex-col gap-2 rounded-xl border p-4">
           {spacingSteps.map((step) => (
