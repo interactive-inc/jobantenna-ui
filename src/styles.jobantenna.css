@@ -1,5 +1,5 @@
 /* ジョブアンテナ固有のセマンティックトークン。shadcn/ui のトークンとは分離する。 */
 :root {
-  --radius-outer: var(--radius-md);
-  --radius-inner: var(--radius-sm);
+  --radius-outer: var(--radius-lg);
+  --radius-inner: calc(var(--radius-outer) - var(--spacing, 0.25rem));
 }

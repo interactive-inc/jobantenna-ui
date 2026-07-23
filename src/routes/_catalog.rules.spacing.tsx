@@ -196,7 +196,7 @@ function InnerPadding() {
  */
 function PlainJobCard() {
   return (
-    <div className="flex w-full max-w-sm flex-col gap-2 rounded-4xl border bg-card p-4 text-card-foreground">
+    <div className="flex w-full max-w-sm flex-col gap-2 rounded-(--radius-outer) border bg-card p-4 text-card-foreground">
       <div className="flex items-center gap-1">
         <Badge variant="secondary">正社員</Badge>
         <Badge variant="secondary">未経験OK</Badge>
