@@ -176,7 +176,7 @@ function InnerPadding() {
   return (
     <SpacingStage>
       <div className="rounded-4xl bg-amber-100 p-4">
-        <div className="flex w-56 flex-col rounded-2xl bg-white p-3 text-neutral-900">
+        <div className="flex w-56 flex-col rounded-lg bg-white p-3 text-neutral-900">
           <span className="font-medium">フロントエンドエンジニア</span>
           <span className="text-xs text-neutral-500">株式会社サンプル / 那覇市</span>
         </div>
