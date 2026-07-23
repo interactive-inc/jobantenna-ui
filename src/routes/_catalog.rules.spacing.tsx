@@ -84,7 +84,7 @@ const gap1Swatch: SpacingSwatch = { token: "gap-1", chip: "bg-orange-300" }
 const gap05Swatch: SpacingSwatch = { token: "gap-0.5", chip: "bg-emerald-300" }
 
 /**
- * 色とトークンの対応を示す凡例チップ。図解と同じ色を背景に敷く
+ * トークン名を表示するミニラベル。図解のどこにどの余白が効いているかを明示する
  */
 function SpacingLabel(props: SpacingSwatch) {
   return (
@@ -111,86 +111,94 @@ function SpacingStage(props: { children: ReactNode }) {
 }
 
 /**
- * 1つの横並びを、要素の間に実寸の色付きスペーサーを挟んで見せる図解。
- * 色が付くのは隙間の幅だけ。行は w-fit で右に色が伸びない
+ * gap-0.5 の実例。求人タイトルと会社名を地続きに重ね、1つのかたまりに見せる
  */
-function HorizontalGapExample(props: {
-  swatch: SpacingSwatch
-  caption: string
-  children: ReactNode
-}) {
+function DenseLineStack() {
   return (
-    <div className="flex flex-col gap-2">
-      <div className="flex w-fit items-center rounded-xl bg-white p-2 text-neutral-900">
-        {props.children}
+    <SpacingStage>
+      <div className="flex w-64 flex-col gap-0.5 rounded-xl bg-white p-4 text-neutral-900">
+        <span className="font-medium">フロントエンドエンジニア</span>
+        <span className="text-xs text-neutral-500">株式会社サンプル / 那覇市</span>
       </div>
       <div className="flex items-center gap-2">
-        <SpacingLabel {...props.swatch} />
-        <span className="text-xs text-muted-foreground">{props.caption}</span>
+        <SpacingLabel {...gap05Swatch} />
+        <span className="text-xs text-muted-foreground">2px の隙間で地続きの行を一体に見せる</span>
       </div>
-    </div>
+    </SpacingStage>
   )
 }
 
 /**
- * 横に並べるときの近接を、バッジ（gap-1）とボタン（gap-2）の2例で見せる
+ * gap-1 の実例。同じ種類のバッジを横に詰めて、ひとかたまりの属性に見せる
  */
-function HorizontalProximity() {
+function HorizontalTightBadges() {
   return (
     <SpacingStage>
-      <HorizontalGapExample swatch={gap1Swatch} caption="意味が近い要素は詰める">
+      <div className="flex w-fit items-center gap-1 rounded-xl bg-white p-4 text-neutral-900">
         <Badge variant="secondary">正社員</Badge>
-        <div className="h-5 w-1 bg-orange-200" />
         <Badge variant="secondary">未経験OK</Badge>
-      </HorizontalGapExample>
-      <HorizontalGapExample swatch={gap2Swatch} caption="独立した操作は開ける">
+        <Badge variant="secondary">リモート可</Badge>
+      </div>
+      <div className="flex items-center gap-2">
+        <SpacingLabel {...gap1Swatch} />
+        <span className="text-xs text-muted-foreground">
+          4px の隙間で同種のバッジをひとまとまりに
+        </span>
+      </div>
+    </SpacingStage>
+  )
+}
+
+/**
+ * gap-2（横）の実例。独立した操作であるボタンを開けて、別々だと分かるようにする
+ */
+function HorizontalLooseButtons() {
+  return (
+    <SpacingStage>
+      <div className="flex w-fit items-center gap-2 rounded-xl bg-white p-4 text-neutral-900">
         <Button size="sm">応募する</Button>
-        <div className="h-8 w-2 bg-sky-200" />
         <Button size="sm" variant="outline">
           詳細を見る
         </Button>
-      </HorizontalGapExample>
+      </div>
+      <div className="flex items-center gap-2">
+        <SpacingLabel {...gap2Swatch} />
+        <span className="text-xs text-muted-foreground">
+          8px の隙間で独立した操作どうしを離す（横）
+        </span>
+      </div>
     </SpacingStage>
   )
 }
 
 /**
- * 縦の近接を、地続きのかたまり（gap-0.5）とまとまりの区切り（gap-2）で見せる
+ * gap-2（縦）の実例。タイトルブロックとバッジ行を縦に区切り、別のまとまりに見せる
  */
-function VerticalProximity() {
+function VerticalSectionGap() {
   return (
     <SpacingStage>
-      <div className="flex w-64 flex-col rounded-xl bg-white p-4 text-neutral-900">
-        <span className="text-xs font-medium text-neutral-500">求人タイトル</span>
-
-        <div className="mt-2 flex flex-col">
+      <div className="flex w-64 flex-col gap-2 rounded-xl bg-white p-4 text-neutral-900">
+        <div className="flex flex-col gap-0.5">
           <span className="font-medium">フロントエンドエンジニア</span>
-          <div className="h-0.5 bg-emerald-200" />
           <span className="text-xs text-neutral-500">株式会社サンプル / 那覇市</span>
         </div>
-
-        <div className="h-2 bg-sky-200" />
-
-        <div className="flex items-center">
+        <div className="flex items-center gap-1">
           <Badge variant="secondary">正社員</Badge>
+          <Badge variant="secondary">未経験OK</Badge>
         </div>
       </div>
-      <div className="flex flex-col gap-2">
-        <div className="flex items-center gap-2">
-          <SpacingLabel {...gap05Swatch} />
-          <span className="text-xs text-muted-foreground">地続きの行は一体に見せる</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <SpacingLabel {...gap2Swatch} />
-          <span className="text-xs text-muted-foreground">まとまり同士は区切る</span>
-        </div>
+      <div className="flex items-center gap-2">
+        <SpacingLabel {...gap2Swatch} />
+        <span className="text-xs text-muted-foreground">
+          8px の隙間でまとまり同士を縦に区切る（縦）
+        </span>
       </div>
     </SpacingStage>
   )
 }
 
 /**
- * カードの内側の余白 p-4 を、額縁として見える図解で見せる
+ * p-4 の実例。カードの内側の余白を額縁として見える図解で見せる
  */
 function InnerPadding() {
   return (
@@ -208,6 +216,26 @@ function InnerPadding() {
         </span>
       </div>
     </SpacingStage>
+  )
+}
+
+/**
+ * gap-8 の実例。チャットの吹き出しを縦に gap-8 で並べ、別発言として離して見せる
+ */
+function LooseMessageGapExample() {
+  return (
+    <div className="flex w-full max-w-sm flex-col gap-8 rounded-(--radius-outer) border bg-white p-4 text-neutral-900">
+      <div className="flex justify-start">
+        <div className="max-w-[85%] rounded-lg bg-muted p-2 text-sm">
+          この度はご応募ありがとうございます。面接のご希望日を教えてください。
+        </div>
+      </div>
+      <div className="flex justify-end">
+        <div className="max-w-[85%] rounded-lg bg-primary p-2 text-sm text-primary-foreground">
+          来週の火曜か水曜の午後ですと伺えます。
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -250,31 +278,7 @@ function LoosePageRhythmExample() {
 }
 
 /**
- * 各原則を実クラスのまま組んだ完成形。gap-1 / gap-0.5 / gap-2 / p-4 をそのまま使う
- */
-function PlainJobCard() {
-  return (
-    <div className="flex w-full max-w-sm flex-col gap-2 rounded-(--radius-outer) border bg-card p-4 text-card-foreground">
-      <div className="flex items-center gap-1">
-        <Badge variant="secondary">正社員</Badge>
-        <Badge variant="secondary">未経験OK</Badge>
-      </div>
-      <div className="flex flex-col gap-0.5">
-        <span className="font-medium">フロントエンドエンジニア</span>
-        <span className="text-xs text-muted-foreground">株式会社サンプル / 那覇市</span>
-      </div>
-      <div className="flex gap-2">
-        <Button size="sm">応募する</Button>
-        <Button size="sm" variant="outline">
-          詳細を見る
-        </Button>
-      </div>
-    </div>
-  )
-}
-
-/**
- * 原則「余白は4段階のリズム」。スケールと、横・縦・内側の近接を分けて見せる
+ * 原則「余白は4段階のリズム」。スケールと、各パターンを1つずつ独立して見せる
  */
 function SpacingPage() {
   return (
@@ -297,41 +301,66 @@ function SpacingPage() {
         </div>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           この4値の間にある p-1.5 や p-3 は使いません。大きな区切りほど大きな余白、という対応を
-          4段で完結させます。縦の間隔は margin でなく gap / space-y で作ります。
+          4段で完結させます。縦の間隔は margin でなく gap / space-y で作ります。以降、この4段階が
+          実際のコンポーネントでどう効くかを、パターンごとに1つずつ見ていきます。
         </p>
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">横は、近い要素ほど詰める</h2>
+        <h2 className="text-xl font-semibold tracking-tight">gap-0.5 ── 地続きな行を重ねる</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          横に並べるとき、意味が近い要素は gap-1 で詰めてひとかたまりに見せます。独立した操作は
-          gap-2
-          で開けて別々だと分かるようにします。図解の色付きの帯が、要素の間に空く実寸の隙間です。
+          求人タイトルと会社名のように意味が地続きな行は gap-0.5 でほぼ隙間なく重ね、1つのかたまりに
+          見せます。行の間に 2px だけ入れることで、詰まりすぎず、かつ別々の情報には見えません。
         </p>
-        <HorizontalProximity />
+        <DenseLineStack />
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">縦は、地続きか区切りかで決める</h2>
+        <h2 className="text-xl font-semibold tracking-tight">
+          gap-1 ── 同じ種類の要素を横に詰める
+        </h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          タイトルと会社名のように意味が地続きな行は gap-0.5
-          でほぼ隙間なく重ね、1つのかたまりに見せます。かたまり同士は gap-2
-          で区切って、別々の情報だと分かるようにします。
+          雇用形態や条件のバッジのように、同じ種類の要素を横に並べるときは gap-1 で詰めます。4px の
+          狭い隙間が、ばらばらの単語ではなく1つの属性のまとまりだと伝えます。
         </p>
-        <VerticalProximity />
+        <HorizontalTightBadges />
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">内側は、面から一定の余白を空ける</h2>
+        <h2 className="text-xl font-semibold tracking-tight">
+          gap-2（横）── 独立した要素を横に開ける
+        </h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          「応募する」と「詳細を見る」のように、それぞれ独立した操作を横に並べるときは gap-2
+          で開けます。 8px
+          の隙間が、押し間違えない距離と、別々のアクションだという区別を同時に作ります。
+        </p>
+        <HorizontalLooseButtons />
+      </section>
+
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">
+          gap-2（縦）── まとまり同士を縦に区切る
+        </h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          同じ gap-2 は縦にも使います。タイトルブロックとバッジ行のように、性質の違うまとまり同士を
+          縦に区切るのがこの用途です。横で操作を開けるときと、縦でまとまりを区切るとき、どちらも
+          「独立したもの同士を離す」という同じ意味を、同じ 8px で表しています。
+        </p>
+        <VerticalSectionGap />
+      </section>
+
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">p-4 ── 面の内側に余白を回す</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           カードのように内容を囲む面は、内側に p-4
-          の余白を回します。縁と内容がくっつかず、四辺すべてで同じ厚みの額縁になります。
+          の余白を回します。縁と内容がくっつかず、四辺すべてで 同じ厚みの額縁になります。
         </p>
         <InnerPadding />
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">大きい余白は、面と面の間に使う</h2>
+        <h2 className="text-xl font-semibold tracking-tight">大きい余白のスケール</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           p-4 より大きい余白は、カードの中では使いません。使うのは面と面の間、または中身が少ない面の
           内側だけです。密な間隔の4段階とは目的が違うので、同じ4段階のリズムには含めず別の語彙として
@@ -342,28 +371,44 @@ function SpacingPage() {
             <SpacingScaleRow key={step.tailwind} {...step} />
           ))}
         </div>
+      </section>
+
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">gap-8 ── 別発言として離す</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          <code>gap-8</code> はチャットのメッセージ同士のように、独立した発言単位を離す縦の間隔です
-          （message-scroller）。<code>p-12</code> は Empty
-          のように中身がテキストとアイコンだけの面で、余白そのものが「何もない」ことを伝えます。{" "}
-          <code>py-16 / space-y-16</code>
-          はページ本体の外枠と、ページ内の大きなセクション同士の区切りに使い、このカタログの全ページ
-          がこの値で組まれています。
+          gap-8 はチャットのメッセージ同士のように、独立した発言単位を離す縦の間隔です
+          （message-scroller）。密な間隔よりはっきり空けることで、一続きの内容ではなく別々の発言だと
+          伝わります。
         </p>
         <SpacingStage>
-          <LooseInnerPaddingExample />
-          <LoosePageRhythmExample />
+          <LooseMessageGapExample />
         </SpacingStage>
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">完成形</h2>
+        <h2 className="text-xl font-semibold tracking-tight">p-12 ── 中身が少ない面の内側</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          横の gap-1 / gap-2、縦の gap-0.5 / gap-2、内側の p-4。ここまでの原則が、この求人カード
-          1枚に全部入っています。図解ではなく実クラスをそのまま使っています。
+          p-12 は Empty
+          のように中身がテキストとアイコンだけの面で使います。広い内側パディングそのものが
+          「ここには何もない」ことを伝え、通常のカードとは違う特別な状態だと分からせます。
         </p>
         <SpacingStage>
-          <PlainJobCard />
+          <LooseInnerPaddingExample />
+        </SpacingStage>
+      </section>
+
+      <section className="space-y-5">
+        <h2 className="text-xl font-semibold tracking-tight">
+          py-16 / space-y-16 ── ページのリズム
+        </h2>
+        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
+          py-16 / space-y-16
+          はページ本体の外枠と、ページ内の大きなセクション同士の区切りに使います。
+          このカタログの全ページがこの値で組まれています。実寸の 64px
+          は枠に収まらないため、下の見本は 構成比だけを 1/4 縮尺で示しています。
+        </p>
+        <SpacingStage>
+          <LoosePageRhythmExample />
         </SpacingStage>
       </section>
     </div>
