@@ -18,8 +18,8 @@
       "dependencies": ["@base-ui/react", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -38,8 +38,8 @@
       "dependencies": ["class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -59,8 +59,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -78,8 +78,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -99,8 +99,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -119,8 +119,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -139,8 +139,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -159,8 +159,8 @@
       "dependencies": ["@base-ui/react", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -179,8 +179,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -199,8 +199,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -220,8 +220,8 @@
       "registryDependencies": ["separator"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -241,8 +241,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -260,8 +260,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -281,8 +281,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -301,8 +301,8 @@
       "dependencies": ["recharts"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -321,8 +321,8 @@
       "dependencies": ["@base-ui/react", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -341,8 +341,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -362,8 +362,8 @@
       "registryDependencies": ["button", "input-group"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -383,8 +383,8 @@
       "registryDependencies": ["dialog", "input-group"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -403,8 +403,8 @@
       "dependencies": ["@base-ui/react", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -424,8 +424,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -444,8 +444,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -464,8 +464,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -484,8 +484,8 @@
       "dependencies": ["@base-ui/react", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -504,8 +504,8 @@
       "dependencies": ["class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -525,8 +525,8 @@
       "registryDependencies": ["label", "separator"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -545,8 +545,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -565,8 +565,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -586,8 +586,8 @@
       "registryDependencies": ["button", "input", "textarea"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -606,8 +606,8 @@
       "dependencies": ["input-otp", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -627,8 +627,8 @@
       "registryDependencies": ["separator"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -646,8 +646,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -665,8 +665,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -685,8 +685,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -706,8 +706,8 @@
       "registryDependencies": ["dropdown-menu"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -725,8 +725,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -746,8 +746,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -766,8 +766,8 @@
       "dependencies": ["lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -786,8 +786,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -807,8 +807,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -827,8 +827,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -847,8 +847,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -867,8 +867,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -887,8 +887,8 @@
       "dependencies": ["react-resizable-panels"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -907,8 +907,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -927,8 +927,8 @@
       "dependencies": ["@base-ui/react", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -947,8 +947,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -968,8 +968,8 @@
       "registryDependencies": ["button"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -997,8 +997,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1016,8 +1016,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1036,8 +1036,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1056,8 +1056,8 @@
       "dependencies": ["next-themes", "sonner", "lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1076,8 +1076,8 @@
       "dependencies": ["lucide-react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1096,8 +1096,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1115,8 +1115,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1135,8 +1135,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1154,8 +1154,8 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1174,8 +1174,8 @@
       "dependencies": ["@base-ui/react", "class-variance-authority"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1195,8 +1195,8 @@
       "registryDependencies": ["toggle"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
@@ -1215,8 +1215,8 @@
       "dependencies": ["@base-ui/react"],
       "cssVars": {
         "light": {
-          "radius-outer": "calc(var(--radius) * 0.8)",
-          "radius-inner": "calc(var(--radius) * 0.6)"
+          "radius-outer": "var(--radius)",
+          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
         }
       }
     },
