@@ -230,7 +230,7 @@ function SpacingPage() {
         <h2 className="text-xl font-semibold tracking-tight">スケール</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           使うのは 0.5 / 1 / 2 / 4 の4段階だけです。数字がそのまま余白の名前で、sm や md
-          のようなトークン名はありません。帯の長さが実際の px に比例しています。
+          のようなトークン名はありません。帯の長さは実寸の8倍で、px 表記の値がそのまま実際の余白です。
         </p>
         <div className="flex flex-col gap-2 rounded-xl border p-4">
           {spacingSteps.map((step) => (
