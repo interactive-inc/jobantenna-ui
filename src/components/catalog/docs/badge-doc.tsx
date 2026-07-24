@@ -159,6 +159,54 @@ function UnreadCountPattern() {
   )
 }
 
+/**
+ * アイコンの右上に重ねる通知バッジ。マイページのナビゲーションで未読数を知らせる
+ */
+function NotificationBadgePattern() {
+  return (
+    <div className="flex w-full max-w-sm items-center justify-around">
+      <button type="button" className="flex cursor-pointer flex-col items-center gap-1">
+        <span className="relative">
+          <HeartIcon className="size-6 text-muted-foreground" />
+          <Badge
+            variant="destructive"
+            className="absolute -top-1 -right-1.5 h-4 min-w-4 px-1 text-[10px]"
+          >
+            3
+          </Badge>
+        </span>
+        <span className="text-xs text-muted-foreground">いいかも！</span>
+      </button>
+
+      <button type="button" className="flex cursor-pointer flex-col items-center gap-1">
+        <span className="relative">
+          <FootprintsIcon className="size-6 text-muted-foreground" />
+          <Badge
+            variant="destructive"
+            className="absolute -top-1 -right-1.5 h-4 min-w-4 px-1 text-[10px]"
+          >
+            5
+          </Badge>
+        </span>
+        <span className="text-xs text-muted-foreground">あしあと</span>
+      </button>
+
+      <button type="button" className="flex cursor-pointer flex-col items-center gap-1">
+        <span className="relative">
+          <MessageSquareIcon className="size-6 text-muted-foreground" />
+          <Badge
+            variant="destructive"
+            className="absolute -top-1 -right-3 h-4 min-w-4 px-1 text-[10px]"
+          >
+            99+
+          </Badge>
+        </span>
+        <span className="text-xs text-muted-foreground">メッセージ</span>
+      </button>
+    </div>
+  )
+}
+
 export const badgeDoc: ComponentDoc = {
   name: "badge",
   title: "Badge",
@@ -197,6 +245,14 @@ export const badgeDoc: ComponentDoc = {
         "管理画面のメニュー項目に件数を添える例です。通常の件数は secondary、未読メッセージなど対応が必要なものだけ destructive にします。",
       previewHeight: null,
       Demo: UnreadCountPattern,
+    },
+    {
+      id: "notification-badge",
+      title: "通知バッジ",
+      description:
+        "マイページのナビゲーションでアイコンの右上に未読数を重ねる例です。リスト形式の「未読件数」と違い、relative なアイコンに destructive の Badge を absolute で重ね、100件以上は 99+ に丸めます。",
+      previewHeight: null,
+      Demo: NotificationBadgePattern,
     },
   ],
 }
