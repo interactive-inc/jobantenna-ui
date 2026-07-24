@@ -3,6 +3,29 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import {
+  Combobox,
+  ComboboxCollection,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxLabel,
+  ComboboxList,
+} from "@/components/ui/combobox"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+import {
   Drawer,
   DrawerClose,
   DrawerContent,
@@ -15,6 +38,29 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Building2Icon, ImageIcon, SlidersHorizontalIcon } from "lucide-react"
+
+const occupations = [
+  "接客・販売",
+  "調理・キッチン",
+  "一般事務",
+  "ITエンジニア",
+  "介護スタッフ",
+  "保育士",
+  "ドライバー",
+  "軽作業・倉庫",
+]
+
+type AreaGroup = {
+  value: string
+  items: ReadonlyArray<string>
+}
+
+const areaGroups: ReadonlyArray<AreaGroup> = [
+  { value: "本島南部", items: ["那覇市", "糸満市", "豊見城市", "南城市"] },
+  { value: "本島中部", items: ["浦添市", "宜野湾市", "沖縄市", "うるま市"] },
+  { value: "本島北部", items: ["名護市", "本部町", "今帰仁村"] },
+  { value: "離島", items: ["宮古島市", "石垣市", "久米島町"] },
+]
 
 /**
  * 下から出る最小構成のドロワー。スワイプハンドル付き
@@ -189,6 +235,158 @@ function JobDetailPattern() {
   )
 }
 
+/**
+ * ドロワーの上に Dialog を重ねて開くパターン。フッターの応募ボタンから応募確認ダイアログを開く
+ */
+function ApplyConfirmInDrawerPattern() {
+  return (
+    <Drawer swipeDirection="right">
+      <DrawerTrigger render={<Button variant="outline" />}>求人詳細を見る</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>フロントエンドエンジニア</DrawerTitle>
+          <DrawerDescription>【未経験歓迎・在宅可】自社求人サービスの画面開発</DrawerDescription>
+        </DrawerHeader>
+
+        <div className="flex min-h-0 flex-col gap-4 overflow-y-auto p-4">
+          <div className="flex items-center gap-2">
+            <div className="flex size-8 items-center justify-center rounded-md bg-muted">
+              <Building2Icon className="size-4 text-muted-foreground" />
+            </div>
+            <span className="text-sm text-muted-foreground">株式会社サンプル</span>
+          </div>
+
+          <div className="flex flex-col gap-2 text-sm">
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-muted-foreground">勤務地</span>
+              <span>那覇市</span>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-muted-foreground">雇用形態</span>
+              <span>正社員</span>
+            </div>
+            <div className="flex items-center justify-between gap-4">
+              <span className="text-muted-foreground">給与</span>
+              <span>月給 200,000〜300,000円</span>
+            </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground">
+            React / TypeScript
+            を用いた自社求人サービスの画面実装を担当します。デザイナーと連携しながら UI
+            コンポーネントの設計・開発を進めます。
+          </p>
+        </div>
+
+        <DrawerFooter>
+          <Dialog>
+            <DialogTrigger render={<Button />}>応募する</DialogTrigger>
+            {/* ネストされたダイアログの Backdrop は Base UI がデフォルトで描画しないため forceRender で強制する */}
+            <DialogPortal>
+              <DialogOverlay forceRender />
+            </DialogPortal>
+            <DialogContent>
+              <DialogHeader>
+                <DialogTitle>応募内容の確認</DialogTitle>
+                <DialogDescription>
+                  応募する求人を確認の上、「応募を完了する」を押してください。
+                </DialogDescription>
+              </DialogHeader>
+              <div className="flex items-center gap-4 rounded-xl bg-muted p-4">
+                <div className="flex size-12 shrink-0 items-center justify-center rounded-lg bg-background text-muted-foreground">
+                  <Building2Icon className="size-5" />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <span className="font-medium text-foreground">フロントエンドエンジニア</span>
+                  <span className="text-xs text-muted-foreground">株式会社サンプル</span>
+                  <span className="text-xs text-muted-foreground">
+                    那覇市 / 正社員 / 月給 200,000〜300,000円
+                  </span>
+                </div>
+              </div>
+              <DialogFooter>
+                <DialogClose render={<Button variant="outline" />}>キャンセル</DialogClose>
+                <DialogClose render={<Button />}>応募を完了する</DialogClose>
+              </DialogFooter>
+            </DialogContent>
+          </Dialog>
+          <DrawerClose render={<Button variant="outline" />}>閉じる</DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+
+/**
+ * 下から出る希望条件の登録フォーム。Combobox の候補リストはドロワーの上に重なって表示される
+ */
+function DesiredConditionsFormPattern() {
+  return (
+    <Drawer showSwipeHandle>
+      <DrawerTrigger render={<Button variant="outline" />}>希望条件を編集</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>希望条件の登録</DrawerTitle>
+          <DrawerDescription>条件に合う新着求人をお知らせします</DrawerDescription>
+        </DrawerHeader>
+
+        <div className="flex min-h-0 flex-col gap-4 overflow-y-auto p-4">
+          <div className="flex flex-col gap-2">
+            <span className="text-sm font-medium">職種</span>
+            <Combobox items={occupations}>
+              <ComboboxInput placeholder="職種を検索" showClear />
+              <ComboboxContent>
+                <ComboboxEmpty>該当する職種がありません</ComboboxEmpty>
+                <ComboboxList>
+                  {(occupation: string) => (
+                    <ComboboxItem key={occupation} value={occupation}>
+                      {occupation}
+                    </ComboboxItem>
+                  )}
+                </ComboboxList>
+              </ComboboxContent>
+            </Combobox>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <span className="text-sm font-medium">勤務地</span>
+            <Combobox items={areaGroups}>
+              <ComboboxInput placeholder="市区町村を検索" showClear />
+              <ComboboxContent>
+                <ComboboxEmpty>該当する勤務地がありません</ComboboxEmpty>
+                <ComboboxList>
+                  {(areaGroup: AreaGroup) => (
+                    <ComboboxGroup key={areaGroup.value} items={areaGroup.items}>
+                      <ComboboxLabel>{areaGroup.value}</ComboboxLabel>
+                      <ComboboxCollection>
+                        {(city: string) => (
+                          <ComboboxItem key={city} value={city}>
+                            {city}
+                          </ComboboxItem>
+                        )}
+                      </ComboboxCollection>
+                    </ComboboxGroup>
+                  )}
+                </ComboboxList>
+              </ComboboxContent>
+            </Combobox>
+          </div>
+
+          <div className="flex flex-col gap-2">
+            <Label htmlFor="desired-salary">希望給与（月給）</Label>
+            <Input id="desired-salary" placeholder="例: 200,000円以上" />
+          </div>
+        </div>
+
+        <DrawerFooter>
+          <Button>保存する</Button>
+          <DrawerClose render={<Button variant="outline" />}>キャンセル</DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  )
+}
+
 export const drawerDoc: ComponentDoc = {
   name: "drawer",
   title: "Drawer",
@@ -219,6 +417,22 @@ export const drawerDoc: ComponentDoc = {
         'swipeDirection="right" で右からスライドインする求人詳細です。一覧に戻りやすい形で勤務地・給与などの概要を確認し、そのまま応募に進めます。',
       previewHeight: 480,
       Demo: JobDetailPattern,
+    },
+    {
+      id: "dialog-in-drawer",
+      title: "ドロワー内ダイアログ",
+      description:
+        "求人詳細ドロワーの「応募する」から応募確認 Dialog を重ねて開きます。Dialog はドロワーの上にレイヤーされ、閉じたあともドロワーは開いたままです。ネストされた Dialog の Backdrop は Base UI がデフォルトで描画しないため、DialogOverlay の forceRender で表示しています。",
+      previewHeight: 480,
+      Demo: ApplyConfirmInDrawerPattern,
+    },
+    {
+      id: "form-in-drawer",
+      title: "ドロワー内フォーム",
+      description:
+        "マイページの希望条件編集を下からのドロワーで行います。職種と勤務地は Combobox で検索しながら選べ、候補リストはドロワーの上に重なって表示されます。保存ボタンは DrawerFooter に固定します。",
+      previewHeight: 560,
+      Demo: DesiredConditionsFormPattern,
     },
   ],
 }

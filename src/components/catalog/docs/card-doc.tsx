@@ -71,6 +71,70 @@ function BasicPattern() {
 }
 
 /**
+ * 特集枠・検索結果上位向けの LARGE 求人カード。仕事内容の抜粋まで表示する
+ */
+function JobCardLargePattern() {
+  return (
+    <Card className="w-full max-w-md pt-0">
+      <div className="flex h-48 items-center justify-center bg-muted">
+        <ImageIcon className="size-8 text-muted-foreground" />
+      </div>
+
+      <CardHeader>
+        <CardDescription className="flex items-center gap-2 text-xs">
+          <span className="flex size-5 shrink-0 items-center justify-center rounded bg-muted">
+            <Building2Icon className="size-3" />
+          </span>
+          株式会社サンプル
+        </CardDescription>
+        <CardTitle>フロントエンドエンジニア</CardTitle>
+        <CardDescription>【未経験歓迎・在宅可】自社求人サービスの画面開発</CardDescription>
+        <CardAction>
+          <Button variant="ghost" size="icon-sm" aria-label="いいかも！">
+            <HeartIcon />
+          </Button>
+        </CardAction>
+      </CardHeader>
+
+      <CardContent className="flex flex-col gap-2">
+        <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1">
+            <MapPinIcon className="size-3" />
+            那覇市
+          </span>
+          <span className="flex items-center gap-1">
+            <BriefcaseIcon className="size-3" />
+            正社員
+          </span>
+          <span className="flex items-center gap-1">
+            <BanknoteIcon className="size-3" />
+            月給 200,000〜300,000円
+          </span>
+        </div>
+
+        <p className="line-clamp-2 text-sm text-muted-foreground">
+          React / TypeScript を用いた自社求人サービスの画面実装を担当します。デザイナーと連携しながら
+          UI コンポーネントの設計・開発を進めます。リモートワーク可、フレックスタイム制です。
+        </p>
+
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-wrap gap-1">
+            <Badge variant="secondary">新卒採用</Badge>
+            <Badge variant="secondary">Web履歴書OK</Badge>
+          </div>
+          <span className="shrink-0 text-xs text-muted-foreground">30+日前</span>
+        </div>
+      </CardContent>
+
+      <CardFooter className="gap-2">
+        <Button className="flex-1">応募する</Button>
+        <Button variant="outline">詳細を見る</Button>
+      </CardFooter>
+    </Card>
+  )
+}
+
+/**
  * 求人一覧の標準（MEDIUM）サイズの求人カード
  */
 function JobCardMediumPattern() {
@@ -114,10 +178,12 @@ function JobCardMediumPattern() {
           </span>
         </div>
 
-        <div className="flex flex-wrap gap-1">
-          <Badge variant="secondary">新卒採用</Badge>
-          <Badge variant="secondary">Web履歴書OK</Badge>
-          <Badge variant="outline">本日更新</Badge>
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex flex-wrap gap-1">
+            <Badge variant="secondary">新卒採用</Badge>
+            <Badge variant="secondary">Web履歴書OK</Badge>
+          </div>
+          <span className="shrink-0 text-xs text-muted-foreground">本日</span>
         </div>
       </CardContent>
 
@@ -241,6 +307,14 @@ export const cardDoc: ComponentDoc = {
         'CardHeader / CardTitle / CardDescription / CardAction / CardContent / CardFooter を組み合わせた基本構成です。size="sm" にすると余白が詰まり、一覧向けのコンパクトなカードになります。',
       previewHeight: 480,
       Demo: BasicPattern,
+    },
+    {
+      id: "job-card-large",
+      title: "求人カード（LARGE）",
+      description:
+        "特集枠や検索結果の上位掲載向けの最大サイズです。MEDIUM に対して画像が大きく、仕事内容の抜粋を2行の line-clamp で追加します。抜粋をその場で全文展開する例は Collapsible の「求人カード」パターンを参照してください。",
+      previewHeight: 680,
+      Demo: JobCardLargePattern,
     },
     {
       id: "job-card-medium",

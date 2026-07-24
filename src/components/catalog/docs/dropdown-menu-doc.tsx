@@ -49,9 +49,9 @@ function BasicPattern() {
       />
 
       <DropdownMenuContent>
-        <DropdownMenuLabel>この求人</DropdownMenuLabel>
-
         <DropdownMenuGroup>
+          <DropdownMenuLabel>この求人</DropdownMenuLabel>
+
           <DropdownMenuItem>
             <SendIcon />
             応募する
@@ -115,9 +115,9 @@ function MyPageMenuPattern() {
       />
 
       <DropdownMenuContent>
-        <DropdownMenuLabel>yamada@example.com</DropdownMenuLabel>
-
         <DropdownMenuGroup>
+          <DropdownMenuLabel>yamada@example.com</DropdownMenuLabel>
+
           <DropdownMenuItem>
             <FileTextIcon />
             Web履歴書
@@ -182,9 +182,9 @@ function SortMenuPattern() {
         />
 
         <DropdownMenuContent align="end">
-          <DropdownMenuLabel>並び順</DropdownMenuLabel>
-
           <DropdownMenuRadioGroup defaultValue="newest">
+            <DropdownMenuLabel>並び順</DropdownMenuLabel>
+
             <DropdownMenuRadioItem value="newest">新着順</DropdownMenuRadioItem>
 
             <DropdownMenuRadioItem value="recommended">おすすめ順</DropdownMenuRadioItem>
