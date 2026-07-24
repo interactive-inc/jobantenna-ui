@@ -113,6 +113,34 @@ function SearchFooterPattern() {
   )
 }
 
+/**
+ * 各社ガイドライン準拠・日本語文言のソーシャルログインボタン。
+ * ロゴは size-4、ボタンは h-9 全幅で統一する。LINE のアイコンは公式配布画像
+ */
+function SocialLoginPattern() {
+  return (
+    <div className="flex w-full max-w-xs flex-col gap-3">
+      <Button className="border-[#747775] bg-white text-[#1F1F1F] hover:bg-[#F2F2F2] dark:border-[#8E918F] dark:bg-[#131314] dark:text-[#E3E3E3] dark:hover:bg-[color-mix(in_srgb,#131314_90%,white)]">
+        <img src="/brand/google-g.svg" alt="" className="size-4" />
+        Googleでログイン
+      </Button>
+
+      <Button className="gap-0 bg-[#06C755] p-0 text-white hover:bg-[color-mix(in_srgb,#06C755_90%,black)] active:bg-[color-mix(in_srgb,#06C755_70%,black)]">
+        <span className="flex h-full w-9 shrink-0 items-center justify-center">
+          <img src="/brand/line-icon.png" alt="" className="size-7" />
+        </span>
+        <span className="h-full w-px bg-black/8" />
+        <span className="flex-1 text-center">LINEでログイン</span>
+      </Button>
+
+      <Button className="bg-[#1877F2] text-white hover:bg-[color-mix(in_srgb,#1877F2_90%,black)]">
+        <img src="/brand/facebook-f.png" alt="" className="size-4" />
+        Facebookでログイン
+      </Button>
+    </div>
+  )
+}
+
 export const buttonDoc: ComponentDoc = {
   name: "button",
   title: "Button",
@@ -143,6 +171,14 @@ export const buttonDoc: ComponentDoc = {
         "求人カードでの「応募する」と「いいかも！」の並びです。応募済みの求人はラベルを「応募済み」に変えて disabled にし、二重応募を防ぎます。",
       previewHeight: null,
       Demo: ApplyStatusPattern,
+    },
+    {
+      id: "social-login",
+      title: "ソーシャルログイン",
+      description:
+        "各社ブランドガイドライン準拠・日本語文言のソーシャルログインボタンです。公式配布のボタン画像は英語版のみのため、ガイドラインが許容するカスタム描画で日本語化し、ロゴには public/brand/ の公式アセット(Google: 公式 SVG から抽出した G、LINE: 公式配布アイコン、Facebook: 公式ブランドパックの Secondary ロゴ)を使っています。LINE は規定の縦区切り線+hover 黒10%/press 黒30%重ね、ボタンは h-9 全幅で統一、ロゴは size-4(LINE のみ公式ボタンの比率に合わせ size-7)。Google のフォントのみ指定の Google Sans ではなくプロジェクトフォントです。",
+      previewHeight: null,
+      Demo: SocialLoginPattern,
     },
     {
       id: "search-footer",
