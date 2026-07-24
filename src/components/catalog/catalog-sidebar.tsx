@@ -86,6 +86,22 @@ export function CatalogSidebar() {
                   <span>文字</span>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  render={<Link to="/rules/images" />}
+                  isActive={location.pathname === "/rules/images"}
+                >
+                  <span>画像</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  render={<Link to="/rules/accessibility" />}
+                  isActive={location.pathname === "/rules/accessibility"}
+                >
+                  <span>アクセシビリティ</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
