@@ -1,7 +1,11 @@
 import type { ComponentDoc } from "@/components/catalog/component-doc"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupTextarea,
+} from "@/components/ui/input-group"
 import {
   MessageScroller,
   MessageScrollerButton,
@@ -301,13 +305,16 @@ function ChatScreenPattern() {
         </MessageScroller>
       </MessageScrollerProvider>
 
-      <div className="flex items-center gap-2 border-t p-2">
-        <Input placeholder="メッセージを入力" />
-
-        <Button size="icon">
-          <SendIcon />
-          <span className="sr-only">送信</span>
-        </Button>
+      <div className="border-t p-2">
+        <InputGroup>
+          <InputGroupTextarea placeholder="メッセージを入力" rows={2} />
+          <InputGroupAddon align="block-end">
+            <InputGroupButton variant="default" size="icon-sm" className="ml-auto">
+              <SendIcon />
+              <span className="sr-only">送信</span>
+            </InputGroupButton>
+          </InputGroupAddon>
+        </InputGroup>
       </div>
     </div>
   )
