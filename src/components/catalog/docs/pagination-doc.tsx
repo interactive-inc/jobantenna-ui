@@ -167,6 +167,53 @@ function FirstPagePattern() {
   )
 }
 
+/**
+ * 3桁のページ番号が並ぶ最大幅の構成。スマホ幅での折り返し・はみ出しの確認用
+ */
+function ThreeDigitPagesPattern() {
+  return (
+    <div className="flex w-full max-w-md flex-col gap-4">
+      <p className="text-muted-foreground text-sm">
+        沖縄県の求人 19,975件（999ページ中 500ページ目）
+      </p>
+
+      <Pagination>
+        <PaginationContent>
+          <PaginationItem>
+            <PaginationPrevious href="#" text="前へ" />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">1</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">499</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#" isActive>
+              500
+            </PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">501</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationEllipsis />
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationLink href="#">999</PaginationLink>
+          </PaginationItem>
+          <PaginationItem>
+            <PaginationNext href="#" text="次へ" />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
+    </div>
+  )
+}
+
 export const paginationDoc: ComponentDoc = {
   name: "pagination",
   title: "Pagination",
@@ -197,6 +244,14 @@ export const paginationDoc: ComponentDoc = {
         "ページ数が多い検索結果の中間を閲覧中の状態です。前後1ページと先頭・末尾だけを残し、両側を省略記号でまとめます。",
       previewHeight: null,
       Demo: MiddlePagePattern,
+    },
+    {
+      id: "three-digit-pages",
+      title: "3桁ページ番号",
+      description:
+        "3桁のページ番号が最も多く並ぶ中間ページ構成です。スマホ幅で折り返しやはみ出しが起きないかの確認に使います。",
+      previewHeight: null,
+      Demo: ThreeDigitPagesPattern,
     },
     {
       id: "first-page",
