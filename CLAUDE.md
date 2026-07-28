@@ -1,5 +1,15 @@
 # jobantenna-ui
 
+転職・求人サービスのための規範デザインシステム。デザインルールとコンポーネント実例のカタログサイトであり、コンポーネントは shadcn レジストリとして配布する。公開 URL は https://ui.jobantenna.jp
+
+## 地図
+
+- `src/routes/`: カタログ。`_catalog.rules.*` がデザインルール、`_catalog.components.$name` がコンポーネント個別ページ、`preview.*` が iframe 用プレビュー
+- `src/components/ui/`: 配布するコンポーネント本体（shadcn 生成）。`ui.base-luma/` は base-luma テーマ版
+- `src/styles.css` / `src/styles.jobantenna.css` / `src/styles.base-luma.css`: トークン定義
+- `registry.json` + `bun run registry:build`: shadcn レジストリ生成（`public/r/styles/default` に出力、`bun run build` に含まれる）
+- `DESIGN.md`: トークンと造形原則の正。UI を触る前に読む
+
 ## パッケージマネージャ
 
 - bun を使う（npm/yarn/pnpm 禁止）
@@ -14,6 +24,12 @@ lint/format/test は vite-plus (`vp`) に統一。設定はすべて `vite.confi
 - `bun run format` → `vp fmt` (Oxfmt, セミコロンなし)
 - `bun run check` → format + lint + typecheck
 - `bun run test` → `vp test` (Vitest)
+- `bun run typecheck` → `tsc --noEmit`
+
+## 既知の落とし穴
+
+- `vp check` が `src/route-tree.gen.ts` の format エラーで落ちることがある。TanStack Router の生成ファイルを dev サーバが未整形のまま再生成するため。自分の変更と無関係なら気にしない
+- `src/components/ui*/scroll-area.tsx` の未使用 import 型エラーは shadcn 生成由来の既知。手で直さない（.claude/rules/ts.react.shadcn.md）
 
 ## 開発サーバ
 
