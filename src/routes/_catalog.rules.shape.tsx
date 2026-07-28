@@ -16,36 +16,36 @@ export const Route = createFileRoute("/_catalog/rules/shape")({
 const semanticTokens = [
   {
     token: "--radius-outer",
-    value: "rounded-lg (10px)",
+    value: "rounded-lg (8px)",
     role: "独立した面。Button・Card・Input・Popover など、それ自体で完結する要素の外枠。",
   },
   {
     token: "--radius-inner",
-    value: "outer − p-1 (6px)",
-    role: "面の中で繰り返される項目。メニュー項目・TabsTrigger など、外枠の内側に並ぶ要素。outer から p-1 を引いた値として計算されます。",
+    value: "rounded-sm (4px)",
+    role: "面の中で繰り返される項目。メニュー項目・TabsTrigger など、外枠の内側に並ぶ要素。",
   },
 ] as const
 
 const comparisonExamples = [
   {
-    issue: "p-1 に対して、左の外側は丸みが足りない",
+    issue: "外側に rounded-md を発明している。面の外枠は常に rounded-lg (outer)",
     before: { outer: "rounded-md", inset: "p-1", inner: "rounded-sm" },
     after: { outer: "rounded-lg", inset: "p-1", inner: "rounded-sm" },
   },
   {
-    issue: "p-2 に対して、左の外側は丸みが足りない",
-    before: { outer: "rounded-lg", inset: "p-2", inner: "rounded-sm" },
-    after: { outer: "rounded-xl", inset: "p-2", inner: "rounded-sm" },
+    issue: "余白を p-2 に広げても、外側を rounded-xl に大きくしない。半径は余白に追従させない",
+    before: { outer: "rounded-xl", inset: "p-2", inner: "rounded-sm" },
+    after: { outer: "rounded-lg", inset: "p-2", inner: "rounded-sm" },
   },
   {
-    issue: "p-2 に対して、左の外側は丸みが大きすぎる",
+    issue: "外側に rounded-2xl を発明している。大きい面でも外枠は rounded-lg (outer)",
     before: { outer: "rounded-2xl", inset: "p-2", inner: "rounded-sm" },
-    after: { outer: "rounded-xl", inset: "p-2", inner: "rounded-sm" },
+    after: { outer: "rounded-lg", inset: "p-2", inner: "rounded-sm" },
   },
   {
-    issue: "rounded-md + p-1 には対応する外側がないため、内側を変更する",
-    before: { outer: "rounded-xl", inset: "p-1", inner: "rounded-md" },
-    after: { outer: "rounded-xl", inset: "p-1", inner: "rounded-lg" },
+    issue: "内側に rounded-md を発明している。中の項目は常に rounded-sm (inner)",
+    before: { outer: "rounded-lg", inset: "p-1", inner: "rounded-md" },
+    after: { outer: "rounded-lg", inset: "p-1", inner: "rounded-sm" },
   },
 ] as const
 
@@ -66,13 +66,13 @@ function CurvatureCorner(props: CurvatureCornerProps) {
   return (
     <div className="space-y-2">
       <div className="flex items-center justify-between gap-2">
-        <span className={`text-xs font-semibold ${isBefore ? "text-destructive" : "text-success"}`}>
+        <span className={`text-xs font-semibold ${isBefore ? "text-destructive" : "text-green3"}`}>
           {isBefore ? "不一致" : "一致"}
         </span>
       </div>
       <div className="relative h-32 overflow-hidden rounded-md border bg-muted/30">
         <div
-          className={`absolute top-4 left-4 size-20 origin-top-left scale-[2.5] ${props.tokens.outer} ${props.tokens.inset} ${isBefore ? "bg-destructive/25 ring-destructive/60" : "bg-success/25 ring-success/60"} ring-1`}
+          className={`absolute top-4 left-4 size-20 origin-top-left scale-[2.5] ${props.tokens.outer} ${props.tokens.inset} ${isBefore ? "bg-destructive/25 ring-destructive/60" : "bg-green2/25 ring-green2/60"} ring-1`}
         >
           <div
             className={`${props.tokens.inner} size-full bg-background ring-1 ring-foreground/25`}
@@ -102,14 +102,14 @@ function CurvatureComparison(props: CurvatureComparisonProps) {
 }
 
 /**
- * 角丸の意味トークンと、入れ子になった面の曲率を半径と余白の関係で決めるルール
+ * 角丸を outer / inner の 2 つの意味トークンの固定ペアだけで決めるルール
  */
 function ShapePage() {
   return (
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="形"
-        lead="角丸は全コンポーネントで --radius-outer と --radius-inner の 2 つの意味トークンに統一しています。用途ごとに半径を発明せず、面には outer、その中の項目には inner を使います。面を入れ子にするときは、内側と外側の曲線が同じ中心を共有するよう、半径と余白の関係で決めます。"
+        lead="角丸は全コンポーネントで --radius-outer と --radius-inner の 2 つの意味トークンに統一しています。用途ごとに半径を発明せず、面には outer、その中の項目には inner を使います。面を入れ子にしても余白を広げても、使う半径はこの 2 つから増やしません。"
       />
 
       <section className="space-y-5">
@@ -118,7 +118,7 @@ function ShapePage() {
           角丸に使うトークンは 2 つだけです。独立した面には <code>--radius-outer</code>
           、面の中で繰り返される項目には <code>--radius-inner</code>。Button・Card・Tabs をはじめ 36
           のコンポーネントがこの 2 つに接続していて、 用途ごとに半径を発明しません。現在は outer が
-          rounded-lg (10px)、inner が outer から p-1 を引いた 6px です。
+          rounded-lg (8px)、inner が rounded-sm (4px) です。
         </p>
         <div className="overflow-x-auto rounded-lg border">
           <table className="w-full min-w-xl text-left text-sm">
@@ -142,11 +142,10 @@ function ShapePage() {
         </div>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           コンポーネントでは <code>rounded-(--radius-outer)</code> または{" "}
-          <code>rounded-(--radius-inner)</code> と記述します。<code>--radius-outer</code> が{" "}
-          <code>--radius-lg</code> に接続し、<code>--radius-inner</code> は{" "}
-          <code>calc(var(--radius-outer) - var(--spacing))</code>
-          として計算されます。inner が outer に追従するので、面の大きさを変えたいときは outer の 1
-          行だけを差し替えれば全体に伝わります。
+          <code>rounded-(--radius-inner)</code> と記述します。<code>--radius-outer</code> は{" "}
+          <code>--radius-lg</code>、<code>--radius-inner</code> は <code>--radius-sm</code>{" "}
+          にそのまま固定していて、値を独自に計算しません。面の大きさを変えたいときは接続先の 2
+          行を差し替えれば全体に伝わります。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -180,37 +179,11 @@ function ShapePage() {
       </section>
 
       <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">半径は余白の分だけ大きくする</h2>
+        <h2 className="text-xl font-semibold tracking-tight">入れ子でもペアは変えない</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          外側の角から内側の角までが一定の距離なら、2本の曲線は平行になります。角だけが太ったり細ったりせず、四辺と同じ厚みに見えます。
-        </p>
-        <div className="space-y-4 rounded-lg border bg-muted/30 p-4">
-          <div className="space-y-4">
-            <div className="font-mono text-xl font-semibold tracking-tight md:text-2xl">
-              外側の rounded = 内側の rounded + padding
-            </div>
-            <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
-              <dt className="font-mono font-semibold">外側</dt>
-              <dd className="text-muted-foreground">コンテナの rounded トークン</dd>
-              <dt className="font-mono font-semibold">内側</dt>
-              <dd className="text-muted-foreground">子要素の rounded トークン</dd>
-              <dt className="font-mono font-semibold">padding</dt>
-              <dd className="text-muted-foreground">間を空ける p-* トークン</dd>
-            </dl>
-          </div>
-          <div className="w-fit max-w-full rounded-(--radius-inner) bg-background px-4 py-2 font-mono text-sm ring-1 ring-border">
-            --radius-outer (10px) = --radius-inner (6px) + p-1 (4px)
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">inner は計算済み</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          <code>--radius-inner</code> は <code>--radius-outer</code> から <code>p-1</code>
-          を引いた値として定義しています。面に outer、その中の項目に inner を書き、間を{" "}
-          <code>p-1</code> 空けるだけで、外側と内側の曲線は必ず同心になります。半径と余白の対応を
-          個別に計算する必要はありません。
+          面の中に項目が入っても、間の余白を <code>p-1</code> から広げても、外側は outer・内側は
+          inner のままです。余白に合わせて <code>rounded-xl</code> や <code>rounded-2xl</code>{" "}
+          など中間の半径を持ち出した時点で不一致になります。
         </p>
         <div className="space-y-3 rounded-(--radius-outer) border bg-muted/30 p-4">
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-sm">
@@ -223,15 +196,8 @@ function ShapePage() {
               <code>rounded-(--radius-inner)</code>
             </dd>
             <dt className="font-mono font-semibold">間</dt>
-            <dd className="text-muted-foreground">
-              <code>p-1</code>
-            </dd>
+            <dd className="text-muted-foreground">余白ルールに従って選ぶ。半径には影響しない</dd>
           </dl>
-          <p className="text-sm text-muted-foreground">
-            この 3 つだけで同心が定義上保証されます。<code>--radius-inner</code> は{" "}
-            <code>calc(var(--radius-outer) - var(--spacing))</code> なので、<code>p-1</code>{" "}
-            の分がちょうど内側で戻り、2 本の曲線が平行になります。
-          </p>
         </div>
       </section>
 
@@ -239,9 +205,8 @@ function ShapePage() {
         <h2 className="text-xl font-semibold tracking-tight">Tabs に当てはめる</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           TabsList は面なので <code>rounded-(--radius-outer)</code>、その中の TabsTrigger
-          は項目なので <code>rounded-(--radius-inner)</code>、間は <code>p-1</code>。3
-          つを書くだけで、選択されたタブと背景の曲線が同心になります。outer
-          の値を変えても、この関係は崩れません。
+          は項目なので <code>rounded-(--radius-inner)</code>。ここでも使う半径はペアの 2
+          つだけで、個別の値を選びません。
         </p>
         <div
           style={sampleCanvasStyle}
@@ -261,8 +226,8 @@ function ShapePage() {
         <h2 className="text-xl font-semibold tracking-tight">生トークンで組むと崩れる</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           2 つの意味トークンを使わず、生の rounded-*
-          を面と項目に手で当てると同心が崩れます。外側が小さすぎても大きすぎても曲線は揃いません。だからこそ
-          outer / inner / <code>p-1</code> の 3 つに寄せて、半径を個別に選ばないようにします。
+          を面と項目に手で当てると、面ごとに角の表情がばらつきます。外側は rounded-lg
+          (outer)、内側は rounded-sm (inner)。それ以外の半径を持ち出した組み合わせが不一致です。
         </p>
         <div
           style={sampleCanvasStyle}
