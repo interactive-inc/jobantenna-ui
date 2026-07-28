@@ -119,6 +119,47 @@ function SalaryTypePattern() {
   )
 }
 
+/**
+ * orientation="vertical" の縦並び。縦矢印キーで項目を移動できることを確認する用途。
+ */
+function VerticalPattern() {
+  return (
+    <div className="flex w-full max-w-md flex-col gap-4">
+      <div className="flex flex-col gap-2">
+        <p className="text-sm text-muted-foreground">こだわり条件（縦並び・複数選択）</p>
+
+        <ToggleGroup
+          multiple
+          orientation="vertical"
+          variant="outline"
+          defaultValue={["remote"]}
+          aria-label="こだわり条件"
+        >
+          <ToggleGroupItem value="remote">リモート可</ToggleGroupItem>
+          <ToggleGroupItem value="flextime">フレックスタイム</ToggleGroupItem>
+          <ToggleGroupItem value="no-transfer">転勤なし</ToggleGroupItem>
+        </ToggleGroup>
+      </div>
+
+      <div className="flex flex-col gap-2">
+        <p className="text-sm text-muted-foreground">縦並び・連結（spacing 0）</p>
+
+        <ToggleGroup
+          orientation="vertical"
+          spacing={0}
+          variant="outline"
+          defaultValue={["new"]}
+          aria-label="並び順"
+        >
+          <ToggleGroupItem value="new">新着順</ToggleGroupItem>
+          <ToggleGroupItem value="salary">給与が高い順</ToggleGroupItem>
+          <ToggleGroupItem value="near">近い順</ToggleGroupItem>
+        </ToggleGroup>
+      </div>
+    </div>
+  )
+}
+
 export const toggleGroupDoc: ComponentDoc = {
   name: "toggle-group",
   title: "Toggle Group",
@@ -133,6 +174,14 @@ export const toggleGroupDoc: ComponentDoc = {
         "単一選択（default）、複数選択（multiple・outline）、アイコンのみの表示切替（spacing 0・sm）という3構成です。defaultValue に配列を渡して非制御で初期選択を決めます。",
       previewHeight: null,
       Demo: BasicPattern,
+    },
+    {
+      id: "vertical",
+      title: "縦並び",
+      description:
+        'orientation="vertical" で縦に積みます。orientation はプリミティブへ転送されるため、aria-orientation が vertical になり、上下矢印キーで項目を移動できます。spacing={0} の連結時は上下の角丸と border が調整されます。',
+      previewHeight: null,
+      Demo: VerticalPattern,
     },
     {
       id: "view-switch",
