@@ -228,6 +228,7 @@ function ShapePage() {
           2 つの意味トークンを使わず、生の rounded-*
           を面と項目に手で当てると、面ごとに角の表情がばらつきます。外側は rounded-lg
           (outer)、内側は rounded-sm (inner)。それ以外の半径を持ち出した組み合わせが不一致です。
+          サンプルは角を見やすくするため 2.5 倍に拡大表示しています。
         </p>
         <div
           style={sampleCanvasStyle}
