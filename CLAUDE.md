@@ -43,7 +43,23 @@ main にプッシュすると Cloudflare が自動デプロイする。公開 UR
 
 各コンポーネントが実際に出す属性は `node_modules/@base-ui/react/<component>/<Component>DataAttributes.d.ts` で確認する。推測で書かない。
 
-`orientation` のような props はプリミティブへ転送する。分割代入で取り出して `data-orientation` を手で付けるだけでは、`aria` 属性やローミングフォーカスがプリミティブ側に伝わらない。
+### orientation の実装パターン
+
+`orientation` の扱いは3通りある。既存コンポーネントはいずれかに当てはまるので、新規実装でも合わせる。
+
+素通し。`orientation` を分割代入せず `{...props}` でプリミティブへ渡す。値を自分で使う必要がないならこれが最良で、転送漏れが原理的に起きない（`slider`）。
+
+明示転送。デフォルト値を与えたい、子へ渡したいなど値を使う必要がある場合は分割代入するが、`orientation={orientation}` でプリミティブへ戻す。戻し忘れると `aria` 属性やローミングフォーカスが伝わらない（`toggle-group` / `tabs` / `scroll-area` / `separator`）。
+
+手動付与。ラップ対象がプリミティブでなく素の `div` の場合は誰も属性を出さないため、`data-orientation={orientation}` を自分で付ける。root のレイアウトは cva の `orientation` variant で組む（`attachment` / `button-group` / `field`）。
+
+プリミティブをラップする場合に `data-orientation` を手で付けてはいけない。プリミティブが自分で出すため重複する。
+
+### セレクタの使い分け
+
+自分自身の状態で分岐するなら `data-[orientation=vertical]:`、祖先の状態で分岐するなら `group-data-[orientation=vertical]/name:` を使う。後者は root 側に `group/name` が付いていることが前提。
+
+`has-` は付けない。`group-has-data-[orientation=...]` は「子孫に該当要素があるか」を見るため、`data-orientation` が group 要素自身に付く構成では条件が成立しない。入れ子にできるコンポーネントでは内側の状態が外側に誤って効く。
 
 ### 検証
 
