@@ -40,6 +40,30 @@ function BasicPattern() {
 }
 
 /**
+ * 縦方向のスライダー。orientation の属性とレイアウトを確認する
+ */
+function VerticalPattern() {
+  return (
+    <div className="flex h-64 items-center gap-4">
+      <Slider
+        orientation="vertical"
+        defaultValue={[45]}
+        min={0}
+        max={90}
+        step={15}
+        aria-label="通勤時間の上限"
+      />
+
+      <div className="flex h-full flex-col justify-between text-xs text-muted-foreground">
+        <span>90分</span>
+        <span>45分</span>
+        <span>0分</span>
+      </div>
+    </div>
+  )
+}
+
+/**
  * 検索条件パネルの希望年収レンジ。フッターに件数付き検索ボタンを置く
  */
 function SalaryRangePattern() {
@@ -114,6 +138,14 @@ export const sliderDoc: ComponentDoc = {
         "単一値・範囲指定（配列の defaultValue）・disabled の各状態です。ラベルと現在値をスライダーの上に並べて表示します。",
       previewHeight: null,
       Demo: BasicPattern,
+    },
+    {
+      id: "vertical",
+      title: "縦向き",
+      description:
+        'orientation="vertical" で下から上へ値を選ぶ例です。上下矢印キーで値を変更でき、縦向き用のトラック・つまみ寸法が適用されます。',
+      previewHeight: 320,
+      Demo: VerticalPattern,
     },
     {
       id: "salary-range",

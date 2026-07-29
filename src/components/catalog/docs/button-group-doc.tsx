@@ -35,7 +35,9 @@ function BasicPattern() {
 
       <ButtonGroup orientation="vertical" className="w-40">
         <Button variant="outline">正社員</Button>
+        <ButtonGroupSeparator orientation="horizontal" />
         <Button variant="outline">契約社員</Button>
+        <ButtonGroupSeparator orientation="horizontal" />
         <Button variant="outline">アルバイト</Button>
       </ButtonGroup>
     </div>
