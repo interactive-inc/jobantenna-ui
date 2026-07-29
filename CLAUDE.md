@@ -47,16 +47,73 @@ main にプッシュすると Cloudflare が自動デプロイする。公開 UR
 
 ### 検証
 
-見た目が正しく見えても機構が働いているとは限らない。`separator` の縦線は `data-vertical:w-px` が無効でも、空 div の幅がほぼ0で `bg-border` が線のように見えるため正常に見えていた（Issue #8）。
+見た目が正しく見えても機構が働いているとは限らない。`separator` の縦線は、存在しない縦向き data 属性を条件とする幅指定が無効でも、空 div の幅がほぼ0で `bg-border` が線のように見えるため正常に見えていた（Issue #8）。
 
-Tailwind クラスの有効性は**生成 CSS にルールが存在するか**で判定する。computed style だけでは足りない。
+Tailwind クラスの有効性は**生成 CSS にルールが存在し、実要素に一致するか**で判定する。computed style だけでは足りない。Tailwind v4 のルールは `@layer` 配下にネストされるため、`sheet.cssRules` の最上位だけでなく、`cssRules` を持つルールを再帰的に走査する。
 
 ```js
+const collectSelectors = (rules, parentSelector = null, selectors = []) => {
+  for (const rule of rules) {
+    if (typeof rule.selectorText === "string") {
+      const effectiveSelector = parentSelector
+        ? rule.selectorText.includes("&")
+          ? rule.selectorText.replaceAll("&", `:is(${parentSelector})`)
+          : `${parentSelector} ${rule.selectorText}`
+        : rule.selectorText
+
+      selectors.push(effectiveSelector)
+
+      if (rule.cssRules) {
+        collectSelectors(rule.cssRules, effectiveSelector, selectors)
+      }
+    } else if (rule.cssRules) {
+      collectSelectors(rule.cssRules, parentSelector, selectors)
+    }
+  }
+
+  return selectors
+}
+
+const selectors = []
+
 for (const sheet of document.styleSheets) {
-  for (const r of sheet.cssRules) {
-    if (/data-vertical/.test(r.selectorText ?? "")) console.log(r.selectorText)
+  try {
+    collectSelectors(sheet.cssRules, null, selectors)
+  } catch {
+    // cross-origin stylesheet は走査できないため対象外
   }
 }
+
+const positiveControl = selectors.filter((selector) => selector === ".flex-col")
+
+if (positiveControl.length === 0) {
+  throw new Error("CSSOM 走査の陽性対照 flex-col が見つからない")
+}
+
+const legacySelectors = selectors.filter((selector) =>
+  /data-(?:vertical|horizontal)/.test(selector),
+)
+const target = document.querySelector('[data-orientation="vertical"]')
+
+if (!target) {
+  throw new Error("検証対象の縦向き要素が見つからない")
+}
+
+const matchingSelectors = selectors.filter((selector) => {
+  try {
+    return selector.includes("[data-orientation") && target.matches(selector)
+  } catch {
+    return false
+  }
+})
+
+if (matchingSelectors.length === 0) {
+  throw new Error("値付き orientation セレクタが検証対象に一致しない")
+}
+
+console.log({ positiveControl, legacySelectors, matchingSelectors })
 ```
+
+0件を報告する前に、同じ走査器で `.flex-col` など確実に存在するセレクタが1件以上見つかることを陽性対照として確認する。陽性対照の無い0件では、対象セレクタが存在しないのか走査器が壊れているのか区別できない。対象コンポーネントをカタログで描画し、`matchingSelectors` が1件以上になることも確認する。
 
 縦向き・押下状態などの分岐は、カタログにパターンが無いと検証できない。分岐を追加したらデモも追加する。
