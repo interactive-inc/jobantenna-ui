@@ -43,6 +43,21 @@ function BasicPattern() {
 }
 
 /**
+ * 縦並びのボタングループを横向きの区切り線で分割する
+ */
+function VerticalSeparatorPattern() {
+  return (
+    <ButtonGroup orientation="vertical" className="w-40">
+      <Button variant="outline">正社員</Button>
+      <ButtonGroupSeparator orientation="horizontal" />
+      <Button variant="outline">契約社員</Button>
+      <ButtonGroupSeparator orientation="horizontal" />
+      <Button variant="outline">アルバイト</Button>
+    </ButtonGroup>
+  )
+}
+
+/**
  * 検索結果の並び替えを切り替えるボタングループ
  */
 function SortPattern() {
@@ -127,6 +142,14 @@ export const buttonGroupDoc: ComponentDoc = {
         'outline ボタンの横並び、ButtonGroupText によるラベル付き、orientation="vertical" の縦並びという基本の3構成です。',
       previewHeight: null,
       Demo: BasicPattern,
+    },
+    {
+      id: "vertical-separator",
+      title: "縦並びの区切り線",
+      description:
+        '縦並びの ButtonGroup で ButtonGroupSeparator に orientation="horizontal" を指定し、項目間へ横線を描画する検証例です。',
+      previewHeight: null,
+      Demo: VerticalSeparatorPattern,
     },
     {
       id: "sort",
