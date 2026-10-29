@@ -20,7 +20,25 @@ shadcn CLI でコンポーネントを取り込める。
 bunx shadcn@latest add https://ui.jobantenna.jp/r/styles/default/button.json
 ```
 
-namespace 設定（`@jobantenna/button`）や MCP 連携の手順はトップページ https://ui.jobantenna.jp に記載している。
+利用側の `components.json` にレジストリを登録すると、短縮名で追加できる。
+
+```json
+{
+  "registries": {
+    "@jobantenna": "https://ui.jobantenna.jp/r/styles/default/{name}.json"
+  }
+}
+```
+
+```bash
+bunx shadcn@latest add @jobantenna/sheet
+```
+
+`@jobantenna` は取得先の名前であり、保存先のフォルダ名ではない。保存先は利用側の `components.json` の `aliases.ui` に従う。`"ui": "@/components/ui"` の場合、Sheet は `components/ui/sheet.tsx` に配置される（`@/` が `src/` を指す構成なら `src/components/ui/sheet.tsx`）。
+
+部品同士の依存先は、このレジストリの完全な URL で指定している。Sheet が必要とする Button なども `ui.jobantenna.jp` から取得されるため、URL で直接追加する場合も、短縮名を使う場合も、取得先を差し替えるプロキシや専用の同期スクリプトは不要。
+
+MCP 連携の手順はトップページ https://ui.jobantenna.jp に記載している。
 
 ## 開発
 

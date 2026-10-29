@@ -56,7 +56,7 @@
         }
       ],
       "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -96,7 +96,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -217,7 +217,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["separator"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/separator.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -238,7 +238,7 @@
         }
       ],
       "dependencies": ["react-day-picker", "lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -278,7 +278,7 @@
         }
       ],
       "dependencies": ["embla-carousel-react", "lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -359,7 +359,10 @@
         }
       ],
       "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["button", "input-group"],
+      "registryDependencies": [
+        "https://ui.jobantenna.jp/r/styles/default/button.json",
+        "https://ui.jobantenna.jp/r/styles/default/input-group.json"
+      ],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -380,7 +383,10 @@
         }
       ],
       "dependencies": ["cmdk", "lucide-react"],
-      "registryDependencies": ["dialog", "input-group"],
+      "registryDependencies": [
+        "https://ui.jobantenna.jp/r/styles/default/dialog.json",
+        "https://ui.jobantenna.jp/r/styles/default/input-group.json"
+      ],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -421,7 +427,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -522,7 +528,10 @@
         }
       ],
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["label", "separator"],
+      "registryDependencies": [
+        "https://ui.jobantenna.jp/r/styles/default/label.json",
+        "https://ui.jobantenna.jp/r/styles/default/separator.json"
+      ],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -583,7 +592,11 @@
         }
       ],
       "dependencies": ["class-variance-authority"],
-      "registryDependencies": ["button", "input", "textarea"],
+      "registryDependencies": [
+        "https://ui.jobantenna.jp/r/styles/default/button.json",
+        "https://ui.jobantenna.jp/r/styles/default/input.json",
+        "https://ui.jobantenna.jp/r/styles/default/textarea.json"
+      ],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -624,7 +637,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["separator"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/separator.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -703,7 +716,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["dropdown-menu"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/dropdown-menu.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -743,7 +756,7 @@
         }
       ],
       "dependencies": ["@shadcn/react", "lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -804,7 +817,7 @@
         }
       ],
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -965,7 +978,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/button.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
@@ -987,13 +1000,13 @@
       ],
       "dependencies": ["@base-ui/react", "class-variance-authority", "lucide-react"],
       "registryDependencies": [
-        "button",
-        "input",
-        "separator",
-        "sheet",
-        "skeleton",
-        "tooltip",
-        "use-mobile"
+        "https://ui.jobantenna.jp/r/styles/default/button.json",
+        "https://ui.jobantenna.jp/r/styles/default/input.json",
+        "https://ui.jobantenna.jp/r/styles/default/separator.json",
+        "https://ui.jobantenna.jp/r/styles/default/sheet.json",
+        "https://ui.jobantenna.jp/r/styles/default/skeleton.json",
+        "https://ui.jobantenna.jp/r/styles/default/tooltip.json",
+        "https://ui.jobantenna.jp/r/styles/default/use-mobile.json"
       ],
       "cssVars": {
         "light": {
@@ -1192,7 +1205,7 @@
         }
       ],
       "dependencies": ["@base-ui/react", "class-variance-authority"],
-      "registryDependencies": ["toggle"],
+      "registryDependencies": ["https://ui.jobantenna.jp/r/styles/default/toggle.json"],
       "cssVars": {
         "light": {
           "radius-outer": "var(--radius)",
