@@ -460,6 +460,8 @@ const sidebarMenuButtonVariants = cva(
         default: "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
         outline:
           "bg-background shadow-[0_0_0_1px_var(--sidebar-border)] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground hover:shadow-[0_0_0_1px_var(--sidebar-accent)]",
+        section:
+          "rounded-full px-3 focus-visible:ring-inset data-active:font-bold xl:[&_svg]:size-5",
       },
       size: {
         default: "h-9 text-sm",
@@ -467,6 +469,7 @@ const sidebarMenuButtonVariants = cva(
         lg: "h-14 px-3 text-sm group-data-[collapsible=icon]:p-0!",
       },
     },
+    compoundVariants: [{ variant: "section", size: "default", class: "h-11 xl:h-9" }],
     defaultVariants: {
       variant: "default",
       size: "default",
@@ -487,7 +490,7 @@ function SidebarMenuButton({
     isActive?: boolean
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
   } & VariantProps<typeof sidebarMenuButtonVariants>) {
-  const { isMobile, state } = useSidebar()
+  const sidebar = React.useContext(SidebarContext)
   const comp = useRender({
     defaultTagName: "button",
     props: mergeProps<"button">(
@@ -509,6 +512,10 @@ function SidebarMenuButton({
     return comp
   }
 
+  if (!sidebar) {
+    throw new Error("SidebarMenuButton with a tooltip must be used within a SidebarProvider.")
+  }
+
   if (typeof tooltip === "string") {
     tooltip = {
       children: tooltip,
@@ -521,7 +528,7 @@ function SidebarMenuButton({
       <TooltipContent
         side="right"
         align="center"
-        hidden={state !== "collapsed" || isMobile}
+        hidden={sidebar.state !== "collapsed" || sidebar.isMobile}
         {...tooltip}
       />
     </Tooltip>

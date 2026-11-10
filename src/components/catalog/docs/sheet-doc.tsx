@@ -1,6 +1,9 @@
+import { SlidersHorizontalIcon } from "lucide-react"
+import { useState } from "react"
 import type { ComponentDoc } from "@/components/catalog/component-doc"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
 import {
   Sheet,
   SheetClose,
@@ -11,186 +14,73 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import {
-  BanknoteIcon,
-  BellIcon,
-  BriefcaseIcon,
-  Building2Icon,
-  ClockIcon,
-  FootprintsIcon,
-  HeartIcon,
-  ImageIcon,
-  MailIcon,
-  MapPinIcon,
-} from "lucide-react"
+import { useIsMobile } from "@/hooks/use-mobile"
 
-/**
- * Sheet を右・左・下の各方向から開く基本デモ
- */
-function BasicPattern() {
-  return (
-    <div className="flex flex-wrap items-center gap-2">
-      <Sheet>
-        <SheetTrigger render={<Button variant="outline" />}>右から開く</SheetTrigger>
-        <SheetContent side="right">
-          <SheetHeader>
-            <SheetTitle>求人の詳細条件</SheetTitle>
-            <SheetDescription>雇用形態やエリアを指定して求人を絞り込めます</SheetDescription>
-          </SheetHeader>
-          <div className="flex flex-col gap-2 px-4 text-sm">
-            <p>雇用形態: 正社員</p>
-            <p>勤務地: 沖縄県那覇市</p>
-            <p>給与: 月給 25万円以上</p>
-          </div>
-          <SheetFooter>
-            <Button>この条件で検索</Button>
-            <SheetClose render={<Button variant="outline" />}>閉じる</SheetClose>
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
-      <Sheet>
-        <SheetTrigger render={<Button variant="outline" />}>左から開く</SheetTrigger>
-        <SheetContent side="left">
-          <SheetHeader>
-            <SheetTitle>メニュー</SheetTitle>
-            <SheetDescription>ジョブアンテナの各ページへ移動</SheetDescription>
-          </SheetHeader>
-          <div className="flex flex-col gap-2 px-4 text-sm">
-            <p>求人を探す</p>
-            <p>応募履歴</p>
-            <p>お気に入り</p>
-            <p>プロフィール設定</p>
-          </div>
-        </SheetContent>
-      </Sheet>
-      <Sheet>
-        <SheetTrigger render={<Button variant="outline" />}>下から開く</SheetTrigger>
-        <SheetContent side="bottom">
-          <SheetHeader>
-            <SheetTitle>この求人に応募しますか？</SheetTitle>
-            <SheetDescription>株式会社サンプル / 営業職（那覇市・正社員）</SheetDescription>
-          </SheetHeader>
-          <SheetFooter>
-            <Button>応募する</Button>
-            <SheetClose render={<Button variant="ghost" />}>あとで</SheetClose>
-          </SheetFooter>
-        </SheetContent>
-      </Sheet>
-    </div>
-  )
-}
+function SearchFilters() {
+  const isMobile = useIsMobile()
+  const filtersState = useState({ recentLogin: false, hasWorkHistory: false })
+  const filters = filtersState[0]
+  const setFilters = filtersState[1]
 
-/**
- * 求人一覧から遷移せずに詳細を確認できる右側クイックビュー
- */
-function JobQuickViewPattern() {
   return (
     <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>求人の詳細を見る</SheetTrigger>
-      <SheetContent side="right">
-        <SheetHeader>
-          <div className="flex items-center gap-2">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
-              <Building2Icon className="size-4" />
-            </div>
-            <span className="text-xs text-muted-foreground">株式会社サンプル</span>
-          </div>
-          <SheetTitle>フロントエンドエンジニア</SheetTitle>
-          <SheetDescription>【未経験歓迎・在宅可】自社求人サービスの UI 開発</SheetDescription>
-        </SheetHeader>
-        <div className="flex flex-col gap-4 overflow-y-auto px-4">
-          <div className="flex aspect-video items-center justify-center rounded-lg bg-muted text-muted-foreground">
-            <ImageIcon className="size-8" />
-          </div>
-          <div className="flex flex-wrap gap-1">
-            <Badge variant="secondary">新卒採用</Badge>
-            <Badge variant="outline">Web履歴書OK</Badge>
-          </div>
-          <div className="flex flex-col gap-2 text-sm">
-            <div className="flex items-center gap-2">
-              <MapPinIcon className="size-4 text-muted-foreground" />
-              <span>那覇市</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BriefcaseIcon className="size-4 text-muted-foreground" />
-              <span>正社員</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <BanknoteIcon className="size-4 text-muted-foreground" />
-              <span>月給 200,000〜300,000円</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <ClockIcon className="size-4 text-muted-foreground" />
-              <span className="text-muted-foreground">最終更新: 本日</span>
-            </div>
-          </div>
-        </div>
-        <SheetFooter>
-          <Button>応募する</Button>
-          <Button variant="outline">
-            <HeartIcon />
-            いいかも！
-          </Button>
-        </SheetFooter>
-      </SheetContent>
-    </Sheet>
-  )
-}
-
-/**
- * いいかもやあしあとの新着をまとめて確認する左側の通知一覧
- */
-function NotificationsPattern() {
-  return (
-    <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>
-        <BellIcon />
-        通知
+      <SheetTrigger render={<Button type="button" variant="ghost" />}>
+        <SlidersHorizontalIcon strokeWidth={1.75} aria-hidden />
+        細かく探す
       </SheetTrigger>
-      <SheetContent side="left">
-        <SheetHeader>
-          <SheetTitle>通知</SheetTitle>
-          <SheetDescription>いいかもやあしあとの新着をまとめて確認できます</SheetDescription>
+      <SheetContent
+        side={isMobile ? "bottom" : "right"}
+        showCloseButton={false}
+        className={
+          isMobile
+            ? "h-(--ja-layout-filter-height)! rounded-t-(--radius-container)"
+            : "w-full max-w-(--ja-dialog-width)!"
+        }
+      >
+        <SheetHeader className="shrink-0 flex-row items-start justify-between gap-3 border-b px-(--ja-layout-panel-gutter) py-4">
+          <div className="grid min-w-0 gap-1">
+            <SheetTitle className="text-2xl font-bold">細かく探す</SheetTitle>
+            <SheetDescription>希望や経験、最近の活動から候補者を絞れます。</SheetDescription>
+          </div>
+          <SheetClose
+            render={<Button type="button" variant="ghost" size="sm" className="text-link" />}
+          >
+            閉じる
+          </SheetClose>
         </SheetHeader>
-        <div className="flex flex-col gap-4 overflow-y-auto px-4">
-          <div className="flex items-start gap-2">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <HeartIcon className="size-4" />
-            </div>
-            <div className="flex flex-col gap-1">
-              <p className="text-sm">株式会社サンプルから「で〜じいいかも！」が届きました</p>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-muted-foreground">1時間前</span>
-                <Badge variant="destructive">未読</Badge>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <MailIcon className="size-4" />
-            </div>
-            <div className="flex flex-col gap-1">
-              <p className="text-sm">株式会社アールエムシーからメッセージが届きました</p>
-              <div className="flex items-center gap-2">
-                <span className="text-xs text-muted-foreground">本日</span>
-                <Badge variant="destructive">未読</Badge>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-start gap-2">
-            <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
-              <FootprintsIcon className="size-4" />
-            </div>
-            <div className="flex flex-col gap-1">
-              <p className="text-sm">
-                常磐合同産業株式会社があなたのWeb履歴書にあしあとを残しました
-              </p>
-              <span className="text-xs text-muted-foreground">3日前</span>
-            </div>
-          </div>
+        <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-(--ja-layout-panel-gutter) py-6">
+          <fieldset className="grid gap-(--ja-layout-field-gap)">
+            <legend className="mb-4 text-lg font-bold">活動・経験</legend>
+            <Label className="min-h-6">
+              <Checkbox
+                checked={filters.recentLogin}
+                onCheckedChange={(recentLogin) =>
+                  setFilters((current) => ({ ...current, recentLogin }))
+                }
+              />
+              1週間以内にログイン
+            </Label>
+            <Label className="min-h-6">
+              <Checkbox
+                checked={filters.hasWorkHistory}
+                onCheckedChange={(hasWorkHistory) =>
+                  setFilters((current) => ({ ...current, hasWorkHistory }))
+                }
+              />
+              職歴あり
+            </Label>
+          </fieldset>
         </div>
-        <SheetFooter>
-          <SheetClose render={<Button variant="outline" />}>閉じる</SheetClose>
+        <SheetFooter className="flex-row justify-between shrink-0 border-t px-(--ja-layout-panel-gutter) pt-4 pb-(--ja-layout-safe-bottom)">
+          <Button
+            type="button"
+            variant="ghost"
+            className="px-0 text-link"
+            onClick={() => setFilters({ recentLogin: false, hasWorkHistory: false })}
+          >
+            条件をはずす
+          </Button>
+          <SheetClose render={<Button type="button" />}>検索する</SheetClose>
         </SheetFooter>
       </SheetContent>
     </Sheet>
@@ -199,34 +89,30 @@ function NotificationsPattern() {
 
 export const sheetDoc: ComponentDoc = {
   name: "sheet",
-  title: "Sheet",
+  title: "シート（Sheet）",
   category: "オーバーレイ",
-  purpose:
-    "画面の端からスライドして現れるパネルで、いまのページを離れずに補足的な内容を表示します。Dialog より縦に長い情報やリストを載せるのに向きます。ジョブアンテナでは求人一覧からのクイックビュー、通知一覧、モバイルの絞り込み条件などに使います。",
+  purpose: "元の画面を離れずに、一覧や複数の入力欄を画面の端から開きます。",
   patterns: [
     {
       id: "basic",
-      title: "基本",
+      title: "候補者の検索条件",
       description:
-        "side プロパティで右・左・下の開く方向を切り替える最小構成です。Header・Footer・Close の組み合わせ方もあわせて確認できます。",
-      previewHeight: null,
-      Demo: BasicPattern,
-    },
-    {
-      id: "job-quick-view",
-      title: "求人クイックビュー",
-      description:
-        "求人一覧のカードから遷移せずに詳細を右側パネルで確認します。メイン画像・勤務地・給与などのサマリーを載せ、フッターに応募といいかも！を固定します。",
-      previewHeight: 560,
-      Demo: JobQuickViewPattern,
-    },
-    {
-      id: "notifications",
-      title: "通知一覧",
-      description:
-        "ヘッダーのベルアイコンから開く左側の通知パネルです。いいかも・メッセージ・あしあとを時系列に並べ、未読には destructive バッジを付けます。",
-      previewHeight: 520,
-      Demo: NotificationsPattern,
+        "PCでは右、スマートフォンでは下から開きます。見出しと操作を残し、条件欄をスクロールできるようにします。",
+      previewHeight: 420,
+      showControls: false,
+      Demo: SearchFilters,
     },
   ],
+  usage: {
+    recommended: [
+      "本文が長い場合は、シートの中でスクロールできるようにする。",
+      "閉じる操作は見出しの右、検索する操作はシートの下に置く。",
+      "条件をはずす操作は下部の左に置く。編集中の条件を外し、検索する操作で結果に反映する。",
+      "シート内で一覧から詳細を開く場合は、ヘッダーの左に一覧へ戻る操作、右に閉じる操作を置く。",
+      "保存済みの検索条件を表示しているときは、条件欄から別の保存済み条件を選べるようにする。選んだ条件で検索し、条件名と結果を更新する。",
+      "保存済みの条件を編集したときは、保存メニューで上書きと別名保存を選べるようにする。別名で保存すると元の条件はそのまま残る。",
+      "スマートフォンでは検索する操作の下に端末の安全領域を取る。",
+    ],
+    avoid: ["操作のすぐ近くに短い補足を出すために使う。その場合はポップオーバーを使う。"],
+  },
 }

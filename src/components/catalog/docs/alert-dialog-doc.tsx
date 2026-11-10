@@ -7,25 +7,19 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
-import { BellOffIcon, Trash2Icon } from "lucide-react"
 
-/**
- * 求人票の削除確認。取り消せない操作をアイコンと destructive ボタンで警告する
- */
 function DeleteJobPattern() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger render={<Button variant="destructive" />}>求人を削除</AlertDialogTrigger>
+      <AlertDialogTrigger render={<Button variant="secondary" />}>
+        求人を削除する
+      </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogMedia>
-            <Trash2Icon />
-          </AlertDialogMedia>
           <AlertDialogTitle>求人を削除しますか？</AlertDialogTitle>
           <AlertDialogDescription>
             「【未経験歓迎・在宅可】フロントエンドエンジニア」を削除します。この操作は取り消せません。
@@ -33,33 +27,7 @@ function DeleteJobPattern() {
         </AlertDialogHeader>
         <AlertDialogFooter>
           <AlertDialogCancel>キャンセル</AlertDialogCancel>
-          <AlertDialogAction variant="destructive">削除する</AlertDialogAction>
-        </AlertDialogFooter>
-      </AlertDialogContent>
-    </AlertDialog>
-  )
-}
-
-/**
- * 企業フォロー解除の確認。sm サイズでボタンを2カラムに並べるコンパクト表示
- */
-function UnfollowPattern() {
-  return (
-    <AlertDialog>
-      <AlertDialogTrigger render={<Button variant="outline" />}>フォロー解除</AlertDialogTrigger>
-      <AlertDialogContent size="sm">
-        <AlertDialogHeader>
-          <AlertDialogMedia>
-            <BellOffIcon />
-          </AlertDialogMedia>
-          <AlertDialogTitle>この企業のフォローを解除しますか？</AlertDialogTitle>
-          <AlertDialogDescription>
-            「株式会社サンプル」のフォローを解除すると、新着求人のお知らせが届かなくなります。
-          </AlertDialogDescription>
-        </AlertDialogHeader>
-        <AlertDialogFooter>
-          <AlertDialogCancel>キャンセル</AlertDialogCancel>
-          <AlertDialogAction>解除する</AlertDialogAction>
+          <AlertDialogAction>削除する</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
@@ -68,26 +36,29 @@ function UnfollowPattern() {
 
 export const alertDialogDoc: ComponentDoc = {
   name: "alert-dialog",
-  title: "Alert Dialog",
+  title: "確認ダイアログ（Alert Dialog）",
   category: "オーバーレイ",
-  purpose:
-    "取り消しづらい操作の前にユーザーへ明示的な確認を求めるモーダルダイアログです。通常の Dialog と違い、キャンセルか実行かの選択に応答が絞られます。ジョブアンテナでは求人の削除、応募の取り消し、企業フォローの解除といった確認に使います。",
+  purpose: "取り消せない操作など、実行する前に影響を確かめてもらう場面に使います。",
   patterns: [
     {
       id: "basic",
-      title: "基本",
-      description:
-        "管理画面の求人票削除の確認です。AlertDialogMedia のアイコンと destructive アクションで、取り消せない操作であることを強調します。",
+      title: "求人票の削除",
+      description: "対象の求人と、削除すると元に戻せないことを表示します。",
+      showControls: false,
       previewHeight: null,
       Demo: DeleteJobPattern,
     },
-    {
-      id: "unfollow",
-      title: "フォロー解除",
-      description:
-        '企業フォローを解除する前の確認です。破壊的ではないが影響のある操作なので、size="sm" のコンパクトなダイアログで解除後の影響を伝えます。',
-      previewHeight: null,
-      Demo: UnfollowPattern,
-    },
   ],
+  usage: {
+    recommended: [
+      "見出しを「〜しますか？」とし、本文には実行後に変わることと残るものを書く。",
+      "白のキャンセルと墨色の確定ボタンを並べる。確定ボタンには「削除する」のように実行内容を書く。",
+      "開いた直後はキャンセルにフォーカスする。キャンセルすると対象を残したまま元の画面へ戻る。",
+    ],
+    avoid: [
+      "確定ボタンを「OK」だけにする。",
+      "削除の確定ボタンを赤くする。赤はエラー表示に使う。",
+      "すぐ元に戻せる操作のたびに確認する。その場合はトーストに「取り消す」を添える。",
+    ],
+  },
 }

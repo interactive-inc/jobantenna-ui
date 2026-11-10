@@ -41,7 +41,7 @@ function SelectTrigger({
       data-slot="select-trigger"
       data-size={size}
       className={cn(
-        "flex w-fit items-center justify-between gap-1.5 rounded-(--radius-outer) border border-transparent bg-input/50 px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow,background-color] outline-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-placeholder:text-muted-foreground data-[size=default]:h-9 data-[size=sm]:h-8 *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+        "flex w-fit items-center justify-between gap-1.5 rounded-(--radius-outer) border border-input bg-card disabled:bg-muted px-3 py-2 text-sm whitespace-nowrap transition-[color,box-shadow,background-color] outline-none focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 data-placeholder:text-muted-foreground data-[size=default]:h-(--ja-control-height) data-[size=sm]:h-(--ja-control-compact-height) *:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-1.5 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         className,
       )}
       {...props}
@@ -106,7 +106,12 @@ function SelectLabel({ className, ...props }: SelectPrimitive.GroupLabel.Props) 
   )
 }
 
-function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Props) {
+function SelectItem({
+  className,
+  children,
+  wrapText = false,
+  ...props
+}: SelectPrimitive.Item.Props & { wrapText?: boolean }) {
   return (
     <SelectPrimitive.Item
       data-slot="select-item"
@@ -116,8 +121,15 @@ function SelectItem({ className, children, ...props }: SelectPrimitive.Item.Prop
       )}
       {...props}
     >
-      <SelectPrimitive.ItemText className="flex flex-1 shrink-0 gap-2 whitespace-nowrap">
-        {children}
+      <SelectPrimitive.ItemText className="flex min-w-0 flex-1 gap-2 whitespace-nowrap">
+        <span
+          className={cn(
+            "min-w-0 flex-1",
+            wrapText ? "whitespace-normal wrap-anywhere" : "truncate",
+          )}
+        >
+          {children}
+        </span>
       </SelectPrimitive.ItemText>
       <SelectPrimitive.ItemIndicator
         render={

@@ -1,11 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { HeartIcon, SendIcon } from "lucide-react"
+import { EllipsisIcon, ThumbsUpIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
-import { sampleCanvasStyle } from "@/components/catalog/sample-canvas-style"
 
 export const Route = createFileRoute("/_catalog/rules/accessibility")({
   component: AccessibilityPage,
@@ -53,6 +52,10 @@ const keyboardRules: ReadonlyArray<KeyboardRule> = [
     rule: "Esc で閉じる・矢印キーで移動などの挙動は Base UI に任せ、独自実装しません",
     example: "Dialog / Dropdown Menu / Combobox のキーボード操作は組み込み済み",
   },
+  {
+    rule: "パネル内の詳細から一覧に戻るときは、開いていた項目にフォーカスを戻します",
+    example: "お知らせの詳細から一覧に戻ると、読んでいたお知らせの行に戻る",
+  },
 ]
 
 /**
@@ -68,18 +71,11 @@ function AccessibilityPage() {
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">ラベル</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap items-end gap-6 rounded-xl bg-background p-4 text-foreground"
-        >
+        <div className="ja-light-surface flex flex-wrap items-end gap-6 rounded-xl bg-background p-4 text-foreground">
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon-sm" aria-label="いいかも！">
-              <HeartIcon />
+            <Button variant="ghost" size="icon" aria-label="ほかの操作">
+              <EllipsisIcon aria-hidden="true" />
             </Button>
-            <Button size="icon-sm" aria-label="メッセージを送信">
-              <SendIcon />
-            </Button>
-            <code className="text-xs text-muted-foreground">aria-label 付きアイコンボタン</code>
           </div>
           <div className="flex w-full max-w-60 flex-col gap-2">
             <Label htmlFor="a11y-keyword">キーワード</Label>
@@ -87,52 +83,35 @@ function AccessibilityPage() {
           </div>
         </div>
         <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
-          アイコンだけのボタンは aria-label 必須です。フォーム入力は Label の htmlFor と input の id
-          を必ず紐付けます。placeholder はラベルの代わりになりません。
+          アイコンだけのボタンには「ほかの操作」のような読み上げ名を付けます。
+          項目名は入力欄と関連づけ、入力を始めた後も表示します。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">コントラスト</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap items-center gap-6 rounded-xl bg-background p-4 text-foreground"
-        >
-          <div className="flex flex-col gap-1">
-            <span className="inline-flex h-9 items-center rounded-md bg-primary px-4 text-sm font-medium text-primary-foreground">
-              応募する
-            </span>
-            <code className="text-xs text-muted-foreground">
-              ○ primary-foreground（yellow-900）
-            </code>
-          </div>
-          <div className="flex flex-col gap-1">
-            <span className="inline-flex h-9 items-center rounded-md bg-primary px-4 text-sm font-medium text-white">
-              応募する
-            </span>
-            <code className="text-xs text-muted-foreground">× 黄色地に白文字</code>
-          </div>
+        <div className="ja-light-surface flex flex-wrap items-center gap-6 rounded-xl bg-background p-4 text-foreground">
+          <Button variant="interest">
+            <ThumbsUpIcon data-icon="inline-start" aria-hidden="true" />
+            いいかもを送る
+          </Button>
         </div>
         <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
-          本文テキストは WCAG AA（4.5:1）、18px 以上の大きな文字とアイコンは 3:1
-          を満たします。ブランドの黄色に白文字は載せません。primary-foreground が濃い黄土色（yellow-900）
+          本文テキストは WCAG 2.2 AA（4.5:1）、大きな文字と操作の境界は 3:1
+          を満たします。ブランドの黄色に白文字は載せません。brand-foreground が墨
           なのはこのためです。muted-foreground は補足専用で、本文には使いません。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">キーボード操作</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap items-center gap-2 rounded-xl bg-background p-4 text-foreground"
-        >
-          <Button variant="outline">検索</Button>
-          <Button variant="outline">絞り込み</Button>
-          <Button>応募する</Button>
-          <code className="w-full text-xs text-muted-foreground">
-            Tab で移動するとフォーカスリングが表示される（クリックでは出ない）
-          </code>
+        <div className="ja-light-surface flex flex-wrap items-center gap-2 rounded-xl bg-background p-4 text-foreground">
+          <Button variant="secondary">条件を変える</Button>
+          <Button>検索する</Button>
         </div>
+        <p className="text-sm text-muted-foreground">
+          Tabキーで移動したときは、次に操作できるボタンを輪郭で示します。
+        </p>
         <div className="flex flex-col gap-4 rounded-xl border p-4">
           {keyboardRules.map((keyboard) => (
             <div key={keyboard.rule} className="flex flex-col gap-0.5">
@@ -161,8 +140,8 @@ function AccessibilityPage() {
         <h2 className="text-xl font-semibold tracking-tight">モーション</h2>
         <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
           アニメーションは装飾であり、情報をアニメーションだけで伝えません。自動再生・無限ループのモーションは使わず、
-          prefers-reduced-motion が有効な環境では動きを減らします。トランジションは
-          200〜450ms の範囲に収め、酔いやすい大きな視差・ズームは避けます。
+          prefers-reduced-motion が有効な環境では動きを減らします。トランジションは 200〜450ms
+          の範囲に収め、酔いやすい大きな視差・ズームは避けます。
         </p>
       </section>
     </div>

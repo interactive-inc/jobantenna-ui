@@ -26,13 +26,18 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }}
       style={
         {
-          "--normal-bg": "var(--popover)",
-          "--normal-text": "var(--popover-foreground)",
-          "--normal-border": "var(--border)",
-          "--border-radius": "var(--radius-md)",
+          "--normal-bg": "var(--ja-ink)",
+          "--normal-text": "var(--ja-paper)",
+          "--normal-border": "var(--ja-ink)",
+          "--border-radius": "var(--radius-outer)",
         } as React.CSSProperties
       }
       toastOptions={{
+        closeButtonAriaLabel: "通知を閉じる",
+        style: {
+          paddingBlock: "calc(var(--spacing) * 4)",
+          paddingInline: "calc(var(--spacing) * 6)",
+        },
         classNames: {
           toast: "cn-toast",
         },

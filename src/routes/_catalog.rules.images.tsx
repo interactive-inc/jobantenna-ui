@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { ImageIcon } from "lucide-react"
+import { ImagePlusIcon } from "lucide-react"
 
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
-import { sampleCanvasStyle } from "@/components/catalog/sample-canvas-style"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 export const Route = createFileRoute("/_catalog/rules/images")({
   component: ImagesPage,
@@ -41,7 +41,7 @@ type LoadingRule = {
 
 const loadingRules: ReadonlyArray<LoadingRule> = [
   {
-    rule: "ファーストビューの外にある画像は loading=\"lazy\" で遅延読み込みします",
+    rule: 'ファーストビューの外にある画像は loading="lazy" で遅延読み込みします',
     example: "求人一覧の2枚目以降のカード画像、フッター周辺の画像",
   },
   {
@@ -62,8 +62,70 @@ function ImagesPage() {
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
         title="画像"
-        lead="求人写真・企業ロゴなど、img タグを使うときのルールです。ジョブアンテナは SSG 配信のため、サイズ未指定によるレイアウトのガタつき（CLS）が特に目立ちます。すべての画像は「代替テキスト・領域の予約・トリミング方針」の3点を決めてから置きます。"
+        lead="求人写真や会社ロゴを使うときは、代替テキスト、表示する領域、画像の切り抜き方を決めます。"
       />
+
+      <section className="grid gap-4">
+        <h2 className="text-xl font-semibold tracking-tight">パートナーズのロゴ</h2>
+        <p className="text-muted-foreground">
+          管理画面とログインでは、それぞれの場所に対応する原本のSVGを使います。
+        </p>
+        <Card>
+          <CardHeader>
+            <CardTitle>管理画面</CardTitle>
+          </CardHeader>
+          <CardContent className="grid gap-3">
+            <span className="w-fit rounded-lg bg-white p-2">
+              <img src="/brand/partners-mark.svg" alt="ジョブアンテナのAマーク" />
+            </span>
+            <p className="text-sm text-muted-foreground">ヘッダーの左端にAマークを置きます。</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>ログイン</CardTitle>
+          </CardHeader>
+          <CardContent className="grid gap-3">
+            <span className="w-fit max-w-full rounded-lg bg-white p-2">
+              <img
+                src="/brand/partners-wordmark.svg"
+                alt="ジョブアンテナ for PARTNERS"
+                className="h-auto max-w-full"
+              />
+            </span>
+            <p className="text-sm text-muted-foreground">地域名のない共通のフルロゴを置きます。</p>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="grid gap-4" aria-labelledby="image-upload">
+        <h2 id="image-upload" className="text-xl font-semibold tracking-tight">
+          画像の登録
+        </h2>
+        <p className="text-muted-foreground">
+          点線の枠から画像を1枚選びます。枠にドラッグ＆ドロップしても選べます。
+          画像の目安寸法は項目名の近くに置き、枠の中に「JPG・PNG」「5MBまで」と表示します。
+          選んだ画像は掲載先と同じ比率で表示し、切り抜かれる範囲を確かめられるようにします。
+          登録済みの画像の右下に「差し替える」と「消す」を並べます。
+        </p>
+        <dl className="grid gap-2 text-sm">
+          <div className="flex flex-wrap justify-between gap-2">
+            <dt>求人の表紙</dt>
+            <dd className="font-numeric">980 × 400</dd>
+          </div>
+          <div className="flex flex-wrap justify-between gap-2">
+            <dt>会社ページの表紙の写真</dt>
+            <dd className="font-numeric">980 × 320</dd>
+          </div>
+          <div className="flex flex-wrap justify-between gap-2">
+            <dt>会社ロゴ</dt>
+            <dd className="font-numeric">150 × 150</dd>
+          </div>
+        </dl>
+        <p className="text-muted-foreground">
+          会社ページの編集では、横長の表紙の写真を上に置き、その下に正方形の会社ロゴを置きます。
+        </p>
+      </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">alt テキスト</h2>
@@ -85,10 +147,7 @@ function ImagesPage() {
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">サイズの予約（CLS 防止）</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-col gap-4 rounded-xl bg-background p-4 text-foreground"
-        >
+        <div className="ja-light-surface flex flex-col gap-4 rounded-xl bg-background p-4 text-foreground">
           <div className="flex flex-col gap-1">
             <div className="aspect-video w-full max-w-xs overflow-hidden rounded-md">
               <img
@@ -106,18 +165,15 @@ function ImagesPage() {
         </div>
         <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
           width / height 属性か aspect-ratio
-          のどちらかを必ず指定し、画像の読み込みで下のコンテンツが動かないようにします。求人写真は
-          16:9（aspect-video）に統一します。比率をコンポーネントで管理する場合は AspectRatio
+          のどちらかを指定し、画像の読み込みで下のコンテンツが動かないようにします。
+          比率は上の「画像の登録」のように掲載先に合わせます。コンポーネントで管理する場合は AspectRatio
           を使います。
         </p>
       </section>
 
       <section className="space-y-5">
         <h2 className="text-xl font-semibold tracking-tight">トリミング</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap gap-6 rounded-xl bg-background p-4 text-foreground"
-        >
+        <div className="ja-light-surface flex flex-wrap gap-6 rounded-xl bg-background p-4 text-foreground">
           <div className="flex flex-col gap-1">
             <div className="size-32 overflow-hidden rounded-md border">
               <img src={demoImageSource} alt="" className="size-full object-cover" />
@@ -151,20 +207,22 @@ function ImagesPage() {
         </div>
       </section>
 
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">プレースホルダー</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap gap-6 rounded-xl bg-background p-4 text-foreground"
-        >
-          <div className="flex h-32 w-48 items-center justify-center rounded-md bg-muted">
-            <ImageIcon className="size-8 text-muted-foreground" />
-          </div>
-        </div>
-        <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
-          画像が未登録の求人は bg-muted の面に ImageIcon
-          を置いたプレースホルダーで統一します。ダミー写真や企業ロゴの流用はしません。読み込み失敗（onError）時も同じ見た目に落とします。
+      <section className="grid gap-4">
+        <h2 className="text-xl font-semibold tracking-tight">求人票一覧の写真</h2>
+        <p className="text-muted-foreground">
+          写真枠は4:3です。PCの標準は120×90pxで、1280px以上の画面で対象が20件を超えると
+          96×72pxに縮めます。コンパクト表示では職種名を残し、別に表示しているキャッチを省略します。
         </p>
+        <figure className="grid gap-3">
+          <figcaption className="text-sm text-muted-foreground">
+            写真が未登録の場合も、読み込めない場合も、写真と同じ枠にアイコンを置きます。
+          </figcaption>
+          <div className="ja-light-surface rounded-(--radius-container) bg-background p-4">
+            <span className="grid aspect-4/3 w-20 place-items-center rounded-(--radius-outer) bg-muted text-muted-foreground lg:w-24 xl:w-30">
+              <ImagePlusIcon className="size-5" strokeWidth={1.75} aria-hidden />
+            </span>
+          </div>
+        </figure>
       </section>
     </div>
   )

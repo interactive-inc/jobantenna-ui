@@ -1,10 +1,10 @@
 import type { ReactNode } from "react"
-import { Link, createFileRoute } from "@tanstack/react-router"
+import { Link, createFileRoute, redirect } from "@tanstack/react-router"
 
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { componentDocs } from "@/components/catalog/component-docs"
+import { componentDocAliases, componentDocs } from "@/components/catalog/component-docs"
 import {
   ExternalLinkIcon,
   MonitorIcon,
@@ -31,6 +31,18 @@ export const Route = createFileRoute("/_catalog/components/$name")({
     viewport:
       search.viewport === "tablet" || search.viewport === "mobile" ? search.viewport : undefined,
   }),
+  beforeLoad: ({ params, search }) => {
+    const alias = componentDocAliases.get(params.name)
+    if (alias) {
+      throw redirect({
+        to: "/components/$name",
+        params: { name: alias.name },
+        search,
+        hash: alias.pattern,
+        replace: true,
+      })
+    }
+  },
   component: ComponentPage,
 })
 
@@ -95,69 +107,83 @@ function ComponentPage() {
       </div>
 
       {doc.patterns.map((pattern) => (
-        <section key={pattern.id} className="space-y-4">
+        <section key={pattern.id} id={pattern.id} className="scroll-mt-6 space-y-4">
           <h2 className="text-xl font-semibold tracking-tight">{pattern.title}</h2>
-          <p className="text-sm leading-relaxed text-muted-foreground">{pattern.description}</p>
+          {pattern.description && (
+            <p className="text-sm leading-relaxed text-muted-foreground">{pattern.description}</p>
+          )}
+          {pattern.details && (
+            <dl className="grid gap-3 text-sm">
+              {pattern.details.map((detail) => (
+                <div key={detail.label} className="grid grid-cols-[5rem_minmax(0,1fr)] gap-2">
+                  <dt className="font-bold">{detail.label}</dt>
+                  <dd className="text-muted-foreground">{detail.description}</dd>
+                </div>
+              ))}
+            </dl>
+          )}
           <div className="overflow-hidden rounded-2xl border bg-muted/50">
-            <div className="flex flex-wrap items-center justify-end gap-4 border-b px-2 py-1">
-              <div className="flex items-center gap-0.5">
-                <ToggleLink
-                  name={doc.name}
-                  search={{ ...search, theme: "light" }}
-                  label="ライトモード"
-                  isActive={theme === "light"}
-                >
-                  <SunIcon />
-                </ToggleLink>
-                <ToggleLink
-                  name={doc.name}
-                  search={{ ...search, theme: "dark" }}
-                  label="ダークモード"
-                  isActive={theme === "dark"}
-                >
-                  <MoonIcon />
-                </ToggleLink>
+            {pattern.showControls !== false && (
+              <div className="flex flex-wrap items-center justify-end gap-4 border-b px-2 py-1">
+                <div className="flex items-center gap-0.5">
+                  <ToggleLink
+                    name={doc.name}
+                    search={{ ...search, theme: "light" }}
+                    label="ライトモード"
+                    isActive={theme === "light"}
+                  >
+                    <SunIcon />
+                  </ToggleLink>
+                  <ToggleLink
+                    name={doc.name}
+                    search={{ ...search, theme: "dark" }}
+                    label="ダークモード"
+                    isActive={theme === "dark"}
+                  >
+                    <MoonIcon />
+                  </ToggleLink>
+                </div>
+                <div className="flex items-center gap-0.5">
+                  <ToggleLink
+                    name={doc.name}
+                    search={{ ...search, viewport: "desktop" }}
+                    label="PC 幅で表示"
+                    isActive={viewport === "desktop"}
+                  >
+                    <MonitorIcon />
+                  </ToggleLink>
+                  <ToggleLink
+                    name={doc.name}
+                    search={{ ...search, viewport: "tablet" }}
+                    label="タブレット幅で表示"
+                    isActive={viewport === "tablet"}
+                  >
+                    <TabletIcon />
+                  </ToggleLink>
+                  <ToggleLink
+                    name={doc.name}
+                    search={{ ...search, viewport: "mobile" }}
+                    label="スマホ幅で表示"
+                    isActive={viewport === "mobile"}
+                  >
+                    <SmartphoneIcon />
+                  </ToggleLink>
+                </div>
+                <div className="flex items-center gap-0.5">
+                  <Link
+                    to="/preview/$name/$pattern"
+                    params={{ name: doc.name, pattern: pattern.id }}
+                    search={{ theme }}
+                    target="_blank"
+                    title="新しいタブで開く"
+                    className={buttonVariants({ variant: "secondary", size: "icon-sm" })}
+                  >
+                    <ExternalLinkIcon />
+                    <span className="sr-only">新しいタブで開く</span>
+                  </Link>
+                </div>
               </div>
-              <div className="flex items-center gap-0.5">
-                <ToggleLink
-                  name={doc.name}
-                  search={{ ...search, viewport: "desktop" }}
-                  label="PC 幅で表示"
-                  isActive={viewport === "desktop"}
-                >
-                  <MonitorIcon />
-                </ToggleLink>
-                <ToggleLink
-                  name={doc.name}
-                  search={{ ...search, viewport: "tablet" }}
-                  label="タブレット幅で表示"
-                  isActive={viewport === "tablet"}
-                >
-                  <TabletIcon />
-                </ToggleLink>
-                <ToggleLink
-                  name={doc.name}
-                  search={{ ...search, viewport: "mobile" }}
-                  label="スマホ幅で表示"
-                  isActive={viewport === "mobile"}
-                >
-                  <SmartphoneIcon />
-                </ToggleLink>
-              </div>
-              <div className="flex items-center gap-0.5">
-                <Link
-                  to="/preview/$name/$pattern"
-                  params={{ name: doc.name, pattern: pattern.id }}
-                  search={{ theme }}
-                  target="_blank"
-                  title="新しいタブで開く"
-                  className={cn(buttonVariants({ variant: "ghost", size: "icon-sm" }))}
-                >
-                  <ExternalLinkIcon />
-                  <span className="sr-only">新しいタブで開く</span>
-                </Link>
-              </div>
-            </div>
+            )}
             <div className="flex justify-center p-4">
               <iframe
                 key={`${doc.name}-${pattern.id}-${theme}`}
@@ -173,6 +199,28 @@ function ComponentPage() {
           </div>
         </section>
       ))}
+      {doc.usage && (
+        <section aria-labelledby="component-usage" className="grid gap-4">
+          <h2 id="component-usage" className="text-xl font-semibold tracking-tight">
+            使い方
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              { title: "やること", items: doc.usage.recommended },
+              { title: "やらないこと", items: doc.usage.avoid },
+            ].map(({ title, items }) => (
+              <div key={title} className="grid content-start gap-3">
+                <h3 className="font-bold">{title}</h3>
+                <ul className="list-disc space-y-3 ps-5 text-sm leading-relaxed text-muted-foreground">
+                  {items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   )
 }

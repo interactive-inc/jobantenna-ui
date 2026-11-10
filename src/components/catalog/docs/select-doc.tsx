@@ -18,13 +18,6 @@ const areaItems = {
   nago: "名護市",
 }
 
-const employmentItems = {
-  fulltime: "正社員",
-  contract: "契約社員",
-  parttime: "アルバイト・パート",
-  dispatch: "派遣社員",
-}
-
 const desiredSalaryItems = {
   "150": "150万円以上",
   "200": "200万円以上",
@@ -64,8 +57,8 @@ function BasicPattern() {
         <span className="text-sm font-medium">勤務地</span>
 
         <Select items={areaItems}>
-          <SelectTrigger>
-            <SelectValue placeholder="勤務地を選択" />
+          <SelectTrigger aria-label="勤務地">
+            <SelectValue placeholder="指定しない" />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="naha">那覇市</SelectItem>
@@ -78,17 +71,18 @@ function BasicPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium">雇用形態（初期値あり）</span>
+        <span className="text-sm font-medium">希望勤務地</span>
 
-        <Select items={employmentItems} defaultValue="fulltime">
-          <SelectTrigger>
+        <Select items={areaItems} defaultValue="naha">
+          <SelectTrigger aria-label="希望勤務地">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="fulltime">正社員</SelectItem>
-            <SelectItem value="contract">契約社員</SelectItem>
-            <SelectItem value="parttime">アルバイト・パート</SelectItem>
-            <SelectItem value="dispatch">派遣社員</SelectItem>
+            <SelectItem value="naha">那覇市</SelectItem>
+            <SelectItem value="urasoe">浦添市</SelectItem>
+            <SelectItem value="ginowan">宜野湾市</SelectItem>
+            <SelectItem value="okinawa">沖縄市</SelectItem>
+            <SelectItem value="nago">名護市</SelectItem>
           </SelectContent>
         </Select>
       </div>
@@ -123,10 +117,6 @@ function DesiredSalaryPattern() {
           <SelectItem value="1000">1000万円以上</SelectItem>
         </SelectContent>
       </Select>
-
-      <p className="text-xs text-muted-foreground">
-        選択肢が収まらない場合はリスト内がスクロールします
-      </p>
     </div>
   )
 }
@@ -184,20 +174,60 @@ function SalaryGroupPattern() {
   )
 }
 
+const jobItems = {
+  front: "海の見えるリゾートホテルのフロントスタッフ｜宿泊予約と観光案内も担当",
+  kitchen: "レストランの調理スタッフ",
+}
+
+function JobPattern() {
+  return (
+    <Select items={jobItems} defaultValue="front">
+      <SelectTrigger aria-label="求人" className="w-full min-w-0 max-w-90">
+        <SelectValue className="min-w-0">
+          {(value) => {
+            const label = jobItems[value as keyof typeof jobItems]
+            return (
+              <span className="truncate" title={label}>
+                {label}
+              </span>
+            )
+          }}
+        </SelectValue>
+      </SelectTrigger>
+      <SelectContent alignItemWithTrigger={false} className="max-w-(--available-width)">
+        <SelectItem value="front" wrapText>
+          {jobItems.front}
+        </SelectItem>
+        <SelectItem value="kitchen" wrapText>
+          {jobItems.kitchen}
+        </SelectItem>
+      </SelectContent>
+    </Select>
+  )
+}
+
 export const selectDoc: ComponentDoc = {
   name: "select",
   title: "Select",
   category: "フォーム",
   purpose:
-    "決まった選択肢の中から1つを選ばせるドロップダウン入力です。選択肢が数個〜十数個で一覧して選べる場面に向きます。ジョブアンテナでは検索条件の勤務地・雇用形態・希望年収や、求人一覧の並び替えに使います。",
+    "決まった選択肢から一つを選ぶ入力欄です。標準は高さ40px、角丸8pxの白地に枠線を付けます。",
   patterns: [
     {
       id: "basic",
       title: "基本",
       description:
-        "プレースホルダありと初期値ありの単一選択です。Select の items に値とラベルの対応を渡し、SelectValue が選択中のラベルを表示します。",
+        "任意の条件は、選択されていないときに「指定しない」と表示します。選んだ値は一行で表示し、長い場合は末尾を省略します。",
       previewHeight: 400,
       Demo: BasicPattern,
+    },
+    {
+      id: "job",
+      title: "長い選択肢",
+      description:
+        "選択済みの求人名は一行に収めます。メニューを開くと長い求人名も折り返して全文を読めます。",
+      previewHeight: 260,
+      Demo: JobPattern,
     },
     {
       id: "desired-salary",
@@ -210,18 +240,26 @@ export const selectDoc: ComponentDoc = {
     {
       id: "sort-order",
       title: "並び替え",
-      description:
-        '求人一覧のヘッダーで新着順・おすすめ順を切り替える例です。size="sm" のトリガーを件数表示と並べ、defaultValue で初期の並び順を決めます。',
+      description: "件数の横に並べ、現在の並び順を表示します。",
       previewHeight: null,
       Demo: SortOrderPattern,
     },
     {
       id: "salary-group",
       title: "給与グループ",
-      description:
-        "月給と時給のように性質の違う選択肢を SelectGroup と SelectLabel で区切り、SelectSeparator で境界を示す例です。",
+      description: "月給と時給のように意味が異なる選択肢は、見出しと区切り線で分けます。",
       previewHeight: 400,
       Demo: SalaryGroupPattern,
     },
   ],
+  usage: {
+    recommended: [
+      "選択肢が5つ以上あるときに使う。",
+      "幅は置く場所に合わせる。狭いパネルでは横幅いっぱいに広げる。",
+    ],
+    avoid: [
+      "選択した値を二行に折り返す。",
+      "4つ以下の選択肢を並べて見せられる場面で使う。その場合はラジオボタンにする。",
+    ],
+  },
 }

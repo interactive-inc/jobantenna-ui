@@ -1,232 +1,65 @@
+import { EllipsisIcon } from "lucide-react"
 import type { ComponentDoc } from "@/components/catalog/component-doc"
-import { Avatar, AvatarFallback } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import {
-  ArrowUpDownIcon,
-  BookmarkIcon,
-  BuildingIcon,
-  ChevronDownIcon,
-  FileTextIcon,
-  FootprintsIcon,
-  HeartIcon,
-  LogOutIcon,
-  MailIcon,
-  SendIcon,
-  SettingsIcon,
-  Share2Icon,
-  TrashIcon,
-} from "lucide-react"
 
-/**
- * 通常項目・サブメニュー・破壊的操作を組み合わせた基本形
- */
-function BasicPattern() {
+function MoreActionsExample() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
+        aria-label="ほかの操作"
         render={
-          <Button variant="outline">
-            求人の操作
-            <ChevronDownIcon />
-          </Button>
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="size-(--ja-control-height)"
+          />
         }
-      />
-
-      <DropdownMenuContent>
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>この求人</DropdownMenuLabel>
-
-          <DropdownMenuItem>
-            <SendIcon />
-            応募する
-            <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <BookmarkIcon />
-            キープする
-            <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <BuildingIcon />
-            企業情報を見る
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-
+      >
+        <EllipsisIcon aria-hidden="true" />
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        <DropdownMenuItem>複製する</DropdownMenuItem>
         <DropdownMenuSeparator />
-
-        <DropdownMenuSub>
-          <DropdownMenuSubTrigger>
-            <Share2Icon />
-            共有
-          </DropdownMenuSubTrigger>
-
-          <DropdownMenuSubContent>
-            <DropdownMenuItem>LINE で送る</DropdownMenuItem>
-            <DropdownMenuItem>メールで送る</DropdownMenuItem>
-            <DropdownMenuItem>リンクをコピー</DropdownMenuItem>
-          </DropdownMenuSubContent>
-        </DropdownMenuSub>
-
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem variant="destructive">
-          <TrashIcon />
-          閲覧履歴から削除
-        </DropdownMenuItem>
+        <DropdownMenuItem>掲載を停止する</DropdownMenuItem>
+        <DropdownMenuItem>削除する</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
-}
-
-/**
- * アバターをトリガーにしたマイページメニューの例
- */
-function MyPageMenuPattern() {
-  return (
-    <DropdownMenu>
-      <DropdownMenuTrigger
-        render={
-          <Button variant="ghost" className="h-auto px-2 py-1">
-            <Avatar>
-              <AvatarFallback>山</AvatarFallback>
-            </Avatar>
-            山田 太郎
-            <ChevronDownIcon />
-          </Button>
-        }
-      />
-
-      <DropdownMenuContent>
-        <DropdownMenuGroup>
-          <DropdownMenuLabel>yamada@example.com</DropdownMenuLabel>
-
-          <DropdownMenuItem>
-            <FileTextIcon />
-            Web履歴書
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <BookmarkIcon />
-            キープした求人
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <HeartIcon />
-            いいかも！
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <FootprintsIcon />
-            あしあと
-          </DropdownMenuItem>
-
-          <DropdownMenuItem>
-            <MailIcon />
-            メッセージ
-            <Badge variant="destructive" className="ml-auto">
-              3
-            </Badge>
-          </DropdownMenuItem>
-        </DropdownMenuGroup>
-
-        <DropdownMenuSeparator />
-
-        <DropdownMenuItem>
-          <SettingsIcon />
-          設定
-        </DropdownMenuItem>
-
-        <DropdownMenuItem variant="destructive">
-          <LogOutIcon />
-          ログアウト
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
-  )
-}
-
-/**
- * 求人一覧の並び替えを RadioGroup で単一選択する例
- */
-function SortMenuPattern() {
-  return (
-    <div className="flex w-full max-w-md items-center justify-between gap-4">
-      <span className="text-sm text-muted-foreground">128件の求人</span>
-
-      <DropdownMenu>
-        <DropdownMenuTrigger
-          render={
-            <Button variant="outline" size="sm">
-              <ArrowUpDownIcon />
-              並び替え
-            </Button>
-          }
-        />
-
-        <DropdownMenuContent align="end">
-          <DropdownMenuRadioGroup defaultValue="newest">
-            <DropdownMenuLabel>並び順</DropdownMenuLabel>
-
-            <DropdownMenuRadioItem value="newest">新着順</DropdownMenuRadioItem>
-
-            <DropdownMenuRadioItem value="recommended">おすすめ順</DropdownMenuRadioItem>
-
-            <DropdownMenuRadioItem value="salary">給与が高い順</DropdownMenuRadioItem>
-          </DropdownMenuRadioGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
   )
 }
 
 export const dropdownMenuDoc: ComponentDoc = {
   name: "dropdown-menu",
-  title: "Dropdown Menu",
+  title: "ドロップダウンメニュー（Dropdown Menu）",
   category: "オーバーレイ",
   purpose:
-    "ボタンやアバターをトリガーに、関連する操作をまとめて表示するメニューです。画面上に常時並べるほどではない補助的な操作の置き場所に使います。ジョブアンテナでは求人カードの操作、ヘッダーのマイページメニュー、求人一覧の並び替えに使います。",
+    "対象ごとの補助操作をまとめるメニューです。求人票の操作をまとめる場合は、各項目を「複製する」のように動詞で書きます。メニューの幅の目安は200〜280px、各項目の最小高さは44px、上下の内側の余白は8pxです。項目にフォーカスすると、行の幅いっぱいに背景色が付きます。",
   patterns: [
     {
-      id: "basic",
-      title: "基本",
+      id: "icon-trigger",
+      title: "アイコンで開く",
       description:
-        "通常項目・サブメニュー・破壊的操作を組み合わせた基本形です。DropdownMenuTrigger は render プロップに Button を渡してトリガーにします。",
-      previewHeight: 400,
-      Demo: BasicPattern,
-    },
-    {
-      id: "mypage-menu",
-      title: "マイページメニュー",
-      description:
-        "アバター付きボタンをトリガーにしたマイページメニューです。DropdownMenuLabel でアカウント情報を示し、未読メッセージ数は ml-auto の Badge で右端に表示します。",
-      previewHeight: 480,
-      Demo: MyPageMenuPattern,
-    },
-    {
-      id: "sort-menu",
-      title: "並び替え",
-      description:
-        '求人一覧の並び順を DropdownMenuRadioGroup で単一選択する例です。defaultValue で初期値を指定し、align="end" でトリガーの右端に揃えます。',
-      previewHeight: null,
-      Demo: SortMenuPattern,
+        "行末の三点アイコンからメニューを開き、ボタンの右端に揃えます。押せる範囲は40px四方、角丸は8pxです。読み上げ名は「ほかの操作」にします。",
+      previewHeight: 320,
+      Demo: MoreActionsExample,
     },
   ],
+  usage: {
+    recommended: [
+      "複製や公開停止など、たまに使う操作をまとめる。",
+      "停止と削除は下にまとめ、ほかの操作と区切り線で分ける。",
+      "項目を選んだらメニューを閉じる。",
+    ],
+    avoid: [
+      "よく使う操作をメニューに入れる。直接押せる位置に置く。",
+      "取り消せない操作を選んだ時点で実行する。確認ダイアログを開く。",
+    ],
+  },
 }

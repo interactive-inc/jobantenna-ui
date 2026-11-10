@@ -1,252 +1,161 @@
-import { createFileRoute } from "@tanstack/react-router"
-import type { CSSProperties } from "react"
-import { BellDotIcon, CircleCheckIcon, InfoIcon, SendIcon, StickyNoteIcon } from "lucide-react"
+import { createFileRoute, Link } from "@tanstack/react-router"
+import { ArrowRight, ThumbsUp } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { ColorSwatch } from "@/components/catalog/color-swatch"
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
+import { Badge } from "@/components/ui/badge"
+import { Button, buttonVariants } from "@/components/ui/button"
 
 export const Route = createFileRoute("/_catalog/rules/color")({
   component: ColorPage,
 })
 
-type SwatchEntry = {
-  name: string
-  light: string
-  dark: string
-  usage: string
-}
-
-const brandTokens: ReadonlyArray<SwatchEntry> = [
+const colors = [
   {
-    name: "job-antenna-black",
-    light: "#2A2E3D",
-    dark: "#2A2E3D",
-    usage: "ブランドの骨格。foreground と primary-foreground の基準",
-  },
-  {
-    name: "job-antenna-yellow",
+    name: "brand / interest",
     light: "#FFC306",
     dark: "#FFC306",
-    usage: "ブランドの光。brand と主要アクションの primary に対応",
+    usage: "ロゴ・現在地・いいかも。黄色の上は墨の文字。",
   },
-]
-
-const shadcnTokens: ReadonlyArray<SwatchEntry> = [
-  {
-    name: "background",
-    light: "#FFFFFF",
-    dark: "#2A2E3D",
-    usage: "ページ全体の地。ダークはブランド Black をそのまま使う",
-  },
-  {
-    name: "foreground",
-    light: "#2A2E3D",
-    dark: "#ECEFF1",
-    usage: "見出し・本文。Blue Gray と組み合わせて階層を作る",
-  },
-  {
-    name: "card / popover",
-    light: "#FFFFFF",
-    dark: "#37474F",
-    usage: "カードと浮き面。ダークでは background より一段明るい",
-  },
+  { name: "page", light: "#F7F9FC", dark: "#1C232A", usage: "画面の地。白いカードと区別する。" },
+  { name: "foreground", light: "#262F37", dark: "#FAFAFA", usage: "見出しと本文の色。" },
   {
     name: "primary",
-    light: "#FFC306",
-    dark: "#FFC306",
-    usage: "主要CTA・選択状態。文字は primary-foreground の Black",
+    light: "#262F37",
+    dark: "#EEF1F4",
+    usage: "画面で最も重要な決定。1画面に原則1つ。",
   },
-  {
-    name: "secondary",
-    light: "#FEFAF4",
-    dark: "#455A64",
-    usage: "軽い代替アクション。ライトは white-yellow を使う",
-  },
-  {
-    name: "muted / accent",
-    light: "#ECEFF1",
-    dark: "#37474F",
-    usage: "補助面・非活性・ホバー。Blue Gray で静かな階層を作る",
-  },
-  {
-    name: "border / input",
-    light: "#CFD8DC",
-    dark: "#546E7A",
-    usage: "枠線と入力の境界。面より一段強い Blue Gray",
-  },
+  { name: "link", light: "#076ABA", dark: "#A1CFFE", usage: "テキストリンクと新着の印。" },
   {
     name: "ring",
-    light: "#2A2E3D",
-    dark: "#FFC306",
-    usage: "キーボードフォーカス。背景と3:1以上になるブランド色を選ぶ",
+    light: "#076ABA",
+    dark: "#78BBFE",
+    usage: "キーボードフォーカス。周囲との区別を保つ。",
   },
 ]
 
-const jobAntennaSampleStyle: CSSProperties = {
-  "--background": "#ffffff",
-  "--foreground": "#2a2e3d",
-  "--card": "#ffffff",
-  "--card-foreground": "#2a2e3d",
-  "--popover": "#ffffff",
-  "--popover-foreground": "#2a2e3d",
-  "--primary": "#ffc306",
-  "--primary-foreground": "#2a2e3d",
-  "--secondary": "#fefaf4",
-  "--secondary-foreground": "#2a2e3d",
-  "--muted": "#eceff1",
-  "--muted-foreground": "#546e7a",
-  "--accent": "#eceff1",
-  "--accent-foreground": "#2a2e3d",
-  "--destructive": "#b71c1c",
-  "--border": "#cfd8dc",
-  "--input": "#cfd8dc",
-  "--ring": "#2a2e3d",
-  "--link": "#0d47a1",
-  "--signal": "#5d39fe",
-  "--signal-muted": "color-mix(in oklch, #5d39fe 12%, white)",
-  "--info": "#0d47a1",
-  "--info-muted": "#bbdefb",
-  "--success": "#004d40",
-  "--success-muted": "#b2dfdb",
-  "--warning": "#f9a406",
-  "--warning-foreground": "#2a2e3d",
-  "--warning-muted": "#fefaf4",
-}
+const surfaceColors = [
+  { name: "card", light: "#FFFFFF", dark: "oklch(0.205 0 0)", usage: "カードや面の地。" },
+  {
+    name: "secondary",
+    light: "#EEF1F4",
+    dark: "oklch(0.274 0.006 286.033)",
+    usage: "ページ移動用のボタンや補助操作。",
+  },
+  {
+    name: "muted",
+    light: "#EEF1F4",
+    dark: "oklch(0.269 0 0)",
+    usage: "くぼみや補足をまとめる背景。",
+  },
+  { name: "border", light: "#E0E3E7", dark: "oklch(1 0 0 / 10%)", usage: "カードや行の区切り。" },
+  { name: "input", light: "#CDD1D5", dark: "oklch(1 0 0 / 15%)", usage: "入力欄の境界。" },
+]
 
-/**
- * ジョブアンテナの実パレットを shadcn の意味トークンへ接続する配色原則
- */
+const chartBars = [
+  { label: "系列1", className: "h-16 bg-chart-1" },
+  { label: "系列2", className: "h-12 bg-chart-2" },
+  { label: "系列3", className: "h-20 bg-chart-3" },
+  { label: "系列4", className: "h-8 bg-chart-4" },
+  { label: "系列5", className: "h-14 bg-chart-5" },
+]
+
 function ColorPage() {
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
+    <div className="mx-auto grid w-full max-w-4xl gap-12 px-6 py-12 md:px-10">
       <RulePageHeader
         title="配色"
-        lead="ジョブアンテナの実パレットを色名のままUIへ直書きせず、shadcnの意味トークンへ割り当てて使います。ブランドのYellowとBlackを核に、Blue Grayで面と境界を作り、彩度のある色は状態の意味にだけ固定します。"
+        lead="色はプリミティブと役割の2段で管理します。コンポーネントは地、文字、操作、状態などの役割で色を指定します。"
       />
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">ブランドの核</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          YellowとBlackはライト・ダークで変えない固定値です。Yellowを面、Blackを文字に使うことで、ブランドらしさと読みやすさを同時に保ちます。
+      <section className="grid gap-4">
+        <h2 className="text-xl font-bold">ブランドと操作</h2>
+        <p className="text-muted-foreground">
+          主の操作は墨。黄色はロゴ・現在地・いいかもに使います。ボタン型のリンクはSecondary、テキストリンクは青です。失敗や入力エラーは赤、注意は橙です。
         </p>
-        <div className="grid grid-cols-1 gap-4">
-          {brandTokens.map((token) => (
-            <ColorSwatch key={token.name} {...token} />
-          ))}
-        </div>
+        {colors.map((color) => (
+          <ColorSwatch key={color.name} {...color} />
+        ))}
       </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">shadcnの基本トークン</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          コンポーネントは元の色名ではなく、primary・muted・borderのような役割を参照します。テーマ切り替えは値だけを変え、役割は変えません。
-        </p>
-        <div className="grid grid-cols-1 gap-4">
-          {shadcnTokens.map((token) => (
-            <ColorSwatch key={token.name} {...token} />
-          ))}
-        </div>
+      <section className="grid gap-4" aria-labelledby="surface-tokens">
+        <h2 id="surface-tokens" className="text-xl font-bold">
+          背景と境界のトークン
+        </h2>
+        {surfaceColors.map((color) => (
+          <ColorSwatch key={color.name} {...color} />
+        ))}
       </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">主要アクションだけが光る</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          primaryは1画面に原則1つです。副次アクションはsecondary・outline・ghostへ落とし、Yellowの面を増やしすぎません。
-        </p>
-        <div
-          style={jobAntennaSampleStyle}
-          className="flex flex-wrap items-center gap-3 rounded-2xl bg-background p-6 text-foreground"
-        >
-          <Button>応募する</Button>
-          <Button variant="secondary">保存</Button>
-          <Button variant="outline">詳細を見る</Button>
-          <Button variant="ghost">キャンセル</Button>
-          <Button variant="link" className="text-link">
-            募集要項を確認
+      <section className="grid gap-4">
+        <h2 className="text-xl font-bold">使い分け</h2>
+        <div className="ja-light-surface flex flex-wrap items-center gap-3 rounded-2xl bg-page p-6 text-foreground">
+          <Button>条件を適用</Button>
+          <Button variant="interest">
+            <ThumbsUp data-icon="inline-start" />
+            いいかもを送る
           </Button>
-          <Button disabled>応募済み</Button>
+          <Button variant="secondary">キャンセル</Button>
+          <Button variant="ghost">項目を追加する</Button>
+          <Link
+            to="/components/$name"
+            params={{ name: "button" }}
+            className={buttonVariants({ variant: "secondary" })}
+          >
+            Buttonの使用例を見る
+            <ArrowRight data-icon="inline-end" />
+          </Link>
         </div>
-        <p className="max-w-prose text-sm text-muted-foreground">
-          テキストリンクは低コントラストのYellowを避け、Blueのlinkトークンを使います。
+        <p className="text-sm text-muted-foreground">
+          ボタンの形で別画面へ案内する場合は、Secondaryの面と文字色を使います。
         </p>
       </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">状態色は意味に固定する</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          色だけに頼らず、アイコンとラベルを併記します。淡い色を面、濃い色を文字に分けることで、状態バッジもコントラストを保ちます。
+      <section className="grid gap-4">
+        <h2 className="text-xl font-bold">状態の札</h2>
+        <p className="text-muted-foreground">
+          淡い地と濃い文字を組み合わせ、文言でも状態が分かるようにします。公開停止は灰、掲載中や条件の一致は緑です。
         </p>
-        <div
-          style={jobAntennaSampleStyle}
-          className="flex flex-col gap-y-3 rounded-2xl bg-background p-6 text-foreground"
+        <div className="ja-light-surface flex flex-wrap gap-3 rounded-2xl bg-card p-6 text-foreground">
+          <Badge variant="information">応募あり</Badge>
+          <Badge variant="interest">
+            <ThumbsUp aria-hidden="true" />
+            いいかもが届いています
+          </Badge>
+          <Badge variant="secondary">公開停止</Badge>
+          <Badge variant="secondary" className="bg-success-muted text-success">
+            掲載中
+          </Badge>
+          <Badge variant="attention">要確認</Badge>
+        </div>
+        <p className="text-sm text-muted-foreground">
+          灰色の地に置く補足は、白地の補足より濃くします。本文と補足はWCAG 2.2 AAを基準にします。
+        </p>
+      </section>
+      <section className="grid gap-4" aria-labelledby="chart-colors">
+        <h2 id="chart-colors" className="text-xl font-bold">
+          チャートの系列色
+        </h2>
+        <p className="text-muted-foreground">
+          系列は <code>--chart-1</code> から <code>--chart-5</code>{" "}
+          の明度差で区別します。系列名や凡例を併記します。
+        </p>
+        <figure className="ja-light-surface rounded-(--radius-container) bg-card p-4 text-foreground sm:p-6">
+          <div className="grid grid-cols-5 items-end gap-2">
+            {chartBars.map((bar) => (
+              <div key={bar.label} className="grid justify-items-center gap-2">
+                <div
+                  className={`w-full max-w-10 rounded-t-(--radius-inner) ${bar.className}`}
+                  aria-hidden
+                />
+                <span className="text-xs text-muted-foreground">{bar.label}</span>
+              </div>
+            ))}
+          </div>
+        </figure>
+        <Link
+          to="/components/$name"
+          params={{ name: "chart" }}
+          className="w-fit font-semibold underline-offset-4 hover:underline"
         >
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="w-56 shrink-0 text-sm text-muted-foreground">相手からの事実</span>
-            <Badge className="border-info/30 bg-info-muted text-info">
-              <InfoIcon data-icon="inline-start" aria-hidden="true" />
-              応募あり
-            </Badge>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="w-56 shrink-0 text-sm text-muted-foreground">
-              こちらから送ったシグナル
-            </span>
-            <Badge className="border-signal/30 bg-signal-muted text-signal">
-              <SendIcon data-icon="inline-start" aria-hidden="true" />
-              送信済み
-            </Badge>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="w-56 shrink-0 text-sm text-muted-foreground">
-              相手から届いたシグナル
-            </span>
-            <Badge className="border-success/30 bg-success-muted text-success">
-              <CircleCheckIcon data-icon="inline-start" aria-hidden="true" />
-              受信あり
-            </Badge>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="w-56 shrink-0 text-sm text-muted-foreground">内部向けのメモ</span>
-            <Badge className="border-warning/40 bg-warning-muted text-warning-foreground">
-              <StickyNoteIcon data-icon="inline-start" aria-hidden="true" />
-              メモあり
-            </Badge>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="w-56 shrink-0 text-sm text-muted-foreground">未読・要対応</span>
-            <Badge variant="destructive">
-              <BellDotIcon data-icon="inline-start" aria-hidden="true" />
-              未読 3
-            </Badge>
-          </div>
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="w-56 shrink-0 text-sm text-muted-foreground">
-              公開状態（彩度を使わない）
-            </span>
-            <Badge>公開中</Badge>
-            <Badge variant="outline">停止中</Badge>
-            <Badge variant="secondary">下書き</Badge>
-          </div>
-        </div>
-      </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">チャートはBlue Grayで組む</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          系列はBlue
-          Grayの明度差で区別し、状態色との意味衝突を避けます。強調したい1系列だけprimaryを使えます。
-        </p>
-        <div className="flex items-end gap-2 rounded-2xl border p-6">
-          <div className="h-16 w-8 rounded-lg bg-blue-gray1" />
-          <div className="h-12 w-8 rounded-lg bg-blue-gray3" />
-          <div className="h-20 w-8 rounded-lg bg-blue-gray5" />
-          <div className="h-8 w-8 rounded-lg bg-blue-gray7" />
-          <div className="h-14 w-8 rounded-lg bg-blue-gray10" />
-          <div className="h-24 w-8 rounded-lg bg-job-antenna-yellow" />
-          <span className="ml-2 text-sm text-muted-foreground">Blue Gray 5段階 + 強調1色</span>
-        </div>
+          Chartの使用例を見る
+        </Link>
       </section>
     </div>
   )

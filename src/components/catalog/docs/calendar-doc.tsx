@@ -1,97 +1,46 @@
+import { useState } from "react"
 import type { ComponentDoc } from "@/components/catalog/component-doc"
-import { Calendar } from "@/components/ui/calendar"
+import { DateTimePicker } from "@/components/ui/date-time-picker"
+import { Label } from "@/components/ui/label"
 
-const interviewMonth = new Date(2026, 6, 1)
+function PublicationSchedule() {
+  const [start, setStart] = useState<string | null>(new Date(2026, 10, 20, 10).toISOString())
+  const [end, setEnd] = useState<string | null>(null)
 
-const unavailableInterviewDates = [
-  new Date(2026, 6, 14),
-  new Date(2026, 6, 15),
-  new Date(2026, 6, 21),
-]
-
-const hireableStartMonth = new Date(2026, 0, 1)
-
-const hireableEndMonth = new Date(2027, 11, 1)
-
-/**
- * mode="single" の非制御カレンダーで面接希望日を選択する
- */
-function BasicPattern() {
   return (
-    <div className="flex flex-col gap-2">
-      <p className="text-sm font-medium">面接希望日</p>
-      <Calendar mode="single" defaultMonth={interviewMonth} className="rounded-md border" />
-    </div>
-  )
-}
-
-/**
- * captionLayout="dropdown" で年月をドロップダウンから指定する
- */
-function DropdownPattern() {
-  return (
-    <div className="flex flex-col gap-2">
-      <p className="text-sm font-medium">入社可能日</p>
-      <Calendar
-        mode="single"
-        captionLayout="dropdown"
-        defaultMonth={interviewMonth}
-        startMonth={hireableStartMonth}
-        endMonth={hireableEndMonth}
-        className="rounded-md border"
-      />
-    </div>
-  )
-}
-
-/**
- * disabled で企業側の面接不可日と土日をグレーアウトする
- */
-function DisabledDatesPattern() {
-  return (
-    <div className="flex flex-col gap-2">
-      <p className="text-sm font-medium">面接希望日（土日・面接不可日を除く）</p>
-      <Calendar
-        mode="single"
-        defaultMonth={interviewMonth}
-        disabled={[...unavailableInterviewDates, { dayOfWeek: [0, 6] }]}
-        className="rounded-md border"
-      />
-      <p className="text-xs text-muted-foreground">※ 企業の面接不可日と土日は選択できません</p>
+    <div className="grid w-full max-w-sm gap-4">
+      <div className="grid gap-2">
+        <Label htmlFor="publication-start">公開開始日時</Label>
+        <DateTimePicker id="publication-start" value={start} onChange={setStart} />
+      </div>
+      <div className="grid gap-2">
+        <Label htmlFor="publication-end">公開終了日時</Label>
+        <DateTimePicker id="publication-end" value={end} onChange={setEnd} />
+      </div>
     </div>
   )
 }
 
 export const calendarDoc: ComponentDoc = {
   name: "calendar",
-  title: "Calendar",
+  title: "日付ピッカー（Calendar）",
   category: "フォーム",
-  purpose:
-    "月表示のグリッドから日付を選択するコンポーネントです。react-day-picker ベースで、単一選択・年月ドロップダウン・日付の無効化に対応します。ジョブアンテナでは応募後の面接希望日の選択や、入社可能日の指定に使います。",
+  purpose: "公開予約など、日付と時刻を指定する場面に使います。入力欄を押すとカレンダーが開きます。",
   patterns: [
     {
-      id: "basic",
-      title: "基本",
-      description:
-        'mode="single" の非制御カレンダーです。面接希望日を1日だけ選ぶ最小構成で、defaultMonth で初期表示月を固定します。',
-      previewHeight: 440,
-      Demo: BasicPattern,
-    },
-    {
-      id: "dropdown",
-      title: "年月ドロップダウン",
-      description:
-        'captionLayout="dropdown" で年と月をドロップダウンから直接指定します。入社可能日など数か月先の日付を選ぶ場面で、月送りボタンの連打を避けられます。',
-      previewHeight: 440,
-      Demo: DropdownPattern,
-    },
-    {
-      id: "disabled-dates",
-      title: "選択不可日",
-      description:
-        "disabled に日付の配列と曜日マッチャーを渡してグレーアウトします。企業側の面接不可日や休業日を候補から外すときに使います。",
-      previewHeight: 480,
-      Demo: DisabledDatesPattern,
+      id: "date-time",
+      title: "公開日時の指定",
+      description: "日付と時刻を選び、「日時を確定」を押すと入力欄に反映されます。",
+      showControls: false,
+      previewHeight: 520,
+      Demo: PublicationSchedule,
     },
   ],
+  usage: {
+    recommended: [
+      "日付と時刻は「2026年11月20日 10:00」の形式で表示する。",
+      "曜日が必要な箇所では「11月20日（金）」のように日付の後ろへ添える。",
+    ],
+    avoid: ["同じ画面の中で、年月日の表記とスラッシュ区切りの日付を混在させる。"],
+  },
 }

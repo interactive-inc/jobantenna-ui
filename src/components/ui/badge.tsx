@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const badgeVariants = cva(
-  "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border border-transparent px-2 text-xs leading-none font-medium whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!",
+  "group/badge inline-flex h-5 w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-full border border-transparent px-2 text-xs leading-4 font-bold whitespace-nowrap transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 has-data-[icon=inline-end]:pr-1.5 has-data-[icon=inline-start]:pl-1.5 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&>svg]:pointer-events-none [&>svg]:size-3!",
   {
     variants: {
       variant: {
@@ -13,6 +13,11 @@ const badgeVariants = cva(
         secondary: "bg-secondary text-secondary-foreground [a]:hover:bg-secondary/80",
         destructive:
           "bg-[color-mix(in_oklch,var(--background),var(--destructive)_10%)] text-destructive focus-visible:ring-destructive/20 dark:bg-[color-mix(in_oklch,var(--background),var(--destructive)_20%)] dark:focus-visible:ring-destructive/40 [a]:hover:bg-[color-mix(in_oklch,var(--background),var(--destructive)_20%)]",
+        information:
+          "bg-(--status-information-surface,#dfeffe) text-(--status-information-text,#054f8e)",
+        success: "bg-success-muted text-success",
+        attention: "bg-(--status-attention-surface,#fee8d7) text-(--status-attention-text,#9d4900)",
+        interest: "bg-(--status-interest-surface,#fff6e2) text-(--status-interest-text,#8d5604)",
         outline: "border-border text-foreground [a]:hover:bg-muted [a]:hover:text-muted-foreground",
         ghost: "hover:bg-muted hover:text-muted-foreground dark:hover:bg-muted/50",
         link: "text-primary underline-offset-4 hover:underline",

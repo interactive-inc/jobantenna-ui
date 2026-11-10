@@ -1,12 +1,154 @@
-/*
- * Product-specific semantic tokens, kept separate from shadcn/ui's own tokens.
- * outer / inner are pinned to Tailwind's default rounded-lg(8px) / rounded-sm(4px)
- * (the --radius-sm..4xl custom multiplier scale was removed from styles.css's
- * @theme block). Since these are fixed scale references rather than a computed
- * value, outer = inner + p-1 holds only incidentally at the current --radius and
- * is not guaranteed.
- */
 :root {
-  --radius-outer: var(--radius-lg);
-  --radius-inner: var(--radius-sm);
+  --ja-ink: #262f37;
+  --ja-paper: #fff;
+  --ja-page: #f7f9fc;
+  --ja-recess: #eef1f4;
+  --ja-border: #e0e3e7;
+  --ja-input: #cdd1d5;
+  --ja-subtle: #555c62;
+  --ja-filter-chip-count: #70777d;
+  --ja-blue: #076aba;
+  --ja-yellow: #ffc306;
+  --ja-red: #b4252f;
+  --ja-information-surface: #dfeffe;
+  --ja-information-text: #054f8e;
+  --ja-attention-surface: #fee8d7;
+  --ja-attention-text: #9d4900;
+  --ja-interest-surface: #fff6e2;
+  --ja-interest-text: #8d5604;
+  --ja-success-surface: #ecfcef;
+  --ja-success-text: #027942;
+  --ja-notice-warning-surface: #fef5ed;
+  --ja-error-surface: #fff4f3;
+  --ja-occupation-orange-surface: #ffe7d7;
+  --ja-occupation-orange-text: #994a00;
+  --ja-occupation-green-surface: #ddf4e1;
+  --ja-occupation-green-text: #137738;
+  --ja-occupation-violet-surface: #ece9ff;
+  --ja-occupation-violet-text: #6453a7;
+  --ja-occupation-blue-surface: #daf0ff;
+  --ja-occupation-blue-text: #0068a7;
+  --ja-occupation-pink-surface: #ffe4f0;
+  --ja-occupation-pink-text: #973f6e;
+
+  --ja-layout-filter-height: 77dvh;
+  --ja-layout-safe-bottom: max(env(safe-area-inset-bottom), calc(var(--spacing) * 4));
+  --ja-layout-panel-gutter: calc(var(--spacing) * 6);
+  --ja-layout-field-gap: calc(var(--spacing) * 4);
+  --ja-layout-section-gap: calc(var(--spacing) * 6);
+  --ja-layout-page-inset: calc(var(--spacing) * 4);
+  --ja-layout-profile-paper-inset: var(--ja-layout-field-gap);
+  --ja-layout-profile-paper-section-inset: var(--ja-layout-field-gap);
+  --ja-layout-profile-column-gap: var(--ja-layout-panel-gutter);
+  --ja-layout-profile-internal-gap: calc(var(--spacing) * 5);
+  --ja-layout-profile-columns: minmax(0, 19fr) minmax(0, 8fr);
+  --ja-control-height: calc(var(--spacing) * 10);
+  --ja-control-compact-height: calc(var(--spacing) * 8);
+  --ja-control-inline: calc(var(--spacing) * 6);
+  --ja-dialog-width: calc(var(--spacing) * 120);
+  --ja-dialog-scrim: rgb(38 47 55 / 40%);
+  --ja-shadow-floating: 0 calc(var(--spacing) * 2) calc(var(--spacing) * 6)
+    color-mix(in srgb, var(--ja-ink) 16%, transparent);
+  --ja-shadow-raised: 0 var(--spacing) calc(var(--spacing) * 4.5) rgb(23 31 38 / 7%);
+
+  --radius-outer: calc(var(--spacing) * 2);
+  --radius-inner: var(--radius-outer);
+  --radius-container: calc(var(--spacing) * 4);
+  --action-interest-surface: var(--ja-yellow);
+  --action-interest-text: var(--ja-ink);
+  --ja-button-primary-hover: #3b444b;
+  --ja-button-interest-hover: #f9a406;
+  --ja-button-disabled-text: #acb2b6;
+  --ja-button-focus: #1e88e5;
+
+  @media (width >= 40rem) {
+    --ja-layout-page-inset: calc(var(--spacing) * 8);
+    --ja-layout-profile-paper-inset: var(--ja-layout-panel-gutter);
+    --ja-layout-profile-paper-section-inset: calc(var(--spacing) * 8);
+  }
+
+  @media (width >= 80rem) {
+    --ja-layout-page-inset: calc(var(--spacing) * 12);
+    --ja-layout-profile-paper-inset: calc(var(--spacing) * 10);
+  }
+}
+
+:root,
+.ja-light-surface {
+  --page: var(--ja-page);
+  --background: var(--ja-paper);
+  --foreground: var(--ja-ink);
+  --brand: var(--ja-yellow);
+  --brand-foreground: var(--ja-ink);
+  --card: var(--ja-paper);
+  --card-foreground: var(--ja-ink);
+  --popover: var(--ja-paper);
+  --popover-foreground: var(--ja-ink);
+  --primary: var(--ja-ink);
+  --primary-foreground: var(--ja-paper);
+  --secondary: var(--ja-recess);
+  --secondary-foreground: var(--ja-ink);
+  --muted: var(--ja-recess);
+  --muted-foreground: var(--ja-subtle);
+  --accent: var(--ja-recess);
+  --accent-foreground: var(--ja-ink);
+  --border: var(--ja-border);
+  --input: var(--ja-input);
+  --ring: var(--ja-blue);
+  --link: var(--ja-blue);
+  --destructive: var(--ja-red);
+  --status-information-surface: var(--ja-information-surface);
+  --status-information-text: var(--ja-information-text);
+  --status-attention-surface: var(--ja-attention-surface);
+  --status-attention-text: var(--ja-attention-text);
+  --status-interest-surface: var(--ja-interest-surface);
+  --status-interest-text: var(--ja-interest-text);
+  --info: var(--status-information-text);
+  --info-muted: var(--status-information-surface);
+  --success: var(--ja-success-text);
+  --success-muted: var(--ja-success-surface);
+  --warning: var(--status-attention-text);
+  --warning-foreground: var(--status-attention-text);
+  --warning-muted: var(--status-attention-surface);
+  --sidebar: var(--ja-paper);
+  --sidebar-foreground: var(--ja-ink);
+  --sidebar-border: var(--ja-border);
+  --sidebar-primary: var(--ja-yellow);
+  --sidebar-primary-foreground: var(--ja-ink);
+  --sidebar-accent: var(--ja-recess);
+  --sidebar-accent-foreground: var(--ja-ink);
+  --sidebar-ring: var(--ja-blue);
+}
+
+.dark {
+  --ja-notice-warning-surface: var(--status-attention-surface);
+  --ja-error-surface: #3a1519;
+  --page: #1c232a;
+  --primary: var(--ja-recess);
+  --ja-button-primary-hover: color-mix(in srgb, var(--primary) 90%, var(--background));
+  --ja-button-disabled-text: var(--muted-foreground);
+  --ja-button-focus: var(--ring);
+  --primary-foreground: var(--ja-ink);
+  --brand-foreground: var(--ja-ink);
+  --link: #a1cffe;
+  --ring: #78bbfe;
+  --status-information-surface: #013463;
+  --status-information-text: #c2e0fe;
+  --status-attention-surface: #542201;
+  --status-attention-text: #ffd3b1;
+  --status-interest-surface: #4c2901;
+  --status-interest-text: #ffedc7;
+  --info: var(--status-information-text);
+  --info-muted: var(--status-information-surface);
+  --success: #b0eec1;
+  --success-muted: #013e20;
+  --warning: var(--status-attention-text);
+  --warning-foreground: var(--status-attention-text);
+  --warning-muted: var(--status-attention-surface);
+  --sidebar-primary: var(--ja-yellow);
+  --sidebar-primary-foreground: var(--ja-ink);
+}
+
+[data-slot] > svg {
+  stroke-width: 1.75;
 }

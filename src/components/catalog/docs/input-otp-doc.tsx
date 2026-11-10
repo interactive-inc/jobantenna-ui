@@ -49,7 +49,7 @@ function BasicPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-sm font-medium">無効状態（4桁）</p>
+        <p className="text-sm font-medium">確認コード</p>
 
         <InputOTP maxLength={4} disabled>
           <InputOTPGroup>

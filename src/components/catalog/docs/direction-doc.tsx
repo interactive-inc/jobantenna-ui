@@ -13,8 +13,6 @@ function BasicPattern() {
   return (
     <div className="flex w-full max-w-md flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">LTR（デフォルト）</p>
-
         <DirectionProvider direction="ltr">
           <div dir="ltr" className="flex flex-col gap-2 rounded-md border p-4">
             <p className="text-sm">那覇市の正社員求人を探す。給与や勤務地で絞り込みできます。</p>
@@ -32,8 +30,6 @@ function BasicPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">RTL（右から左）</p>
-
         <DirectionProvider direction="rtl">
           <div dir="rtl" className="flex flex-col gap-2 rounded-md border p-4">
             <p className="text-sm">那覇市の正社員求人を探す。給与や勤務地で絞り込みできます。</p>
@@ -60,7 +56,7 @@ function SalarySliderPattern() {
   return (
     <div className="flex w-full max-w-md flex-col gap-4">
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">LTR — 希望年収 300〜600万円</p>
+        <p className="text-sm text-muted-foreground">希望年収 300〜600万円</p>
 
         <DirectionProvider direction="ltr">
           <div dir="ltr" className="flex flex-col gap-2 rounded-md border p-4">
@@ -75,7 +71,7 @@ function SalarySliderPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">RTL — 同じ値でも右が最小値になる</p>
+        <p className="text-sm text-muted-foreground">希望年収 300〜600万円</p>
 
         <DirectionProvider direction="rtl">
           <div dir="rtl" className="flex flex-col gap-2 rounded-md border p-4">
@@ -99,8 +95,6 @@ function JobCardMirrorPattern() {
   return (
     <div className="grid w-full max-w-2xl grid-cols-2 gap-4">
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">LTR</p>
-
         <DirectionProvider direction="ltr">
           <Card dir="ltr" className="gap-0 p-0">
             <div className="flex flex-col gap-2 p-4">
@@ -127,8 +121,6 @@ function JobCardMirrorPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <p className="text-sm text-muted-foreground">RTL</p>
-
         <DirectionProvider direction="rtl">
           <Card dir="rtl" className="gap-0 p-0">
             <div className="flex flex-col gap-2 p-4">

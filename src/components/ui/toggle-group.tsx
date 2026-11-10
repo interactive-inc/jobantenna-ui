@@ -24,12 +24,14 @@ function ToggleGroup({
   className,
   variant,
   size,
-  spacing = 2,
+  spacing = variant === "segmented" ? 1 : 2,
+  tone = "muted",
   orientation = "horizontal",
   children,
   ...props
 }: ToggleGroupPrimitive.Props &
   VariantProps<typeof toggleVariants> & {
+    tone?: "muted" | "surface"
     spacing?: number
     orientation?: "horizontal" | "vertical"
   }) {
@@ -37,12 +39,15 @@ function ToggleGroup({
     <ToggleGroupPrimitive
       data-slot="toggle-group"
       data-variant={variant}
+      data-tone={variant === "segmented" ? tone : undefined}
       data-size={size}
       data-spacing={spacing}
       data-orientation={orientation}
       style={{ "--gap": spacing } as React.CSSProperties}
       className={cn(
         "group/toggle-group flex w-fit flex-row items-center gap-[--spacing(var(--gap))] data-[spacing=0]:data-[variant=outline]:rounded-(--radius-outer) data-vertical:flex-col data-vertical:items-stretch",
+        variant === "segmented" &&
+          "rounded-full bg-muted p-1 data-[tone=surface]:gap-0 data-[tone=surface]:bg-card",
         className,
       )}
       {...props}
@@ -75,6 +80,8 @@ function ToggleGroupItem({
           variant: context.variant || variant,
           size: context.size || size,
         }),
+        (context.variant || variant) === "segmented" &&
+          "h-[calc(var(--ja-control-compact-height)-var(--spacing))] group-data-[tone=surface]/toggle-group:px-4.5",
         className,
       )}
       {...props}

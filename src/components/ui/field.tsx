@@ -106,6 +106,26 @@ function FieldLabel({ className, ...props }: React.ComponentProps<typeof Label>)
   )
 }
 
+function FieldCharacterCount({
+  id,
+  value,
+  maxLength,
+}: {
+  id: string
+  value: string
+  maxLength: number
+}) {
+  return (
+    <span
+      id={id}
+      data-slot="field-character-count"
+      className="shrink-0 text-xs text-muted-foreground tabular-nums"
+    >
+      {value.length} / {maxLength}
+    </span>
+  )
+}
+
 function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
@@ -213,6 +233,7 @@ function FieldError({
 export {
   Field,
   FieldLabel,
+  FieldCharacterCount,
   FieldDescription,
   FieldError,
   FieldGroup,

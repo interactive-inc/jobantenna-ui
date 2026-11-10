@@ -16,8 +16,18 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
   )
 }
 
-function TableHeader({ className, ...props }: React.ComponentProps<"thead">) {
-  return <thead data-slot="table-header" className={cn("[&_tr]:border-b", className)} {...props} />
+function TableHeader({
+  className,
+  variant = "default",
+  ...props
+}: React.ComponentProps<"thead"> & { variant?: "default" | "muted" }) {
+  return (
+    <thead
+      data-slot="table-header"
+      className={cn("[&_tr]:border-b", variant === "muted" && "bg-muted", className)}
+      {...props}
+    />
+  )
 }
 
 function TableBody({ className, ...props }: React.ComponentProps<"tbody">) {

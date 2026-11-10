@@ -1,3 +1,5 @@
+import { textLinkDoc } from "@/components/catalog/docs/text-link-doc"
+import { periodDeltaDoc } from "@/components/catalog/docs/period-delta-doc"
 import type { ComponentDoc } from "@/components/catalog/component-doc"
 
 import { accordionDoc } from "@/components/catalog/docs/accordion-doc"
@@ -25,6 +27,7 @@ import { directionDoc } from "@/components/catalog/docs/direction-doc"
 import { drawerDoc } from "@/components/catalog/docs/drawer-doc"
 import { dropdownMenuDoc } from "@/components/catalog/docs/dropdown-menu-doc"
 import { emptyDoc } from "@/components/catalog/docs/empty-doc"
+import { formSaveBarDoc } from "@/components/catalog/docs/form-save-bar-doc"
 import { fieldDoc } from "@/components/catalog/docs/field-doc"
 import { hoverCardDoc } from "@/components/catalog/docs/hover-card-doc"
 import { inputDoc } from "@/components/catalog/docs/input-doc"
@@ -42,6 +45,7 @@ import { navigationMenuDoc } from "@/components/catalog/docs/navigation-menu-doc
 import { paginationDoc } from "@/components/catalog/docs/pagination-doc"
 import { popoverDoc } from "@/components/catalog/docs/popover-doc"
 import { progressDoc } from "@/components/catalog/docs/progress-doc"
+import { readErrorDoc } from "@/components/catalog/docs/read-error-doc"
 import { radioGroupDoc } from "@/components/catalog/docs/radio-group-doc"
 import { resizableDoc } from "@/components/catalog/docs/resizable-doc"
 import { scrollAreaDoc } from "@/components/catalog/docs/scroll-area-doc"
@@ -53,6 +57,7 @@ import { skeletonDoc } from "@/components/catalog/docs/skeleton-doc"
 import { sliderDoc } from "@/components/catalog/docs/slider-doc"
 import { sonnerDoc } from "@/components/catalog/docs/sonner-doc"
 import { spinnerDoc } from "@/components/catalog/docs/spinner-doc"
+import { stepIndicatorDoc } from "@/components/catalog/docs/step-indicator-doc"
 import { switchDoc } from "@/components/catalog/docs/switch-doc"
 import { tableDoc } from "@/components/catalog/docs/table-doc"
 import { tabsDoc } from "@/components/catalog/docs/tabs-doc"
@@ -75,6 +80,7 @@ export const componentDocs: ReadonlyArray<ComponentDoc> = [
   breadcrumbDoc,
   bubbleDoc,
   buttonDoc,
+  textLinkDoc,
   buttonGroupDoc,
   calendarDoc,
   cardDoc,
@@ -91,6 +97,7 @@ export const componentDocs: ReadonlyArray<ComponentDoc> = [
   dropdownMenuDoc,
   emptyDoc,
   fieldDoc,
+  formSaveBarDoc,
   hoverCardDoc,
   inputDoc,
   inputGroupDoc,
@@ -105,9 +112,11 @@ export const componentDocs: ReadonlyArray<ComponentDoc> = [
   nativeSelectDoc,
   navigationMenuDoc,
   paginationDoc,
+  periodDeltaDoc,
   popoverDoc,
   progressDoc,
   radioGroupDoc,
+  readErrorDoc,
   resizableDoc,
   scrollAreaDoc,
   selectDoc,
@@ -118,6 +127,7 @@ export const componentDocs: ReadonlyArray<ComponentDoc> = [
   sliderDoc,
   sonnerDoc,
   spinnerDoc,
+  stepIndicatorDoc,
   switchDoc,
   tableDoc,
   tabsDoc,
@@ -126,3 +136,9 @@ export const componentDocs: ReadonlyArray<ComponentDoc> = [
   toggleGroupDoc,
   tooltipDoc,
 ]
+
+export const componentDocAliases = new Map([
+  ["previous-next", { name: "pagination", oldPattern: "appearance", pattern: "icons-only" }],
+  ["more-actions", { name: "dropdown-menu", oldPattern: "states", pattern: "icon-trigger" }],
+  ["filter-chip", { name: "toggle", oldPattern: "states", pattern: "filter-chip" }],
+])

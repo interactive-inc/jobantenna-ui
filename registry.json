@@ -260,8 +260,7 @@
       ],
       "cssVars": {
         "light": {
-          "radius-outer": "var(--radius)",
-          "radius-inner": "calc(var(--radius) - var(--spacing, 0.25rem))"
+          "radius-container": "1rem"
         }
       }
     },

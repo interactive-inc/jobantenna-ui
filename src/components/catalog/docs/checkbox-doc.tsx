@@ -1,231 +1,52 @@
+import { useState } from "react"
 import type { ComponentDoc } from "@/components/catalog/component-doc"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Label } from "@/components/ui/label"
-import { Building2Icon, MailIcon, SearchIcon, UserIcon } from "lucide-react"
 
-/**
- * チェック状態と disabled の組み合わせ、name / value を付けた複数選択の基本形
- */
-function BasicPattern() {
+function EmploymentOptions() {
   return (
-    <div className="flex w-full max-w-md flex-col gap-4">
-      <div className="flex flex-col gap-2">
-        <Label>
-          <Checkbox />
-          利用規約に同意する
-        </Label>
-
-        <Label>
-          <Checkbox defaultChecked />
-          新着求人のメール通知を受け取る
-        </Label>
-
-        <Label>
-          <Checkbox disabled />
-          スカウトを受け取る（会員登録後に設定可）
-        </Label>
-
-        <Label>
-          <Checkbox defaultChecked disabled />
-          応募済みの求人を非表示にする
-        </Label>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <p className="text-sm font-medium">希望する雇用形態</p>
-
-        <div className="flex flex-wrap items-center gap-4">
-          <Label>
-            <Checkbox name="employment" value="fulltime" defaultChecked />
-            正社員
-          </Label>
-
-          <Label>
-            <Checkbox name="employment" value="contract" />
-            契約社員
-          </Label>
-
-          <Label>
-            <Checkbox name="employment" value="parttime" />
-            アルバイト・パート
-          </Label>
-        </div>
-      </div>
+    <div className="grid w-full max-w-xs gap-2" role="group" aria-label="希望する雇用形態">
+      <Label className="min-h-6 w-full cursor-pointer">
+        <Checkbox name="employment" value="fulltime" defaultChecked />
+        正社員
+      </Label>
+      <Label className="min-h-6 w-full cursor-pointer">
+        <Checkbox name="employment" value="contract" />
+        契約社員
+      </Label>
+      <Label className="min-h-6 w-full cursor-pointer">
+        <Checkbox name="employment" value="parttime" />
+        アルバイト・パート
+      </Label>
     </div>
   )
 }
 
-/**
- * 求人検索のこだわり条件。「すべて」で一括選択し、フッターに件数付き検索ボタンを置く
- */
-function FilterConditionsPattern() {
+function RowSelection() {
+  const [selected, setSelected] = useState(true)
+
   return (
-    <div className="w-full max-w-sm rounded-lg border">
-      <div className="flex items-center justify-between border-b p-4">
-        <span className="text-sm font-medium">こだわり条件</span>
-
-        <Label className="font-normal text-muted-foreground">
-          <Checkbox />
-          すべて
-        </Label>
+    <div className="grid w-full max-w-md gap-3">
+      <div className="flex items-center gap-3 rounded-(--radius-outer) border bg-card p-3">
+        <Checkbox
+          aria-label="ホールスタッフの求人を選択"
+          checked={selected}
+          onCheckedChange={setSelected}
+        />
+        <span className="text-sm">ホールスタッフ</span>
       </div>
-
-      <div className="grid grid-cols-2 gap-2 p-4">
-        <Label>
-          <Checkbox name="conditions" value="inexperienced" defaultChecked />
-          未経験OK
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="remote" defaultChecked />
-          リモート可
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="near-station" defaultChecked />
-          駅近
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="weekends-off" />
-          土日休み
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="car-commute" />
-          車通勤OK
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="two-days-off" />
-          週休2日
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="bonus" />
-          賞与あり
-        </Label>
-
-        <Label>
-          <Checkbox name="conditions" value="free-dress" />
-          服装自由
-        </Label>
-      </div>
-
-      <div className="flex items-center justify-between border-t p-4">
-        <Button variant="secondary" size="sm">
-          すべてクリア
-        </Button>
-
-        <Button size="sm">
-          <SearchIcon data-icon="inline-start" />
-          128件 検索する
-        </Button>
-      </div>
-    </div>
-  )
-}
-
-/**
- * 応募確認の同意チェック。同意しないと進めない操作の直前に置く
- */
-function ApplyConsentPattern() {
-  return (
-    <div className="flex w-full max-w-sm flex-col gap-4 rounded-lg border p-4">
-      <p className="text-sm">応募する求人を確認の上、「応募を完了する」を押してください。</p>
-
-      <div className="flex items-center gap-2 rounded-md bg-muted p-2">
-        <div className="flex size-8 shrink-0 items-center justify-center rounded bg-background">
-          <Building2Icon className="size-4 text-muted-foreground" />
-        </div>
-
-        <div className="flex min-w-0 flex-col">
-          <span className="truncate text-sm font-medium">フロントエンドエンジニア</span>
-          <span className="truncate text-xs text-muted-foreground">
-            株式会社サンプル / 那覇市 / 正社員
+      {selected && (
+        <Card className="flex flex-wrap items-center justify-between gap-2 p-3 shadow-(--ja-shadow-floating) sm:flex-row">
+          <span className="text-sm font-bold" role="status">
+            1件を選択中
           </span>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <Label>
-          <Checkbox />
-          利用規約と個人情報の取り扱いに同意する
-        </Label>
-
-        <p className="text-xs text-muted-foreground">※応募すると氏名が企業に公開されます。</p>
-      </div>
-
-      <Button className="w-full">応募を完了する</Button>
-    </div>
-  )
-}
-
-/**
- * 応募者リストの行選択。ヘッダーのチェックで全選択し、選択件数と一括操作を表示する
- */
-function CandidateBulkSelectPattern() {
-  return (
-    <div className="w-full max-w-md overflow-hidden rounded-lg border">
-      <div className="flex items-center gap-2 border-b bg-muted/50 p-2">
-        <Checkbox defaultChecked />
-
-        <span className="flex-1 text-sm text-muted-foreground">2件選択中</span>
-
-        <Button variant="outline" size="xs">
-          <MailIcon data-icon="inline-start" />
-          メッセージを送る
-        </Button>
-      </div>
-
-      <div className="flex items-center gap-2 p-2">
-        <Checkbox defaultChecked />
-
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted">
-          <UserIcon className="size-4 text-muted-foreground" />
-        </div>
-
-        <div className="flex min-w-0 flex-1 flex-col">
-          <span className="truncate text-sm font-medium">比嘉 太郎</span>
-          <span className="truncate text-xs text-muted-foreground">28歳・男性・前職: 営業</span>
-        </div>
-
-        <Badge variant="destructive">未選考</Badge>
-      </div>
-
-      <div className="flex items-center gap-2 border-t p-2">
-        <Checkbox defaultChecked />
-
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted">
-          <UserIcon className="size-4 text-muted-foreground" />
-        </div>
-
-        <div className="flex min-w-0 flex-1 flex-col">
-          <span className="truncate text-sm font-medium">金城 花子</span>
-          <span className="truncate text-xs text-muted-foreground">25歳・女性・前職: 販売</span>
-        </div>
-
-        <Badge variant="secondary">保留中</Badge>
-      </div>
-
-      <div className="flex items-center gap-2 border-t p-2">
-        <Checkbox />
-
-        <div className="flex size-8 shrink-0 items-center justify-center rounded-full bg-muted">
-          <UserIcon className="size-4 text-muted-foreground" />
-        </div>
-
-        <div className="flex min-w-0 flex-1 flex-col">
-          <span className="truncate text-sm font-medium">大城 健</span>
-          <span className="truncate text-xs text-muted-foreground">
-            30歳・男性・前職: エンジニア
-          </span>
-        </div>
-
-        <Badge variant="outline">連絡済</Badge>
-      </div>
+          <Button type="button" variant="link" size="sm" onClick={() => setSelected(false)}>
+            選ぶのをやめる
+          </Button>
+        </Card>
+      )}
     </div>
   )
 }
@@ -235,39 +56,38 @@ export const checkboxDoc: ComponentDoc = {
   title: "Checkbox",
   category: "フォーム",
   purpose:
-    "複数の選択肢から任意の数を選ぶ、またはオン・オフを切り替えるためのフォームコントロールです。@base-ui/react ベースで defaultChecked による非制御利用と name / value でのフォーム送信に対応します。ジョブアンテナではこだわり条件や勤務地の複数選択、応募時の同意確認、応募者リストの一括選択に使います。",
+    "複数の項目を選んだり、保存時に確定する設定を選んだりするときに使います。四角は16px、角丸は4pxです。",
   patterns: [
     {
       id: "basic",
-      title: "基本",
+      title: "ラベル付き",
       description:
-        "未チェック・チェック済み・disabled の各状態と、name / value を付けてフォーム送信する複数選択です。Label で包むとテキストのクリックでも切り替わります。",
+        "ラベルも押せるようにし、行の高さは24px以上、行同士の間隔は8pxにします。長いラベルは折り返せます。",
+      showControls: false,
       previewHeight: null,
-      Demo: BasicPattern,
-    },
-    {
-      id: "filter-conditions",
-      title: "こだわり条件",
-      description:
-        "求人検索でこだわり条件（未経験OK、リモート可、駅近など）を複数選択する例です。先頭の「すべて」で一括選択・解除し、フッターに件数付きの検索ボタンとクリアを置きます。",
-      previewHeight: null,
-      Demo: FilterConditionsPattern,
-    },
-    {
-      id: "apply-consent",
-      title: "応募の同意確認",
-      description:
-        "応募確認画面で利用規約への同意を取る例です。同意しないと進めない操作では、実行ボタンの直前にチェックボックスと注意書きを置きます。",
-      previewHeight: null,
-      Demo: ApplyConsentPattern,
+      Demo: EmploymentOptions,
     },
     {
       id: "candidate-bulk-select",
-      title: "応募者の一括選択",
+      title: "一覧の行選択",
       description:
-        "管理画面の応募者リストで行を選択する例です。ヘッダーのチェックで全選択し、選択件数と一括操作ボタンを表示します。",
+        "行の左端にチェックボックスを置きます。選択があるときだけ一括操作バーを表示し、選んだ件数と選択解除を左、まとめて行う操作を右に置きます。",
+      showControls: false,
       previewHeight: null,
-      Demo: CandidateBulkSelectPattern,
+      Demo: RowSelection,
     },
   ],
+  usage: {
+    recommended: [
+      "複数選べる条件や、保存ボタンで確定する設定に使う。",
+      "ラベル付きの選択肢は、ラベルを含む行全体から切り替えられるようにする。",
+      "下部に固定ナビがある画面では、一括操作バーをナビの上に置き、操作が重ならないようにする。",
+      "選んだ人数と操作の対象人数が異なる場合は、操作ボタンに対象人数を示す。",
+      "一括操作を終えたら、何件に反映されたかをトーストで伝える。",
+    ],
+    avoid: [
+      "一つしか選べない項目に使う。選択肢の数に応じてラジオボタンかSelectにする。",
+      "切り替えと同時に反映する設定に使う。すぐに反映する場合はスイッチにする。",
+    ],
+  },
 }

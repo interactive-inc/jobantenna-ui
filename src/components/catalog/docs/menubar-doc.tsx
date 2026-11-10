@@ -159,14 +159,14 @@ function AdminPattern() {
         <MenubarContent>
           <MenubarItem>
             進捗管理
-            <Badge variant="destructive" className="ml-auto">
+            <Badge className="ml-auto bg-link text-white">
               8
             </Badge>
           </MenubarItem>
 
           <MenubarItem>
             メッセージ
-            <Badge variant="destructive" className="ml-auto">
+            <Badge className="ml-auto bg-link text-white">
               5
             </Badge>
           </MenubarItem>

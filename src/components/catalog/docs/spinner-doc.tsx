@@ -1,124 +1,73 @@
 import type { ComponentDoc } from "@/components/catalog/component-doc"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
 import { Spinner } from "@/components/ui/spinner"
 
-/**
- * className の size-* によるサイズ展開
- */
 function BasicPattern() {
   return (
-    <div className="flex w-full max-w-md items-end gap-4">
-      <div className="flex flex-col items-center gap-1">
-        <Spinner />
-        <span className="text-xs text-muted-foreground">size-4</span>
-      </div>
-
-      <div className="flex flex-col items-center gap-1">
-        <Spinner className="size-6" />
-        <span className="text-xs text-muted-foreground">size-6</span>
-      </div>
-
-      <div className="flex flex-col items-center gap-1">
-        <Spinner className="size-8" />
-        <span className="text-xs text-muted-foreground">size-8</span>
-      </div>
+    <div className="flex items-center gap-6">
+      <Spinner />
+      <Spinner className="size-5" />
     </div>
   )
 }
 
-/**
- * 通常時と送信中を並べたボタン内ローディング
- */
 function ButtonLoadingPattern() {
   return (
-    <div className="flex w-full max-w-md flex-col gap-4">
-      <div className="flex flex-col gap-1">
-        <span className="text-xs text-muted-foreground">検索フッター（通常 → 検索中）</span>
-        <div className="flex flex-wrap items-center gap-2">
-          <Button>128件 検索する</Button>
-          <Button disabled>
-            <Spinner />
-            検索中…
-          </Button>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-1">
-        <span className="text-xs text-muted-foreground">応募ボタン（通常 → 送信中）</span>
-        <div className="flex flex-wrap items-center gap-2">
-          <Button>応募する</Button>
-          <Button disabled>
-            <Spinner />
-            応募を送信中…
-          </Button>
-        </div>
-      </div>
-
-      <div className="flex flex-col gap-1">
-        <span className="text-xs text-muted-foreground">求人票の一時保存</span>
-        <div className="flex flex-wrap items-center gap-2">
-          <Button variant="outline" disabled>
-            <Spinner />
-            一時保存中…
-          </Button>
-        </div>
-      </div>
+    <div className="flex flex-wrap items-center gap-2">
+      <Button disabled aria-busy="true">
+        <Spinner aria-hidden="true" />
+        検索中…
+      </Button>
     </div>
   )
 }
 
-/**
- * 一覧やメッセージ欄が空の間の読み込み中プレースホルダ
- */
 function LoadingPlaceholderPattern() {
   return (
-    <div className="flex w-full max-w-md flex-col gap-4">
-      <Card className="p-0 gap-0">
-        <div className="flex flex-col items-center gap-2 p-4">
-          <Spinner className="size-6" />
-          <p className="text-sm text-muted-foreground">那覇市の求人を読み込み中…</p>
-        </div>
-      </Card>
-
-      <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Spinner />
-        メッセージを読み込み中…
-      </div>
+    <div className="flex items-center gap-2 text-sm text-muted-foreground" role="status">
+      <Spinner className="size-5" aria-hidden="true" />
+      追加のメッセージを読み込み中…
     </div>
   )
 }
 
 export const spinnerDoc: ComponentDoc = {
   name: "spinner",
-  title: "Spinner",
+  title: "スピナー",
   category: "フィードバック",
-  purpose:
-    "処理が進行中であることを示す回転インジケータです。求人検索や応募の送信など、結果を待つ間に操作が受け付けられたことを伝える場面で使います。Loader2Icon ベースの単一 SVG で、className の size-* だけでサイズを変えられます。",
+  purpose: "ボタンを押した後や、一覧の続きを取得する間の短い待ち時間を示します。",
   patterns: [
     {
       id: "basic",
-      title: "基本",
-      description:
-        "className の size-* によるサイズ展開です。デフォルトは size-4 で、ボタン内やインラインはそのまま、セクション全体の読み込みには size-6〜8 を使います。",
+      title: "16・20",
+      description: "小さい操作には16、読み込みの文言に添える場合は20を使います。",
       previewHeight: null,
+      showControls: false,
       Demo: BasicPattern,
     },
     {
       id: "button-loading",
-      title: "ボタン内ローディング",
-      description:
-        "送信中のボタンは disabled にして Spinner を先頭に置き、ラベルを進行中の文言に差し替えます。検索フッターや応募ボタンの二重送信防止と待機表示を兼ねます。",
+      title: "ボタンの処理中",
+      description: "処理が終わるまでボタンを無効にし、何を処理しているかをラベルで伝えます。",
       previewHeight: null,
+      showControls: false,
       Demo: ButtonLoadingPattern,
     },
     {
       id: "loading-placeholder",
-      title: "読み込み中プレースホルダ",
+      title: "追加の読み込み",
       description:
-        "求人一覧やメッセージ欄のデータ到着前に、中央寄せの Spinner と読み込み中の文言で待機状態を示します。読み込み完了後にコンテンツへ差し替えます。",
+        "一覧の続きを読み込む間は表示済みの内容を残します。ページの初期表示にはスケルトン、完了までの割合が分かる場合は進捗バーを使います。",
       previewHeight: null,
+      showControls: false,
       Demo: LoadingPlaceholderPattern,
     },
   ],
+  usage: {
+    recommended: ["スピナーだけで待機を示す場合は、読み上げでも「読み込み中」と伝える。"],
+    avoid: [
+      "ページの初期表示に使う。画面の構成が決まっている場合はスケルトンを使う。",
+      "完了の割合が分かる処理に使う。その場合は進捗バーを使う。",
+    ],
+  },
 }

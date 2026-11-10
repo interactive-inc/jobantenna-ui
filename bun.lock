@@ -6,7 +6,9 @@
       "name": "start-app",
       "dependencies": {
         "@base-ui/react": "^1.6.0",
+        "@fontsource-variable/inter": "5.3.0",
         "@fontsource-variable/noto-sans-jp": "^5.2.10",
+        "@fontsource/line-seed-jp": "5.3.2",
         "@shadcn/react": "^0.2.1",
         "@tailwindcss/vite": "^4",
         "@tanstack/react-router": "latest",
@@ -158,7 +160,11 @@
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.11", "", {}, "sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg=="],
 
+    "@fontsource-variable/inter": ["@fontsource-variable/inter@5.3.0", "", {}, "sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA=="],
+
     "@fontsource-variable/noto-sans-jp": ["@fontsource-variable/noto-sans-jp@5.2.10", "", {}, "sha512-m0XfZ38rZtCaGAuAQL0cBPQ6fc/RguYEOqw66zvuLOV9vNRUBf9MFqyoazTu2JVCRIcnkrxbwF29UUaHHgTKdg=="],
+
+    "@fontsource/line-seed-jp": ["@fontsource/line-seed-jp@5.3.2", "", {}, "sha512-ng/gMt1yI9EAU0TlBcDtBuQAy8fB0FAvjxW3JY9NnYSN3CJgqkciMcEAldt/N0yUC4C4Oai4oeLzU9PYqyeghQ=="],
 
     "@hono/node-server": ["@hono/node-server@1.19.14", "", { "peerDependencies": { "hono": "^4" } }, "sha512-GwtvgtXxnWsucXvbQXkRgqksiH2Qed37H9xHZocE5sA3N8O8O8/8FA3uclQXxXVzc9XBZuEOMK7+r02FmSpHtw=="],
 

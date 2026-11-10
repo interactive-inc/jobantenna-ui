@@ -1,98 +1,70 @@
 import { createFileRoute } from "@tanstack/react-router"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
-import { sampleCanvasStyle } from "@/components/catalog/sample-canvas-style"
 
 export const Route = createFileRoute("/_catalog/rules/experience")({
-  component: ExperiencePage,
+  component: ScreenLanguagePage,
 })
 
-/**
- * 体験。ターゲットと製品カテゴリに根ざした、すべての判断の土台になる3原則
- */
-function ExperiencePage() {
+function ScreenLanguagePage() {
   return (
     <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
       <RulePageHeader
-        title="体験"
-        lead="スマホの片手で完結し、重い決断を軽い一歩に分解し、モダンでポップに(でもポップ過ぎない)。転職・求人サービスのすべての判断は、この3つの上に成り立ちます。"
+        title="画面の言葉"
+        lead="画面の区分には場所が分かる名詞を、ボタンには押すと何が起きるかが分かる動詞を使います。普段使う言葉で書きます。"
       />
 
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">1. スマホの片手で完結する</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          仕事を探す人は、通勤中や休憩中にスマホで探して、そのまま応募まで終えます。設計は常にモバイルファーストです。1カラムで縦に流し、主要アクションは親指が届く下側に、タップ領域は最小
-          36px
-          を確保します。デスクトップは「広いモバイル」ではなく、一覧と詳細を並べる密度で応えます。
-        </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex justify-center rounded-2xl bg-background p-4 text-foreground"
-        >
-          <div className="flex h-64 w-40 flex-col justify-between rounded-2xl border bg-card p-2 text-card-foreground">
-            <div className="flex flex-col gap-1">
-              <div className="h-2 w-3/4 rounded-lg bg-muted" />
-              <div className="h-2 w-1/2 rounded-lg bg-muted" />
-              <div className="mt-2 h-12 rounded-xl bg-muted" />
-              <div className="h-12 rounded-xl bg-muted" />
-            </div>
-            <Button size="sm" className="w-full">
-              応募する
-            </Button>
+      <section className="grid gap-3">
+        <h2 className="text-xl font-bold">区分の名前</h2>
+        <dl className="grid gap-3 text-sm">
+          <div>
+            <dt className="font-bold">ヘッダー</dt>
+            <dd>ホーム／求人票／候補者／選考／やりとり／会社ページ</dd>
           </div>
-        </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          主要アクションは画面下部に固定します。スクロールしても迷子になりません。
-        </p>
+          <div>
+            <dt className="font-bold">ホームの切り替え</dt>
+            <dd>今日／これから</dd>
+          </div>
+          <div>
+            <dt className="font-bold">候補者の中</dt>
+            <dd>候補者と出会う／いいかも／あしあと／フォロー／候補者リスト</dd>
+          </div>
+        </dl>
       </section>
 
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">2. 重い決断を、軽い一歩に分解する</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          転職は重い決断です。いきなり「応募」だけを迫ると、ユーザーは何もせずに離脱します。保存・フォロー・気になるを伝える、のような軽いアクションを必ず併置し、段階的に関係を深められるようにします。空状態や完了画面では、必ず次の一歩を1つ提示します。
-        </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-col gap-4 rounded-2xl bg-background p-4 text-foreground"
-        >
-          <div className="flex flex-wrap items-center gap-2">
-            <Button>応募する</Button>
-            <Button variant="secondary">気になる</Button>
-            <Button variant="ghost">保存</Button>
-          </div>
-          <div className="flex flex-col items-center gap-2 rounded-2xl bg-muted/50 p-4 text-center">
-            <span className="text-sm font-medium">まだ保存した求人はありません</span>
-            <span className="text-xs text-muted-foreground">
-              気になる求人を保存して、あとで見返しましょう
-            </span>
-            <Button size="sm" variant="outline">
-              求人を探す
-            </Button>
-          </div>
-        </div>
-        <p className="text-sm leading-relaxed text-muted-foreground">
-          重い行動(primary)の隣に必ず軽い行動があります。空状態は「現状+次の一歩+CTA」の3点セットです。
-        </p>
+      <section className="grid gap-3">
+        <h2 className="text-xl font-bold">決めた言い方</h2>
+        <ul className="list-disc space-y-2 pl-5 text-muted-foreground">
+          <li>
+            求人に対して初めていいかもを送る操作は「いいかもを送る」と書きます。
+            その求人で候補者から受け取ったいいかもに応える操作は、ボタンと確認画面の両方で「いいかもを返す」と書きます。
+          </li>
+          <li>候補者の操作は「応募を見る」「返信する」「いいかもを見る」のように書きます。</li>
+          <li>ホームの見出しは「今日のやりとり」のように書き、件数は別に表示します。</li>
+          <li>名前が公開される前は「女性（30歳）」のように表示します。</li>
+          <li>数字は3桁ごとに区切ります。例は「2,384人」です。</li>
+          <li>
+            日付は時期に合わせて「今日 9:41」「昨日」「11月5日」「2025年11月5日」と書き分けます。
+          </li>
+        </ul>
       </section>
 
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">
-          3. モダンでポップに。でもポップ過ぎない
-        </h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          仕事と収入という真剣なテーマを、堅苦しくせずに扱います。ポップさを出すのは「形」(ピル形状・大きな角丸)と「一色のアクセント」と「励ますことば」の3つだけです。色数を増やす・装飾やアニメーションを盛る・絵文字を多用する、ではポップさを出しません。土台は常にグレースケールの落ち着きで、真剣さを支えます。
-        </p>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-wrap items-center gap-4 rounded-2xl bg-background p-4 text-foreground"
-        >
-          <Button>1分で会員登録</Button>
-          <Badge variant="secondary">未経験OK</Badge>
-          <span className="text-sm">応募が完了しました！</span>
-          <span className="text-xs text-muted-foreground">← ポップさはこの3つの道具で出す</span>
-        </div>
+      <section className="grid gap-3">
+        <h2 className="text-xl font-bold">使い方</h2>
+        <dl className="grid gap-3 text-sm">
+          <div>
+            <dt className="font-bold">使う表現</dt>
+            <dd>
+              行き先には「候補者」、操作には「応募を見る」のように、場所と操作を具体的に書きます。
+            </dd>
+          </div>
+          <div>
+            <dt className="font-bold">避ける表現</dt>
+            <dd>
+              感嘆符や絵文字、操作の対象が伝わりにくい「確かめる」「書く」だけのボタン、「〜させていただきます」のような長い敬語は避けます。
+            </dd>
+          </div>
+        </dl>
       </section>
     </div>
   )

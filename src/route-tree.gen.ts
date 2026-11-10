@@ -15,10 +15,10 @@ import { Route as PreviewNamePatternRouteImport } from './routes/preview.$name.$
 import { Route as CatalogRulesTypographyRouteImport } from './routes/_catalog.rules.typography'
 import { Route as CatalogRulesSpacingRouteImport } from './routes/_catalog.rules.spacing'
 import { Route as CatalogRulesShapeRouteImport } from './routes/_catalog.rules.shape'
+import { Route as CatalogRulesPrinciplesRouteImport } from './routes/_catalog.rules.principles'
 import { Route as CatalogRulesImagesRouteImport } from './routes/_catalog.rules.images'
 import { Route as CatalogRulesExperienceRouteImport } from './routes/_catalog.rules.experience'
 import { Route as CatalogRulesColorRouteImport } from './routes/_catalog.rules.color'
-import { Route as CatalogRulesBasicsRouteImport } from './routes/_catalog.rules.basics'
 import { Route as CatalogRulesAccessibilityRouteImport } from './routes/_catalog.rules.accessibility'
 import { Route as CatalogComponentsNameRouteImport } from './routes/_catalog.components.$name'
 
@@ -51,6 +51,11 @@ const CatalogRulesShapeRoute = CatalogRulesShapeRouteImport.update({
   path: '/rules/shape',
   getParentRoute: () => CatalogRoute,
 } as any)
+const CatalogRulesPrinciplesRoute = CatalogRulesPrinciplesRouteImport.update({
+  id: '/rules/principles',
+  path: '/rules/principles',
+  getParentRoute: () => CatalogRoute,
+} as any)
 const CatalogRulesImagesRoute = CatalogRulesImagesRouteImport.update({
   id: '/rules/images',
   path: '/rules/images',
@@ -64,11 +69,6 @@ const CatalogRulesExperienceRoute = CatalogRulesExperienceRouteImport.update({
 const CatalogRulesColorRoute = CatalogRulesColorRouteImport.update({
   id: '/rules/color',
   path: '/rules/color',
-  getParentRoute: () => CatalogRoute,
-} as any)
-const CatalogRulesBasicsRoute = CatalogRulesBasicsRouteImport.update({
-  id: '/rules/basics',
-  path: '/rules/basics',
   getParentRoute: () => CatalogRoute,
 } as any)
 const CatalogRulesAccessibilityRoute =
@@ -87,10 +87,10 @@ export interface FileRoutesByFullPath {
   '/': typeof CatalogIndexRoute
   '/components/$name': typeof CatalogComponentsNameRoute
   '/rules/accessibility': typeof CatalogRulesAccessibilityRoute
-  '/rules/basics': typeof CatalogRulesBasicsRoute
   '/rules/color': typeof CatalogRulesColorRoute
   '/rules/experience': typeof CatalogRulesExperienceRoute
   '/rules/images': typeof CatalogRulesImagesRoute
+  '/rules/principles': typeof CatalogRulesPrinciplesRoute
   '/rules/shape': typeof CatalogRulesShapeRoute
   '/rules/spacing': typeof CatalogRulesSpacingRoute
   '/rules/typography': typeof CatalogRulesTypographyRoute
@@ -100,10 +100,10 @@ export interface FileRoutesByTo {
   '/': typeof CatalogIndexRoute
   '/components/$name': typeof CatalogComponentsNameRoute
   '/rules/accessibility': typeof CatalogRulesAccessibilityRoute
-  '/rules/basics': typeof CatalogRulesBasicsRoute
   '/rules/color': typeof CatalogRulesColorRoute
   '/rules/experience': typeof CatalogRulesExperienceRoute
   '/rules/images': typeof CatalogRulesImagesRoute
+  '/rules/principles': typeof CatalogRulesPrinciplesRoute
   '/rules/shape': typeof CatalogRulesShapeRoute
   '/rules/spacing': typeof CatalogRulesSpacingRoute
   '/rules/typography': typeof CatalogRulesTypographyRoute
@@ -115,10 +115,10 @@ export interface FileRoutesById {
   '/_catalog/': typeof CatalogIndexRoute
   '/_catalog/components/$name': typeof CatalogComponentsNameRoute
   '/_catalog/rules/accessibility': typeof CatalogRulesAccessibilityRoute
-  '/_catalog/rules/basics': typeof CatalogRulesBasicsRoute
   '/_catalog/rules/color': typeof CatalogRulesColorRoute
   '/_catalog/rules/experience': typeof CatalogRulesExperienceRoute
   '/_catalog/rules/images': typeof CatalogRulesImagesRoute
+  '/_catalog/rules/principles': typeof CatalogRulesPrinciplesRoute
   '/_catalog/rules/shape': typeof CatalogRulesShapeRoute
   '/_catalog/rules/spacing': typeof CatalogRulesSpacingRoute
   '/_catalog/rules/typography': typeof CatalogRulesTypographyRoute
@@ -130,10 +130,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components/$name'
     | '/rules/accessibility'
-    | '/rules/basics'
     | '/rules/color'
     | '/rules/experience'
     | '/rules/images'
+    | '/rules/principles'
     | '/rules/shape'
     | '/rules/spacing'
     | '/rules/typography'
@@ -143,10 +143,10 @@ export interface FileRouteTypes {
     | '/'
     | '/components/$name'
     | '/rules/accessibility'
-    | '/rules/basics'
     | '/rules/color'
     | '/rules/experience'
     | '/rules/images'
+    | '/rules/principles'
     | '/rules/shape'
     | '/rules/spacing'
     | '/rules/typography'
@@ -157,10 +157,10 @@ export interface FileRouteTypes {
     | '/_catalog/'
     | '/_catalog/components/$name'
     | '/_catalog/rules/accessibility'
-    | '/_catalog/rules/basics'
     | '/_catalog/rules/color'
     | '/_catalog/rules/experience'
     | '/_catalog/rules/images'
+    | '/_catalog/rules/principles'
     | '/_catalog/rules/shape'
     | '/_catalog/rules/spacing'
     | '/_catalog/rules/typography'
@@ -216,6 +216,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CatalogRulesShapeRouteImport
       parentRoute: typeof CatalogRoute
     }
+    '/_catalog/rules/principles': {
+      id: '/_catalog/rules/principles'
+      path: '/rules/principles'
+      fullPath: '/rules/principles'
+      preLoaderRoute: typeof CatalogRulesPrinciplesRouteImport
+      parentRoute: typeof CatalogRoute
+    }
     '/_catalog/rules/images': {
       id: '/_catalog/rules/images'
       path: '/rules/images'
@@ -235,13 +242,6 @@ declare module '@tanstack/react-router' {
       path: '/rules/color'
       fullPath: '/rules/color'
       preLoaderRoute: typeof CatalogRulesColorRouteImport
-      parentRoute: typeof CatalogRoute
-    }
-    '/_catalog/rules/basics': {
-      id: '/_catalog/rules/basics'
-      path: '/rules/basics'
-      fullPath: '/rules/basics'
-      preLoaderRoute: typeof CatalogRulesBasicsRouteImport
       parentRoute: typeof CatalogRoute
     }
     '/_catalog/rules/accessibility': {
@@ -265,10 +265,10 @@ interface CatalogRouteChildren {
   CatalogIndexRoute: typeof CatalogIndexRoute
   CatalogComponentsNameRoute: typeof CatalogComponentsNameRoute
   CatalogRulesAccessibilityRoute: typeof CatalogRulesAccessibilityRoute
-  CatalogRulesBasicsRoute: typeof CatalogRulesBasicsRoute
   CatalogRulesColorRoute: typeof CatalogRulesColorRoute
   CatalogRulesExperienceRoute: typeof CatalogRulesExperienceRoute
   CatalogRulesImagesRoute: typeof CatalogRulesImagesRoute
+  CatalogRulesPrinciplesRoute: typeof CatalogRulesPrinciplesRoute
   CatalogRulesShapeRoute: typeof CatalogRulesShapeRoute
   CatalogRulesSpacingRoute: typeof CatalogRulesSpacingRoute
   CatalogRulesTypographyRoute: typeof CatalogRulesTypographyRoute
@@ -278,10 +278,10 @@ const CatalogRouteChildren: CatalogRouteChildren = {
   CatalogIndexRoute: CatalogIndexRoute,
   CatalogComponentsNameRoute: CatalogComponentsNameRoute,
   CatalogRulesAccessibilityRoute: CatalogRulesAccessibilityRoute,
-  CatalogRulesBasicsRoute: CatalogRulesBasicsRoute,
   CatalogRulesColorRoute: CatalogRulesColorRoute,
   CatalogRulesExperienceRoute: CatalogRulesExperienceRoute,
   CatalogRulesImagesRoute: CatalogRulesImagesRoute,
+  CatalogRulesPrinciplesRoute: CatalogRulesPrinciplesRoute,
   CatalogRulesShapeRoute: CatalogRulesShapeRoute,
   CatalogRulesSpacingRoute: CatalogRulesSpacingRoute,
   CatalogRulesTypographyRoute: CatalogRulesTypographyRoute,

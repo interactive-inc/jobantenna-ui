@@ -43,7 +43,6 @@ function BasicPattern() {
       <ContextMenuTrigger className="flex h-48 w-full max-w-md flex-col items-center justify-center gap-2 rounded-(--radius-outer) border border-dashed text-sm text-muted-foreground">
         <span className="font-medium text-foreground">カフェスタッフ（正社員） / 那覇市</span>
         <span>月給 20万円〜 / 未経験歓迎</span>
-        <span className="text-xs">ここを右クリック</span>
       </ContextMenuTrigger>
 
       <ContextMenuContent>

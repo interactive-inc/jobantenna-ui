@@ -5,14 +5,24 @@ import { cn } from "@/lib/utils"
 function Card({
   className,
   size = "default",
+  elevation = "none",
+  variant = "outline",
   ...props
-}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
+}: React.ComponentProps<"div"> & {
+  size?: "default" | "sm"
+  elevation?: "none" | "raised"
+  variant?: "outline" | "surface" | "muted"
+}) {
   return (
     <div
       data-slot="card"
       data-size={size}
+      data-variant={variant}
       className={cn(
-        "group/card flex flex-col overflow-hidden rounded-(--radius-outer) border bg-card text-sm text-card-foreground *:[img:first-child]:rounded-t-(--radius-outer) *:[img:last-child]:rounded-b-(--radius-outer)",
+        "group/card flex flex-col overflow-hidden rounded-(--radius-container) bg-card text-sm text-card-foreground *:[img:first-child]:rounded-t-(--radius-container) *:[img:last-child]:rounded-b-(--radius-container)",
+        variant === "outline" && "border",
+        variant === "muted" && "bg-muted",
+        elevation === "raised" && "shadow-(--ja-shadow-raised)",
         className,
       )}
       {...props}
@@ -25,7 +35,7 @@ function CardHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-header"
       className={cn(
-        "group/card-header @container/card-header grid auto-rows-min items-start gap-1.5 rounded-t-(--radius-outer) p-4 group-data-[size=sm]/card:p-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto]",
+        "group/card-header @container/card-header grid auto-rows-min items-start gap-1.5 rounded-t-(--radius-container) p-4 group-data-[size=sm]/card:p-3 has-data-[slot=card-action]:grid-cols-[1fr_auto] has-data-[slot=card-description]:grid-rows-[auto_auto]",
         className,
       )}
       {...props}
@@ -78,7 +88,7 @@ function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="card-footer"
       className={cn(
-        "flex items-center rounded-b-(--radius-outer) border-t p-4 group-data-[size=sm]/card:p-3",
+        "flex items-center rounded-b-(--radius-container) border-t p-4 group-data-[size=sm]/card:p-3",
         className,
       )}
       {...props}

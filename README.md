@@ -38,7 +38,7 @@ bunx shadcn@latest add @jobantenna/sheet
 
 部品同士の依存先は、このレジストリの完全な URL で指定している。Sheet が必要とする Button なども `ui.jobantenna.jp` から取得されるため、URL で直接追加する場合も、短縮名を使う場合も、取得先を差し替えるプロキシや専用の同期スクリプトは不要。
 
-MCP 連携の手順はトップページ https://ui.jobantenna.jp に記載している。
+MCP 接続の設定はサイトの導入ページに掲載している。 [設定手順](https://ui.jobantenna.jp/#mcp-connection)
 
 ## 開発
 

@@ -1,121 +1,117 @@
 import { createFileRoute } from "@tanstack/react-router"
 
 import { RulePageHeader } from "@/components/catalog/rule-page-header"
-import { sampleCanvasStyle } from "@/components/catalog/sample-canvas-style"
 
 export const Route = createFileRoute("/_catalog/rules/typography")({
   component: TypographyPage,
 })
 
-type TypeSample = {
-  label: string
-  className: string
-  px: number
-  usage: string
-}
-
-const typeSamples: ReadonlyArray<TypeSample> = [
-  { label: "text-2xl", className: "text-2xl font-bold", px: 24, usage: "ページタイトル" },
-  { label: "text-lg", className: "text-lg font-semibold", px: 18, usage: "セクション見出し" },
-  { label: "text-base", className: "text-base", px: 16, usage: "本文(長文)" },
+const typeSamples = [
   {
-    label: "text-sm",
-    className: "text-sm",
-    px: 14,
-    usage: "UI の基本サイズ。ボタン・フォーム・説明文",
+    name: "大見出し",
+    size: "32 / 44",
+    className: "text-[length:calc(var(--spacing)*8)]/11 font-bold",
+    example: "候補者と出会う",
   },
-  { label: "text-xs", className: "text-xs", px: 12, usage: "バッジ・メタ情報・補足" },
+  {
+    name: "数字",
+    size: "28 / 36",
+    className: "font-numeric text-[length:calc(var(--spacing)*7)]/9 font-semibold tabular-nums",
+    example: "1,146",
+  },
+  {
+    name: "段の見出し",
+    size: "24 / 32",
+    className: "text-2xl font-bold",
+    example: "今日のやりとり",
+  },
+  { name: "名前（大）", size: "20 / 28", className: "text-xl font-bold", example: "島袋 剛さん" },
+  { name: "名前", size: "18 / 26", className: "text-lg/6.5 font-bold", example: "比嘉 美咲さん" },
+  { name: "本文", size: "16 / 24", className: "text-base", example: "メッセージが届いています。" },
+  {
+    name: "補足",
+    size: "14 / 22",
+    className: "text-sm/5.5 text-muted-foreground",
+    example: "フロントスタッフに応募しました。",
+  },
+  { name: "日付・札", size: "12 / 16", className: "text-xs", example: "11月8日・応募あり" },
 ]
 
-type VoiceRule = {
-  rule: string
-  example: string
-}
-
-const voiceRules: ReadonlyArray<VoiceRule> = [
+const voiceRules = [
   {
-    rule: "です・ます調で書きます。感嘆符は完了・祝福の場面だけです",
-    example: "応募が完了しました！",
+    rule: "地元の仕事に詳しい、気さくなプロとして書く",
+    example: "求人票を公開すると、見てくれた人がここに出ます。",
   },
+  { rule: "区分は名詞、操作は動詞", example: "候補者・選考・やりとり／応募を見る・返信する" },
   {
-    rule: "注意書きは ※ で前置きし、本文と分けます",
-    example: "※応募すると氏名が企業に公開されます。",
+    rule: "ふだんは事実と次の行動を伝え、節目で温かさを出す",
+    example: "初めての採用、おめでとうございます。",
   },
-  {
-    rule: "空状態は「現状」+「次の一歩」の2文と CTA で構成します",
-    example: "まだメッセージはありません / まずはプロフィールを充実させましょう",
-  },
-  {
-    rule: "破壊的操作は必ず確認を挟み、取り消せないことを明記します",
-    example: "削除しますか？ この操作は取り消せません。",
-  },
-  {
-    rule: "完了はトーストで短く伝えます",
-    example: "一時保存しました。",
-  },
+  { rule: "条件に合う理由を具体的に書く", example: "希望勤務地と求人の勤務地が合っています。" },
 ]
 
-/**
- * 原則「文字とことば」。一書体のタイポグラフィとトーン&ボイス
- */
 function TypographyPage() {
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-16 px-6 py-16 md:px-10">
+    <div className="mx-auto grid w-full max-w-4xl gap-12 px-6 py-12 md:px-10">
       <RulePageHeader
         title="文字"
-        lead="書体は Noto Sans JP Variable の一書体運用です。日本語の可読性を最優先し、階層は書体でなくサイズとウェイトで作ります。可変フォントなので font-weight は数値でそのまま指定できます。そして文字と同じくらい、ことばのトーンも UI の一部です。"
+        lead="日本語はLINE Seed JPのRegular 400とBold 700です。件数・金額・表・日時など数字だけのまとまりはInterを使います。文中の数字や単位はLINE Seed JPでそろえます。"
       />
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">タイプスケール</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-col gap-2 rounded-xl bg-background p-4 text-foreground"
-        >
+      <section className="grid gap-4">
+        <h2 className="text-xl font-bold">タイプスケール</h2>
+        <dl className="ja-light-surface grid divide-y rounded-2xl bg-card px-6 text-foreground">
           {typeSamples.map((sample) => (
-            <div key={sample.label} className="flex items-baseline gap-4">
-              <code className="w-20 shrink-0 text-xs text-muted-foreground">{sample.label}</code>
-              <span className="w-10 shrink-0 text-xs text-muted-foreground">{sample.px}px</span>
-              <div className="flex min-w-0 flex-col">
-                <span className={sample.className}>沖縄で働く、を面白く。</span>
-                <span className="text-xs text-muted-foreground">{sample.usage}</span>
-              </div>
+            <div
+              key={sample.name}
+              className="grid gap-2 py-4 sm:grid-cols-[10rem_1fr] sm:items-baseline"
+            >
+              <dt className="text-sm text-muted-foreground">
+                {sample.name} · {sample.size}
+              </dt>
+              <dd className={sample.className}>{sample.example}</dd>
             </div>
           ))}
+        </dl>
+      </section>
+      <section className="grid gap-4" aria-labelledby="font-weight">
+        <h2 id="font-weight" className="text-xl font-bold">
+          書体とウェイトの見本
+        </h2>
+        <div className="ja-light-surface grid gap-4 rounded-(--radius-container) bg-card p-4 text-foreground sm:p-6">
+          <div className="grid gap-1">
+            <p className="text-sm text-muted-foreground">LINE Seed JP Regular 400</p>
+            <p className="font-normal">応募の状況を確認できます。</p>
+          </div>
+          <div className="grid gap-1">
+            <p className="text-sm text-muted-foreground">LINE Seed JP Bold 700</p>
+            <p className="font-bold">今日のやりとり</p>
+          </div>
+          <div className="grid gap-1">
+            <p className="text-sm text-muted-foreground">Inter Semibold 600</p>
+            <p className="font-numeric text-xl font-semibold tabular-nums">1,146</p>
+          </div>
         </div>
-        <p className="max-w-prose text-sm leading-relaxed text-muted-foreground">
-          UI の基本は text-sm。text-xl と text-3xl
-          以上は原則使わず、5段で完結させます。書体は増やさず、italic
-          は日本語で崩れるため使いません。
+      </section>
+      <section className="grid gap-3" aria-labelledby="numeric-columns">
+        <h2 id="numeric-columns" className="text-xl font-bold">
+          一覧の数値と日付
+        </h2>
+        <p className="text-muted-foreground">
+          件数などを表の同じ列で比較するときは、数字の幅を揃えて右寄せにします。
+          数が多い場合は「1,146」のように桁を区切ります。
+          会話の送信時刻は「9:41」のように表示し、日付が変わる位置に日付を添えます。
         </p>
       </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">ウェイト</h2>
-        <div
-          style={sampleCanvasStyle}
-          className="flex flex-col gap-1 rounded-xl bg-background p-4 text-foreground"
-        >
-          <span className="font-normal">Regular 400 — 本文と説明文</span>
-          <span className="font-medium">Medium 500 — ラベル・ボタン・強調</span>
-          <span className="font-semibold">Semibold 600 — セクション見出し</span>
-          <span className="font-bold">Bold 700 — ページタイトル</span>
-        </div>
-      </section>
-
-      <section className="space-y-5">
-        <h2 className="text-xl font-semibold tracking-tight">トーン&ボイス</h2>
-        <p className="max-w-prose text-base leading-relaxed text-muted-foreground">
-          文言のルールです。例文の型はそのまま流用できます。
-        </p>
-        <div className="flex flex-col gap-4 rounded-xl border p-4">
+      <section className="grid gap-4">
+        <h2 className="text-xl font-bold">トーンと文言</h2>
+        <dl className="grid divide-y rounded-2xl border px-6">
           {voiceRules.map((voice) => (
-            <div key={voice.rule} className="flex flex-col gap-0.5">
-              <span className="text-sm font-medium">{voice.rule}</span>
-              <span className="text-sm text-muted-foreground">例: {voice.example}</span>
+            <div key={voice.rule} className="grid gap-2 py-4">
+              <dt className="font-bold">{voice.rule}</dt>
+              <dd className="text-sm text-muted-foreground">{voice.example}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
     </div>
   )

@@ -25,7 +25,7 @@ const config = defineConfig({
     ignorePatterns: ["dist/**", "src/components/ui.base-luma/**"],
   },
   fmt: {
-    ignorePatterns: ["src/components/ui.base-luma/**"],
+    ignorePatterns: ["src/components/ui.base-luma/**", "src/route-tree.gen.ts"],
     semi: false,
     singleQuote: false,
   },

@@ -5,16 +5,18 @@ description: 製品から独立した規範デザインシステム
 colors:
   background: "oklch(1 0 0)"
   foreground: "oklch(0.145 0 0)"
-  brand: "oklch(0.852 0.199 91.936)"
-  brandForeground: "oklch(0.421 0.095 57.708)"
+  brand: "#ffc306"
+  brandForeground: "#262f37"
   card: "oklch(1 0 0)"
   cardForeground: "oklch(0.145 0 0)"
   popover: "oklch(1 0 0)"
   popoverForeground: "oklch(0.145 0 0)"
-  primary: "oklch(0.852 0.199 91.936)"
-  primaryForeground: "oklch(0.421 0.095 57.708)"
-  secondary: "oklch(0.967 0.001 286.375)"
-  secondaryForeground: "oklch(0.21 0.006 285.885)"
+  primary: "#262f37"
+  primaryForeground: "#ffffff"
+  secondary: "#eef1f4"
+  secondaryForeground: "#262f37"
+  interest: "#ffc306"
+  interestForeground: "#262f37"
   muted: "oklch(0.97 0 0)"
   mutedForeground: "oklch(0.556 0 0)"
   accent: "oklch(0.97 0 0)"
@@ -33,38 +35,49 @@ colors:
   sidebarRing: "oklch(0.708 0 0)"
 typography:
   heading-xl:
-    fontFamily: Noto Sans JP Variable
-    fontSize: 1.5rem
+    fontFamily: LINE Seed JP
+    fontSize: 2rem
+    lineHeight: 1.375
     fontWeight: 700
   heading-md:
-    fontFamily: Noto Sans JP Variable
-    fontSize: 1.125rem
-    fontWeight: 600
+    fontFamily: LINE Seed JP
+    fontSize: 1.5rem
+    lineHeight: 1.3333
+    fontWeight: 700
   body-md:
-    fontFamily: Noto Sans JP Variable
+    fontFamily: LINE Seed JP
     fontSize: 1rem
     lineHeight: 1.5
+    fontWeight: 400
   body-sm:
-    fontFamily: Noto Sans JP Variable
+    fontFamily: LINE Seed JP
     fontSize: 0.875rem
-    lineHeight: 1.5
+    lineHeight: 1.5714
+    fontWeight: 400
   label-xs:
-    fontFamily: Noto Sans JP Variable
+    fontFamily: LINE Seed JP
     fontSize: 0.75rem
-    fontWeight: 500
+    lineHeight: 1.3333
+    fontWeight: 700
+  number-md:
+    fontFamily: Inter
+    fontSize: 1.75rem
+    lineHeight: 1.2857
+    fontWeight: 600
 rounded:
+  container: 16px
   outer: 8px
-  inner: 4px
+  inner: 8px
 spacing:
   dense:
-    sm: 2px
-    md: 4px
-    lg: 8px
+    sm: 4px
+    md: 8px
+    lg: 12px
     xl: 16px
   loose:
-    sm: 32px
-    md: 48px
-    lg: 64px
+    sm: 24px
+    md: 32px
+    lg: 48px
 components:
   logo:
     backgroundColor: "{colors.brand}"
@@ -73,12 +86,20 @@ components:
     backgroundColor: "{colors.primary}"
     textColor: "{colors.primaryForeground}"
     rounded: "{rounded.outer}"
-    padding: "{spacing.dense.lg}"
+    padding: "{spacing.dense.md}"
     typography: "{typography.body-sm}"
-    height: 36px
-  button-destructive:
-    textColor: "{colors.destructive}"
+    height: 40px
+  button-secondary:
+    backgroundColor: "{colors.primaryForeground}"
+    textColor: "{colors.primary}"
+    borderColor: "{colors.input}"
     rounded: "{rounded.outer}"
+    height: 40px
+  button-interest:
+    backgroundColor: "{colors.interest}"
+    textColor: "{colors.interestForeground}"
+    rounded: "{rounded.outer}"
+    height: 40px
   badge:
     backgroundColor: "{colors.secondary}"
     textColor: "{colors.secondaryForeground}"
@@ -87,13 +108,13 @@ components:
   card:
     backgroundColor: "{colors.card}"
     textColor: "{colors.cardForeground}"
-    rounded: "{rounded.outer}"
+    rounded: "{rounded.container}"
     padding: "{spacing.dense.xl}"
   input:
     backgroundColor: "{colors.background}"
     textColor: "{colors.foreground}"
     rounded: "{rounded.outer}"
-    height: 36px
+    height: 40px
   popover:
     backgroundColor: "{colors.popover}"
     textColor: "{colors.popoverForeground}"
@@ -101,12 +122,12 @@ components:
     padding: "{spacing.dense.xl}"
   menu-item:
     rounded: "{rounded.inner}"
-    padding: "{spacing.dense.lg}"
+    padding: "{spacing.dense.md}"
     typography: "{typography.body-sm}"
   empty-state:
     textColor: "{colors.mutedForeground}"
     rounded: "{rounded.outer}"
-    padding: "{spacing.loose.md}"
+    padding: "{spacing.loose.lg}"
   sidebar:
     backgroundColor: "{colors.sidebar}"
     textColor: "{colors.sidebarForeground}"
@@ -117,73 +138,77 @@ components:
 
 転職・求人サービスのための、製品から独立した規範デザインシステム。
 
-コンセプトは3つ。(1) スマホの片手で完結する — 設計は常にモバイルファースト。1カラム、主要アクションは親指が届く下側、タップ領域は最小 36px。(2) 重い決断を軽い一歩に分解する — 応募のような重い行動の隣に必ず軽い行動(保存・気になる)を併置し、空状態と完了画面では次の一歩を1つ示す。(3) モダンでポップに、でもポップ過ぎない — ポップさは形と一色のアクセントと励ますことばの3つだけで出し、土台はグレースケールの落ち着きで真剣さを支える。
+スマートフォンでは読む順番に合わせて縦に並べる。操作を下に固定する場合は、本文や下部ナビゲーションに重ねない。広い画面では、一覧と詳細など見比べたい内容を並べる。応募の検討を続けられるよう、必要な場面では保存やフォローを用意する。普段は事実と次の操作を短く伝え、節目は温かい言葉で伝える。
 
-造形の原則は基本原則(近接・整列・反復・対比)の上に5つ。(1) アクセントはアンバー1色で、画面の主要な次のアクションだけが光る。(2) 彩度は状態の意味にだけ使い、装飾に使わない。(3) 角丸は面(`{rounded.outer}`)と項目(`{rounded.inner}`)の2値だけで決め、用途ごとに半径を発明しない。円・ピルは `rounded-full` の別枠。(4) 余白はカードの中の密な4段階(2/4/8/16px)と、面と面の間の大きい3段階(32/48/64px)の2層で組む。(5) 書体は Noto Sans JP の一書体運用で、階層はサイズとウェイトで作る。
+造形の原則は基本原則(近接・整列・反復・対比)の上に5つ。(1) 黄色のアクセントはロゴ・現在地・いいかもに使う。(2) 彩度は状態の意味にだけ使い、装飾に使わない。(3) 角丸はカードと画面の区画、操作部品の外枠、その中に並ぶ項目の役割で選ぶ。(4) 余白は部品内と画面全体の階層に合わせて選ぶ。(5) 日本語と数値のまとまりで書体を使い分け、文字の階層はサイズと太さで表す。
 
-文言はです・ます調。感嘆符は完了・祝福だけ(「完了しました！」)、注意は ※ 前置き、空状態は「現状+次の一歩」の2文と CTA、破壊的操作は「この操作は取り消せません。」を明記して確認を挟む。
+文言はです・ます調。操作ラベルには「保存する」「公開を止める」のように動詞を使う。空の表示では何がないかを伝え、次の操作がある場合は一つ案内する。取り消せない操作は、何が変わるかを示してから確認する。
 
 ## Colors
 
 グレースケール基調に、単一のアンバー系アクセント。
 
-- **Brand (`{colors.brand}`):** アイデンティティの固定色。ロゴや象徴的な演出専用で、テーマで変化しない。UI の状態表現には使わない。
-- **Primary (`{colors.primary}`):** UI の主要アクション専用。1画面に原則1つ。ブランド由来だがテーマごとにコントラストを優先して調整される(brand と primary は別トークン)。
-- **Secondary (`{colors.secondary}`):** 軽い代替アクション、サブボタン。
+- **Brand (`{colors.brand}`):** テーマで変化しない固定色。ロゴとナビゲーションの現在地に使う。
+- **Primary (`{colors.primary}`):** UI の主要アクション専用。1画面に原則1つ。明るい面では墨色を使う。
+- **Secondary (`{colors.secondary}`):** 副操作、キャンセル、ボタン型のリンク。
+- **Interest:** いいかもの送信に使う黄色のボタン。
 - **Muted / Accent (`{colors.muted}` / `{colors.accent}`):** 補助領域の背景と、ホバー・選択状態。
-- **Destructive (`{colors.destructive}`):** 削除などの破壊的操作と、未読バッジ。唯一の警告色。
+- **Destructive (`{colors.destructive}`):** 失敗や入力エラーの色。削除などの確定ボタンは Primary を使う。
 - **Border / Input / Ring:** 枠線、入力欄の境界、フォーカスリング。
 - **Sidebar 系:** ナビゲーション専用トークン。背景は本体と同化させ、線でなく余白で区切る。
 
-状態を伝える拡張色は意味を固定する: 青=相手からの事実(応募など)、紫=こちらから送ったシグナル、緑=相手から届いたシグナル、黄=内部メモ、赤=未読・破壊的操作。公開状態のような進行中の状態は彩度でなく 塗り=公開中 / outline=停止 / secondary=下書き のバッジで表す。チャートの系列は明度5段階のグレー(chart-1〜5)で区別し、彩度を持ち込まない。
+状態は淡い地と濃い文字を組み合わせ、文言でも伝える。応募と新着は青、両思いと受信したいいかもは黄、掲載中と条件の一致は緑、公開停止は灰、要確認と未入力の必須項目は橙、失敗は赤を使う。候補者との関係は選んだ求人について一つだけ表示し、応募、両思い、受信したいいかもの順で優先する。チャートの系列は chart-1〜5 の明度差と凡例で区別する。
 
 ## Typography
 
-Noto Sans JP Variable の一書体運用。日本語の可読性を最優先し、ウェイトは 400(本文)・500(ラベル)・600〜700(見出し)を使う。`{typography.heading-xl}` がページタイトル、`{typography.body-sm}` が UI の基本サイズ、`{typography.label-xs}` がバッジやメタ情報。
+日本語は LINE Seed JP の Regular（400）と Bold（700）を使う。ページタイトルは `{typography.heading-xl}`、本文は `{typography.body-md}`、補足は `{typography.body-sm}`。件数・金額・日時など数字だけのまとまりには Inter を使い、文中の数字と単位は LINE Seed JP で揃える。表で比較する数値は等幅数字を使って右揃えにする。
 
 ## Layout
 
-余白には2つの層がある。要素どうしの近さを作る密な間隔が `{spacing.dense.sm}`(2px)・`{spacing.dense.md}`(4px)・`{spacing.dense.lg}`(8px)・`{spacing.dense.xl}`(16px)、面と面を区切る大きい余白が `{spacing.loose.sm}`(32px)・`{spacing.loose.md}`(48px)・`{spacing.loose.lg}`(64px)。中間値(6px、12px など)を使いたくなったら階層設計を見直す。
+余白は4・8・12・16・24・32・48pxを使う。関連する項目の間隔は詰め、役割が切り替わる面の間隔は広げる。縦の間隔は `gap` や `space-y` で作る。
 
-密な間隔はカードの中、要素どうしの近さに使う。大きい余白はカードの中では使わず、面と面の間、または中身が少ない面の内側にだけ使う。モバイルの1カラムから高密度なテーブル・カードグリッドまで、同じ2層で組む。縦の間隔は margin でなく gap / space-y で作る。
+一覧・詳細・フォームの本文枠は、四辺に `--ja-layout-page-inset` を使う。640px未満は16px、640px以上は32px、1280px以上は48px。本文と補助欄を並べる詳細画面では、640px以上で四辺に `--ja-layout-panel-gutter`（24px）を使える。独立したスクロール領域を持つ画面や印刷は用途別の枠を使う。
+
+サイドバー横の本文面を画面の右端まで伸ばす場合は、右端の外側の余白と角丸を外す。面の内側では本文の四辺に同じ余白を取る。 候補者詳細の概要・本文・社内欄はカード内側の左右を揃え、640px未満は16px、640px以上は24pxにする。 1280px以上のホームは会社の状況と本文を別々にスクロールし、本文は上下48px、左右64pxを取る。
 
 ## Shapes
 
-角丸は `{rounded.outer}`(8px) と `{rounded.inner}`(4px) の2つの意味トークンだけで決める。独立した面(Button・Card・Input・Popover など、それ自体で完結する要素)には outer、面の中で繰り返される項目(メニュー項目・TabsTrigger など)には inner。用途ごとに半径を発明しない。outer / inner は Tailwind 標準デフォルトの `rounded-lg` / `rounded-sm` にそのまま固定していて、値を独自に計算しない。
+一覧カードの補助操作はカードの下段にまとめる。スマホでは高さ48pxの操作領域に、アイコンと短いラベルを並べる。完了状態では押せないことをラベルと表示で伝える。
 
-面を入れ子にするときは目安として `outer = inner + p-1` を意識する。現在の値ではこの関係が成立していて、面に outer・その中の項目に inner・間を p-1 空けると外側と内側の曲線が同心になるが、これは固定スケール値の組み合わせがたまたま一致しているだけで、恒常的に保証された関係ではない。
-
-Badge・Avatar・Switch・Slider など円とトラック(細長い丸)形状には `rounded-full` を使う。これは2トークンの外にある別枠の指定で、面の大小のグラデーションではない。
+カードと画面の区画には `--radius-container`（16px）、ボタンや入力欄の外枠には `--radius-outer`（8px）、外枠の中に並ぶ項目には `--radius-inner`（8px）を使う。外枠と項目には用途に応じた名前を使う。丸い写真、状態の札、ピル型の切り替え、区分内メニューのホバー面には `rounded-full` を使う。
 
 ## Images
 
-求人写真・企業ロゴなどの img は、代替テキスト・領域の予約・トリミング方針の3点を決めてから置く。情報を持つ画像は内容を alt に書き、装飾画像は alt を空にする。width / height か aspect-ratio で読み込み前に領域を確保し(SSG 配信のため CLS が目立つ)、求人写真は 16:9 の object-cover、企業ロゴは object-contain で扱う。ファーストビュー外は loading="lazy"、LCP 候補は eager + fetchpriority="high" にする。画像未登録の求人は muted の面にアイコンを置いたプレースホルダーで統一する。
+求人写真・企業ロゴなどの img は、代替テキスト・領域の予約・トリミング方針の3点を決めてから置く。情報を持つ画像は内容を alt に書き、装飾画像は alt を空にする。width / height か aspect-ratio で読み込み前に領域を確保し(SSG 配信のため CLS が目立つ)、求人写真は掲載先の比率を使い、object-cover で表示する。企業ロゴは object-contain で全体を表示する。ファーストビュー外は loading="lazy"、LCP 候補は eager + fetchpriority="high" にする。求人票一覧の写真は4:3。1280px以上では標準120×90px、対象が20件を超える場合は96×72pxにする。画像が未登録の場合と読み込みに失敗した場合は、写真と同じ枠にアイコンを置く。
 
 ## Accessibility
 
-環境や身体条件によらず同じ情報にたどり着けることを、後付けでなく最初から守る。アイコンだけのボタンは aria-label か sr-only テキストで名前を付け、フォームは Label と input の id を必ず紐付ける。本文のコントラストは WCAG AA(4.5:1)を満たし、ブランドの黄色に白文字を載せない(primaryForeground が濃い黄土色なのはこのため)。focus-visible のフォーカスリングを消さず、Esc や矢印キーの挙動は Base UI に任せて独自実装しない。状態は色だけで伝えずテキストを併記する。モーションは装飾にとどめ、自動再生と無限ループを避け、prefers-reduced-motion を尊重する。
+環境や身体条件によらず同じ情報にたどり着けることを、後付けでなく最初から守る。アイコンだけのボタンは aria-label か sr-only テキストで名前を付け、フォームは Label と input の id を必ず紐付ける。本文のコントラストは WCAG AA(4.5:1)を満たし、ブランドの黄色に白文字を載せない(黄色の上は墨色の文字を使う)。focus-visible のフォーカスリングを消さず、Esc や矢印キーの挙動は Base UI に任せて独自実装しない。状態は色だけで伝えずテキストを併記する。モーションは装飾にとどめ、自動再生と無限ループを避け、prefers-reduced-motion を尊重する。
 
 ## Components
 
-- **logo:** brand を使う唯一のコンポーネント。アイデンティティの表現専用。
+- **logo:** ロゴには brand を使う。
 - **button-primary:** 主要アクション。`{rounded.outer}` の面、1画面に原則1つ。
-- **button-destructive:** 破壊的操作。塗りでなく `{colors.destructive}` の文字色 + 薄い背景。
+- **button-secondary:** 副操作とキャンセル、ボタン型のリンクに使う。移動だけの導線は青いテキストリンクにする。
+- **button-ghost:** 行の追加などの補助操作に使う。
+- **alert-dialog:** 白いキャンセルと墨色の確定ボタンを並べ、確定ボタンには「削除する」のように操作を書く。
 - **badge:** タグや状態表示。`{typography.label-xs}` の `rounded-full` ピル。
-- **card:** 一覧カード・統計カードの基盤。`{rounded.outer}` + `{spacing.dense.xl}`。
-- **input:** フォーム入力。`{rounded.outer}` の面、高さ 36px、フォーカスで `{colors.ring}` のリング。
+- **card:** 本文と補足は罫線のない白い面と淡い面で分ける。入力欄など境界が必要な箇所には枠線を使う。
+- **input:** フォーム入力。`{rounded.outer}` の面、高さ 40px、フォーカスで `{colors.ring}` のリング。
 - **popover:** 補足ヘルプや通知の浮き面。`{rounded.outer}` + `{spacing.dense.xl}`。
 - **menu-item:** ドロップダウン・セレクトの項目。面の中の反復項目なので `{rounded.inner}`。
 - **empty-state:** 空状態。`{rounded.outer}` の面、`{spacing.loose.md}` の内側パディングで「現状+次の一歩」の2文と CTA を包む。
-- **sidebar:** ナビゲーション。幅 256px、背景は本体と同化させ余白で区切る。項目は面の中の反復項目なので `{rounded.inner}`。
+- **sidebar:** 区分内のナビゲーション。現在地は黄色の印と太字で示す。縦に固定する場合は本文と別にスクロールできるようにする。
 
 ## Do's and Don'ts
 
-- 余白は密な4値(2/4/8/16px)と大きい3値(32/48/64px)の計7値のみ。任意の px 値を直接書かない。
-- 角丸は `{rounded.outer}` と `{rounded.inner}` の2値のみ。中間の半径を個別に選ばない。円・ピルは `rounded-full` を使う。
+- 余白は共通の7段階と用途別のトークンを使う。任意の px 値を直接書かない。
+- 角丸は用途別のトークンから選ぶ。円・ピルは `rounded-full` を使う。
 - primary は主要アクション専用。1画面に primary ボタンを並べない。
-- brand はロゴ・象徴的な演出専用。UI のボタン・リンク・状態表現に brand を使わない。
-- 彩度のある色は状態の意味にだけ。意味の割り当て(青=相手からの事実、紫=送信、緑=受信、黄=メモ、赤=未読/破壊)を崩さない。
+- brand はロゴとナビゲーションの現在地に使う。いいかものボタンには Interest を使う。
+- 状態の色は用途を揃え、短い文言を添える。
 - ダークテーマは `.dark` の対応トークンを使い、ライト用の値を流用しない。
 - 薄い色の背景は透過で作らない。バッジをアイコンに重ねても下が透けないよう、不透明の色(color-mix)で塗る。
 - ソーシャルログインなど他社ブランドの要素は各社の公式アセットとガイドラインを優先し、テーマトークンで塗り替えない。
-- 更新時期などのメタ情報はバッジにせず、テキストで添える。バッジは求人の属性と状態の表現に限る。
+- 更新時期などのメタ情報はバッジにせず、テキストで添える。バッジは属性や状態を短く伝えるときに使う。
+- ナビゲーションの新着は青で示す。対応すると減る件数は白文字の丸い札にし、99を超えるときは「99+」と表示する。新着の有無だけを伝える場合は点を使う。

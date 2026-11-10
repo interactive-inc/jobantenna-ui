@@ -26,7 +26,7 @@ function BasicPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium">勤務地（エリア別・size sm）</span>
+        <span className="text-sm font-medium">勤務地</span>
 
         <NativeSelect size="sm" defaultValue="naha" className="w-full">
           <NativeSelectOptGroup label="沖縄本島南部">
@@ -42,7 +42,7 @@ function BasicPattern() {
       </div>
 
       <div className="flex flex-col gap-2">
-        <span className="text-sm font-medium">給与（無効状態）</span>
+        <span className="text-sm font-medium">給与</span>
 
         <NativeSelect disabled defaultValue="200" className="w-full">
           <NativeSelectOption value="200">月給20万円以上</NativeSelectOption>
